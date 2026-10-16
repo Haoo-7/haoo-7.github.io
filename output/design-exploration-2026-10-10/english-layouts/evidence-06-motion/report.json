@@ -1,0 +1,191 @@
+[
+  {
+    "file": "motion-probe",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 5,
+        "loops": 0,
+        "maxMove": 11,
+        "maxSize": 0,
+        "maxOpacity": 0.92,
+        "top": [
+          {
+            "el": "a.hero-action",
+            "move": 11,
+            "size": 0,
+            "opacity": 0.92,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.life",
+            "move": 8,
+            "size": 0,
+            "opacity": 0.47,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "p.identity-copy",
+            "move": 4,
+            "size": 0,
+            "opacity": 0.37,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.history",
+            "move": 4,
+            "size": 0,
+            "opacity": 0.2,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.tech",
+            "move": 1,
+            "size": 0,
+            "opacity": 0.07,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 10,
+        "loops": 0,
+        "maxMove": 800,
+        "maxSize": 0.936,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "span.topic.tech",
+            "move": 800,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.history",
+            "move": 777,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.life",
+            "move": 675,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.solid",
+            "move": 246,
+            "size": 0.936,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "button.directory-button.work-row",
+            "move": 583,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "h1.wordmark",
+            "move": 246,
+            "size": 0.936,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.title",
+            "move": 583,
+            "size": 0,
+            "opacity": 0.85,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.title",
+            "move": 492,
+            "size": 0,
+            "opacity": 0.89,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          }
+        ],
+        "layers": 8
+      },
+      "scroll": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 7,
+        "maxSize": 0,
+        "maxOpacity": 0.03,
+        "top": [
+          {
+            "el": "button.directory-button.about-row",
+            "move": 7,
+            "size": 0,
+            "opacity": 0.03,
+            "loop": false,
+            "sources": [
+              "transition:transform",
+              "js:style"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": []
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "file": "motion-probe",
+    "state": null,
+    "size": "1280x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 2,
+        "loops": 0,
+        "maxMove": 36,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "h1.wordmark",
+            "move": 36,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.primary",
+            "move": 16,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 768,
+        "maxSize": 1,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "dialog",
+            "move": 768,
+            "size": 1,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "transition:opacity",
+              "transition:transform",
+              "transition:overlay"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 1211,
+        "maxSize": 0.906,
+        "maxOpacity": 0.99,
+        "top": [
+          {
+            "el": "div.project-media",
+            "move": 1211,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "h1.wordmark",
+            "move": 111,
+            "size": 0.906,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.identity",
+            "move": 0,
+            "size": 0,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "layers": 2
+      },
+      "scroll": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 2,
+        "maxSize": 0,
+        "maxOpacity": 0.06,
+        "top": [
+          {
+            "el": "a.article",
+            "move": 2,
+            "size": 0,
+            "opacity": 0.06,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1280x900",
+    "zoom": 1,
+    "issues": []
+  }
+]

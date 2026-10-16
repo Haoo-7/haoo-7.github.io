@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haoo — Selected work & writing</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2") format("woff2");font-weight:500;font-display:swap}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+    :root{--paper:#FCFCFC;--ink:#181818;--accent:#2456D6;--muted:#626262;--line:#d4d4d4;--gutter:64px;--body:18px;--small:14px;--display:80px;--serif:Georgia,serif;--ease:cubic-bezier(.16,1,.3,1)}
+    *{box-sizing:border-box;letter-spacing:0}
+    html{scroll-behavior:smooth;scroll-padding-top:100px;overflow-x:hidden}
+    body{margin:0;background:var(--paper);color:var(--ink);font:500 var(--body)/1.55 Satoshi,Arial,sans-serif;overflow-x:hidden}
+    ::selection{color:var(--paper);background:var(--accent)}
+    a{color:inherit;text-decoration:none}button{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+    [x-cloak]{display:none!important}
+    .nav{height:84px;position:fixed;inset:0 0 auto;z-index:30;background:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);
+      .identity{font:500 16px/1.3 var(--serif);font-style:italic}
+      .dock{position:absolute;left:var(--gutter);top:25px;width:84px;height:34px}
+      .links{display:flex;gap:32px;font-size:16px}
+      a{padding:12px 0;transition:color .2s}a:hover{color:var(--accent)}
+    }
+    .opening{height:calc(100svh - 84px);min-height:710px;max-height:1000px;margin-top:84px;position:relative;overflow:clip}
+    .wordmark{margin:0;position:absolute;top:-1%;left:var(--gutter);width:calc(100% - 2*var(--gutter));line-height:1.13;font-weight:700;transform-origin:0 0;z-index:40;pointer-events:none;
+      .solid{display:block;white-space:nowrap}.solid span{color:var(--accent)}
+      canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:auto}
+      &[data-rendered=true]{.solid{opacity:0}canvas{opacity:1}}
+    }
+    .type-band{position:absolute;left:var(--gutter);right:var(--gutter);top:56%;display:flex;align-items:baseline;justify-content:space-between;line-height:1.1;
+      .tech{font:700 90px/1 Satoshi}
+      .life{font:italic 116px/1 var(--serif);color:var(--accent);transform:rotate(-6deg)}
+      .history{font:500 90px/1 var(--serif)}
+    }
+    .hero-bottom{position:absolute;left:var(--gutter);right:var(--gutter);bottom:52px;display:flex;align-items:end;justify-content:space-between;gap:40px;
+      p{font-size:18px;line-height:1.6;margin:0}
+      a{font-size:16px;display:flex;align-items:center;gap:32px;padding:12px 0}
+      img{width:30px;height:30px;transition:transform .3s var(--ease)}
+      a:hover img{transform:translateY(6px)}
+    }
+    .projects{padding:0 var(--gutter) 88px}
+    .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;
+      h2{font-size:18px;font-weight:500;margin:0}.count{font-size:14px;color:var(--muted)}
+    }
+    .project-item{position:relative;border-top:1px solid var(--line)}
+    .index-button{min-height:192px;width:100%;display:grid;grid-template-columns:90px 1fr 36px;align-items:center;text-align:left;gap:20px;transition:transform .15s,color .25s;
+      .number{font:500 54px/1 var(--serif);color:var(--accent)}
+      .title{font:700 var(--display)/1.04 Satoshi}
+      .caption{display:block;font:500 16px/1.4 Satoshi;color:var(--muted);margin-top:14px}
+      img{width:36px;height:36px;transition:transform .3s var(--ease)}
+      &:hover,&:focus-visible{.title{color:var(--accent)}img{transform:translateY(5px)}}
+      &:active{transform:scale(.99)}
+      &[aria-expanded=true] img{transform:rotate(180deg)}
+    }
+    .item-detail{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;padding:16px 56px 40px 110px;align-items:center;
+      p{font:500 24px/1.4 var(--serif);margin:0}
+      img{width:100%;aspect-ratio:1.55;object-fit:contain;background:#f0f0f0}
+    }
+    .writing{background:var(--ink);color:var(--paper);padding:60px var(--gutter) 72px;
+      .section-head{margin-bottom:32px}.count{color:#b8b8b8}
+    }
+    .article-item{border-top:1px solid #666}
+    .article-button{min-height:180px;display:grid;grid-template-columns:1fr 130px 32px;gap:30px;align-items:center;text-align:left;width:100%;transition:background .25s,color .25s,transform .15s;
+      .article-title{font:500 62px/1.08 var(--serif)}
+      time{font-size:14px;color:#b8b8b8}
+      img{width:32px;height:32px;filter:invert(1);transition:transform .3s var(--ease)}
+      &:hover,&:focus-visible{color:#91adff;img{transform:translateY(5px)}}
+      &:active{transform:scale(.99)}
+      &[aria-expanded=true] img{transform:rotate(180deg)}
+    }
+    .writing .item-detail{padding-left:0;p{font-size:22px;color:#d0d0d0}}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:70px var(--gutter) 64px;
+      p{font:500 38px/1.25 var(--serif);margin:0;max-width:430px}
+      .socials{display:flex;flex-direction:column;gap:12px;font-size:17px;overflow-wrap:anywhere}
+    }
+    .footer{padding:0 var(--gutter) 32px;display:flex;justify-content:space-between;font-size:14px;color:var(--muted);a{color:var(--ink);padding:10px 0}}
+    .peek{position:fixed;left:0;top:0;z-index:50;width:350px;pointer-events:none;visibility:hidden;opacity:0}
+    .peek-card{transform:scale(.8) rotate(10deg);background:var(--paper);padding:8px;box-shadow:0 3px 6px #18181818,0 22px 60px #18181832;
+      img{display:block;width:100%;height:220px;object-fit:contain;background:#f0f0f0}
+      p{font:500 16px/1.4 Satoshi;margin:12px 8px 8px;color:var(--ink)}
+    }
+    @media(min-width:1500px){:root{--gutter:88px;--display:96px}.type-band{.tech,.history{font-size:116px}.life{font-size:144px}}}
+    @media(max-width:760px){
+      :root{--gutter:24px;--display:44px;--body:16px}
+      .nav{height:72px;.identity{font-size:14px}.links{gap:20px;font-size:14px}.dock{top:22px}}
+      .opening{height:calc(100svh - 125px);min-height:585px;margin-top:72px}
+      .wordmark{top:8%}
+      .type-band{top:42%;left:var(--gutter);right:var(--gutter);.tech{font-size:35px}.life{font-size:54px}.history{font-size:38px}}
+      .hero-bottom{bottom:22px;flex-direction:column;align-items:start;gap:20px;p{font-size:16px}a{font-size:14px;gap:24px;padding:0}img{width:24px;height:24px}}
+      .projects{padding-bottom:52px}
+      .section-head{margin-bottom:14px;h2{font-size:16px}}
+      .index-button{min-height:176px;grid-template-columns:28px 1fr 24px;gap:14px;.number{font-size:26px}.title{line-height:1.08}.caption{font-size:14px;margin-top:12px}img{width:24px;height:24px}}
+      .item-detail{grid-template-columns:1fr;padding:8px 0 28px 42px;gap:22px;p{font-size:22px}}
+      .writing{padding:40px var(--gutter) 48px}
+      .article-button{grid-template-columns:1fr 24px;gap:14px;min-height:170px;padding:24px 0;.article-title{font-size:36px;grid-column:1;grid-row:1}time{grid-column:1;grid-row:2;font-size:14px}img{width:24px;height:24px;grid-column:2;grid-row:1 / 3}}
+      .writing .item-detail{p{font-size:20px}}
+      .contact{grid-template-columns:1fr;gap:32px;padding:44px var(--gutter);p{font-size:30px}.socials{font-size:16px}}
+      .peek{display:none}
+    }
+    @media(max-width:360px){:root{--gutter:20px;--display:38px}.opening{min-height:565px}.type-band{.tech{font-size:30px}.life{font-size:48px}.history{font-size:32px}}.nav .links{gap:16px}.article-button .article-title{font-size:32px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    html[data-motion=reduce]{scroll-behavior:auto}
+    html[data-motion=reduce] *{transition:none!important}
+  </style>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/character-brand.js"></script>
+  <script defer src="vendor/index-motion.js"></script>
+  <script defer src="vendor/alpine.min.js"></script>
+</head>
+<body x-data="{ open: new URLSearchParams(location.search).get('state') || '', toggle(name) { this.open = this.open === name ? '' : name } }" @keydown.escape.window="open = ''">
+  <nav class="nav" aria-label="Main"><span class="identity">Between tech & the humanities</span><span class="dock" aria-hidden="true"></span><div class="links"><a href="#work">Work</a><a href="#writing">Writing</a></div></nav>
+  <header class="opening" id="top">
+    <h1 class="wordmark" aria-label="Haoo"><span class="solid" aria-hidden="true">Haoo<span>.</span></span><canvas aria-hidden="true"></canvas></h1>
+    <div class="type-band" aria-label="Interests: technology, life and history"><span class="tech">Tech</span><span class="life">Life</span><span class="history">History</span></div>
+    <div class="hero-bottom"><p>Humanities student.<br>Writing about tech and learning.<br>Building useful everyday tools.</p><a href="#work"><span>Selected work</span><img src="assets/arrow-down.svg" alt=""></a></div>
+  </header>
+  <main>
+    <section class="projects" id="work">
+      <div class="section-head"><h2>Work</h2><span class="count">02 projects</span></div>
+      <article class="project-item">
+        <h3 style="margin:0"><button class="index-button dayline-row" data-image="dayline" @click="toggle('dayline')" :aria-expanded="open === 'dayline'" aria-controls="dayline-detail"><span class="number">01</span><span class="title">Dayline Journal<span class="caption">Obsidian plugin / Journal & calendar</span></span><img src="assets/arrow-down.svg" alt=""></button></h3>
+        <div class="item-detail" id="dayline-detail" hidden :hidden="open !== 'dayline'"><p>Daily notes, seen differently. A visual calendar and timeline, with mood, weather, and your original Markdown intact.</p><img src="assets/dayline.webp" alt="Dayline Journal image calendar and journal timeline"></div>
+      </article>
+      <article class="project-item">
+        <h3 style="margin:0"><button class="index-button blog-row" data-image="blog" @click="toggle('blog')" :aria-expanded="open === 'blog'" aria-controls="blog-detail"><span class="number">02</span><span class="title">Haoo Blog<span class="caption">Personal website / Writing & experiments</span></span><img src="assets/arrow-down.svg" alt=""></button></h3>
+        <div class="item-detail" id="blog-detail" hidden :hidden="open !== 'blog'"><p>A personal space at the intersection of technology, everyday life, and the humanities.</p><img src="assets/blog-writing.webp" alt="Haoo Blog writing section"></div>
+      </article>
+    </section>
+    <section class="writing" id="writing">
+      <div class="section-head"><h2>Writing</h2><span class="count">02 essays</span></div>
+      <article class="article-item"><h3 style="margin:0"><button class="article-button ai-row" data-image="ai" @click="toggle('ai')" :aria-expanded="open === 'ai'" aria-controls="ai-detail"><span class="article-title">Learning with AI</span><time datetime="2026-03-18">18 Mar 2026</time><img src="assets/arrow-down.svg" alt=""></button></h3><div class="item-detail" id="ai-detail" hidden :hidden="open !== 'ai'"><p>Connecting XMind, Obsidian, and NotebookLM into a learning workflow.</p><img src="assets/ai-learning.webp" alt="Blue knowledge paths across a white page"></div></article>
+      <article class="article-item"><h3 style="margin:0"><button class="article-button kindle-row" data-image="kindle" @click="toggle('kindle')" :aria-expanded="open === 'kindle'" aria-controls="kindle-detail"><span class="article-title">A Kindle through<br>high school</span><time datetime="2026-01-26">26 Jan 2026</time><img src="assets/arrow-down.svg" alt=""></button></h3><div class="item-detail" id="kindle-detail" hidden :hidden="open !== 'kindle'"><p>Living with a Kindle Paperwhite 3, one book at a time.</p><img src="assets/kindle.webp" alt="A close view of the Kindle device"></div></article>
+    </section>
+    <section class="contact" id="about"><p>Haoo.<br>A humanities student,<br>still curious.</p><div class="socials"><span>GitHub / Haoo-7</span><span>SSPAI / 6veuyub4</span><span>Bilibili / 438365760</span><span>re11.zhou@gmail.com</span></div></section>
+  </main>
+  <footer class="footer"><span>© 2026 Haoo</span><a href="#top">Back to top</a></footer>
+  <aside class="peek" aria-hidden="true"><div class="peek-card"><img src="assets/dayline.webp" alt=""><p>Dayline Journal</p></div></aside>
+</body>
+</html>

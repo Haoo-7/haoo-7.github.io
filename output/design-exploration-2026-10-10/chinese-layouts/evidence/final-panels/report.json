@@ -1,0 +1,30 @@
+[
+  {
+    "file": "writing-390x844.png",
+    "state": "writing",
+    "size": "390x844",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "about-390x844.png",
+    "state": "about",
+    "size": "390x844",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "writing-320x740.png",
+    "state": "writing",
+    "size": "320x740",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "about-320x740.png",
+    "state": "about",
+    "size": "320x740",
+    "zoom": 1,
+    "issues": []
+  }
+]

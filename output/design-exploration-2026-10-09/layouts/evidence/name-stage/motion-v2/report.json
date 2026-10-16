@@ -1,0 +1,167 @@
+[
+  {
+    "file": "motion-probe",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 36,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "h1.wordmark",
+            "move": 36,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "p.serif",
+            "move": 16,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.primary",
+            "move": 16,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 4,
+        "loops": 0,
+        "maxMove": 707,
+        "maxSize": 0.881,
+        "maxOpacity": 0.99,
+        "top": [
+          {
+            "el": "h1.wordmark",
+            "move": 599,
+            "size": 0.881,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.identity",
+            "move": 707,
+            "size": 0,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "img",
+            "move": 16,
+            "size": 0.02,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "img.icon",
+            "move": 2,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 1237,
+        "maxSize": 6.359,
+        "maxOpacity": 0.68,
+        "top": [
+          {
+            "el": "h1.wordmark",
+            "move": 94,
+            "size": 6.359,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "img",
+            "move": 1237,
+            "size": 0.02,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.identity",
+            "move": 0,
+            "size": 0,
+            "opacity": 0.68,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "layers": 2
+      },
+      "scroll": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 20,
+        "maxSize": 0,
+        "maxOpacity": 0.84,
+        "top": [
+          {
+            "el": "a.article",
+            "move": 20,
+            "size": 0,
+            "opacity": 0.84,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": []
+  }
+]

@@ -1,0 +1,13 @@
+UI design mockup, flat front view, rendered like a real browser screenshot of a live website. No device frame, no perspective, no page-external decoration, no watermark. This image is the lower slice of a taller desktop page; it continues directly below the previous screen, which already showed the navigation, the giant slogan hero and the article list row "01". Content width 1440 CSS px, background cloud-white #F6F8F8.
+
+The image must not repeat the navigation, the hero slogan or the row "01". It starts near the top with the second numbered list row.
+
+Numbered article list, editorial and quiet, one visible row, single-line and scannable — no covers, no thumbnails, no cards, no buttons:
+Hanging number "02" in deep sea blue #2E6FA8, small sans-serif with wide letter spacing, placed in the same left gutter column as row 01; one single-line truncated article title in Chinese "Kindle PaperWhite 3：为什么我推荐高中生使用电子书？" in ink #14253A, medium weight sans-serif, about 26px; right aligned date "2026.01.26" in small misty blue-grey #55708C type, aligned with the scroll column.
+Below the row, one 1px divider line #D9E1E8 spanning the content column.
+
+Footer anchored at the bottom of the slice with generous empty whitespace above it, separated from the list by one 1px divider line #D9E1E8: left, "© 2026 Haoo" in small sans-serif, misty blue-grey #55708C; right, three small text links "GitHub", "Bilibili", "少数派" in the same small misty blue-grey type. No newsletter form, no large logo, no link columns, no social icons.
+
+Typography rules: the same geometric sans-serif (Satoshi-like) family as the page above, two weights only; ink #14253A for the title, misty blue-grey #55708C for meta. Accent blue #2E6FA8 appears only on the list number "02". No gradients, no shadows, no glow, no cards, no centered stacking, no icons.
+
+All Chinese characters must be rendered verbatim and correct; render each quoted string exactly, with no extra characters, no misspelling, no pseudo-Chinese shapes.

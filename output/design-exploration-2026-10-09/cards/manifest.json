@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · 科技与人文",
+  "brief": "个人作品馆：先认识 Haoo，再进入作品，最后延伸到文章与社交账号。本轮只比较视觉语言，不是首页定稿；字符图案与动效将在下一轮展开。",
+  "round": "01 · 风格探索",
+  "candidates": [
+    {
+      "id": "woven-code",
+      "name": "字符编织",
+      "concept": "把代码变成形象：等宽字符与中文宋体并置，下一轮用 0 与 1 聚成 Haoo 字标，再展开为作品。",
+      "typography": "标题 Menlo · 正文 Songti SC · 数字 Menlo",
+      "palette": [
+        "#F4F5F7",
+        "#151719",
+        "#2456D6",
+        "#A72B48"
+      ],
+      "traits": [
+        "字符作为主视觉材料",
+        "等宽字 × 中文宋体",
+        "冷白与墨黑",
+        "直角细线 · 较密"
+      ],
+      "kind": "html",
+      "source": "card-woven-code.html"
+    },
+    {
+      "id": "humanist-type",
+      "name": "人文巨字",
+      "concept": "以名字而非口号开场：厚重无衬线与有书卷气的中文正文形成反差，华丽来自尺度和精确的转场。",
+      "typography": "标题 Helvetica Neue · 正文 Songti SC · 数字 Georgia",
+      "palette": [
+        "#FCFCFC",
+        "#181818",
+        "#242424",
+        "#2E6FA8"
+      ],
+      "traits": [
+        "厚重无衬线大字",
+        "宋体正文与衬线编号",
+        "明亮 · 大留白",
+        "方角黑色动作"
+      ],
+      "kind": "html",
+      "source": "card-humanist-type.html"
+    },
+    {
+      "id": "digital-engraving",
+      "name": "数字版画",
+      "concept": "让计算有印刷的分量：宋体名字、等宽编号、银灰与黑色；下一轮让字符构成雕刻般的图像。",
+      "typography": "标题 Songti SC · 正文 PingFang SC · 数字 Menlo",
+      "palette": [
+        "#E5E7E9",
+        "#202225",
+        "#A42443",
+        "#2E6FA8"
+      ],
+      "traits": [
+        "宋体承担主标题",
+        "银灰底与墨黑",
+        "图像压字的构图倾向",
+        "无阴影 · 精细边线"
+      ],
+      "kind": "html",
+      "source": "card-digital-engraving.html"
+    },
+    {
+      "id": "electric-publishing",
+      "name": "电光出版",
+      "concept": "把个人站当成一份数字出版物：电黄、黑字、紧凑分栏，作品像封面一样直接出现。",
+      "typography": "标题 Avenir Next · 正文 Menlo · 数字 Avenir Next",
+      "palette": [
+        "#E8F43D",
+        "#191B18",
+        "#191B18",
+        "#A42443"
+      ],
+      "traits": [
+        "电黄建立鲜明身份",
+        "无衬线标题 · 等宽正文",
+        "紧凑分栏",
+        "硬边框 · 不用圆角"
+      ],
+      "kind": "html",
+      "source": "card-electric-publishing.html"
+    },
+    {
+      "id": "blue-manifesto",
+      "name": "蓝色宣言",
+      "concept": "让蓝色从点缀变成舞台：满版高饱和蓝与白色衬线名字，科技感靠字符变化，人文感靠字形。",
+      "typography": "标题 Georgia · 正文 Helvetica Neue · 数字 Menlo",
+      "palette": [
+        "#234DDC",
+        "#FFFFFF",
+        "#FFFFFF",
+        "#F0F56B"
+      ],
+      "traits": [
+        "满版钴蓝而非蓝色点缀",
+        "衬线名字 · 无衬线正文",
+        "白色方角控件",
+        "高对比 · 中等密度"
+      ],
+      "kind": "html",
+      "source": "card-blue-manifesto.html"
+    }
+  ]
+}

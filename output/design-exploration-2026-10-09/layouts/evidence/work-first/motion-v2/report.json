@@ -1,0 +1,156 @@
+[
+  {
+    "file": "motion-probe",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 24,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "h1.brand",
+            "move": 24,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.header-right",
+            "move": 12,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.gallery-top",
+            "move": 12,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 5,
+        "loops": 0,
+        "maxMove": 36,
+        "maxSize": 0.114,
+        "maxOpacity": 0.87,
+        "top": [
+          {
+            "el": "img",
+            "move": 36,
+            "size": 0.114,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.article",
+            "move": 21,
+            "size": 0,
+            "opacity": 0.87,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.article",
+            "move": 20,
+            "size": 0,
+            "opacity": 0.84,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.socials",
+            "move": 13,
+            "size": 0,
+            "opacity": 0.82,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "img.icon",
+            "move": 2,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 510,
+        "maxSize": 0.135,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "img",
+            "move": 510,
+            "size": 0.135,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "layers": 1
+      },
+      "scroll": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 4,
+        "maxSize": 0.014,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "img",
+            "move": 4,
+            "size": 0.014,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": []
+  }
+]

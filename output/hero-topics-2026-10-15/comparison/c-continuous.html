@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Haoo · 一线相连</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2");font-weight:500}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2");font-weight:700}
+    *{box-sizing:border-box;letter-spacing:0}
+    :root{--paper:#fcfcfc;--ink:#181818;--blue:#2456d6}
+    body{margin:0;width:1440px;height:900px;overflow:hidden;background:var(--paper);color:var(--ink);font:500 18px/1.6 Satoshi,"Hiragino Sans GB",Arial,sans-serif}
+    .nav{position:absolute;top:0;left:64px;right:64px;height:84px;display:flex;justify-content:space-between;align-items:center}.nav p{font-size:14px;margin:0}.links{display:flex;gap:32px;font-size:16px}
+    .hero{position:relative;margin-top:84px;height:724px}
+    h1{position:absolute;left:104px;top:187px;margin:0;width:1232px;height:350px}h1 img{display:block;width:1232px;height:350px}
+    .thread{position:absolute;left:408px;right:292px;bottom:41px;height:98px;margin:0}
+    .thread svg{display:block;width:100%;height:100%}
+    .intro{position:absolute;left:64px;bottom:36px;margin:0;font-size:18px;line-height:1.6}
+    .action{position:absolute;right:64px;bottom:44px;display:flex;align-items:center;gap:28px;font-size:16px}.action img{width:32px;height:32px}
+    .next{position:absolute;top:808px;left:64px;right:64px;border-top:1px solid #d4d4d4;display:flex;gap:52px;padding-top:28px}.next span{font-size:14px;padding-top:9px;color:#626262}.next h2{margin:0;font:600 108px/1.18 "Songti SC",serif}
+  </style>
+</head>
+<body>
+  <nav class="nav"><p>A personal corner of the internet</p><div class="links"><span>探索</span><span>关于</span></div></nav>
+  <main class="hero">
+    <h1><img src="assets/haoo.png" alt="Haoo"></h1>
+    <figure class="thread" aria-label="从技术到生活，再到历史：代码折线、日出和时间刻度一线相连">
+      <svg viewBox="0 0 740 98" aria-hidden="true">
+        <g fill="none" stroke="#181818" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 63H46L64 45 46 27M85 69 99 21M118 27 136 45 118 63H245C270 63 277 63 287 63A38 38 0 0 1 363 63H715"/>
+          <path d="M325 9V1M285 23 278 16M365 23 372 16M264 48 254 45M386 48 396 45" stroke="#2456d6"/>
+          <path d="M299 77H351" stroke="#2456d6"/>
+          <path d="M464 63V43M485 63V54M506 63V54M527 63V54M548 63V36M569 63V54M590 63V54M611 63V54M632 63V43M653 63V54M674 63V54M695 63V54M716 63V28"/>
+          <path d="M716 28V63" stroke="#2456d6" stroke-width="2.5"/>
+        </g>
+      </svg>
+    </figure>
+    <p class="intro">人文社科学生。<br>写数码，也写学习。<br>做让日常更顺手的工具。</p>
+    <div class="action"><span>作品与文章</span><img src="assets/arrow-down.svg" alt=""></div>
+  </main>
+  <section class="next"><span>01</span><h2>作品</h2></section>
+</body>
+</html>

@@ -1,0 +1,17 @@
+UI design mockup, flat front view, rendered like a real browser screenshot of a live mobile website at a 390 by 844 logical viewport. No device frame, no phone mockup, no perspective, no page-external decoration, no watermark. Background cloud-white #F6F8F8.
+
+Mobile navigation, single compact row: left, wordmark "Haoo" in geometric sans-serif bold, ink #14253A; right, a thin-line menu icon and a thin-line sun/moon theme toggle icon.
+
+Mobile hero, left aligned, generous whitespace above and below: the slogan split across three tight lines, all words the same display size, roughly 56px, tight line height:
+Line 1: "TECH" in solid geometric sans-serif bold, ink #14253A.
+Line 2: "LIFE" in high-contrast serif italic, deep sea blue #2E6FA8, followed by "&" in ink.
+Line 3: "HISTORY" as outline-only geometric sans-serif bold, 1.5px ink outline with background showing inside.
+At the right edge of the outline word keep sparse small ink-blue specks, a frozen frame of a canvas text effect, restrained, no glow. Below the slogan, right aligned against the right margin, the Chinese year "二〇二六" set vertically in small misty blue-grey #55708C type with one small square seal in deep sea blue #2E6FA8 containing a single white Chinese character "昊".
+
+One attitude line below the hero, Chinese, sans-serif medium, about 18px, ink color: "写数码、历史，和不肯将就的事。" left aligned.
+
+Below that, a 1px divider line #D9E1E8 and the start of the numbered article list, left gutter number inline before the title: row one shows "01" in deep sea blue #2E6FA8 small sans-serif with wide letter spacing, then the Chinese title "效率杂谈：告别纸笔拓荒，怎么用 AI 来辅助学习？" wrapping to two lines and truncated with an ellipsis in ink #14253A medium sans-serif, and a small misty blue-grey date "2026.03.18" under the title. Only the top edge of row two is visible.
+
+Typography rules: sans-serif is a geometric grotesque with clean round shapes; serif is a high-contrast display serif with true italic; no third typeface. Accent blue appears only on "LIFE", the list number and the seal, covering less than 5% of the page. No gradients, no shadows, no glow, no cards, no bottom tab bar, no floating action button, no carousel, no hero image.
+
+All Chinese characters must be rendered verbatim and correct; render each quoted string exactly, with no extra characters, no misspelling, no pseudo-Chinese shapes.

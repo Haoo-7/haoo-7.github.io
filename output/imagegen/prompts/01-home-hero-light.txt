@@ -1,0 +1,20 @@
+UI design mockup, flat front view, rendered like a real browser screenshot of a live website. No device frame, no perspective, no page-external decoration, no watermark.
+
+Page: personal blog homepage, desktop, first screen. Content width 1440 CSS px, background cloud-white #F6F8F8.
+
+Navigation, single row, no border: left, wordmark "Haoo" in geometric sans-serif bold, ink #14253A, tight letter spacing. Right aligned, four small text links in Chinese: "文章" "项目" "记录" "关于", ink color, letter-spacing slightly open, sans-serif. Far right, one minimal thin-line sun/moon theme toggle icon in ink.
+
+Hero, left aligned, generous whitespace, occupying most of the screen. Two stacked lines of a giant slogan, all words the same size, about 130px, tight line height:
+Line 1: "TECH" in solid geometric sans-serif bold, ink #14253A, followed by "LIFE" in high-contrast serif italic, deep sea blue #2E6FA8.
+Line 2: "&" followed by "HISTORY" as outline-only geometric sans-serif bold: 2px ink #14253A outline with the background showing inside, same giant size.
+At the bottom-right edge of the outlined word "HISTORY" keep sparse small ink-blue specks, a frozen frame of a canvas text effect, restrained, no glow, no gradient.
+
+In the right column whitespace of the hero: the Chinese year "二〇二六" set vertically, small Chinese type, misty blue-grey #55708C, and one small square seal in deep sea blue #2E6FA8 containing a single white Chinese character "昊", placed near the right margin baseline.
+
+Below the hero, one attitude line in Chinese: "写数码、历史，和不肯将就的事。" in sans-serif medium, about 22px, ink color.
+
+Bottom of the screen shows the beginning of a numbered article list: a 1px divider line #D9E1E8, then one single-line row: hanging number "01" in #2E6FA8 with wide letter spacing, a one-line article title in Chinese truncated with an ellipsis, and a right aligned date "2026.03.18" in small misty blue-grey type. Only the very top edge of the next list row is visible.
+
+Typography rules: sans-serif is a geometric grotesque with clean round shapes (Satoshi-like); serif is a high-contrast display serif with true italic (Instrument Serif-like); no third typeface. Accent blue covers less than 5% of the page and appears only on LIFE, the list number and the seal. No gradients, no shadows, no glow, no glass, no cards, no centered stacking, no icons other than the theme toggle.
+
+All Chinese characters must be rendered verbatim and correct; render each quoted string exactly, with no extra characters, no misspelling, no pseudo-Chinese shapes.

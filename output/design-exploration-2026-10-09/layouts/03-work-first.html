@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Haoo · 作品先行</title><link rel="icon" href="data:,">
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2") format("woff2");font-weight:500;font-display:swap}
+    @font-face{font-family:SourceHan;src:url("assets/source-han-serif-cn.woff2") format("woff2");font-weight:200 900;font-display:swap}
+    :root{--paper:#FCFCFC;--ink:#181818;--muted:#656565;--rule:#D4D4D4;--surface:#F2F2F2;--gutter:48px;--space:24px;--body:17px;--display:110px;--ease:cubic-bezier(.16,1,.3,1)}
+    *{box-sizing:border-box;letter-spacing:0}html{scroll-behavior:smooth;scroll-padding-top:32px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:500 var(--body)/1.65 Satoshi,"PingFang SC",sans-serif}
+    a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:6px}::selection{background:var(--ink);color:var(--paper)}.icon{width:20px;height:20px;flex:none}
+    header{padding:28px var(--gutter) 20px;display:flex;align-items:end;justify-content:space-between;gap:32px}.brand{font:700 var(--display)/1.05 Satoshi,sans-serif;margin:0}.header-right{display:flex;flex-direction:column;align-items:end;gap:24px}.header-right p{font:400 22px/1.5 SourceHan,serif;margin:0}nav{display:flex;gap:32px;align-items:center}nav a,nav button{font-size:15px;padding:8px 0}nav a:hover,nav button:hover{text-decoration:underline;text-underline-offset:6px}
+    .gallery{padding:0 var(--gutter) 80px}.gallery-top{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);border-top:1px solid var(--ink);padding:16px 0}
+    .exhibit{height:calc(100svh - 470px);min-height:320px;max-height:650px;overflow:hidden;background:var(--paper);position:relative;display:flex;justify-content:center}
+    .exhibit img{width:auto;max-width:100%;height:100%;object-fit:contain;object-position:center;display:block;transform-origin:center}
+    .caption{padding:20px 0;display:flex;align-items:baseline;justify-content:space-between;gap:24px}.caption h2{font:500 30px/1.2 Satoshi,sans-serif;margin:0}.primary{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--ink);transition:transform .18s var(--ease);white-space:nowrap}.primary:active{transform:translateY(2px)}.primary:hover .icon{transform:translate(2px,-2px)}.primary .icon{transition:transform .2s var(--ease)}.project-description{margin:16px 0 0;font:400 22px/1.6 SourceHan,serif}
+    .writing{display:grid;grid-template-columns:1fr 2fr;gap:80px;padding:48px var(--gutter) 72px;border-top:1px solid var(--rule)}.writing h2{font:400 36px/1.5 SourceHan,serif;margin:0}.article{display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-bottom:1px solid var(--rule);padding:20px 0}.article:first-child{padding-top:0}.article h3{font:400 22px/1.6 SourceHan,serif;margin:0;text-wrap:pretty}.article small{color:var(--muted);font-size:14px;white-space:nowrap}.article:hover h3{text-decoration:underline;text-underline-offset:6px}.reading{font:400 18px/1.8 SourceHan,serif;margin:32px 0 0;max-width:38em}
+    footer{background:var(--ink);color:var(--paper);padding:56px var(--gutter);display:flex;justify-content:space-between;align-items:center;gap:32px}.footer-name{font:700 56px/1 Satoshi;margin:0}.socials{display:flex;gap:28px;flex-wrap:wrap}.socials a:hover{text-decoration:underline;text-underline-offset:6px}.copyright{font-size:14px;color:#C7C7C7;margin:24px 0 0}
+    .article-copy{min-width:0}.article-copy p{font:400 17px/1.8 SourceHan,serif;color:var(--muted);margin:12px 0 0;max-width:38em}
+    .motion-entry .brand,.motion-entry .header-right,.motion-entry .gallery-top{opacity:0}.motion-entry .exhibit{clip-path:inset(0 0 100% 0)}
+    dialog{margin:auto;border:0;background:var(--paper);color:var(--ink);padding:32px 40px 48px;width:min(640px,calc(100% - 32px));max-height:calc(100% - 32px);opacity:0;transform:translateY(24px);transition:opacity .3s var(--ease),transform .3s var(--ease),display .3s allow-discrete,overlay .3s allow-discrete}dialog[open]{opacity:1;transform:translateY(0)}dialog::backdrop{background:rgb(0 0 0/.2)}@starting-style{dialog[open]{opacity:0;transform:translateY(24px)}}.close{display:flex;margin-left:auto;padding:10px}.about-title{font:700 80px/1 Satoshi;margin:24px 0 32px}.about-text{font:400 24px/1.7 SourceHan,serif;margin:0 0 40px}
+    @media(min-width:1500px){:root{--gutter:64px;--display:130px}}
+    @media(max-width:1000px){:root{--gutter:32px;--display:96px}.writing{gap:40px}.article{align-items:start}.article small{display:none}}
+    @media(max-width:600px){:root{--gutter:24px;--display:76px}header{padding-top:28px;flex-direction:column;align-items:start;gap:20px}.header-right{align-items:start;flex-direction:column;gap:16px;width:100%}.header-right p{font-size:22px}nav{gap:24px;width:100%;justify-content:flex-end}.gallery-top{padding:14px 0}.exhibit{height:calc(100svh - 540px);min-height:280px;max-height:420px}.gallery{padding-bottom:48px}.caption{align-items:center;gap:16px}.caption h2{font-size:24px}.primary{font-size:14px;gap:8px}.project-description{font-size:20px}.writing{grid-template-columns:1fr;gap:24px;padding-top:40px;padding-bottom:48px}.writing h2{font-size:30px}.article h3{font-size:19px}footer{flex-direction:column;align-items:start;padding:40px var(--gutter);gap:32px}.footer-name{font-size:48px}.socials{gap:24px;font-size:15px}dialog{padding:24px}.about-title{font-size:64px}.about-text{font-size:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+  </style>
+  <script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script defer src="vendor/alpine.min.js"></script>
+  <script>if(window.gsap&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion-entry");</script>
+</head>
+<body x-data="{state:new URLSearchParams(location.search).get('state')||'idle',init(){this.$watch('state',value=>value==='about'?this.$refs.about.showModal():this.$refs.about.close());if(this.state==='about')this.$nextTick(()=>this.$refs.about.showModal());}}">
+  <header><h1 class="brand">Haoo.</h1><div class="header-right"><p>让科技改变生活。</p><nav aria-label="主导航"><a href="#works">作品</a><a href="#writing">文章</a><button class="about-trigger" @click="state='about'">关于</button></nav></div></header>
+  <main>
+    <section class="gallery" id="works"><div class="gallery-top"><span>作品</span><span>01 / 网站</span></div><a class="exhibit" href="#project-detail"><img src="assets/blog.png" alt="Haoo Blog 的首页设计" width="1280" height="900"></a><div class="caption"><h2>Haoo Blog</h2><a class="primary" href="#project-detail">进入作品<img class="icon" src="assets/arrow-up-right.svg" alt=""></a></div><p class="project-description" id="project-detail">写数码、历史，和不肯将就的事。</p></section>
+    <section class="writing" id="writing"><h2>也写一些文字。</h2><div><a class="article" href="#reading"><div class="article-copy"><h3>告别纸笔拓荒，怎么用 AI 来辅助学习？</h3><p id="reading">从纸笔到 XMind、Obsidian 与 NotebookLM，一位人文社科大学生亲历的 AI 辅助学习系统。</p></div><small>2026.03.18</small></a><a class="article" href="#kindle-reading"><div class="article-copy"><h3>Kindle Paperwhite 3</h3><p id="kindle-reading">一台二手 Kindle PaperWhite 3 如何陪伴高中学习：阅读、背单词、看课件，以及它无法回避的缺陷。</p></div><small>2026.01.26</small></a></div></section>
+  </main>
+  <footer id="social"><div><p class="footer-name">Haoo.</p><p class="copyright">© 2026 Haoo</p></div><div class="socials"><a href="#social">GitHub</a><a href="#social">Bilibili</a><a href="#social">少数派</a></div></footer>
+  <dialog x-ref="about" @cancel.prevent="state='idle'" @close="state='idle'" aria-label="关于 Haoo"><button class="close" title="关闭" aria-label="关闭" @click="state='idle'"><img class="icon" src="assets/x.svg" alt=""></button><h2 class="about-title">Haoo.</h2><p class="about-text">记录数码工具、学习方法与真实使用体验。</p><div class="socials"><a href="#social" @click="state='idle'">GitHub</a><a href="#social" @click="state='idle'">Bilibili</a><a href="#social" @click="state='idle'">少数派</a></div></dialog>
+  <script>
+    document.fonts.ready.then(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      if(matchMedia("(prefers-reduced-motion: reduce)").matches){document.body.dataset.ready="true";return;}
+      gsap.timeline({onComplete:()=>document.body.dataset.ready="true"})
+        .fromTo(".brand",{opacity:0,y:24},{opacity:1,y:0,duration:.3,ease:"power3.out"})
+        .fromTo(".header-right,.gallery-top",{opacity:0,y:12},{opacity:1,y:0,stagger:.05,duration:.25,ease:"power3.out"},.12)
+        .fromTo(".exhibit",{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0 0 0% 0)",duration:.35,ease:"power3.out"},.2);
+      document.documentElement.classList.remove("motion-entry");
+      gsap.fromTo(".exhibit img",{scale:1},{scale:.8,y:-24,ease:"none",scrollTrigger:{trigger:".gallery",start:"top top",end:"bottom top",scrub:true}});
+      gsap.from(".writing .article",{opacity:0,x:24,stagger:.07,duration:.4,ease:"power3.out",scrollTrigger:{trigger:".writing",start:"top 85%",once:true}});
+      gsap.from("footer .socials",{opacity:0,y:16,duration:.35,ease:"power3.out",scrollTrigger:{trigger:"footer",start:"top 90%",once:true}});
+    });
+  </script>
+</body>
+</html>

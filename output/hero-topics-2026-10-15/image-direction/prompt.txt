@@ -1,0 +1,16 @@
+Use case: a coordinated photographic cutout asset set for the existing Haoo personal website hero. Images replace the words Tech, Life, History around a large black character-art wordmark. Make the actual objects beautiful, tactile and immediately recognizable at small display sizes, with refined editorial still-life photography rather than flat icons or toy-like 3D.
+
+SUBJECTS AND MEDIUM
+Exactly three independent photorealistic objects in one horizontal asset sheet. Left: a contemporary thin silver aluminum laptop, open about 105 degrees, dark charcoal inactive screen and visible precise keyboard, no brand. Center: one rich cobalt-blue glazed ceramic everyday coffee cup with a generous round handle, no saucer, no steam. Right: one ancient Chinese bronze ding ritual vessel with two upright loop handles and three short legs, small authentic incised geometric ornament and dark brown aged bronze with restrained oxidation, no inscription, not a replica of a specific museum artifact. Laptop means technology, ceramic cup means everyday life, bronze vessel means history.
+
+COMPOSITION AND CUTOUT SPACING
+Landscape 1536 by 1024. Place each complete object centered within its own third: laptop centered near (256,512), cup near (768,512), vessel near (1280,512). Each object occupies roughly 350 to 410 pixels wide and no more than 450 pixels high. Leave at least 80 pixels of totally empty background between silhouettes. Keep complete outlines, handles, feet and corners within their thirds with 60 pixels safe margin. No object overlaps another. All three have the same slightly elevated three-quarter viewpoint looking down about 20 degrees; maintain coherent physical form. The laptop can have a gentle editorial angle, but keep its screen and keyboard recognizable. Do not make a miniature scene or frame.
+
+BACKGROUND
+Perfectly flat, uniform vivid chroma-key magenta #FF00FF in all empty pixels, including inside open handles and between legs. Background is for local alpha extraction, not part of the finished website. No magenta tint, spill, reflections or edges on the actual objects. No environmental surface or floor.
+
+MATERIALS AND LIGHT
+One consistent large softbox from the upper left, subtle neutral fill from front. Soft silver reflections, convincing ceramic glaze with a slightly imperfect rim, finely weathered bronze. Physical realism, clear silhouettes, rich controlled material detail, no harsh specular glare. No ground shadows; the final website controls shadows separately. Everything sharp and in focus.
+
+EXCLUSIONS
+No text, words, letters, dates, numerals, logo, watermark, UI screenshot, code, caption, divider, border, panel, decorative symbol, stand, plinth, hands, people, leaves, scenery or extra props. No gradients on background, no glow, no halos, no drop shadow, no contact shadow, no graphic illustration, no clay style, no cartoon proportions. Return the asset sheet only, not a web page design.

@@ -1,0 +1,44 @@
+[
+  {
+    "file": "work-1280x900.png",
+    "state": "work",
+    "size": "1280x900",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "writing-1280x900.png",
+    "state": "writing",
+    "size": "1280x900",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "about-1280x900.png",
+    "state": "about",
+    "size": "1280x900",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "work-320x740.png",
+    "state": "work",
+    "size": "320x740",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "writing-320x740.png",
+    "state": "writing",
+    "size": "320x740",
+    "zoom": 1,
+    "issues": []
+  },
+  {
+    "file": "about-320x740.png",
+    "state": "about",
+    "size": "320x740",
+    "zoom": 1,
+    "issues": []
+  }
+]

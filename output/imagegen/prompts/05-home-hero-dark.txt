@@ -1,0 +1,17 @@
+Edit this website screenshot. Change only the color theme: convert it from light mode to dark mode. Keep layout, spacing, type sizes, typefaces, positions and every element exactly where they are.
+
+Dark theme colors:
+- Page background becomes near-black deep indigo #0B1220.
+- Wordmark "Haoo", the four nav links 文章 项目 记录 关于, the theme toggle icon, the giant word "TECH", the "&" sign, and the attitude line 写数码、历史，和不肯将就的事。 become light ink #E8F1F6.
+- The giant word "HISTORY" stays outline-only, its outline becomes light ink #E8F1F6 with the dark background showing inside.
+- The serif italic word "LIFE" becomes sky blue #8FC8ED.
+- The vertical Chinese year 二〇二六 becomes soft blue-grey #7E93A3.
+- The hanging list number "01" becomes sky blue #8FC8ED.
+- The square seal becomes sky blue #8FC8ED with its single glyph rendered in dark #0B1220.
+- The sparse specks at the right edge of HISTORY stay light blue.
+- Hairline dividers become dark slate #16273A.
+- The article title text stays light ink #E8F1F6 and the date stays blue-grey #7E93A3.
+
+Do not change any text content, do not move or resize anything, do not add or remove elements, no gradients, no glow, no neon, no shadows. Keep the same flat editorial look.
+
+All Chinese characters must remain verbatim and correct, with no extra characters and no pseudo-Chinese shapes.

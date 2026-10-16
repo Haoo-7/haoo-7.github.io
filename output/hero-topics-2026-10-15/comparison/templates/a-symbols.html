@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>[[brand]] · 字符意象</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2");font-weight:500}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2");font-weight:700}
+    *{box-sizing:border-box;letter-spacing:0}
+    :root{--paper:#fcfcfc;--ink:#181818;--blue:#2456d6}
+    body{margin:0;width:1440px;height:900px;overflow:hidden;background:var(--paper);color:var(--ink);font:500 18px/1.6 Satoshi,"Hiragino Sans GB",Arial,sans-serif}
+    .nav{height:84px;margin:0 64px;display:flex;align-items:center;justify-content:space-between}
+    .nav p{font-size:14px;margin:0}.links{display:flex;gap:32px;font-size:16px}
+    .hero{position:absolute;inset:84px 0 auto;height:724px}
+    h1{position:absolute;left:104px;top:236px;width:1232px;height:350px;margin:0}
+    h1 img{display:block;width:1232px;height:350px}
+    .glyph{position:absolute;margin:0}.glyph svg{display:block;width:100%;height:100%}
+    .tech{left:232px;top:45px;width:168px;height:120px}
+    .history{right:180px;top:47px;width:182px;height:128px}
+    .life{left:641px;bottom:40px;width:150px;height:90px;color:var(--blue)}
+    .intro{position:absolute;left:64px;bottom:36px;margin:0;font-size:18px;line-height:1.6}
+    .action{position:absolute;right:64px;bottom:44px;display:flex;gap:28px;align-items:center;font-size:16px}
+    .action img{width:32px;height:32px}
+    .next{position:absolute;top:808px;left:64px;right:64px;border-top:1px solid #d4d4d4;display:flex;gap:52px;padding-top:28px}
+    .next span{font-size:14px;padding-top:9px;color:#626262}.next h2{margin:0;font:600 108px/1.18 "Songti SC",serif}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  </style>
+</head>
+<body>
+  <nav class="nav"><p>[[tagline]]</p><div class="links"><span>[[explore]]</span><span>[[about]]</span></div></nav>
+  <main class="hero">
+    <h1><img src="assets/haoo.png" alt="[[brand]]"></h1>
+    <figure class="glyph tech" aria-label="技术：代码字符构成的终端光标">
+      <svg viewBox="0 0 168 120" aria-hidden="true">
+        <defs>
+          <pattern id="code" width="18" height="12" patternUnits="userSpaceOnUse"><text x="0" y="6" font-family="Menlo,monospace" font-size="7" font-weight="700" fill="currentColor">01{}</text><text x="0" y="12" font-family="Menlo,monospace" font-size="7" font-weight="700" fill="currentColor">/&lt;&gt;;</text></pattern>
+          <mask id="terminal"><path d="M48 21 13 57 48 92M94 21 129 57 94 92M104 105H153" fill="none" stroke="white" stroke-width="13" stroke-linejoin="round"/></mask>
+        </defs>
+        <rect width="168" height="120" fill="url(#code)" mask="url(#terminal)"/>
+      </svg>
+    </figure>
+    <figure class="glyph history" aria-label="历史：代码字符构成的展开书页">
+      <svg viewBox="0 0 182 128" aria-hidden="true">
+        <defs>
+          <pattern id="book-ink" width="18" height="12" patternUnits="userSpaceOnUse"><text x="0" y="6" font-family="Menlo,monospace" font-size="7" font-weight="700" fill="currentColor">01{}</text><text x="0" y="12" font-family="Menlo,monospace" font-size="7" font-weight="700" fill="currentColor">/&lt;&gt;;</text></pattern>
+          <mask id="book"><path d="M91 28C67 11 40 11 12 17V99C42 93 67 99 91 113C115 99 140 93 170 99V17C142 11 115 11 91 28ZM91 28V113M29 39C48 37 64 41 76 47M29 58C48 56 64 60 76 66M29 77C48 75 64 79 76 85M106 47C118 41 134 37 153 39M106 66C118 60 134 56 153 58M106 85C118 79 134 75 153 77" fill="none" stroke="white" stroke-width="9" stroke-linejoin="round"/></mask>
+        </defs>
+        <rect width="182" height="128" fill="url(#book-ink)" mask="url(#book)"/>
+      </svg>
+    </figure>
+    <figure class="glyph life" aria-label="生活：代码字符构成的日出">
+      <svg viewBox="0 0 150 90" aria-hidden="true">
+        <defs>
+          <pattern id="day-ink" width="17" height="12" patternUnits="userSpaceOnUse"><text x="0" y="6" font-family="Menlo,monospace" font-size="6.5" font-weight="700" fill="currentColor">01{}</text><text x="0" y="12" font-family="Menlo,monospace" font-size="6.5" font-weight="700" fill="currentColor">/&lt;&gt;;</text></pattern>
+          <mask id="sun"><path d="M9 69H141M42 68A33 33 0 0 1 108 68M75 8V24M29 26 41 38M121 26 109 38M11 47 27 52M139 47 123 52M30 82H120" fill="none" stroke="white" stroke-width="9"/></mask>
+        </defs>
+        <rect width="150" height="90" fill="url(#day-ink)" mask="url(#sun)"/>
+      </svg>
+    </figure>
+    <p class="intro">[[identity]]</p>
+    <div class="action"><span>[[action]]</span><img src="assets/arrow-down.svg" alt=""></div>
+  </main>
+  <section class="next"><span>01</span><h2>[[section]]</h2></section>
+</body>
+</html>

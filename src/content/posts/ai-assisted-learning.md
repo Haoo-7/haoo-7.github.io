@@ -16,7 +16,7 @@ externalPublications:
     url: https://mp.weixin.qq.com/s/pwTHNIJG2uMlMK_uHCM03A
 draft: false
 ---
-## 引子：AI 对现代行业的冲击
+## 引子：AI 对<span class="keep">现代行业</span>的冲击
 
 影视飓风 Tim 在罗永浩的采访中，透露出他对未来 AI 冲击现代行业的担忧，平面设计和视频制作的岗位数量也许会因为生产率的大幅提高而锐减。而这种情况已经开始蔓延到了各行各业。
 

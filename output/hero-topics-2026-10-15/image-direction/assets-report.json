@@ -1,0 +1,50 @@
+[
+  {
+    "name": "tech",
+    "sourceBounds": [
+      49,
+      245,
+      577,
+      740
+    ],
+    "size": [
+      480,
+      451
+    ],
+    "transparentPixels": 81456,
+    "opaquePixels": 129823,
+    "bytes": 33308
+  },
+  {
+    "name": "life",
+    "sourceBounds": [
+      620,
+      335,
+      994,
+      658
+    ],
+    "size": [
+      384,
+      333
+    ],
+    "transparentPixels": 44609,
+    "opaquePixels": 81415,
+    "bytes": 37006
+  },
+  {
+    "name": "history",
+    "sourceBounds": [
+      1101,
+      258,
+      1481,
+      702
+    ],
+    "size": [
+      390,
+      454
+    ],
+    "transparentPixels": 64195,
+    "opaquePixels": 110507,
+    "bytes": 56748
+  }
+]

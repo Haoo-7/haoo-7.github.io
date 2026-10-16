@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>[[brand]] · 个人短笺</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url('assets/satoshi-medium.woff2');font-weight:500}
+    @font-face{font-family:Satoshi;src:url('assets/satoshi-bold.woff2');font-weight:700}
+    @font-face{font-family:SourceHanSerif;src:url('assets/source-han-serif-cn.woff2');font-weight:400 700}
+    :root{--paper:#fcfcfc;--ink:#181818;--muted:#626262;--blue:#2456d6;--line:#d4d4d4;--sans:Satoshi,'Hiragino Sans GB',sans-serif;--serif:SourceHanSerif,'Songti SC',serif}
+    *{box-sizing:border-box;letter-spacing:0}body{margin:0;width:1440px;min-height:900px;background:var(--paper);color:var(--ink);font:500 16px/1.7 var(--sans)}
+    p,h1,h2,h3{margin:0}a{color:inherit;text-decoration:none}
+    header{height:100px;margin:0 64px;display:flex;align-items:center;justify-content:space-between}.tagline{font-size:14px}nav{display:flex;gap:32px}
+    .letter{width:800px;margin:67px auto 0}.brand{width:490px;height:139px;margin-left:-14px}.brand img{display:block;width:100%;height:100%}
+    .statement{margin-top:61px;font:400 58px/1.55 var(--serif);white-space:pre-line}
+    .signature{margin-top:31px;display:flex;justify-content:space-between;align-items:end}.identity{font-size:17px;line-height:1.85}.topics{font-size:14px;color:var(--muted)}
+    .shelf{margin:72px 64px 0;display:grid;grid-template-columns:240px 1fr 1fr;gap:48px;border-top:1px solid var(--line);padding-top:27px}
+    .shelf h2{font-size:16px;font-weight:500;display:flex;align-items:center;gap:24px}.shelf h2 img{width:22px;height:22px}
+    .kind{display:block;font-size:14px;color:var(--muted);margin-bottom:12px}.shelf h3{font:400 22px/1.6 var(--serif)}.shelf .project{font:700 25px/1.45 var(--sans)}
+    .secondary{margin-top:12px;font-size:15px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header><p class="tagline">[[tagline]]</p><nav aria-label="主导航"><a href="#content">[[explore]]</a><a href="#about">[[about]]</a></nav></header>
+  <main>
+    <section class="letter" id="about" aria-label="自述">
+      <h1 class="brand"><img src="assets/haoo.png" width="1232" height="350" alt="[[brand]]"></h1>
+      <p class="statement">[[writingfirst]]<br>[[writingsecond]]</p>
+      <div class="signature"><p class="identity">[[student]]<br>[[making]]</p><p class="topics">[[subjects]]</p></div>
+    </section>
+    <section class="shelf" id="content" aria-labelledby="content-title">
+      <h2 id="content-title">[[action]]<img src="assets/arrow-down.svg" alt=""></h2>
+      <article><span class="kind">[[work]]</span><h3 class="project">[[project]]</h3><p class="secondary">[[projectdesc]]</p></article>
+      <article><span class="kind">[[articles]]</span><h3>[[articleone]]</h3><p class="secondary">[[articletwo]]</p></article>
+    </section>
+  </main>
+</body>
+</html>

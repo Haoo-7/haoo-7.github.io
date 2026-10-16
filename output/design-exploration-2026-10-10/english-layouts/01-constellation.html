@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Haoo — Work, writing & a little curiosity</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2") format("woff2");font-weight:500;font-display:swap}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+    :root{--paper:#FCFCFC;--ink:#181818;--accent:#2456D6;--claude-orange:#D97757;--muted:#626262;--line:#d4d4d4;--gutter:64px;--body:18px;--small:14px;--display:108px;--serif:Georgia,serif;--ease:cubic-bezier(.16,1,.3,1)}
+    *{box-sizing:border-box;letter-spacing:0}
+    html{scroll-behavior:smooth;scroll-padding-top:100px;overflow-x:hidden}
+    body{margin:0;background:var(--paper);color:var(--ink);font:500 var(--body)/1.55 Satoshi,Arial,sans-serif;overflow-x:hidden}
+    ::selection{background:var(--accent);color:var(--paper)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+    [x-cloak]{display:none!important}
+    .nav{position:fixed;inset:0 0 auto;z-index:30;height:84px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;background:var(--paper);border-bottom:1px solid transparent;
+      .identity{font-size:14px}
+      .links{display:flex;gap:32px;font-size:16px}
+      a{padding:12px 0;transition:color .2s}
+      a:hover{color:var(--accent)}
+      .dock{position:absolute;left:var(--gutter);top:25px;width:84px;height:34px;pointer-events:none}
+    }
+    .opening{position:relative;height:calc(100svh - 84px);min-height:700px;max-height:950px;margin-top:84px}
+    .wordmark{position:absolute;left:var(--gutter);top:23%;width:calc(100% - 2*var(--gutter));margin:0;line-height:1.13;font-weight:700;transform-origin:0 0;z-index:40;pointer-events:none;
+      .solid{display:block;white-space:nowrap}
+      .solid span{color:var(--accent)}
+      canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:auto}
+      &[data-rendered=true]{.solid{opacity:0}canvas{opacity:1}}
+    }
+    .topic{position:absolute;font:italic 58px/1.1 var(--serif);z-index:2;pointer-events:none}
+    .tech{top:7%;left:17%;transform:rotate(-8deg)}
+    .history{top:9%;right:12%;transform:rotate(5deg);font-size:64px;color:var(--claude-orange)}
+    .life{bottom:19%;left:30%;color:var(--accent);font-size:72px;transform:rotate(-5deg)}
+    .identity-copy{position:absolute;left:var(--gutter);bottom:64px;max-width:380px;margin:0;font-size:18px;line-height:1.6}
+    .hero-action{position:absolute;bottom:72px;right:var(--gutter);display:flex;align-items:center;gap:28px;font-size:16px;
+      img{width:32px;height:32px;transition:transform .3s var(--ease)}
+      &:hover img{transform:translateY(6px)}
+    }
+    .directory{padding:0 var(--gutter);scroll-margin-top:94px}
+    .directory-row{border-top:1px solid var(--line)}
+    .directory-button{position:relative;isolation:isolate;display:grid;grid-template-columns:70px 1fr auto;align-items:center;min-height:214px;width:100%;text-align:left;transition:color .22s,transform .18s;
+      &::before{content:"";position:absolute;inset:0 calc(-1 * var(--gutter));z-index:-1;background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .38s var(--ease)}
+      .number{align-self:start;padding-top:38px;font:500 var(--small)/1.5 Satoshi; color:var(--muted)}
+      .title{font:700 var(--display)/1.05 Satoshi;transition:transform .4s var(--ease)}
+      .label{display:inline-block;position:relative;white-space:nowrap;line-height:1.05}
+      .label-text{display:block}
+      .label canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+      .caption{display:block;font:500 16px/1.5 Satoshi;color:var(--muted);margin-top:12px}
+      .row-arrow{width:38px;height:38px;transition:transform .3s var(--ease)}
+      &.is-engaged,&:focus-visible{color:var(--paper);&::before{transform:scaleY(1)}.number,.caption{color:#d6d6d6}.title{transform:translateX(8px)}.row-arrow{filter:invert(1);transform:translateY(5px)}}
+      &:active{transform:scale(.99)}
+      &[aria-expanded=true]{.row-arrow{transform:rotate(180deg)}}
+    }
+    .expanded{padding:8px 0 40px 70px}
+    .entry{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:30px 0;border-top:1px solid var(--line);
+      h3{font:500 38px/1.15 var(--serif);margin:0 0 16px}
+      p{margin:0;color:var(--muted);font-size:17px;max-width:360px}
+      img{width:100%;max-height:280px;object-fit:contain;aspect-ratio:1.55;background:#f0f0f0}
+      time{font-size:14px;display:block;margin-bottom:12px;color:var(--muted)}
+    }
+    .about-text{max-width:650px;font:500 36px/1.3 var(--serif);margin:16px 0 32px}
+    .social-list{display:flex;flex-wrap:wrap;gap:16px 40px;color:var(--muted);font-size:16px}
+    .footer{margin:0 var(--gutter);border-top:1px solid var(--line);padding:28px 0 56px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);
+      a{color:var(--ink);padding:12px 0}
+    }
+    .peek{position:fixed;left:0;top:0;width:340px;z-index:50;pointer-events:none;opacity:0;visibility:hidden}
+    .peek-sheet{padding:12px;background:var(--paper);box-shadow:0 2px 5px #18181816,0 24px 50px #18181824;transform:scale(.88) rotate(-5deg);
+      img{display:block;width:100%;height:210px;object-fit:contain;background:#f0f0f0}
+      p{font:500 22px/1.2 var(--serif);margin:16px 4px 8px}
+    }
+    @media(min-width:1500px){:root{--gutter:88px;--display:128px}.directory-button{min-height:240px}}
+    @media(max-width:760px){
+      :root{--gutter:24px;--display:60px;--body:16px}
+      .nav{height:72px;.identity{font-size:13px}.links{gap:22px;font-size:14px}.dock{top:22px}}
+      .opening{height:calc(100svh - 100px);min-height:610px;margin-top:72px}
+      .wordmark{top:30%}
+      .tech{top:12%;left:13%;font-size:38px}.history{top:20%;right:12%;font-size:40px}.life{left:48%;bottom:31%;font-size:48px}
+      .identity-copy{bottom:94px;font-size:16px;max-width:280px}
+      .hero-action{left:var(--gutter);right:auto;bottom:22px;font-size:14px;gap:24px;img{width:24px;height:24px}}
+      .directory-button{grid-template-columns:32px 1fr 26px;min-height:162px;.number{padding-top:28px;font-size:13px}.row-arrow{width:26px;height:26px}.caption{font-size:14px;margin-top:8px}}
+      .directory-button.is-engaged .title,.directory-button:focus-visible .title{transform:none}
+      .expanded{padding-left:32px}
+      .entry{grid-template-columns:1fr;gap:20px;padding:24px 0;h3{font-size:30px}p{font-size:16px}img{max-height:none;aspect-ratio:1.55}}
+      .about-text{font-size:28px}.social-list{flex-direction:column;gap:12px;overflow-wrap:anywhere}
+      .footer{font-size:13px;gap:20px}
+      .peek{display:none}
+    }
+    @media(max-width:360px){:root{--gutter:20px;--display:46px}.opening{min-height:590px}.history{font-size:36px;right:8%}.directory-button{min-height:150px}.nav .links{gap:16px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    html[data-motion=reduce]{scroll-behavior:auto}
+    html[data-motion=reduce] *{transition:none!important}
+  </style>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/character-brand.js"></script>
+  <script defer src="vendor/directory-material.js"></script>
+  <script defer src="vendor/constellation-motion.js"></script>
+  <script defer src="vendor/alpine.min.js"></script>
+</head>
+<body x-data="{ open: (() => { const s = new URLSearchParams(location.search).get('state') || ''; return s && !s.endsWith('-panel') ? s + '-panel' : s })(), toggle(name) { this.open = this.open === name ? '' : name; this.$nextTick(() => window.ScrollTrigger?.refresh()) } }" @keydown.escape.window="open = ''; $nextTick(() => window.ScrollTrigger?.refresh())">
+  <nav class="nav" aria-label="Main"><span class="identity">A personal corner of the internet</span><span class="dock" aria-hidden="true"></span><div class="links"><a href="#directory">Explore</a><a href="#about" @click="open = 'about-panel'">About</a></div></nav>
+  <header class="opening" id="top">
+    <span class="topic tech">Tech</span><span class="topic history">History</span><span class="topic life">Life</span>
+    <h1 class="wordmark" aria-label="Haoo"><span class="solid" aria-hidden="true">Haoo<span>.</span></span><canvas aria-hidden="true"></canvas></h1>
+    <p class="identity-copy">Humanities student.<br>Writing about tech and learning.<br>Building useful everyday tools.</p>
+    <a class="hero-action" href="#directory"><span>Work, writing & more</span><img src="assets/arrow-down.svg" alt=""></a>
+  </header>
+  <main class="directory" id="directory">
+    <section class="directory-row" id="work">
+      <h2 style="margin:0"><button class="directory-button work-row" data-peek="dayline" @click="toggle('work-panel')" :aria-expanded="open === 'work-panel'" aria-controls="work-content"><span class="number">01</span><span class="title"><span class="label"><span class="label-text">WORK</span><canvas aria-hidden="true"></canvas></span><span class="caption">2 projects · Dayline Journal + Haoo Blog</span></span><img class="row-arrow" src="assets/arrow-down.svg" alt=""></button></h2>
+      <div class="expanded" id="work-content" hidden :hidden="open !== 'work-panel'">
+        <article class="entry"><div><h3>Dayline Journal</h3><p>An Obsidian journal plugin. A calendar, a timeline, and the small things worth remembering.</p></div><img src="assets/dayline.webp" alt="Dayline Journal image calendar and journal timeline"></article>
+        <article class="entry"><div><h3>Haoo Blog</h3><p>A space for making, writing, and finding connections between technology and the humanities.</p></div><img src="assets/blog-writing.webp" alt="Haoo Blog writing section"></article>
+      </div>
+    </section>
+    <section class="directory-row" id="writing">
+      <h2 style="margin:0"><button class="directory-button writing-row" data-peek="ai" @click="toggle('writing-panel')" :aria-expanded="open === 'writing-panel'" aria-controls="writing-content"><span class="number">02</span><span class="title"><span class="label"><span class="label-text">WRITING</span><canvas aria-hidden="true"></canvas></span><span class="caption">2 essays · AI learning + Kindle</span></span><img class="row-arrow" src="assets/arrow-down.svg" alt=""></button></h2>
+      <div class="expanded" id="writing-content" hidden :hidden="open !== 'writing-panel'">
+        <article class="entry"><div><time datetime="2026-03-18">18 Mar 2026</time><h3>Learning with AI</h3><p>Connecting XMind, Obsidian, and NotebookLM into a learning workflow.</p></div><img src="assets/ai-learning.webp" alt="Blue knowledge paths across a white page"></article>
+        <article class="entry"><div><time datetime="2026-01-26">26 Jan 2026</time><h3>A Kindle through high school</h3><p>Living with a Kindle Paperwhite 3, one book at a time.</p></div><img src="assets/kindle.webp" alt="A close view of the Kindle device"></article>
+      </div>
+    </section>
+    <section class="directory-row" id="about">
+      <h2 style="margin:0"><button class="directory-button about-row" @click="toggle('about-panel')" :aria-expanded="open === 'about-panel'" aria-controls="about-content"><span class="number">03</span><span class="title"><span class="label"><span class="label-text">ABOUT</span><canvas aria-hidden="true"></canvas></span><span class="caption">A humanities student in public</span></span><img class="row-arrow" src="assets/arrow-down.svg" alt=""></button></h2>
+      <div class="expanded" id="about-content" hidden :hidden="open !== 'about-panel'"><p class="about-text">I'm Haoo, a humanities student with a curiosity for technology, history, and the ways we live.</p><div class="social-list"><span>GitHub / Haoo-7</span><span>SSPAI / 6veuyub4</span><span>Bilibili / 438365760</span><span>re11.zhou@gmail.com</span></div></div>
+    </section>
+  </main>
+  <footer class="footer"><span>Haoo © 2026</span><a href="#top">Back to top</a></footer>
+  <aside class="peek" aria-hidden="true"><div class="peek-sheet"><img src="assets/dayline.webp" alt=""><p>Dayline Journal</p></div></aside>
+</body>
+</html>

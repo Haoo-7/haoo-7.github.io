@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Haoo 的个人作品与文字。科技、生活，和不肯将就的事。">
+  <title>Haoo · 作品与文字</title>
+  <link rel="icon" href="data:,">
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2") format("woff2");font-weight:500;font-display:swap}
+    @font-face{font-family:SourceHan;src:url("assets/source-han-serif-cn.woff2") format("woff2");font-weight:200 900;font-display:swap}
+    :root{--paper:#FCFCFC;--ink:#181818;--muted:#656565;--rule:#D4D4D4;--surface:#F0F2F5;--accent:#2456D6;--gutter:48px;--body:17px;--small:14px;--display:420px;--ease:cubic-bezier(.16,1,.3,1)}
+    *{box-sizing:border-box;letter-spacing:0}
+    html{scroll-padding-top:80px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:500 var(--body)/1.65 Satoshi,"PingFang SC",sans-serif}
+    h1,h2,h3,p{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+    button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+    ::selection{background:var(--accent);color:var(--paper)}
+    .serif{font-family:SourceHan,serif;font-weight:400}.icon{width:20px;height:20px;flex:none}
+    .nav{position:fixed;inset:0 0 auto;z-index:40;height:80px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;background:var(--paper)}
+    .identity{font-size:var(--small);color:var(--muted)}.links{display:flex;align-items:center;gap:32px}
+    .links a,.links button{font-size:15px;padding:10px 0;position:relative}
+    .links a:after,.links button:after{content:"";position:absolute;inset:auto 0 5px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s var(--ease)}
+    .links a:hover:after,.links button:hover:after{transform:scaleX(1)}
+    .opening{height:calc(100svh - 96px);min-height:700px;position:relative;padding:80px var(--gutter) 0}
+    .letter-field{position:absolute;inset:80px 0 120px;overflow:hidden;pointer-events:none;z-index:0}
+    .ghost{position:absolute;font:700 116px/1 Satoshi,sans-serif;color:transparent;-webkit-text-stroke:1px #D7DBE1;white-space:nowrap}
+    .ghost.tech{right:var(--gutter);top:10px}.ghost.life{right:8%;top:190px;font-size:168px;color:#E5EBF8;-webkit-text-stroke:0;font-family:SourceHan,serif;font-weight:400;font-style:italic}
+    .ghost.history{left:var(--gutter);bottom:20px;font-size:104px}
+    .wordmark{position:fixed;left:var(--gutter);top:178px;margin:0;z-index:45;font:700 var(--display)/1.05 Satoshi,sans-serif;transform-origin:0 0;pointer-events:none}
+    .wordmark canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:auto;touch-action:pan-y}
+    .dot{color:var(--accent)}.wordmark[data-rendered] .solid{opacity:0}.wordmark.is-docked canvas{pointer-events:none}
+    .opening-copy{position:absolute;left:var(--gutter);right:var(--gutter);bottom:45px;display:flex;align-items:end;justify-content:space-between;gap:32px}
+    .opening-copy p{font:400 36px/1.6 SourceHan,serif}
+    .primary{display:inline-flex;gap:20px;align-items:center;padding:12px 0;white-space:nowrap;border-bottom:1px solid var(--accent);color:var(--accent);transition:transform .18s var(--ease)}
+    .primary:active{transform:translateY(2px)}.primary:hover .icon{transform:translateY(3px)}.primary .icon{transition:transform .2s var(--ease)}
+    .works{padding:0 var(--gutter) 100px}
+    .section-head{display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--ink);padding-top:20px;margin-bottom:40px}
+    .section-head h2{font-size:24px;font-weight:500}.section-head span{font-size:var(--small);color:var(--muted)}
+    .project{display:block;padding-bottom:64px}.project:last-child{padding-bottom:0}
+    .project-head{display:grid;grid-template-columns:64px 1fr auto;align-items:start;margin-bottom:24px;gap:16px}
+    .project-no{color:var(--accent);font:500 17px/1.6 Menlo,monospace;padding-top:7px}
+    .project-head h3{font-size:40px;font-weight:500;line-height:1.25}.project-head p{color:var(--muted);margin-top:10px;font-size:16px}
+    .project-head .icon{width:28px;height:28px;margin-top:10px;transition:transform .24s var(--ease)}
+    .project:hover .project-head .icon{transform:translate(3px,-3px)}
+    .project-media{overflow:hidden;background:#E9EDF2;aspect-ratio:3164/2070}
+    .project-media img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .65s var(--ease)}
+    .project:hover .project-media img{transform:scale(1.01)}
+    .project.blog{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:16px}
+    .blog .project-head{grid-template-columns:48px 1fr auto;margin-bottom:0}.blog .project-media{aspect-ratio:16/9}
+    .blog .project-head h3{font-size:36px}
+    .blog .project-head>.icon{transform:rotate(-90deg)}.blog:hover .project-head>.icon{transform:translateX(3px) rotate(-90deg)}
+    .writing{padding:72px var(--gutter) 88px;background:var(--surface)}
+    .writing-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:48px}
+    .writing h2{font:400 48px/1.4 SourceHan,serif}.writing-head a{color:var(--accent);font-size:15px;display:flex;gap:12px;align-items:center}
+    .article{display:grid;grid-template-columns:300px 1fr 24px;gap:40px;padding:32px 0;border-top:1px solid var(--rule);align-items:center}
+    .article-cover{aspect-ratio:3/2;overflow:hidden;background:var(--paper)}
+    .article-cover img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+    .article:hover .article-cover img{transform:scale(1.04)}
+    .article-meta{display:flex;gap:24px;align-items:center;color:var(--muted);font-size:var(--small);margin-bottom:16px}
+    .article-meta span{color:var(--accent)}.article h3{font:400 28px/1.5 SourceHan,serif;text-wrap:pretty}
+    .article p{font:400 17px/1.8 SourceHan,serif;color:var(--muted);margin-top:16px;max-width:38em}
+    .article:hover h3{text-decoration:underline;text-underline-offset:7px}
+    .contact{padding:80px var(--gutter) 32px;background:var(--ink);color:var(--paper)}
+    .contact-top{display:flex;justify-content:space-between;align-items:end;gap:32px;padding-bottom:56px}
+    .contact h2{font:400 52px/1.4 SourceHan,serif}.contact .email{font-size:20px;border-bottom:1px solid #777;padding-bottom:8px;display:flex;gap:20px;align-items:center}
+    .contact .icon{filter:invert(1)}.contact-bottom{border-top:1px solid #494949;padding-top:28px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .socials{display:flex;gap:32px;flex-wrap:wrap}.socials a{display:flex;align-items:center;gap:8px}.socials a:hover{text-decoration:underline;text-underline-offset:5px}
+    .copyright{color:#B0B0B0;font-size:var(--small)}
+    .motion-entry .wordmark,.motion-entry .opening-copy>*{opacity:0}
+    dialog{margin:0 0 0 auto;width:min(560px,100%);height:100%;max-height:100%;border:0;padding:40px;background:var(--paper);color:var(--ink);opacity:0;transform:translateX(48px);transition:opacity .32s var(--ease),transform .32s var(--ease),display .32s allow-discrete,overlay .32s allow-discrete}
+    dialog[open]{opacity:1;transform:translateX(0)}dialog::backdrop{background:rgb(0 0 0/.25)}
+    @starting-style{dialog[open]{opacity:0;transform:translateX(48px)}}
+    .close{display:flex;margin-left:auto;padding:10px}.about-name{font:700 80px/1.1 Satoshi;margin:60px 0 32px}
+    .about-text{font:400 23px/1.8 SourceHan,serif;margin-bottom:40px}.about-social{display:flex;flex-direction:column;gap:20px}.about-social a{display:flex;justify-content:space-between}.about-social small{color:var(--muted)}
+    .about-blog{margin-top:40px;border-top:1px solid var(--rule);padding-top:24px}.about-blog p{font:400 17px/1.8 SourceHan,serif;margin-top:16px}
+    @media(min-width:1500px){:root{--gutter:64px;--display:480px}.wordmark{top:170px}}
+    @media(max-width:1250px){:root{--display:360px}}
+    @media(max-width:1150px){:root{--display:300px}}
+    @media(max-width:1000px){:root{--gutter:32px}.article{grid-template-columns:240px 1fr 24px;gap:28px}.project.blog{gap:32px}}
+    @media(max-width:900px){:root{--display:240px}.ghost{font-size:92px}.ghost.history{font-size:80px}.article h3{font-size:23px}}
+    @media(max-width:760px){:root{--display:192px}.project.blog{display:block}.blog .project-head{margin-bottom:24px}.contact-top{align-items:start;flex-direction:column}.article{grid-template-columns:180px 1fr;gap:24px}.article>.icon{display:none}.article p{display:none}.writing h2{font-size:38px}}
+    @media(max-width:600px){
+      :root{--gutter:24px;--display:128px}.nav{height:72px}.identity{font-size:11px}.links{gap:20px}.links a,.links button{font-size:14px}
+      .opening{height:calc(100svh - 110px);min-height:580px}.wordmark{top:205px}
+      .letter-field{inset:80px 0 160px}.ghost.tech{top:42px;right:24px;font-size:64px}
+      .ghost.life{top:244px;right:30px;font-size:92px}.ghost.history{bottom:6px;font-size:56px;left:24px}
+      .opening-copy{bottom:32px;align-items:start;flex-direction:column;gap:20px}.opening-copy p{font-size:26px}
+      .section-head{margin-bottom:32px}.section-head h2{font-size:20px}.works{padding-bottom:56px}
+      .project{padding-bottom:44px}.project-head{grid-template-columns:28px 1fr 22px;gap:12px}.project-no{font-size:14px;padding-top:4px}
+      .project-head h3{font-size:28px}.project-head p{font-size:14px;margin-top:8px}.project-head .icon{width:22px;height:22px;margin-top:4px}
+      .dayline .project-media{aspect-ratio:630/800}
+      .blog .project-head{grid-template-columns:28px 1fr 22px}.blog .project-head h3{font-size:28px}
+      .writing{padding:48px var(--gutter) 56px}.writing-head{margin-bottom:28px;align-items:start;flex-direction:column;gap:16px}.writing h2{font-size:32px}
+      .article{grid-template-columns:112px 1fr;gap:20px;padding:24px 0;align-items:start}.article h3{font-size:18px;line-height:1.6}.article-meta{font-size:12px;gap:12px;margin-bottom:10px}
+      .article-cover{aspect-ratio:1}.contact{padding:48px var(--gutter) 28px}.contact h2{font-size:36px}.contact .email{font-size:16px}.contact-top{gap:28px;padding-bottom:40px}
+      .socials{gap:24px;font-size:15px}dialog{padding:24px}.about-name{font-size:64px}.about-text{font-size:21px}
+    }
+    @media(max-width:380px){:root{--display:104px}.links{gap:16px}.identity{font-size:10px}.article{grid-template-columns:88px 1fr;gap:16px}.article-meta{display:block}.article-meta time{display:block;margin-top:4px}}
+    html.reduced-motion{scroll-behavior:auto}html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after{transition-duration:.01ms!important}html.reduced-motion .wordmark{position:absolute}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}.wordmark{position:absolute}}
+  </style>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/alpine.min.js"></script>
+  <script>
+    window.reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches||new URLSearchParams(location.search).get("motion")==="reduce";
+    document.documentElement.classList.toggle("reduced-motion",window.reducedMotion);
+    if(window.gsap&&!window.reducedMotion)document.documentElement.classList.add("motion-entry");
+  </script>
+</head>
+<body x-data="{state:new URLSearchParams(location.search).get('state')||'idle',init(){this.$watch('state',v=>v==='about'?this.$refs.about.showModal():this.$refs.about.close());if(this.state==='about')this.$nextTick(()=>this.$refs.about.showModal());}}">
+  <header class="nav"><span class="identity">人文社科学生</span><nav class="links" aria-label="主导航"><a href="#works">作品</a><a href="#writing">文章</a><button class="about-trigger" @click="state='about'">关于</button></nav></header>
+  <main>
+    <section class="opening">
+      <div class="letter-field" aria-hidden="true"><span class="ghost tech">TECH</span><span class="ghost life">LIFE</span><span class="ghost history">HISTORY</span></div>
+      <h1 class="wordmark" aria-label="Haoo"><span class="solid" aria-hidden="true">Haoo<span class="dot">.</span></span><canvas aria-hidden="true"></canvas></h1>
+      <div class="opening-copy"><p>让科技改变生活。</p><a class="primary" href="#works">查看作品<img class="icon" src="assets/arrow-down.svg" alt=""></a></div>
+    </section>
+    <section class="works" id="works">
+      <div class="section-head"><h2>作品</h2></div>
+      <a class="project dayline" href="https://github.com/Haoo-7/Obsidian-Dayline" target="_blank" rel="noopener noreferrer">
+        <div class="project-head"><span class="project-no">01</span><div><h3>Dayline Journal</h3><p>把每日笔记，变成可翻阅的日记。</p></div><img class="icon" src="assets/arrow-up-right.svg" alt="查看 GitHub 仓库"></div>
+        <div class="project-media"><picture><source media="(max-width:600px)" srcset="assets/dayline-calendar.webp"><img src="assets/dayline.webp" width="1600" height="1047" alt="Dayline 在 Obsidian 中的图片月历，桌面全景另含日记和时间线" loading="lazy"></picture></div>
+      </a>
+      <a class="project blog" href="#about-blog" @click.prevent="state='about'">
+        <div class="project-head"><span class="project-no">02</span><div><h3>Haoo Blog</h3><p>科技、生活，和不肯将就的事。</p></div><img class="icon" src="assets/arrow-down.svg" alt="关于这个网站"></div>
+        <div class="project-media"><img src="assets/blog-writing.webp" width="1280" height="720" alt="Haoo Blog 的文章列表与两篇文章头图" loading="lazy"></div>
+      </a>
+    </section>
+    <section class="writing" id="writing">
+      <div class="writing-head"><h2>文字里，再认识我。</h2><a href="https://sspai.com/u/6veuyub4/updates" target="_blank" rel="noopener noreferrer">少数派<img class="icon" src="assets/arrow-up-right.svg" alt=""></a></div>
+      <a class="article" href="https://sspai.com/post/106878" target="_blank" rel="noopener noreferrer">
+        <div class="article-cover"><img src="assets/ai-learning.webp" width="900" height="600" alt="纸页与蓝色线索组成关联知识网络" loading="lazy"></div>
+        <div class="article-copy"><div class="article-meta"><span>学习 / AI</span><time datetime="2026-03-18">2026.03.18</time></div><h3>告别纸笔拓荒，<br>怎么用 AI 来辅助学习？</h3><p>从 XMind、Obsidian 到 NotebookLM，构建自己的学习系统。</p></div><img class="icon" src="assets/arrow-up-right.svg" alt="">
+      </a>
+      <a class="article" href="https://sspai.com/post/105685" target="_blank" rel="noopener noreferrer">
+        <div class="article-cover"><img src="assets/kindle.webp" width="1000" height="499" alt="Kindle 黑色机身的微距纹理" loading="lazy"></div>
+        <div class="article-copy"><div class="article-meta"><span>数码 / 阅读</span><time datetime="2026-01-26">2026.01.26</time></div><h3>Kindle Paperwhite 3：<br>陪我走过高中的电子书。</h3><p>阅读、背单词、看课件，以及它无法回避的缺陷。</p></div><img class="icon" src="assets/arrow-up-right.svg" alt="">
+      </a>
+    </section>
+  </main>
+  <footer class="contact" id="contact">
+    <div class="contact-top"><h2>不止于这个页面。</h2><a class="email" href="mailto:re11.zhou@gmail.com">re11.zhou@gmail.com<img class="icon" src="assets/arrow-up-right.svg" alt=""></a></div>
+    <div class="contact-bottom"><div class="socials"><a href="https://github.com/Haoo-7" target="_blank" rel="noopener noreferrer">GitHub<img class="icon" src="assets/arrow-up-right.svg" alt=""></a><a href="https://space.bilibili.com/438365760" target="_blank" rel="noopener noreferrer">Bilibili<img class="icon" src="assets/arrow-up-right.svg" alt=""></a><a href="https://sspai.com/u/6veuyub4/updates" target="_blank" rel="noopener noreferrer">少数派<img class="icon" src="assets/arrow-up-right.svg" alt=""></a></div><span class="copyright">© 2026 Haoo</span></div>
+  </footer>
+  <dialog x-ref="about" @cancel.prevent="state='idle'" @close="state='idle'" aria-label="关于 Haoo">
+    <button class="close" title="关闭" aria-label="关闭" @click="state='idle'"><img class="icon" src="assets/x.svg" alt=""></button>
+    <h2 class="about-name">Haoo.</h2><p class="about-text">人文社科学生，写数码与学习，也做让日常更顺手的工具。</p>
+    <div class="about-social"><a href="https://github.com/Haoo-7" target="_blank" rel="noopener noreferrer">GitHub<small>Haoo-7</small></a><a href="https://space.bilibili.com/438365760" target="_blank" rel="noopener noreferrer">Bilibili<small>Haoo_117c</small></a><a href="https://sspai.com/u/6veuyub4/updates" target="_blank" rel="noopener noreferrer">少数派<small>Haoo_7</small></a></div>
+    <div class="about-blog" id="about-blog"><h3>Haoo Blog</h3><p>记录数码工具、学习方法与真实使用体验。</p></div>
+  </dialog>
+  <script src="vendor/homepage-motion.js"></script>
+  <script>document.fonts.ready.then(()=>window.initCharacterName());</script>
+</body>
+</html>

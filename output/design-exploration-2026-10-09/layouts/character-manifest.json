@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · 字符巨字精修",
+  "brief": "沿用巨字开场，恢复蓝色信号。字符组成姓名，滚动时压实为字标并收入导航。本轮只比较精修前后，不更换正式站点。",
+  "round": "03 · 巨字精修",
+  "candidates": [
+    {
+      "id": "name-stage",
+      "name": "原版巨字开场",
+      "concept": "保留上一轮黑白巨字，作为精修前对照。",
+      "typography": "Satoshi 700 名字；思源宋体 CN 400 中文。",
+      "palette": ["#FCFCFC", "#181818", "#656565", "#D4D4D4"],
+      "traits": ["纯黑白", "实心字标", "缩入导航"],
+      "kind": "html",
+      "source": "01-name-stage.html",
+      "baseline": true,
+      "interactive": true
+    },
+    {
+      "id": "character-name",
+      "name": "字符巨字",
+      "concept": "字符是姓名的材料，蓝色是局部信号。散字符聚成 Haoo，滚动时压实并收入导航。",
+      "typography": "Satoshi 700 字形；Menlo 字符颗粒；思源宋体 CN 400 阅读。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#656565"],
+      "traits": ["字符构成名字", "少量蓝色", "局部指针响应", "字符压实接力"],
+      "kind": "html",
+      "source": "04-character-name.html",
+      "interactive": true
+    }
+  ]
+}

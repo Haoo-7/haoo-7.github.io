@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · 重新组织首屏",
+  "brief": "移除三个分散的物件，从阅读顺序重新探索：先记住 Haoo、先读自述，或直接进入内容。三版保留同一品牌和真实内容。",
+  "round": "Hero-03",
+  "nativeViewport": "1440x900",
+  "candidates": [
+    {
+      "id": "previous",
+      "name": "上一轮 · 三个物件",
+      "concept": "最近一轮的比较基线：三个物件分散在字标周围，用户认为过于抢眼。",
+      "typography": "原字符字标 + Satoshi 正文",
+      "palette": ["#FCFCFC", "#181818", "#2456D6"],
+      "traits": ["上一轮截图", "三个分散焦点"],
+      "kind": "image",
+      "source": "assets/previous.png",
+      "baseline": true
+    },
+    {
+      "id": "wordmark",
+      "name": "A · 字标主导",
+      "concept": "让 Haoo 成为唯一的视觉主角，自述与主题归入下方信息带，内容紧接着出现。",
+      "typography": "原字符字标横贯首屏；自述 19px；文章标题 SourceHanSerif 23px。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#626262"],
+      "traits": ["大字标", "平整的信息带", "首屏露出真实内容"],
+      "source": "a-wordmark.html"
+    },
+    {
+      "id": "letter",
+      "name": "B · 个人短笺",
+      "concept": "从一段个人自述开始，字标像署名，兴趣主题成为阅读后的补充。",
+      "typography": "字标缩至 490px；SourceHanSerif 58px 两行自述；辅助正文 Satoshi 17px。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#626262"],
+      "traits": ["窄列自述", "两行衬线文字", "下方横向内容入口"],
+      "source": "b-letter.html"
+    },
+    {
+      "id": "index",
+      "name": "C · 内容目录",
+      "concept": "让身份与内容各有位置，第一屏就能读到具体做过什么、写过什么。",
+      "typography": "446px 字标；项目名 Satoshi 29px；文章标题 SourceHanSerif 26px；正文 18px。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#626262"],
+      "traits": ["身份与目录并列", "两件作品与两篇文章", "无独立封面区", "推荐"],
+      "source": "c-index.html"
+    }
+  ]
+}

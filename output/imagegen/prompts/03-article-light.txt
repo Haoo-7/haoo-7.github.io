@@ -1,0 +1,15 @@
+UI design mockup, flat front view, rendered like a real browser screenshot of a live article page. No device frame, no perspective, no page-external decoration, no watermark. Desktop, content width 1440 CSS px, background cloud-white #F6F8F8.
+
+Navigation, identical to the blog homepage: left, wordmark "Haoo" in geometric sans-serif bold, ink #14253A; right aligned small Chinese text links "文章" "项目" "记录" "关于"; far right a thin-line sun/moon theme toggle icon.
+
+Article header, left aligned, no hero image, no large graphic: an ink-colored Chinese article title "效率杂谈：告别纸笔拓荒，怎么用 AI 来辅助学习？" in bold sans-serif, roughly 44px, wrapping to two lines, occupying about 60% of the content width maximum; under it one meta line in small misty blue-grey #55708C with wide letter spacing: "2026.03.18 · 学习 · 人工智能 · 效率工具".
+
+Readable body text column: measure about 34 Chinese characters per line, left aligned, starting at the same left edge as the title, ink #14253A, geometric sans-serif medium, line height about 1.75, paragraph spacing generous. Two paragraphs of calm Chinese body copy; the actual words must be plausible readable Chinese prose about study tools, not lorem ipsum and not random glyphs.
+
+One pull quote between the paragraphs: Instrument-Serif-like high-contrast italic in deep sea blue #2E6FA8, about 24px, with a thin 1px ink hairline on its left, indented from the body column; it is the only accent-blue element on the page.
+
+At the bottom of the visible area, the top edge of one in-article photograph frame in a plain rectangle with no rounded corners and no border, cropped by the viewport.
+
+Typography rules: sans-serif is a geometric grotesque with clean round shapes; serif is a high-contrast display serif with true italic; no third typeface, no second accent color. Accent blue appears only in the pull quote, covering less than 5% of the page. No gradients, no shadows, no glow, no cards, no sidebar, no table of contents, no reading progress bar, no floating buttons, no animations, no icons other than the theme toggle.
+
+All Chinese characters must be rendered verbatim and correct; render each quoted string exactly, with no extra characters, no misspelling, no pseudo-Chinese shapes.

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>[[brand]] · 字标主导</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url('assets/satoshi-medium.woff2');font-weight:500}
+    @font-face{font-family:Satoshi;src:url('assets/satoshi-bold.woff2');font-weight:700}
+    @font-face{font-family:SourceHanSerif;src:url('assets/source-han-serif-cn.woff2');font-weight:400 700}
+    :root{--paper:#fcfcfc;--ink:#181818;--muted:#626262;--blue:#2456d6;--line:#d4d4d4;--sans:Satoshi,'Hiragino Sans GB',sans-serif;--serif:SourceHanSerif,'Songti SC',serif}
+    *{box-sizing:border-box;letter-spacing:0}
+    body{margin:0;width:1440px;min-height:900px;background:var(--paper);color:var(--ink);font:500 16px/1.7 var(--sans)}
+    p,h1,h2,h3{margin:0}a{color:inherit;text-decoration:none}
+    header{height:100px;margin:0 64px;display:flex;align-items:center;justify-content:space-between}
+    .tagline{font-size:14px}nav{display:flex;gap:32px}
+    main{padding-top:54px}.brand{margin:0 28px;width:1384px;height:393px}.brand img{width:100%;height:100%;display:block}
+    .intro{margin:33px 64px 0;display:grid;grid-template-columns:1fr 1fr;align-items:end}
+    .self{font-size:19px;line-height:1.8}.self span{display:block}
+    .topics{justify-self:end;color:var(--muted);font-size:15px;padding-bottom:5px}
+    .content{margin:46px 64px 0;border-top:1px solid var(--line)}
+    .content-head{height:60px;display:flex;justify-content:space-between;align-items:center}
+    .content-head h2{font-size:16px;font-weight:500}.down{width:24px;height:24px}
+    .entries{display:grid;grid-template-columns:1fr 1.2fr 1.1fr;gap:55px;border-top:1px solid var(--line);padding-top:22px}
+    .kind{display:block;font-size:14px;color:var(--muted);margin-bottom:11px}
+    h3{font:400 23px/1.55 var(--serif)}.project h3{font:700 26px/1.4 var(--sans)}
+  </style>
+</head>
+<body>
+  <header><p class="tagline">[[tagline]]</p><nav aria-label="主导航"><a href="#content">[[explore]]</a><a href="#about">[[about]]</a></nav></header>
+  <main>
+    <h1 class="brand"><img src="assets/haoo.png" width="1232" height="350" alt="[[brand]]"></h1>
+    <div class="intro" id="about"><p class="self"><span>[[student]][[writingfirst]][[writingsecond]]</span><span>[[making]]</span></p><p class="topics">[[subjects]]</p></div>
+    <section class="content" id="content" aria-labelledby="content-title">
+      <div class="content-head"><h2 id="content-title">[[action]]</h2><img class="down" src="assets/arrow-down.svg" alt=""></div>
+      <div class="entries">
+        <article class="project"><span class="kind">[[projecttype]]</span><h3>[[project]]</h3></article>
+        <article><span class="kind">[[dateone]]</span><h3>[[articleone]]</h3></article>
+        <article><span class="kind">[[datetwo]]</span><h3>[[articletwo]]</h3></article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

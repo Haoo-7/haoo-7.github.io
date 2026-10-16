@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · Hero 主题表达",
+  "brief": "同一个 Haoo，三种主题表达。保留现有品牌字标与身份文案，对比三个兴趣主题如何成为首屏的陪衬。",
+  "round": "Hero-01",
+  "nativeViewport": "1440x900",
+  "candidates": [
+    {
+      "id": "current",
+      "name": "当前首页",
+      "concept": "现有三色、倾斜衬线主题词，作为本轮的比较基线。",
+      "typography": "Satoshi 字符字标 + 三个大号衬线词",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#D97757"],
+      "traits": ["现状截图", "三个词分散", "三色与倾角"],
+      "kind": "image",
+      "source": "assets/baseline.png",
+      "baseline": true
+    },
+    {
+      "id": "symbols",
+      "name": "字符意象",
+      "concept": "用同一种字符材料写出三种兴趣，让主题成为 Haoo 的陪衬。",
+      "typography": "保留现有 Satoshi 字标；主题使用 6.5–7px 等宽字符组成轮廓。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6"],
+      "traits": ["终端、日出、书页", "三个字符轮廓", "保留不对称位置", "推荐"],
+      "source": "a-symbols.html"
+    },
+    {
+      "id": "materials",
+      "name": "三种书写",
+      "concept": "保留三个主题词，用代码、连写笔触和年代数字替代三种颜色的区分。",
+      "typography": "Tech 为 Satoshi 700 字符填充；Life 为 Instrument Serif Italic 400；History 为衬线年代填充。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6"],
+      "traits": ["保留可读词形", "三种构成材料", "集中在上缘", "主题最明确"],
+      "source": "b-materials.html"
+    },
+    {
+      "id": "continuous",
+      "name": "一线相连",
+      "concept": "把分散的三个主题收成一条从技术、日常走向时间的连续线。",
+      "typography": "保留 Satoshi 字符字标与原身份文案；主题完全由线形表达。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6"],
+      "traits": ["代码折线 → 日出 → 时间刻度", "字标上移 49px", "集中在下缘", "首屏最安静"],
+      "source": "c-continuous.html"
+    }
+  ]
+}

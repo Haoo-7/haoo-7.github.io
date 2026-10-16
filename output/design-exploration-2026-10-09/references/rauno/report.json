@@ -1,0 +1,11 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": [
+      "横向溢出：页面宽 6648px，视口 1440px"
+    ]
+  }
+]

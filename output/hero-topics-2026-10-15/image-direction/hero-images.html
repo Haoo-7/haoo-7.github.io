@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Haoo · 物件影像</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2");font-weight:500}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2");font-weight:700}
+    *{box-sizing:border-box;letter-spacing:0}
+    :root{--paper:#fcfcfc;--ink:#181818;--accent:#2456d6}
+    body{margin:0;width:1440px;height:900px;overflow:hidden;background:var(--paper);color:var(--ink);font:500 18px/1.6 Satoshi,"Hiragino Sans GB",Arial,sans-serif}
+    .nav{height:84px;padding:0 64px;display:flex;align-items:center;justify-content:space-between}
+    .nav p{font-size:14px;margin:0}.links{display:flex;gap:32px;font-size:16px}
+    .hero{position:relative;height:724px}
+    h1{position:absolute;left:104px;top:236px;width:1232px;height:350px;margin:0;z-index:1}
+    h1 img{display:block;width:1232px;height:350px}
+    .object{position:absolute;margin:0;z-index:2;display:flex;align-items:center;justify-content:center}
+    .object img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(4px 9px 7px #18181814)}
+    .tech{left:226px;top:49px;width:214px;height:170px;transform:rotate(-8deg)}
+    .history{right:162px;top:38px;width:179px;height:179px;transform:rotate(7deg)}
+    .life{left:632px;bottom:29px;width:123px;height:112px;transform:rotate(-9deg)}
+    .intro{position:absolute;left:64px;bottom:36px;margin:0;font-size:18px;line-height:1.6}
+    .action{position:absolute;right:64px;bottom:44px;display:flex;gap:28px;align-items:center;font-size:16px}
+    .action img{width:32px;height:32px}
+    .next{margin:0 64px;border-top:1px solid #d4d4d4;display:grid;grid-template-columns:70px 1fr;padding-top:28px}
+    .next span{font-size:14px;padding-top:9px;color:#626262}.next h2{margin:0;font:600 108px/1.18 "Songti SC",serif}
+  </style>
+</head>
+<body>
+  <nav class="nav"><p>A personal corner of the internet</p><div class="links"><span>探索</span><span>关于</span></div></nav>
+  <main class="hero">
+    <h1><img src="assets/haoo.png" alt="Haoo"></h1>
+    <figure class="object tech"><img src="assets/tech.webp" alt="技术：银色笔记本电脑"></figure>
+    <figure class="object history"><img src="assets/history.webp" alt="历史：带岁月痕迹的青铜器"></figure>
+    <figure class="object life"><img src="assets/life.webp" alt="生活：钴蓝色陶瓷杯"></figure>
+    <p class="intro">人文社科学生。<br>写数码，也写学习。<br>做让日常更顺手的工具。</p>
+    <div class="action"><span>作品与文章</span><img src="assets/arrow-down.svg" alt=""></div>
+  </main>
+  <section class="next"><span>01</span><h2>作品</h2></section>
+</body>
+</html>

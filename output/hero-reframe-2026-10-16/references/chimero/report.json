@@ -1,0 +1,22 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "contrastLow",
+        "label": "文字对比度不达标（正文低于 4.5:1，大字低于 3:1）",
+        "count": 6,
+        "examples": [
+          "h1「Frank Chimero New York-b」（2.36:1）",
+          "a「Studio Frank My design p」（2.36:1）",
+          "a「The Shape of Design Book」（2.36:1）"
+        ]
+      }
+    ]
+  }
+]

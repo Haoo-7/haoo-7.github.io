@@ -1,0 +1,11 @@
+Mode: generate
+Model: gpt-image-2.5
+Size: 1536x1024
+Quality: high
+Original: output/imagegen/ai-learning-cover.png
+Web export: output/design-exploration-2026-10-09/layouts/assets/ai-learning.webp
+
+Reconstructed prompt brief from generation session:
+Editorial cover for a Chinese essay about handwritten notes becoming Markdown, linked knowledge, and AI-assisted learning. White paper sheets with fine black ink marks transition into organized linked paper fragments, with a cobalt connecting thread. Photographic editorial still life and restrained collage. Palette: #FCFCFC white, #181818 charcoal, small #2456D6 accents. Top-down oblique composition, central subject about 65%, 12% margins. Natural upper-left light and contact shadows. No readable text, people, logos, app interfaces, robots, glow, spheres, gradients, extra desk props, or warm beige. 3:2 personal portfolio thumbnail.
+
+The exact original request text was not retained across context compaction.

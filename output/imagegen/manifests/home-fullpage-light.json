@@ -1,0 +1,8 @@
+{
+  "expected_sections": ["hero", "row02", "footer"],
+  "sections": [
+    {"id": "hero", "image": "../parts/fullpage-01-hero.png"},
+    {"id": "row02", "image": "../parts/fullpage-02-row02.png"},
+    {"id": "footer", "image": "../parts/fullpage-03-footer.png"}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · 用物件影像表达主题",
+  "brief": "保留字符 Haoo 与原有文案，让技术、日常、历史以三件有触感的物品进入首屏。",
+  "round": "Hero-02",
+  "nativeViewport": "1440x900",
+  "candidates": [
+    {
+      "id": "current",
+      "name": "当前首页",
+      "concept": "当前本地首页的首屏截图，作为主题词的比较基线。",
+      "typography": "Satoshi 字符字标 + 三个大号衬线词",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#D97757"],
+      "traits": ["现状", "主题以词语表达"],
+      "kind": "image",
+      "source": "assets/baseline.png",
+      "baseline": true
+    },
+    {
+      "id": "objects",
+      "name": "物件影像",
+      "concept": "字符讲名字，实物讲兴趣；三种材质共用一套光线，让技术、日常、历史有可触摸的形态。",
+      "typography": "保留现有 Satoshi 字符 Haoo；主题不再使用文字。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#827C70"],
+      "traits": ["银色笔记本电脑", "钴蓝陶瓷杯", "青铜器", "AI 生成写实物件"],
+      "source": "hero-images.html"
+    }
+  ]
+}

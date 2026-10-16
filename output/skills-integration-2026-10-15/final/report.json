@@ -1,0 +1,294 @@
+[
+  {
+    "file": "work-1440x900.png",
+    "state": "work",
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 444,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "writing-1440x900.png",
+    "state": "writing",
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 405,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "work-390x844.png",
+    "state": "work",
+    "size": "390x844",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "writing-390x844.png",
+    "state": "writing",
+    "size": "390x844",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "work-1440x900-@2x.png",
+    "state": "work",
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 374,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "work-390x844-@2x.png",
+    "state": "work",
+    "size": "390x844",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "motion-probe",
+    "state": "work",
+    "size": "1440x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 8,
+        "loops": 0,
+        "maxMove": 18,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "span.topic.tech",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.history",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.life",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.title",
+            "move": 15,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "p.identity-copy",
+            "move": 12,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.hero-action",
+            "move": 12,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.number",
+            "move": 11,
+            "size": 0,
+            "opacity": 0.91,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.label-text",
+            "move": 15,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 8,
+        "loops": 0,
+        "maxMove": 1428,
+        "maxSize": 0.932,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "span.topic.tech",
+            "move": 1428,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.history",
+            "move": 1405,
+            "size": 0,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.life",
+            "move": 1301,
+            "size": 0,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.solid",
+            "move": 207,
+            "size": 0.932,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "button.directory-button.work-row",
+            "move": 608,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "h1.wordmark",
+            "move": 207,
+            "size": 0.932,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.number",
+            "move": 234,
+            "size": 0,
+            "opacity": 0.91,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.identity",
+            "move": 0,
+            "size": 0,
+            "opacity": 0.98,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "layers": 7
+      },
+      "scroll": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "scrollable": true
+      }
+    },
+    "issues": [
+      "滚动：没有检测到随滚动出现的变化；落地页、品牌页、发布页和展览页需要一段滚动叙事"
+    ]
+  },
+  {
+    "file": "motion-entry-end.jpg",
+    "state": "work",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "entry",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-entry-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 173
+      },
+      "mid": {
+        "file": "motion-entry-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 706
+      },
+      "end": {
+        "file": "motion-entry-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 2455
+      }
+    },
+    "sampling": {
+      "mode": "entry"
+    },
+    "durationMs": 2455,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-entry-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  }
+]

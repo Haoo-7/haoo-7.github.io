@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Haoo · 内容目录</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url('assets/satoshi-medium.woff2');font-weight:500}
+    @font-face{font-family:Satoshi;src:url('assets/satoshi-bold.woff2');font-weight:700}
+    @font-face{font-family:SourceHanSerif;src:url('assets/source-han-serif-cn.woff2');font-weight:400 700}
+    :root{--paper:#fcfcfc;--ink:#181818;--muted:#626262;--blue:#2456d6;--line:#d4d4d4;--sans:Satoshi,'Hiragino Sans GB',sans-serif;--serif:SourceHanSerif,'Songti SC',serif}
+    *{box-sizing:border-box;letter-spacing:0}body{margin:0;width:1440px;min-height:900px;background:var(--paper);color:var(--ink);font:500 16px/1.7 var(--sans)}
+    p,h1,h2,h3{margin:0}a{color:inherit;text-decoration:none}
+    header{height:100px;margin:0 64px;display:flex;align-items:center;justify-content:space-between}.tagline{font-size:14px}nav{display:flex;gap:32px}
+    main{margin:90px 64px 0;display:grid;grid-template-columns:450px 1fr;column-gap:110px}
+    .brand{width:446px;height:127px;margin:0 0 0 -13px}.brand img{display:block;width:100%;height:100%}
+    .identity{margin-top:38px;font-size:18px;line-height:1.85}.identity span{display:block}.topics{margin-top:31px;font-size:14px;color:var(--muted)}
+    .content h2{font-size:16px;font-weight:500;line-height:1.5;padding-bottom:19px;border-bottom:1px solid var(--line)}
+    .entry{padding:25px 0 24px;border-bottom:1px solid var(--line)}.entry-line{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .entry h3{font:700 29px/1.45 var(--sans)}.type{color:var(--muted);font-size:14px;white-space:nowrap}.desc{font-size:16px;color:var(--muted);margin-top:9px}
+    .writing{margin-top:41px}.writing .entry{padding:21px 0}.writing h3{font:400 26px/1.65 var(--serif)}.date{font:500 14px/1.7 var(--sans);color:var(--muted);white-space:nowrap}
+    footer{margin:76px 64px 0;padding-top:23px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <header><p class="tagline">A personal corner of the internet</p><nav aria-label="主导航"><a href="#content">探索</a><a href="#about">关于</a></nav></header>
+  <main>
+    <section id="about" aria-label="自述">
+      <h1 class="brand"><img src="assets/haoo.png" width="1232" height="350" alt="Haoo"></h1>
+      <p class="identity"><span>人文社科学生。</span><span>写数码，也写学习。</span><span>做让日常更顺手的工具。</span></p>
+      <p class="topics">技术、生活与历史</p>
+    </section>
+    <div class="content" id="content">
+      <section aria-labelledby="work-title"><h2 id="work-title">作品</h2>
+        <article class="entry"><div class="entry-line"><h3>Dayline Journal</h3><span class="type">Obsidian 插件</span></div><p class="desc">一个把每日笔记变成日历和时间线的工具。</p></article>
+        <article class="entry"><div class="entry-line"><h3>Haoo Blog</h3><span class="type">个人网站</span></div></article>
+      </section>
+      <section class="writing" aria-labelledby="writing-title"><h2 id="writing-title">文章</h2>
+        <article class="entry entry-line"><h3>告别纸笔，用 AI 辅助学习</h3><span class="date">2026.03.18</span></article>
+        <article class="entry entry-line"><h3>高中生为什么用 Kindle？</h3><span class="date">2026.01.26</span></article>
+      </section>
+    </div>
+  </main>
+  <footer><p>Haoo</p><p>作品与文章</p></footer>
+</body>
+</html>

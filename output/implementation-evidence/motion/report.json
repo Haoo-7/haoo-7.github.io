@@ -1,0 +1,219 @@
+[
+  {
+    "file": "motion-probe",
+    "state": null,
+    "size": "1280x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 8,
+        "loops": 0,
+        "maxMove": 18,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "span.topic.tech",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.history",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.life",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.title",
+            "move": 13,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "p.identity-copy",
+            "move": 12,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.hero-action",
+            "move": 12,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.number",
+            "move": 12,
+            "size": 0,
+            "opacity": 0.97,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.label-text",
+            "move": 13,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 9,
+        "loops": 0,
+        "maxMove": 800,
+        "maxSize": 0.927,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "span.topic.tech",
+            "move": 800,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.history",
+            "move": 777,
+            "size": 0,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.topic.life",
+            "move": 675,
+            "size": 0,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.solid",
+            "move": 203,
+            "size": 0.927,
+            "opacity": 0.99,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "h1.wordmark",
+            "move": 203,
+            "size": 0.927,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.title",
+            "move": 498,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.number",
+            "move": 430,
+            "size": 0,
+            "opacity": 0.94,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.number",
+            "move": 222,
+            "size": 0,
+            "opacity": 0.91,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "layers": 8
+      },
+      "scroll": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 1,
+        "maxSize": 0,
+        "maxOpacity": 0.02,
+        "top": [
+          {
+            "el": "button.directory-button.work-row",
+            "move": 1,
+            "size": 0,
+            "opacity": 0.02,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1280x900",
+    "zoom": 1,
+    "issues": []
+  }
+]

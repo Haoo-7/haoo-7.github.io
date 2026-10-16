@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · 英文动态目录",
+  "brief": "保留字符姓名与蓝色。比较错落兴趣词＋分类入口，以及排字带＋直接作品索引。头图默认收起，指向目录时动态出现；手机点击展开。",
+  "round": "04 · 英文动态目录",
+  "candidates": [
+    {
+      "id": "previous-homepage",
+      "name": "上一轮中文首屏",
+      "concept": "保留旧首屏截图作构图对照；此基线不是可操作页面。",
+      "typography": "Satoshi 字符姓名与思源宋体中文。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#626262"],
+      "traits": ["中文基线", "仅首屏截图", "不可操作"],
+      "kind": "image",
+      "source": "assets/previous-homepage.png",
+      "baseline": true
+    },
+    {
+      "id": "constellation",
+      "name": "姓名星座",
+      "concept": "姓名是一张个人扉页，兴趣词错落围绕；先选择 WORK、WRITING 或 ABOUT。",
+      "typography": "Satoshi 700 字符姓名与分类巨字；Georgia 斜体兴趣词；18px 正文。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#D97757", "#626262"],
+      "traits": ["姓名收进顶栏", "History 橙色信号", "黑白反转悬停", "字符化后归于平静", "触屏原位展开"],
+      "kind": "html",
+      "source": "01-constellation.html",
+      "interactive": true
+    },
+    {
+      "id": "type-index",
+      "name": "排字带 · 直接索引",
+      "concept": "姓名下方是可被滚动拆开的兴趣排字带；直接翻到 Dayline、Blog 与文章。",
+      "typography": "Satoshi 700 项目与姓名；Georgia 兴趣词及文章标题；18px 正文。",
+      "palette": ["#FCFCFC", "#181818", "#2456D6", "#626262"],
+      "traits": ["通栏排字带", "直接项目索引", "黑底文章段", "切行旋入预览"],
+      "kind": "html",
+      "source": "02-type-index.html",
+      "interactive": true
+    }
+  ]
+}

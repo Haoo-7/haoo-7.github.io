@@ -1,0 +1,9 @@
+Edit this website screenshot. Change only two things.
+
+1. In the single visible numbered list row near the bottom, replace the article title with the exact Chinese string 效率杂谈：告别纸笔拓荒，怎么用 AI 来辅助学习？ Keep the same single-line truncated layout, the same left position, the same font size, weight and ink color #14253A, and keep the hanging number "01" and the right-aligned date "2026.03.18" unchanged.
+
+2. Remove the partially visible second list row at the very bottom edge of the image so the screenshot ends cleanly. Below the divider line that follows row 01, the bottom band becomes plain background #F6F8F8 with no cut-off characters and no partial row.
+
+Keep everything else unchanged and pixel-identical: the navigation bar with its four Chinese links 文章 项目 记录 关于, the wordmark "Haoo", the theme toggle icon, the giant slogan "TECH" solid / "LIFE" serif italic in blue / "& HISTORY" outline, the sparse ink specks at the right edge of HISTORY, the vertical Chinese year 二〇二六 with the square blue seal 昊, the attitude line 写数码、历史，和不肯将就的事。, all divider lines, colors, margins and typography.
+
+Do not restyle anything. Do not add or remove any other element. Render the quoted Chinese strings verbatim, with no extra characters and no pseudo-Chinese shapes.

@@ -1,0 +1,164 @@
+{
+  "project": "Haoo · 科技与人文",
+  "lang": "zh",
+  "round": "01 · 风格探索",
+  "brief": "个人作品馆：先认识 Haoo，再进入作品，最后延伸到文章与社交账号。本轮只比较视觉语言，不是首页定稿；字符图案与动效将在下一轮展开。",
+  "content": {
+    "title": "Haoo.",
+    "body": "让科技改变生活。",
+    "number": "01",
+    "number_label": "TECH, LIFE & HISTORY",
+    "primary": "查看作品",
+    "secondary": "认识我",
+    "tags": ["技术", "生活", "历史"],
+    "input_label": "继续认识我",
+    "input_value": "GitHub · Bilibili · 少数派"
+  },
+  "cards": [
+    {
+      "id": "woven-code",
+      "name": "字符编织",
+      "concept": "把代码变成形象：等宽字符与中文宋体并置，下一轮用 0 与 1 聚成 Haoo 字标，再展开为作品。",
+      "traits": ["字符作为主视觉材料", "等宽字 × 中文宋体", "冷白与墨黑", "直角细线 · 较密"],
+      "colors": {
+        "bg": "#F4F5F7",
+        "surface": "#FFFFFF",
+        "text": "#151719",
+        "muted": "#5D626A",
+        "accent": "#2456D6",
+        "accent_text": "#FFFFFF",
+        "line": "#CDD2DB",
+        "warn": "#A72B48"
+      },
+      "fonts": {
+        "display": "Menlo, \"PingFang SC\", monospace",
+        "body": "\"Songti SC\", Georgia, serif",
+        "number": "Menlo, monospace"
+      },
+      "display_weight": 700,
+      "number_weight": 400,
+      "radius": 0,
+      "border": "hairline",
+      "shadow": "none",
+      "density": "compact",
+      "layout": "editorial",
+      "texture": "none"
+    },
+    {
+      "id": "humanist-type",
+      "name": "人文巨字",
+      "concept": "以名字而非口号开场：厚重无衬线与有书卷气的中文正文形成反差，华丽来自尺度和精确的转场。",
+      "traits": ["厚重无衬线大字", "宋体正文与衬线编号", "明亮 · 大留白", "方角黑色动作"],
+      "colors": {
+        "bg": "#FCFCFC",
+        "surface": "#F2F2F2",
+        "text": "#181818",
+        "muted": "#656565",
+        "accent": "#242424",
+        "accent_text": "#FFFFFF",
+        "line": "#D4D4D4",
+        "warn": "#2E6FA8"
+      },
+      "fonts": {
+        "display": "\"Helvetica Neue\", \"PingFang SC\", sans-serif",
+        "body": "\"Songti SC\", Georgia, serif",
+        "number": "Georgia, \"Songti SC\", serif"
+      },
+      "display_weight": 700,
+      "number_weight": 400,
+      "radius": 0,
+      "border": "solid",
+      "shadow": "none",
+      "density": "airy",
+      "layout": "editorial",
+      "texture": "none"
+    },
+    {
+      "id": "digital-engraving",
+      "name": "数字版画",
+      "concept": "让计算有印刷的分量：宋体名字、等宽编号、银灰与黑色；下一轮让字符构成雕刻般的图像。",
+      "traits": ["宋体承担主标题", "银灰底与墨黑", "图像压字的构图倾向", "无阴影 · 精细边线"],
+      "colors": {
+        "bg": "#E5E7E9",
+        "surface": "#F8F9FA",
+        "text": "#202225",
+        "muted": "#5E636A",
+        "accent": "#A42443",
+        "accent_text": "#FFFFFF",
+        "line": "#BFC4CA",
+        "warn": "#2E6FA8"
+      },
+      "fonts": {
+        "display": "\"Songti SC\", Georgia, serif",
+        "body": "\"PingFang SC\", \"Helvetica Neue\", sans-serif",
+        "number": "Menlo, monospace"
+      },
+      "display_weight": 900,
+      "number_weight": 400,
+      "radius": 2,
+      "border": "hairline",
+      "shadow": "none",
+      "density": "regular",
+      "layout": "fullbleed",
+      "texture": "none"
+    },
+    {
+      "id": "electric-publishing",
+      "name": "电光出版",
+      "concept": "把个人站当成一份数字出版物：电黄、黑字、紧凑分栏，作品像封面一样直接出现。",
+      "traits": ["电黄建立鲜明身份", "无衬线标题 · 等宽正文", "紧凑分栏", "硬边框 · 不用圆角"],
+      "colors": {
+        "bg": "#E8F43D",
+        "surface": "#F9FBE5",
+        "text": "#191B18",
+        "muted": "#51563A",
+        "accent": "#191B18",
+        "accent_text": "#F3FF57",
+        "line": "#A7B236",
+        "warn": "#A42443"
+      },
+      "fonts": {
+        "display": "\"Avenir Next\", \"PingFang SC\", sans-serif",
+        "body": "Menlo, \"PingFang SC\", monospace",
+        "number": "\"Avenir Next\", sans-serif"
+      },
+      "display_weight": 700,
+      "number_weight": 700,
+      "radius": 0,
+      "border": "solid",
+      "shadow": "none",
+      "density": "compact",
+      "layout": "editorial",
+      "texture": "none"
+    },
+    {
+      "id": "blue-manifesto",
+      "name": "蓝色宣言",
+      "concept": "让蓝色从点缀变成舞台：满版高饱和蓝与白色衬线名字，科技感靠字符变化，人文感靠字形。",
+      "traits": ["满版钴蓝而非蓝色点缀", "衬线名字 · 无衬线正文", "白色方角控件", "高对比 · 中等密度"],
+      "colors": {
+        "bg": "#234DDC",
+        "surface": "#1F45C4",
+        "text": "#FFFFFF",
+        "muted": "#DCE4FF",
+        "accent": "#FFFFFF",
+        "accent_text": "#234DDC",
+        "line": "#6D8AE8",
+        "warn": "#F0F56B"
+      },
+      "fonts": {
+        "display": "Georgia, \"Songti SC\", serif",
+        "body": "\"Helvetica Neue\", \"PingFang SC\", sans-serif",
+        "number": "Menlo, monospace"
+      },
+      "display_weight": 400,
+      "number_weight": 400,
+      "radius": 0,
+      "border": "hairline",
+      "shadow": "none",
+      "density": "regular",
+      "layout": "fullbleed",
+      "texture": "none"
+    }
+  ]
+}

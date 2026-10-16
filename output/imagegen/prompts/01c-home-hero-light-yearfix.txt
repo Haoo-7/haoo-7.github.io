@@ -1,0 +1,7 @@
+Edit this website screenshot. Change exactly one detail.
+
+The vertical Chinese year near the right edge must read exactly four characters stacked top to bottom: 二 〇 二 六 (i.e. the four-character string 二〇二六), in the same small misty blue-grey #55708C color, the same hairline stroke weight, the same size and the same vertical position and column as it has now. Remove any extra or duplicated character so that only these four characters remain above the blue seal.
+
+Keep everything else pixel-identical: the navigation bar with 文章 项目 记录 关于, the wordmark "Haoo", the theme toggle icon, the giant slogan "TECH" / "LIFE" / "& HISTORY" with the outline and the sparse specks, the square blue seal containing 昊, the attitude line 写数码、历史，和不肯将就的事。, the divider lines, the article row 01 with the title 效率杂谈：告别纸笔拓荒，怎么用 AI 来辅助学习？ and the date 2026.03.18, all colors, margins and typography.
+
+Do not restyle anything. Do not add or remove any other element. Render all quoted Chinese strings verbatim, with no extra characters and no pseudo-Chinese shapes.

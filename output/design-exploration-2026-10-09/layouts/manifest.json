@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "lang": "zh",
+  "project": "Haoo · 人文巨字",
+  "brief": "黑白、厚重无衬线名字、思源宋体中文。此轮选择版式：先认识 Haoo，再进入作品。每个方案可单张打开体验滚动和关于面板。",
+  "round": "02 · 版式探索",
+  "candidates": [
+    {
+      "id": "name-stage",
+      "name": "巨字开场",
+      "concept": "名字先占满视线，滚动时收为导航标识，把舞台交给作品。",
+      "typography": "Satoshi 700 名字 320px；思源宋体 CN 400 中文短句 32px、正文 18px。",
+      "palette": ["#FCFCFC", "#181818", "#656565", "#D4D4D4"],
+      "traits": ["满版名字", "字标收进导航", "作品通栏揭开"],
+      "kind": "html",
+      "source": "01-name-stage.html",
+      "interactive": true
+    },
+    {
+      "id": "editorial",
+      "name": "错落书页",
+      "concept": "名字拆成错落双行，中文落在字间留白，下一章用黑色作品带切换节奏。",
+      "typography": "Satoshi 700 名字 240px；思源宋体 CN 400 中文短句 32px、正文 18px。",
+      "palette": ["#FCFCFC", "#181818", "#656565", "#D4D4D4"],
+      "traits": ["错落双行名字", "中文占据字间留白", "黑白章节交替"],
+      "kind": "html",
+      "source": "02-editorial.html",
+      "interactive": true
+    },
+    {
+      "id": "work-first",
+      "name": "作品先行",
+      "concept": "名字只占顶部一行，把第一个完整作品提前到首屏，让真实成果负责吸引。",
+      "typography": "Satoshi 700 名字 110px；思源宋体 CN 400 中文短句 22px、正文 18px。",
+      "palette": ["#FCFCFC", "#181818", "#656565", "#D4D4D4"],
+      "traits": ["首屏完整作品", "视觉展览而非大封面", "作品图随滚动拉远"],
+      "kind": "html",
+      "source": "03-work-first.html",
+      "interactive": true
+    }
+  ]
+}

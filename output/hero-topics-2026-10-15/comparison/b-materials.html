@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Haoo · 三种书写</title>
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2");font-weight:500}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2");font-weight:700}
+    @font-face{font-family:Instrument;src:url("assets/instrument-serif-italic.ttf");font-style:italic;font-weight:400}
+    *{box-sizing:border-box;letter-spacing:0}
+    :root{--paper:#fcfcfc;--ink:#181818;--blue:#2456d6}
+    body{margin:0;width:1440px;height:900px;overflow:hidden;background:var(--paper);color:var(--ink);font:500 18px/1.6 Satoshi,"Hiragino Sans GB",Arial,sans-serif}
+    .nav{margin:0 64px;height:84px;display:flex;justify-content:space-between;align-items:center}
+    .tagline{margin:0;font-size:14px}.links{display:flex;gap:32px;font-size:16px}
+    .hero{position:relative;height:724px}
+    .material-line{position:absolute;left:164px;right:144px;top:44px;height:132px;display:grid;grid-template-columns:240px 1fr 350px;align-items:center}
+    .code-word{width:240px;height:110px}.history-word{width:350px;height:110px}
+    .life-word{justify-self:center;position:relative;top:-7px;color:var(--blue);font:italic 400 112px/1 Instrument;margin:0;padding:0 14px 14px}
+    .life-word svg{position:absolute;left:5px;bottom:0;width:150px;height:16px;overflow:visible}
+    h1{position:absolute;left:104px;top:236px;margin:0;width:1232px;height:350px}h1 img{display:block;width:1232px;height:350px}
+    .intro{position:absolute;left:64px;bottom:36px;margin:0;font-size:18px;line-height:1.6}
+    .action{position:absolute;bottom:44px;right:64px;display:flex;align-items:center;gap:28px;font-size:16px}.action img{width:32px;height:32px}
+    .next{height:92px;margin:0 64px;border-top:1px solid #d4d4d4;display:grid;grid-template-columns:70px 1fr;padding-top:28px}.next span{font-size:14px;padding-top:9px;color:#626262}.next h2{margin:0;font:600 108px/1.18 "Songti SC",serif}
+  </style>
+</head>
+<body>
+  <nav class="nav"><p class="tagline">A personal corner of the internet</p><div class="links"><span>探索</span><span>关于</span></div></nav>
+  <main class="hero">
+    <div class="material-line" role="group" aria-label="技术、生活与历史，三种书写材料">
+      <svg class="code-word" viewBox="0 0 240 110" role="img" aria-label="Tech，由代码组成">
+        <defs>
+          <pattern id="code-type" width="22" height="12" patternUnits="userSpaceOnUse"><text x="0" y="5" font-family="Menlo,monospace" font-size="6" font-weight="700" fill="#181818">01{}&lt;&gt;</text><text x="0" y="11" font-family="Menlo,monospace" font-size="6" font-weight="700" fill="#181818">/=;101</text></pattern>
+          <mask id="tech-type"><text x="0" y="87" font-family="Satoshi,Arial,sans-serif" font-size="88" font-weight="700" fill="white">Tech</text></mask>
+        </defs>
+        <rect width="240" height="110" fill="url(#code-type)" mask="url(#tech-type)"/>
+      </svg>
+      <p class="life-word" aria-label="Life，连写笔触">Life<svg viewBox="0 0 150 16" aria-hidden="true"><path d="M4 11C39 3 88 2 143 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></p>
+      <svg class="history-word" viewBox="0 0 350 110" role="img" aria-label="History，由年代数字组成">
+        <defs>
+          <pattern id="year-type" width="64" height="12" patternUnits="userSpaceOnUse"><text x="0" y="5" font-family="Menlo,monospace" font-size="5.8" font-weight="700" fill="#181818">1800 1900 2000 2026</text><text x="0" y="11" font-family="Menlo,monospace" font-size="5.8" font-weight="700" fill="#181818">1450 1600 1700 1800</text></pattern>
+          <mask id="history-type"><text x="0" y="87" font-family="Georgia,serif" font-size="87" font-weight="700" fill="white">History</text></mask>
+        </defs>
+        <rect width="350" height="110" fill="url(#year-type)" mask="url(#history-type)"/>
+      </svg>
+    </div>
+    <h1><img src="assets/haoo.png" alt="Haoo"></h1>
+    <p class="intro">人文社科学生。<br>写数码，也写学习。<br>做让日常更顺手的工具。</p>
+    <div class="action"><span>作品与文章</span><img src="assets/arrow-down.svg" alt=""></div>
+  </main>
+  <section class="next"><span>01</span><h2>作品</h2></section>
+</body>
+</html>

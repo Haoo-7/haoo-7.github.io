@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haoo · 错落书页</title><link rel="icon" href="data:,">
+  <style>
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+    @font-face{font-family:Satoshi;src:url("assets/satoshi-medium.woff2") format("woff2");font-weight:500;font-display:swap}
+    @font-face{font-family:SourceHan;src:url("assets/source-han-serif-cn.woff2") format("woff2");font-weight:200 900;font-display:swap}
+    :root{--paper:#FCFCFC;--ink:#181818;--muted:#656565;--rule:#D4D4D4;--surface:#F2F2F2;--gutter:48px;--space:24px;--body:17px;--display:240px;--ease:cubic-bezier(.16,1,.3,1)}
+    *{box-sizing:border-box;letter-spacing:0}html{scroll-behavior:smooth;scroll-padding-top:32px}
+    body{margin:0;font:500 var(--body)/1.65 Satoshi,"PingFang SC",sans-serif;color:var(--ink);background:var(--paper)}
+    a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:6px}::selection{background:var(--ink);color:var(--paper)}
+    .icon{width:20px;height:20px;flex:none}
+    .top{padding:24px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:24px}.top p{margin:0;font-size:14px;color:var(--muted)}nav{display:flex;gap:32px;align-items:center}nav a,nav button{padding:8px 0;font-size:15px}nav a:hover,nav button:hover{text-decoration:underline;text-underline-offset:6px}
+    .opening{height:calc(100svh - 170px);min-height:640px;position:relative;margin:0 var(--gutter);border-top:1px solid var(--ink)}
+    .name{margin:0;font:700 var(--display)/1 Satoshi,sans-serif}
+    .name .first{position:absolute;top:32px;left:0}.name .second{position:absolute;right:0;bottom:110px}
+    .human-line{position:absolute;top:80px;right:18%;margin:0;font:400 32px/1.65 SourceHan,serif}
+    .opening-bottom{position:absolute;left:0;right:0;bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .opening-bottom p{margin:0;color:var(--muted);font-size:14px}.primary{display:inline-flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--ink);transition:transform .18s var(--ease)}.primary:active{transform:translateY(2px)}.primary:hover .icon{transform:translateY(3px)}.primary .icon{transition:transform .2s var(--ease)}
+    .work-band{background:var(--ink);color:var(--paper);padding:44px var(--gutter) 72px}
+    .band-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:36px}.band-head h2{margin:0;font-size:24px;font-weight:500}.band-head span{font-size:14px;color:#C7C7C7}
+    .spread{display:grid;grid-template-columns:1fr 1.7fr;gap:64px;align-items:center}.spread-copy h3{font-size:48px;line-height:1.15;margin:0 0 28px;font-weight:500}.spread-copy p{font:400 22px/1.7 SourceHan,serif;margin:0 0 32px}.spread-copy a{display:inline-flex;align-items:center;gap:16px;border-bottom:1px solid #777;padding:12px 0}.spread-copy .icon{filter:invert(1)}
+    .spread-media{overflow:hidden;aspect-ratio:1280/900;background:var(--paper)}.spread-media img{width:100%;height:100%;object-fit:contain;display:block}
+    .writing{padding:96px var(--gutter);display:grid;grid-template-columns:1fr 1.7fr;gap:64px}.writing h2{font:400 44px/1.4 SourceHan,serif;margin:0}.index-row{display:block;border-top:1px solid var(--rule);padding:24px 0}.index-row h3{font:400 22px/1.6 SourceHan,serif;margin:0 0 12px}.index-row small{font-size:14px;color:var(--muted)}.index-row:hover h3{text-decoration:underline;text-underline-offset:6px}
+    .reading{font:400 18px/1.8 SourceHan,serif;padding:0 var(--gutter) 72px;max-width:800px;margin:0}
+    .index-row p{font:400 17px/1.8 SourceHan,serif;color:var(--muted);margin:12px 0 0;max-width:38em}
+    .motion-entry .name span,.motion-entry .human-line,.motion-entry .opening-bottom{opacity:0}
+    footer{display:flex;justify-content:space-between;gap:32px;margin:0 var(--gutter);padding:32px 0;border-top:1px solid var(--ink)}footer .socials{display:flex;gap:28px;flex-wrap:wrap}footer a:hover{text-decoration:underline;text-underline-offset:5px}footer span{font-size:14px;color:var(--muted)}
+    dialog{margin:0;width:100%;height:auto;max-width:100%;border:0;background:var(--paper);color:var(--ink);padding:40px var(--gutter) 64px;opacity:0;transform:translateY(-48px);transition:opacity .32s var(--ease),transform .32s var(--ease),display .32s allow-discrete,overlay .32s allow-discrete}dialog[open]{opacity:1;transform:translateY(0)}dialog::backdrop{background:rgb(0 0 0/.2)}@starting-style{dialog[open]{opacity:0;transform:translateY(-48px)}}
+    .close{display:flex;margin-left:auto;padding:10px}.about-copy{display:grid;grid-template-columns:1fr 1.7fr;gap:64px;margin-top:24px}.about-copy h2{font:700 80px/1 Satoshi;margin:0}.about-copy p{font:400 24px/1.7 SourceHan,serif;margin:0 0 32px}.about-copy .socials{display:flex;gap:28px}
+    @media(min-width:1500px){:root{--gutter:64px;--display:280px}.human-line{right:22%;font-size:40px}}
+    @media(max-width:1000px){:root{--gutter:32px;--display:200px}.human-line{right:7%}.spread,.writing,.about-copy{gap:32px}.spread-copy h3{font-size:36px}}
+    @media(max-width:600px){:root{--gutter:24px;--display:160px}.top{padding-top:20px;padding-bottom:20px}.top p{font-size:12px}nav{gap:20px}nav a,nav button{font-size:14px}.opening{height:calc(100svh - 210px);min-height:565px}.name .first{top:20px}.name .second{top:174px;bottom:auto}.human-line{font-size:23px;top:360px;left:0;right:auto}.human-line br{display:none}.opening-bottom{bottom:24px;align-items:end}.opening-bottom p{max-width:128px;line-height:1.7;font-size:12px}.work-band{padding-top:32px;padding-bottom:48px}.band-head{padding-bottom:28px}.band-head h2{font-size:20px}.spread{grid-template-columns:1fr;gap:28px}.spread-media{grid-row:1}.spread-copy h3{font-size:32px;margin-bottom:16px}.spread-copy p{font-size:20px;margin-bottom:16px}.writing{padding:56px var(--gutter);grid-template-columns:1fr;gap:28px}.writing h2{font-size:32px}.index-row h3{font-size:19px}footer{flex-direction:column;gap:24px;font-size:15px}.about-copy{grid-template-columns:1fr;gap:32px}.about-copy h2{font-size:64px}.about-copy p{font-size:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+  </style>
+  <script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script defer src="vendor/alpine.min.js"></script>
+  <script>if(window.gsap&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion-entry");</script>
+</head>
+<body x-data="{state:new URLSearchParams(location.search).get('state')||'idle',init(){this.$watch('state',value=>value==='about'?this.$refs.about.showModal():this.$refs.about.close());if(this.state==='about')this.$nextTick(()=>this.$refs.about.showModal());}}">
+  <header class="top"><p>Haoo.</p><nav aria-label="主导航"><a href="#works">作品</a><a href="#writing">文章</a><button class="about-trigger" @click="state='about'">关于</button></nav></header>
+  <main>
+    <section class="opening"><h1 class="name" aria-label="Haoo"><span class="first">Ha</span><span class="second">oo.</span></h1><p class="human-line">让科技<br>改变生活。</p><div class="opening-bottom"><p>写数码、历史，<br>和不肯将就的事。</p><a class="primary" href="#works">查看作品<img class="icon" src="assets/arrow-down.svg" alt=""></a></div></section>
+    <section class="work-band" id="works"><div class="band-head"><h2>作品</h2><span>01 / 网站</span></div><div class="spread"><div class="spread-copy"><h3>Haoo<br>Blog</h3><p>科技、生活与历史。</p><a href="#project-detail">进入作品<img class="icon" src="assets/arrow-up-right.svg" alt=""></a></div><div class="spread-media"><img src="assets/blog.png" alt="Haoo Blog 的首页设计" width="1280" height="900"></div></div></section>
+    <section class="writing" id="writing"><h2>文字里，<br>再认识我。</h2><div><a class="index-row" href="#reading"><h3>告别纸笔拓荒，怎么用 AI 来辅助学习？</h3><small>学习 / 人工智能</small><p id="reading">从纸笔到 XMind、Obsidian 与 NotebookLM，一位人文社科大学生亲历的 AI 辅助学习系统。</p></a><a class="index-row" href="#kindle-reading"><h3>Kindle Paperwhite 3</h3><small>数码 / 真实使用体验</small><p id="kindle-reading">一台二手 Kindle PaperWhite 3 如何陪伴高中学习：阅读、背单词、看课件，以及它无法回避的缺陷。</p></a></div></section>
+    <span id="project-detail"></span>
+  </main>
+  <footer id="social"><div class="socials"><a href="#social">GitHub</a><a href="#social">Bilibili</a><a href="#social">少数派</a></div><span>© 2026 Haoo</span></footer>
+  <dialog x-ref="about" @cancel.prevent="state='idle'" @close="state='idle'" aria-label="关于 Haoo"><button class="close" title="关闭" aria-label="关闭" @click="state='idle'"><img class="icon" src="assets/x.svg" alt=""></button><div class="about-copy"><h2>Haoo.</h2><div><p>记录数码工具、学习方法与真实使用体验。</p><div class="socials"><a href="#social" @click="state='idle'">GitHub</a><a href="#social" @click="state='idle'">Bilibili</a><a href="#social" @click="state='idle'">少数派</a></div></div></div></dialog>
+  <script>
+    document.fonts.ready.then(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {document.body.dataset.ready="true";return;}
+      gsap.timeline({onComplete:()=>document.body.dataset.ready="true"})
+        .fromTo(".name span",{opacity:0,y:32},{opacity:1,y:0,duration:.38,stagger:.07,ease:"power3.out"})
+        .fromTo(".human-line,.opening-bottom",{opacity:0,y:12},{opacity:1,y:0,duration:.24,stagger:.06,ease:"power3.out"},.24);
+      document.documentElement.classList.remove("motion-entry");
+      gsap.timeline({scrollTrigger:{trigger:".opening",start:"top top",end:"bottom 80px",scrub:true}})
+        .to(".name .first",{x:64,y:-64,scale:.82,opacity:.25,ease:"none"},0)
+        .to(".name .second",{x:-64,y:-140,scale:.82,opacity:.25,ease:"none"},0);
+      gsap.from(".spread-media",{clipPath:"inset(0 100% 0 0)",duration:.65,ease:"power3.out",scrollTrigger:{trigger:".spread",start:"top 85%",once:true}});
+      gsap.from(".index-row",{opacity:0,x:24,stagger:.07,duration:.4,ease:"power3.out",scrollTrigger:{trigger:".writing",start:"top 75%",once:true}});
+    });
+  </script>
+</body>
+</html>

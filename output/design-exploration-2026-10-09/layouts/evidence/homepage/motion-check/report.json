@@ -1,0 +1,218 @@
+[
+  {
+    "file": "motion-probe",
+    "state": null,
+    "size": "1280x900",
+    "zoom": 1,
+    "motion": {
+      "load": {
+        "elements": 5,
+        "loops": 0,
+        "maxMove": 18,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "span.ghost.history",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.ghost.life",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.ghost.tech",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "p",
+            "move": 16,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "a.primary",
+            "move": 16,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style",
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 1,
+        "loops": 0,
+        "maxMove": 48,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "dialog",
+            "move": 48,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "transition:transform",
+              "transition:opacity"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 7,
+        "loops": 0,
+        "maxMove": 1295,
+        "maxSize": 0.92,
+        "maxOpacity": 0.7,
+        "top": [
+          {
+            "el": "span.ghost.tech",
+            "move": 1295,
+            "size": 0,
+            "opacity": 0.7,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.ghost.life",
+            "move": 1288,
+            "size": 0,
+            "opacity": 0.67,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.ghost.history",
+            "move": 1261,
+            "size": 0,
+            "opacity": 0.64,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.opening-copy",
+            "move": 1260,
+            "size": 0,
+            "opacity": 0.43,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.project-media",
+            "move": 1080,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "h1.wordmark.is-docked",
+            "move": 135,
+            "size": 0.92,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "span.solid",
+            "move": 100,
+            "size": 0.92,
+            "opacity": 0.67,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "layers": 7
+      },
+      "scroll": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 24,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "div.article-copy",
+            "move": 24,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.article-copy",
+            "move": 21,
+            "size": 0,
+            "opacity": 0.89,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.contact-top",
+            "move": 21,
+            "size": 0,
+            "opacity": 0.86,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1280x900",
+    "zoom": 1,
+    "issues": []
+  }
+]
