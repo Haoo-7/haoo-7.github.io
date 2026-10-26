@@ -15,8 +15,8 @@ const years = [...new Set(posts.map((p) => p.data.pubDate.getFullYear()))];
 <Base title="Writing" description="Essays, reviews and history research by Haoo, written in Chinese." active="/writing/">
   <header class="p-head">
     <p class="kick mono"><b>Writing</b><span>{posts.length} pieces · In Chinese, with English notes</span></p>
-    <h1 class="p-h1" data-split>Written down.</h1>
-    <p class="p-lede" data-rise>Essays on how I study and work, reviews of the gear I actually use, and soon, some history. The pieces are in Chinese; each one opens with a short English note.</p>
+    <h1 class="p-h1" data-split>Written <em>down.</em></h1>
+    <p class="p-lede" data-rise>Essays on how I study and work, and reviews of the gear I actually use. Written in Chinese, with a short English note on each.</p>
   </header>
 
   <div class="wl">
@@ -28,7 +28,7 @@ const years = [...new Set(posts.map((p) => p.data.pubDate.getFullYear()))];
             <ol>
               {posts.map((post, i) => post.data.pubDate.getFullYear() === y && (
                 <li class:list={['entry', { on: i === 0 }]} data-p={String(i)}>
-                  <span class="meta mono">{postMeta(post)}</span>
+                  <span class="meta mono">{postMeta(post, false)}</span>
                   <a class="t" href={`/writing/${post.slug}/`}>{post.data.titleEn ?? post.data.title}</a>
                   <span class="zh" lang="zh-CN">{post.data.title}</span>
                   {post.data.dekEn && <p class="dek">{post.data.dekEn}</p>}
@@ -38,11 +38,10 @@ const years = [...new Set(posts.map((p) => p.data.pubDate.getFullYear()))];
           </li>
         ))}
       </ol>
-      <p class="wl-later">History research is on its way here.</p>
     </div>
     <div class="wl-reader">
       <Reader {...items[0]} class="reader-zoom" />
-      <p class="wl-cap mono" aria-hidden="true">Fig. 05 The reader, on the desk</p>
+      <p class="wl-cap mono" aria-hidden="true">Fig. <b>05</b> The reader, on the desk</p>
     </div>
   </div>
 </Base>

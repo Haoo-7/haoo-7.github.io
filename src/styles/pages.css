@@ -6,13 +6,14 @@
 .p-lede { max-width: 600px; margin-top: 36px; font-family: var(--sans); font-size: 20px; line-height: 1.5; color: var(--ink-2); }
 
 /* Work：左边托盘钉住，右边一份份档案滚过去，滚到哪份就框出哪一格 */
-.work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(40px, 5.56vw, 80px); align-items: start; padding: 96px var(--x) 140px; }
+.work { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); column-gap: clamp(40px, 5.56vw, 80px); align-items: start; padding: 96px var(--x) 140px; }
 .work-tray { position: sticky; top: 110px; }
 .tray-zoom { aspect-ratio: 540 / 410; }
 .tray-zoom .tray { --aw: 203.7%; --ax: -11.11%; --ay: -27.78%; --tray-mask: linear-gradient(#000, #000); }
-.work-cap { margin-top: 16px; color: var(--ink-2); }
+.work-cap, .wl-cap { margin-top: 16px; color: var(--ink-2); }
+.work-cap b, .wl-cap b { color: var(--ink); font-weight: 500; }
 .dossiers { list-style: none; }
-.dossier { padding: 28px 0 88px; border-top: 1px solid var(--ink); scroll-margin-top: 90px; }
+.dossier { padding: 28px 0 88px; border-top: 1px solid var(--rule); scroll-margin-top: 120px; }
 .dossier + .dossier { margin-top: 24px; }
 .d-n { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--ink-2); }
 .d-n b { color: var(--ink); font-weight: 500; }
@@ -33,15 +34,15 @@
 /* Writing：按年份分组的大字列表，右边阅读器跟着当前那篇刷新 */
 .wl { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); column-gap: clamp(40px, 5.56vw, 80px); align-items: start; padding: 96px var(--x) 140px; }
 .wl-list { min-width: 0; }
-.year { display: grid; grid-template-columns: 96px minmax(0, 1fr); border-top: 1px solid var(--ink); padding-top: 18px; }
+.year { display: grid; grid-template-columns: 96px minmax(0, 1fr); border-top: 1px solid var(--rule); padding-top: 18px; }
 .year + .year { margin-top: 64px; }
 .year > h2 { font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .04em; }
 .year ol { list-style: none; }
-.entry { position: relative; padding: 4px 18px 30px; margin: 0 -18px 18px; transition: background-color .2s; }
-.entry.on { background: var(--hover); }
+.entry { position: relative; padding: 4px 0 30px; margin-bottom: 18px; }
 .entry .meta { display: block; padding-top: 14px; color: var(--ink-2); }
 .entry .t { display: block; margin-top: 14px; font-size: clamp(28px, 2.5vw, 36px); line-height: 1.2; letter-spacing: -.015em; }
 .entry .t::after { content: ""; position: absolute; inset: 0; }
+.entry.on .meta { color: var(--ink); }
 .entry.on .t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .entry .zh { display: block; margin-top: 10px; font-size: 17px; line-height: 1.6; color: var(--ink-2); }
 .entry .dek { margin-top: 14px; max-width: 560px; font-family: var(--sans); font-size: 17px; line-height: 1.5; color: var(--ink-2); }
@@ -49,12 +50,11 @@
 .wl-reader { position: sticky; top: 110px; }
 .reader-zoom { aspect-ratio: .941; }
 .reader-zoom .desk-art { --aw: 300%; --ax: -120.8%; --ay: -31.25%; }
-.wl-cap { margin-top: 16px; color: var(--ink-2); }
 
 /* About：一段一帧，滚到哪段，右边那一帧就刷新成哪张 */
 .ab { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); column-gap: clamp(40px, 5.56vw, 80px); align-items: start; padding: 96px var(--x) 0; }
 .ab-text { min-width: 0; }
-.chapter { padding: 26px 0 120px; border-top: 1px solid var(--ink); }
+.chapter { padding: 26px 0 120px; border-top: 1px solid var(--rule); }
 .ch-n { color: var(--ink-2); }
 .ch-n b { color: var(--ink); font-weight: 500; margin-right: 14px; }
 .chapter h2 { margin-top: 26px; font-weight: 400; font-size: clamp(36px, 3.61vw, 52px); line-height: 1.1; letter-spacing: -.025em; }
@@ -65,27 +65,17 @@
 .ab-frame .frame { aspect-ratio: 508 / 600; }
 .ab-cap { margin-top: 16px; display: flex; justify-content: space-between; color: var(--ink-2); }
 .ab-cap b { color: var(--ink); font-weight: 500; }
-.colophon { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); column-gap: clamp(40px, 5.56vw, 80px); padding: 40px var(--x) 160px; }
-.colophon .kick { grid-column: 1 / -1; }
-.colophon .big { margin-top: 30px; font-size: clamp(32px, 3.33vw, 48px); line-height: 1.2; letter-spacing: -.02em; }
-.colophon .big em { font-style: italic; font-weight: 300; }
-.colophon dl { align-self: end; }
-.colophon dl > div { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-top: 1px solid var(--rule); }
-.colophon dl > div:last-child { border-bottom: 1px solid var(--rule); }
-.colophon dt { color: var(--ink-2); }
-.colophon dd { font-family: var(--sans); font-size: 16px; text-align: right; }
 
 @media (max-width: 1023px) {
   .p-head { padding-top: 120px; }
   .p-lede { font-size: 18px; }
-  .work, .wl, .ab, .colophon { grid-template-columns: minmax(0, 1fr); padding-top: 56px; }
+  .work, .wl, .ab { grid-template-columns: minmax(0, 1fr); padding-top: 56px; }
   .work-tray, .wl-reader { position: relative; top: auto; margin-bottom: 48px; }
   .wl-reader { order: -1; max-width: 420px; }
   .ab-frame { order: -1; position: sticky; top: 64px; z-index: 1; margin: 0 calc(-1 * var(--x)) 40px; padding: 0 var(--x) 12px; background: var(--paper); }
   .ab-frame .frame { aspect-ratio: 16 / 7; }
   .ab-frame .frame img { object-position: 50% 62%; }
   .chapter { padding-bottom: 72px; }
-  .colophon dl { margin-top: 40px; }
 }
 @media (max-width: 767px) {
   .p-head { padding-top: 104px; }
@@ -97,11 +87,7 @@
   .d-line { font-size: 19px; }
   .dossier { padding-bottom: 64px; }
   .year { grid-template-columns: 1fr; gap: 4px; }
-  .entry { padding-inline: 0; margin-inline: 0; }
   .entry .t { font-size: 26px; }
   .ab-frame { top: 56px; }
   .chapter p:not(.ch-n) { font-size: 17.5px; }
-  .colophon { padding-bottom: 104px; }
-  .colophon dl > div { flex-direction: column; gap: 4px; }
-  .colophon dd { text-align: left; }
 }

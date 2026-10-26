@@ -31,6 +31,24 @@ update();
 // 窄屏点了目录里的一章，就把目录收起
 links.forEach((a) => a.addEventListener('click', () => { if (toc && matchMedia('(max-width: 1023px)').matches) toc.open = false; }));
 
+// 上标和它前面的一个字、后面紧跟的标点绑在一起，不让它们被折到下一行开头
+$$('sup', prose).forEach((sup) => {
+  if (!sup.querySelector('[data-footnote-ref]')) return;
+  const wrap = document.createElement('span');
+  wrap.className = 'nobr';
+  const prev = sup.previousSibling;
+  if (prev?.nodeType === 3 && prev.textContent) {
+    const t = prev.textContent;
+    prev.textContent = t.slice(0, -1);
+    wrap.append(t.slice(-1));
+  }
+  sup.replaceWith(wrap);
+  wrap.append(sup);
+  const next = wrap.nextSibling;
+  const m = next?.nodeType === 3 ? next.textContent!.match(/^[，。、；：！？）」』”’,.;:!?)]+/) : null;
+  if (m) { next!.textContent = next!.textContent!.slice(m[0].length); wrap.append(m[0]); }
+});
+
 // 脚注：点上标浮出注释，Esc 或点别处关掉
 const notes = $('.footnotes', prose);
 let ref: HTMLAnchorElement | null = null;

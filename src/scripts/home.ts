@@ -89,8 +89,8 @@ mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => 
     .to(img(hist), { xPercent: 75.591, duration: 0.18 }, 0.3)
     .call(() => land(tech), undefined, 0.48).to(caps[1], { opacity: 1, duration: 0.03, ease: 'none' }, 0.49)
     .call(() => land(hist), undefined, 0.5).to(caps[2], { opacity: 1, duration: 0.03, ease: 'none' }, 0.51)
-    // 收尾：三帧一起整屏刷新，和首屏的刷新呼应
-    .call(() => { if (fwd()) strips.forEach((s) => { s.classList.remove('partial'); refresh(s); }); }, undefined, 0.68)
+    // 收尾：三帧从左到右依次整屏刷新，和首屏的刷新呼应；错开 120ms，不让三块同时黑着
+    .call(() => { if (fwd()) [life, tech, hist].forEach((s, k) => setTimeout(() => { s.classList.remove('partial'); refresh(s); }, k * 120)); }, undefined, 0.68)
     .to({}, { duration: 0.2 }, 0.7);
   return () => focusFact(3);
 });

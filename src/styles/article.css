@@ -8,7 +8,7 @@
 .post-title { margin-top: 30px; font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 3.47vw, 50px); line-height: 1.32; letter-spacing: 0; text-wrap: balance; line-break: strict; }
 .keep { white-space: nowrap; }
 .post-en { margin-top: 18px; font-style: italic; font-weight: 300; font-size: clamp(20px, 1.67vw, 24px); line-height: 1.35; color: var(--ink-2); letter-spacing: -.01em; }
-.tldr { max-width: var(--measure); margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 17px; line-height: 1.75; color: var(--ink-2); }
+.tldr { max-width: var(--measure); margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: 17px; line-height: 1.75; color: var(--ink-2); }
 .tldr .mono { display: block; margin-bottom: 8px; color: var(--ink); }
 
 /* 封面和正文里的图保留原色：整站只有内容图带颜色 */
@@ -21,7 +21,7 @@
 .toc summary::-webkit-details-marker { display: none; }
 .toc summary span { display: none; }
 .toc ol { list-style: none; border-top: 1px solid var(--rule); }
-.toc a { display: grid; grid-template-columns: 28px 1fr; gap: 6px; padding: 10px 0; font-family: var(--sans); font-size: 14.5px; line-height: 1.5; color: var(--ink-2); transition: color .2s; }
+.toc a { display: grid; grid-template-columns: 28px 1fr; gap: 6px; padding: 10px 0; font-family: var(--serif); font-size: 15px; line-height: 1.5; color: var(--ink-2); transition: color .2s; }
 .toc a .mono { font-size: 11px; padding-top: 3px; color: var(--ink-2); }
 .toc a:hover { color: var(--ink); }
 .toc a[aria-current] { color: var(--ink); }
@@ -51,19 +51,20 @@
 .prose .article-figure img { width: 100%; height: auto; max-height: 820px; object-fit: contain; background: var(--screen-bg); }
 .prose .article-figure--compact { max-width: 520px; margin-inline: auto; }
 .prose figcaption { margin-top: 12px; font-family: var(--sans); font-size: 14px; line-height: 1.55; color: var(--ink-2); }
-.prose figcaption::before { content: "Fig. " counter(fig); margin-right: 12px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
+.prose figcaption::before { content: "Fig. " counter(fig, decimal-leading-zero); margin-right: 12px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); }
 .prose figcaption a { color: inherit; text-decoration-color: var(--rule); }
 .prose figcaption a:hover { color: var(--blue); }
 
 /* 脚注：正文里是蓝色上标，点开浮出；文末仍保留完整列表 */
 .prose [data-footnote-ref] { display: inline-block; min-width: 1.4em; padding: 0 .2em; margin: 0 .05em; color: var(--blue); font-family: var(--mono); font-size: .62em; line-height: 1; text-align: center; text-decoration: none; vertical-align: super; border: 1px solid transparent; transition: background-color .15s, color .15s; }
 .prose [data-footnote-ref]:hover, .prose [data-footnote-ref][aria-expanded="true"] { background: var(--blue); color: var(--paper); }
+.prose .nobr { white-space: nowrap; }
 .prose .footnotes { max-width: 600px; margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 15px; line-height: 1.7; color: var(--ink-2); }
 .prose .footnotes h2 { margin: 0 0 16px; padding: 0; border: 0; font-family: var(--mono); font-size: 13px; font-weight: 400; letter-spacing: .04em; color: var(--ink); }
 .prose .footnotes ol { padding-left: 1.6em; }
 .prose .footnotes li::marker { font-family: var(--mono); font-size: 12px; }
 .prose .footnotes p { margin: 0; }
-.fn-pop { position: fixed; z-index: 30; width: min(380px, calc(100vw - 32px)); padding: 16px 40px 16px 18px; background: var(--paper); border: 1px solid var(--ink); box-shadow: 6px 6px 0 rgba(18, 18, 18, .08); font-family: var(--sans); font-size: 15px; line-height: 1.7; color: var(--ink); opacity: 0; transform: translateY(4px); transition: opacity .18s var(--ease), transform .18s var(--ease); }
+.fn-pop { position: fixed; z-index: 30; width: min(380px, calc(100vw - 32px)); padding: 16px 40px 16px 18px; background: var(--paper); border: 1px solid var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.7; color: var(--ink); opacity: 0; transform: translateY(4px); transition: opacity .18s var(--ease), transform .18s var(--ease); }
 .fn-pop.on { opacity: 1; transform: none; }
 .fn-pop p { margin: 0; }
 .fn-pop a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }

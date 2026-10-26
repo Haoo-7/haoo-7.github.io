@@ -111,7 +111,7 @@ components:
   - `/writing/[slug]/`：左栏粘性目录，正文一栏，文末原刊链接和下一篇。【Agent 推断】
   - `/writing/`：按年份分组的列表，右侧粘性阅读器跟着当前那篇局部刷新。【Agent 推断】
   - `/work/`：左侧粘性托盘，右侧逐份项目档案，滚到哪份就框出哪格。【Agent 推断】
-  - `/about/`：三段文字配粘性的一帧照片，读到哪段刷新成哪张 → Colophon → Say hello。【Agent 推断】
+  - `/about/`：三段文字配粘性的一帧照片，读到哪段刷新成哪张 → Say hello。【Agent 推断】
 
 ## Motion
 

@@ -11,8 +11,9 @@ export const platforms = (post: Post) => post.data.externalPublications.map((p) 
 export const readingMinutes = (post: Post) => Math.max(1, Math.ceil((post.body ?? '').replace(/<[^>]*>/g, '').length / 450));
 
 // 列表里一行元信息：2026-03 · Essay · sspai, WeChat · In Chinese
-export const postMeta = (post: Post) =>
-  [month(post.data.pubDate), kind(post), platforms(post).join(', '), 'In Chinese'].filter(Boolean).join(' · ');
+// Writing 页头已经写了语言，列表里可以省掉
+export const postMeta = (post: Post, lang = true) =>
+  [month(post.data.pubDate), kind(post), platforms(post).join(', '), lang && 'In Chinese'].filter(Boolean).join(' · ');
 
 // 阅读器屏幕上的一页
 export const readerItem = (post: Post, i: number, total: number) => ({
