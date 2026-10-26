@@ -46,6 +46,56 @@ const screen = $('[data-screen]')!;
 bindReader($('.posts')!, screen);
 
 const mm = gsap.matchMedia();
+
+// 关于：一帧拆成三帧。只在宽屏且开着动效时钉住，滚动 1:1 驱动 1400px；其余情况保持拆好的样子
+const facts = $$('[data-facts] li');
+const strips = $$('.strip');
+const caps = $$('.caps span');
+let fcur = 3;
+const focusFact = (f: number) => {
+  if (f === fcur) return;
+  fcur = f;
+  facts.forEach((li, k) => li.classList.toggle('on', f === 3 || k === f));
+  strips.forEach((s) => s.classList.toggle('dim', f !== 3 && f >= 0 && +s.dataset.s! !== f));
+};
+mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => {
+  const [life, tech, hist] = [0, 1, 2].map((k) => strips.find((el) => +el.dataset.s! === k)!);
+  const img = (s: HTMLElement) => $('img', s)!;
+  // 栏宽 244/760，栏缝 14/760：底下那一帧的左边始终跟着上面那一帧的右边走
+  gsap.set(strips.map(img), { x: 0, xPercent: 49.606 });
+  gsap.set(life, { clipPath: 'inset(0% 0% 0% 33.158%)' });
+  gsap.set([tech, hist], { clipPath: 'inset(0% 0% 0% 101.842%)' });
+  gsap.set(caps, { opacity: 0 });
+  focusFact(-1);
+  // 只在往下滚时刷新；往回滚帧安静地合回去
+  const fwd = () => split.scrollTrigger!.direction === 1;
+  const land = (s: HTMLElement) => { if (fwd()) { s.classList.add('partial'); refresh(s); } };
+  const split = gsap.timeline({
+    defaults: { ease: 'power2.inOut' },
+    scrollTrigger: {
+      trigger: '.about', start: 'top top', end: '+=1400', pin: true, scrub: 0.6,
+      // 第 k 帧落定时它这句亮起；最后整组刷新一次，三句都亮
+      onUpdate: (st) => { const t = st.progress * split.duration(); focusFact(t < 0.1 ? -1 : t < 0.3 ? 0 : t < 0.5 ? 1 : t < 0.68 ? 2 : 3); },
+    },
+  });
+  // Life 揭到左栏，露出底下的 Tech；Tech 收进中栏，露出 History；History 落在右栏
+  split.to(life, { clipPath: 'inset(0% 67.895% 0% 0%)', duration: 0.18 }, 0.1)
+    .to(img(life), { xPercent: -25.984, duration: 0.18 }, 0.1)
+    .to(tech, { clipPath: 'inset(0% 0% 0% 33.947%)', duration: 0.18 }, 0.1)
+    .call(() => land(life), undefined, 0.28).to(caps[0], { opacity: 1, duration: 0.03, ease: 'none' }, 0.29)
+    .to(tech, { clipPath: 'inset(0% 33.947% 0% 33.947%)', duration: 0.18 }, 0.3)
+    .to(img(tech), { xPercent: 24.803, duration: 0.18 }, 0.3)
+    .to(hist, { clipPath: 'inset(0% 0% 0% 67.895%)', duration: 0.18 }, 0.3)
+    .to(img(hist), { xPercent: 75.591, duration: 0.18 }, 0.3)
+    .call(() => land(tech), undefined, 0.48).to(caps[1], { opacity: 1, duration: 0.03, ease: 'none' }, 0.49)
+    .call(() => land(hist), undefined, 0.5).to(caps[2], { opacity: 1, duration: 0.03, ease: 'none' }, 0.51)
+    // 收尾：三帧一起整屏刷新，和首屏的刷新呼应
+    .call(() => { if (fwd()) strips.forEach((s) => { s.classList.remove('partial'); refresh(s); }); }, undefined, 0.68)
+    .to({}, { duration: 0.2 }, 0.7);
+  return () => focusFact(3);
+});
+
+// 钉住的舞台要先建，它下面的触发点才算上钉住的那段距离
 mm.add('(prefers-reduced-motion: no-preference)', () => {
   // 首次进入：三个词从遮罩里升起，屏幕刷一下亮起
   gsap.from('.words .w', { yPercent: 105, duration: 0.9, ease: 'expo.out', stagger: 0.07, delay: 0.1 });
@@ -63,8 +113,12 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   ScrollTrigger.create({ trigger: screen, start: 'top 75%', once: true, onEnter: () => refresh(screen) });
   gsap.from('.posts li, .desk .all', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', stagger: 0.07, scrollTrigger: { trigger: '.posts', start: 'top 80%', once: true } });
 
+  // 近况：四行沿阅读方向展开
+  gsap.from('.lately li', { opacity: 0, x: -28, duration: 0.6, ease: 'power3.out', stagger: 0.07, scrollTrigger: { trigger: '.lately', start: 'top 80%', once: true } });
+
   // 联系：屏幕刷一次进入待机
   const standby = $('[data-standby]')!;
   ScrollTrigger.create({ trigger: standby, start: 'top 75%', once: true, onEnter: () => refresh(standby) });
 });
 mm.add('(prefers-reduced-motion: reduce)', () => pick('0'));
+

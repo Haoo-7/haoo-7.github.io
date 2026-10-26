@@ -63,6 +63,38 @@
 .posts li.later { color: var(--ink-2); font-style: italic; font-size: 22px; }
 .desk .all { margin-top: 48px; }
 
+/* 关于：一帧拆成三帧。默认就是拆好的样子，桌面端开着动效时由脚本先合上再随滚动拆开 */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) var(--stage-w); align-items: start; min-height: 100svh; padding: 130px var(--x) 60px; --stage-w: min(calc(var(--page) * 760 / 1440), calc((100svh - 220px) * 760 / 680)); }
+.about-l { padding-right: 40px; }
+.about .h2 { font-size: clamp(52px, 5.56vw, 80px); margin-top: 22px; }
+.facts { list-style: none; max-width: 440px; margin-top: clamp(40px, 6vw, 96px); }
+.facts li { padding: 14px 0; color: var(--ink-2); transition: color .3s steps(2); }
+.facts li.on { color: var(--ink); }
+.facts .mono { display: block; margin-bottom: 6px; color: inherit; }
+.facts p { font-family: var(--sans); font-size: 19px; line-height: 1.45; }
+.about .all { margin-top: 28px; }
+.frames { position: relative; aspect-ratio: 760 / 640; overflow: hidden; }
+.strip { position: absolute; inset: 0; background: var(--screen-bg); }
+.strip img { position: absolute; left: 0; top: 0; width: 66.842%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .3s; }
+.strip[data-s="0"] { clip-path: inset(0 67.895% 0 0); } .strip[data-s="0"] img { transform: translateX(-25.984%); }
+.strip[data-s="1"] { clip-path: inset(0 33.947% 0 33.947%); } .strip[data-s="1"] img { transform: translateX(24.803%); }
+.strip[data-s="2"] { clip-path: inset(0 0 0 67.895%); } .strip[data-s="2"] img { transform: translateX(75.591%); }
+/* 等候的帧整块调淡，但仍不透明：下面一层不会透上来 */
+.strip.dim img { filter: grayscale(1) brightness(1.32) contrast(.5); }
+.caps { position: relative; height: 20px; margin-top: 16px; color: var(--ink-2); }
+.caps span { position: absolute; top: 0; white-space: nowrap; }
+.caps b { font-weight: 400; color: inherit; }
+.caps span:nth-child(2) { left: 33.947%; } .caps span:nth-child(3) { left: 67.895%; }
+
+/* 近况：无框大字列表 */
+.now { padding: 120px var(--x) 140px; }
+.lately { list-style: none; margin-top: 64px; }
+.lately li { display: flex; align-items: baseline; gap: 34px; padding: 10px 18px; margin: 0 -18px; font-size: clamp(34px, 4.44vw, 64px); letter-spacing: -.03em; line-height: 1.12; transition: background-color .2s; }
+.lately li:hover { background: var(--hover); }
+.lately em { font-style: italic; font-weight: 300; }
+.egg { margin-left: auto; white-space: nowrap; flex: none; color: var(--ink-2); opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s; letter-spacing: 0; }
+.lately li:hover .egg, .lately li:focus-within .egg { opacity: 1; transform: none; }
+
 @media (max-width: 1279px) {
   .desk { min-height: 0; overflow: visible; }
   .desk > .desk-crop { position: relative; inset: auto; aspect-ratio: 1.412; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 88%, transparent 100%); }
@@ -90,6 +122,16 @@
   .bench .tray { --aw: 190%; --ay: -31.6%; --tray-mask: linear-gradient(180deg, #000, #000); }
   .works { order: 3; max-width: none; margin-top: 24px; }
   .bench .all { order: 4; justify-self: start; }
+
+  .about { grid-template-columns: 1fr; min-height: 0; padding: 120px var(--x) 40px; --stage-w: 100%; }
+  .about-l { display: contents; }
+  .about .head { order: 1; }
+  .about .stage { order: 2; margin: 48px 0 0; }
+  .about .facts { order: 3; max-width: 640px; margin-top: 32px; }
+  .about .all { order: 4; justify-self: start; }
+  .caps { font-size: 11px; }
+  .lately li { flex-wrap: wrap; gap: 6px 24px; }
+  .egg { margin-left: 0; opacity: 1; transform: none; white-space: normal; }
 }
 @media (max-width: 767px) {
   .hero { padding-top: 96px; }
@@ -100,5 +142,10 @@
   .posts li.later { font-size: 19px; }
   .desk > .desk-crop { aspect-ratio: .941; }
   .desk-art { --aw: 300%; --ax: -120.8%; --ay: -31.25%; }
+  .caps span { font-size: 10px; letter-spacing: .02em; }
+  .caps span b { display: none; }
+  .now { padding: 96px var(--x) 100px; }
+  .lately { margin-top: 40px; }
+  .lately li { padding: 12px 0; margin: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .scrollhint i { animation: none; } }
