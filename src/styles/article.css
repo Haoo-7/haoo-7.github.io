@@ -13,7 +13,7 @@
 
 /* 封面和正文里的图保留原色：整站只有内容图带颜色 */
 .post-cover { grid-column: 2 / 4; grid-row: 2; margin-top: 56px; max-width: 960px; }
-.post-cover img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--screen-bg); }
+.post-cover img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--screen-bg); filter: grayscale(1) contrast(1.02); }
 
 .side { grid-column: 1; grid-row: 3 / span 2; padding-top: 72px; }
 .toc { position: sticky; top: 100px; max-height: calc(100svh - 130px); overflow: auto; overscroll-behavior: contain; }
