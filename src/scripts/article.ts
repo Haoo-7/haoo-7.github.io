@@ -1,4 +1,4 @@
-import { $, $$ } from './core';
+import { $, $$, reduce } from './core';
 
 // 窄屏目录默认收起
 const toc = $<HTMLDetailsElement>('[data-toc]');
@@ -28,8 +28,21 @@ const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update
 addEventListener('scroll', queue, { passive: true });
 addEventListener('resize', queue);
 update();
-// 窄屏点了目录里的一章，就把目录收起
-links.forEach((a) => a.addEventListener('click', () => { if (toc && matchMedia('(max-width: 1023px)').matches) toc.open = false; }));
+// 页内跳转（目录、脚注回链、跳到正文）只换掉地址栏里的 #，不往历史里加一条，回退直接回上一页
+document.addEventListener('click', (e) => {
+  const a = (e.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
+  if (!a || a.hasAttribute('data-footnote-ref') || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const hash = a.getAttribute('href')!;
+  const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  if (!el.hasAttribute('tabindex') && !el.matches('a, button, input, select, textarea')) el.setAttribute('tabindex', '-1');
+  el.focus({ preventScroll: true });
+  history.replaceState(history.state, '', hash);
+  // 窄屏点了目录里的一章，就把目录收起
+  if (a.hasAttribute('data-to') && toc && matchMedia('(max-width: 1023px)').matches) toc.open = false;
+});
 
 // 上标和它前面的一个字、后面紧跟的标点绑在一起，不让它们被折到下一行开头
 $$('sup', prose).forEach((sup) => {
