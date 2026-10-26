@@ -1,0 +1,87 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { kind, platforms, readingMinutes } from '../../data/posts';
+import '../../styles/article.css';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('posts', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return posts.map((post, i) => ({
+    params: { slug: post.slug },
+    props: { post, next: posts[(i + 1) % posts.length] },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  next: CollectionEntry<'posts'>;
+}
+const { post, next } = Astro.props;
+const { Content, headings } = await render(post);
+// 目录只列二级标题，注释区不算
+const chapters = headings.filter((h) => h.depth === 2 && h.slug !== 'footnote-label' && h.text !== '注释');
+const { title, titleEn, description, tldr, pubDate, cover, externalPublications } = post.data;
+const date = pubDate.toISOString().slice(0, 10);
+const where = platforms(post);
+// 两篇旧标题里有词不能断开
+const keep: Record<string, string> = { 'ai-assisted-learning': '纸笔拓荒', 'kindle-paperwhite-3': '高中生' };
+const word = keep[post.slug] ?? '';
+const [before, after] = word && title.includes(word) ? title.split(word) : [title, undefined];
+---
+<Base title={titleEn ?? title} description={description} active="/writing/" progress image={cover} type="article">
+  <article class="post" lang="zh-CN">
+    <a class="back mono" href="/writing/" lang="en">← All writing</a>
+    <header class="post-head">
+      <p class="kick mono" lang="en"><b>{kind(post)}</b><time datetime={date}>{date}</time><span>{readingMinutes(post)} min read</span><span>In Chinese</span></p>
+      <h1 class="post-title">{after === undefined ? title : <>{before}<span class="keep">{word}</span>{after}</>}</h1>
+      {titleEn && <p class="post-en" lang="en">{titleEn}</p>}
+      <p class="tldr"><span class="mono" lang="en">TL;DR</span>{tldr}</p>
+    </header>
+
+    <figure class="post-cover">
+      <img src={cover} alt="" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <aside class="side" lang="en">
+      {chapters.length > 0 && (
+        <details class="toc" open data-toc>
+          <summary class="mono">Contents <span aria-hidden="true">+</span></summary>
+          <nav aria-label="Contents">
+            <ol>
+              {chapters.map((c, i) => (
+                <li><a href={`#${c.slug}`} data-to={c.slug} lang="zh-CN"><span class="mono" lang="en">{String(i + 1).padStart(2, "0")}</span><span>{c.text}</span></a></li>
+              ))}
+            </ol>
+          </nav>
+        </details>
+      )}
+    </aside>
+
+    <div class="prose" id="prose">
+      <Content />
+    </div>
+
+    <footer class="post-foot" lang="en">
+      {externalPublications.length > 0 && (
+        <p class="also mono">
+          <span>Also published on</span>
+          {externalPublications.map((p, i) => (
+            <a href={p.url} rel="noopener" target="_blank">{where[i]} ↗</a>
+          ))}
+        </p>
+      )}
+      {next.id !== post.id && (
+        <a class="next" href={`/writing/${next.slug}/`}>
+          <span class="mono">Next · {kind(next)}</span>
+          <span class="next-t" lang="zh-CN">{next.data.title}</span>
+          {next.data.titleEn && <span class="next-en">{next.data.titleEn}</span>}
+        </a>
+      )}
+    </footer>
+  </article>
+</Base>
+
+<script>
+  import '../../scripts/article';
+</script>

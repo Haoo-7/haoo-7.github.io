@@ -35,7 +35,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="preload" href="/fonts/refresh/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
     <slot name="head" />
   </head>
-  <body>
+  <body id="top">
     <a class="skip mono" href="#main">Skip to content</a>
     <Bar active={active} progress={progress} />
     <main id="main" class="page">

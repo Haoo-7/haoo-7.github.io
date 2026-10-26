@@ -16,7 +16,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft))
 const items = posts.map((post, i) => readerItem(post, i, posts.length));
 ---
 <Base hello={false}>
-  <section class="hero" id="top">
+  <section class="hero">
     <div class="hero-l">
       <h1 class="words" aria-label="Life, Tech and History">
         <ol>
