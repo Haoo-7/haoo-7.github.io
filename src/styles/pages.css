@@ -12,7 +12,7 @@
 .tray-zoom .tray { --aw: 203.7%; --ax: -11.11%; --ay: -27.78%; --tray-mask: linear-gradient(#000, #000); }
 .work-cap { margin-top: 16px; color: var(--ink-2); }
 .dossiers { list-style: none; }
-.dossier { padding: 28px 0 88px; border-top: 1px solid var(--ink); }
+.dossier { padding: 28px 0 88px; border-top: 1px solid var(--ink); scroll-margin-top: 90px; }
 .dossier + .dossier { margin-top: 24px; }
 .d-n { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--ink-2); }
 .d-n b { color: var(--ink); font-weight: 500; }
