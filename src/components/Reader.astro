@@ -1,0 +1,24 @@
+---
+// 晨光书桌上的阅读器：文章在它的屏幕上刷新
+interface Props {
+  meta: string;
+  title: string;
+  dek: string;
+  n: string;
+  source: string;
+  class?: string;
+}
+const { meta, title, dek, n, source, class: cls = '' } = Astro.props;
+---
+<div class:list={['crop desk-crop', cls]}>
+  <div class="art desk-art" style="--ar: 3 / 2">
+    <img class="img" src="/images/refresh/reader.jpg" width="1536" height="1024" alt="An e-reader, a pencil and an open notebook on a wooden desk in morning light" loading="lazy" decoding="async" />
+    <div class="screen pin partial" data-screen aria-hidden="true" style="--W:1440;--H:960;--l:700;--t:274;--w:244;--h:344">
+      <span class="s-meta" data-s="meta">{meta}</span>
+      <span class="s-title" data-s="title">{title}</span>
+      <span class="s-dek" data-s="dek">{dek}</span>
+      <span class="s-foot"><span data-s="n">{n}</span><span data-s="source">{source}</span></span>
+      <div class="flash"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+/* 托盘：有作品的格子平时挂着编号，选中时框出来；空格只在选中时显出虚线 */
+.tray .img { -webkit-mask-image: var(--tray-mask); mask-image: var(--tray-mask); -webkit-mask-composite: source-in; mask-composite: intersect; }
+.tray { --tray-mask: linear-gradient(90deg, #000 56%, transparent 76%), linear-gradient(180deg, transparent 0, #000 9%, #000 90%, transparent 100%); }
+.cell { border: 1.5px solid transparent; transform: scale(1.04); transition: border-color var(--t-fast), transform .22s cubic-bezier(.3, 1.6, .5, 1); pointer-events: none; }
+.cell b { position: absolute; left: -1.5px; bottom: 100%; margin-bottom: 6px; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .04em; background: rgba(18, 18, 18, .55); color: var(--flash-light); padding: 3px 6px; transition: background-color var(--t-fast), opacity var(--t-fast); }
+.cell.on { border-color: var(--ink); transform: none; }
+.cell.on b { background: var(--ink); }
+.cell.empty b { opacity: 0; background: var(--flash-light); color: var(--ink); }
+.cell.empty.on { border-style: dashed; border-color: var(--flash-light); }
+.cell.empty.on b { opacity: 1; }
+
+/* 阅读器：手机和平板上把图放大、只留阅读器那一块 */
+.desk-art .screen { z-index: 1; }
+
+/* 黄昏待机屏 */
+.dusk-crop { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 84%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 14%, #000 84%, transparent 100%); }
+.dusk-art .dusk-img { position: absolute; left: -10.833%; top: -37.58%; right: auto; bottom: auto; width: 124.79%; height: auto; max-width: none; }
+.standby { display: flex; flex-direction: column; color: var(--screen-ink); padding: 1.39cqw 1.25cqw 1.25cqw; }
+.standby .sb-mono { font-family: var(--mono); font-size: max(7px, .73cqw); letter-spacing: .04em; text-transform: uppercase; color: var(--screen-ink-2); }
+.standby .big { font-size: 5.69cqw; letter-spacing: -.045em; line-height: 1; margin-top: auto; font-variant-numeric: tabular-nums; }
+.standby .where { margin-top: .7cqw; }
+.standby .sleep { font-family: var(--serif); font-style: italic; font-size: max(9px, .97cqw); line-height: 1.45; color: var(--screen-ink-2); margin-top: 1.25cqw; }
+
+.hello { padding-bottom: 140px; }
+.dusk-wrap { position: relative; }
+.hello .head { position: absolute; left: var(--x); top: 61.3%; }
+.hello .h2 { font-size: clamp(56px, 7.22vw, 104px); margin-top: 18px; }
+.hello-body { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); padding: 60px var(--x) 0; }
+.hello-l { display: flex; flex-direction: column; align-items: flex-start; }
+.mail { font-family: var(--sans); font-weight: 500; font-size: clamp(26px, 3.06vw, 44px); letter-spacing: -.02em; color: var(--blue); border-bottom: 1.5px solid var(--blue); padding-bottom: 4px; overflow-wrap: anywhere; }
+.copy { margin-top: 34px; color: var(--ink-2); display: flex; gap: 10px; align-items: center; min-height: 24px; }
+.copy:hover .lab { color: var(--ink); }
+.copy .ok { color: var(--ink); opacity: 0; transition: opacity .2s; }
+.copy.done .ok { opacity: 1; }
+.hello .more { margin-top: 40px; }
+.elsewhere { list-style: none; }
+.elsewhere li { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--rule); }
+.elsewhere li:last-child { border-bottom: 1px solid var(--rule); }
+.elsewhere a { font-size: 24px; }
+.elsewhere a:hover { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.elsewhere .mono { color: var(--ink-2); }
+
+/* 小于 1280：图片放大裁到主角那一块，文字排到图外 */
+@media (max-width: 1279px) {
+  .dusk-crop { aspect-ratio: 1.714; }
+  .dusk-art { --aw: 200%; --ax: -51.5%; --ay: -13.89%; }
+  .hello .head { position: static; padding: 8px var(--x) 0; }
+}
+@media (max-width: 1023px) {
+  .hello { padding-bottom: 88px; }
+  .hello-body { grid-template-columns: 1fr; gap: 48px; padding-top: 36px; }
+  .copy { margin-top: 24px; }
+  .hello .more { margin-top: 28px; }
+}
+@media (max-width: 767px) {
+  .dusk-crop { aspect-ratio: 1.143; }
+  .dusk-art { --aw: 300%; --ax: -102.3%; --ay: -20.83%; }
+  .elsewhere a { font-size: 21px; }
+}

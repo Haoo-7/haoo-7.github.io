@@ -1,0 +1,37 @@
+@font-face { font-family: "Lit"; src: url("/fonts/refresh/literata.woff2") format("woff2"); font-weight: 300 800; font-display: block; }
+@font-face { font-family: "Lit"; src: url("/fonts/refresh/literata-italic.woff2") format("woff2"); font-style: italic; font-weight: 300 800; font-display: block; }
+@font-face { font-family: "Sans"; src: url("/fonts/refresh/instrument-sans.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Mono"; src: url("/fonts/refresh/plex-mono-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Mono"; src: url("/fonts/refresh/plex-mono-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+:root {
+  /* 纸和墨：整站只有灰阶，蓝色只给链接和焦点 */
+  --paper: #EFEEEA;
+  --paper-rgb: 239, 238, 234;
+  --ink: #121212;
+  --ink-2: #5E5E5A;
+  --dim: #858480;
+  --rule: #C9C8C3;
+  --blue: #2E6FA8;
+  --screen-bg: #DCDBD6;
+  --screen-ink: #1A1A1A;
+  --screen-ink-2: #3C3C3A;
+  --flash-dark: #111;
+  --flash-light: #F4F4F1;
+  --hover: rgba(18, 18, 18, .045);
+
+  /* 字体：Literata 是正文与大字，中文落到系统宋体 */
+  --serif: "Lit", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  --sans: "Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", system-ui, sans-serif;
+  --mono: "Mono", ui-monospace, "PingFang SC", monospace;
+
+  /* 页面：最宽 1440，两侧留白随视口收窄 */
+  --page: min(100vw, 1440px);
+  --x: clamp(20px, 5.56vw, 80px);
+  --col-r: 39.6875%; /* 右栏 508 / 1280 */
+
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --t-fast: .18s;
+  --t-mid: .24s;
+  --t-slow: .32s;
+}

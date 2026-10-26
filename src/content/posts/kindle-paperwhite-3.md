@@ -2,6 +2,10 @@
 title: "数码杂谈 | Kindle PaperWhite 3：为什么我推荐高中生使用电子书？"
 description: "一台二手 Kindle PaperWhite 3 如何陪伴高中学习：阅读、背单词、看课件，以及它无法回避的缺陷。"
 tldr: "一台二手 Kindle PaperWhite 3 不只是阅读器：它陪我完成了高中阶段的阅读、背词和课件学习。文章同时讨论停服、越狱、输入和生态限制，说明它适合谁、又不适合谁。"
+titleEn: "Kindle Paperwhite 3: why I’d hand one to a high-schooler"
+shortEn: "Kindle Paperwhite 3, for a high-schooler"
+dekEn: "Reading, vocabulary and class slides on a second-hand e-reader, and where it falls short."
+kind: review
 pubDate: 2026-01-26
 tags:
   - Kindle

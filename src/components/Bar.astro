@@ -1,0 +1,21 @@
+---
+import { siteConfig } from '../data/site';
+
+interface Props {
+  active?: string;
+  progress?: boolean;
+}
+const { active, progress = false } = Astro.props;
+---
+<header class="bar mono" id="bar">
+  <div class="bar-in">
+    <a class="brand" href="/" aria-label="Haoo, home">Haoo</a>
+    <nav class="nav" aria-label="Main">
+      {siteConfig.navigation.map((item) => (
+        <a href={item.href} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="clock" aria-label="Local time in Guangzhou"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
+  </div>
+  {progress && <i class="progress" id="progress" aria-hidden="true"></i>}
+</header>

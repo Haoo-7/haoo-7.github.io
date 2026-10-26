@@ -14,29 +14,23 @@ export interface SiteConfig {
   tagline: string;
   description: string;
   navigation: NavItem[];
-  emails: Array<{ label: string; address: string }>;
-  wechat: { label: string; account: string };
+  email: string;
   socialLinks: SocialLink[];
 }
 
 export const siteConfig = {
   name: 'Haoo',
-  tagline: '让科技改变生活',
-  description: '记录数码工具、学习方法与真实使用体验的中文个人博客。',
+  tagline: 'Life, Tech & History',
+  description: 'Haoo is a history student who builds like an engineer. Projects, essays, tech reviews and some history research.',
   navigation: [
-    { label: '文章', href: '/posts/' },
-    { label: '项目', href: '/projects/' },
-    { label: '记录', href: '/records/' },
-    { label: '关于', href: '/about/' },
+    { label: 'Work', href: '/work/' },
+    { label: 'Writing', href: '/writing/' },
+    { label: 'About', href: '/about/' },
   ],
-  emails: [
-    { label: 'QQ 邮箱', address: 're11.zhou@qq.com' },
-    { label: 'Gmail', address: 're11.zhou@gmail.com' },
-  ],
-  wechat: { label: '微信公众号', account: 'Haoo Blog' },
+  email: 're11.zhou@gmail.com',
   socialLinks: [
-    { label: 'Bilibili', href: 'https://space.bilibili.com/438365760', handle: 'Haoo_117c' },
-    { label: '少数派', href: 'https://sspai.com/u/6veuyub4/updates', handle: 'Haoo_7' },
     { label: 'GitHub', href: 'https://github.com/QVQSmile', handle: 'QVQSmile' },
+    { label: 'Bilibili', href: 'https://space.bilibili.com/438365760', handle: 'Haoo_117c' },
+    { label: 'sspai', href: 'https://sspai.com/u/6veuyub4/updates', handle: 'Haoo_7' },
   ],
 } satisfies SiteConfig;

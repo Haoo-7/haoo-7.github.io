@@ -1,0 +1,23 @@
+---
+// 切割垫上的分格盒就是作品目录：01、02 有作品，03–06 空着
+interface Props {
+  class?: string;
+}
+const { class: cls = '' } = Astro.props;
+const cells = [
+  { n: '01', c: '0', l: 132, t: 215, w: 122, h: 137 },
+  { n: '02', c: '1', l: 266, t: 215, w: 123, h: 137 },
+  { n: '03', c: 'later', l: 397, t: 215, w: 126, h: 137 },
+  { n: '04', c: 'later', l: 132, t: 359, w: 122, h: 135 },
+  { n: '05', c: 'later', l: 266, t: 359, w: 123, h: 135 },
+  { n: '06', c: 'later', l: 397, t: 359, w: 126, h: 135 },
+];
+---
+<div class:list={['crop tray-crop', cls]} aria-hidden="true">
+  <div class="art tray" style="--ar: 1100 / 733">
+    <img class="img" src="/images/refresh/bench.jpg" width="1536" height="1024" alt="" loading="lazy" decoding="async" />
+    {cells.map((cell) => (
+      <div class:list={['cell pin', { empty: cell.c === 'later' }]} data-cell={cell.c} style={`--W:1100;--H:733;--l:${cell.l};--t:${cell.t};--w:${cell.w};--h:${cell.h}`}><b>{cell.n}</b></div>
+    ))}
+  </div>
+</div>

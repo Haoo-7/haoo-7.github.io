@@ -2,6 +2,10 @@
 title: "年度征文｜效率杂谈：告别纸笔拓荒，怎么用 AI 来辅助学习？"
 description: "从纸笔到 XMind、Obsidian 与 NotebookLM，一位人文社科大学生亲历的 AI 辅助学习系统。"
 tldr: "这篇文章复盘了我从纸笔、思维导图到 Obsidian 与 NotebookLM 的学习系统，重点讲清工具如何分工、AI 如何基于可靠信息源参与整理与复习，以及这套方法对大学生的适用边界。"
+titleEn: "How I use AI to study: from pen and paper to NotebookLM"
+shortEn: "How I use AI to study"
+dekEn: "From pen and paper to XMind, Obsidian and NotebookLM: who does what, and where AI fits."
+kind: essay
 pubDate: 2026-03-18
 tags:
   - 学习

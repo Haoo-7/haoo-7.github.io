@@ -1,0 +1,42 @@
+---
+import { siteConfig } from '../data/site';
+
+// 同一张书桌到了傍晚，阅读器进入待机，显示广州时间
+interface Props {
+  fig: string;
+  more?: { label: string; href: string };
+}
+const { fig, more } = Astro.props;
+---
+<section class="hello" id="contact" aria-labelledby="contact-h">
+  <div class="dusk-wrap">
+    <div class="crop dusk-crop">
+      <div class="art dusk-art" style="--ar: 1440 / 620">
+        <img class="dusk-img" src="/images/refresh/dusk.jpg" width="1797" height="1198" alt="The same desk at dusk, the e-reader asleep with a clock on its screen" loading="lazy" decoding="async" />
+        <div class="standby pin partial" data-standby aria-hidden="true" style="--W:1440;--H:620;--l:606;--t:138;--w:250;--h:345">
+          <span class="sb-mono">Standby</span>
+          <span class="big" data-time>--:--</span>
+          <span class="sb-mono where">Guangzhou · UTC+8</span>
+          <p class="sleep">Probably at a desk, building something.</p>
+          <div class="flash"></div>
+        </div>
+      </div>
+    </div>
+    <div class="head">
+      <p class="kick mono"><b>Fig. {fig}</b> Contact</p>
+      <h2 class="h2" id="contact-h" data-split>Say <em>hello.</em></h2>
+    </div>
+  </div>
+  <div class="hello-body">
+    <div class="hello-l">
+      <a class="mail" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+      <button class="copy mono" type="button" data-copy={siteConfig.email}><span class="lab">Copy address</span><span class="ok" aria-live="polite"></span></button>
+      {more && <a class="go mono more" href={more.href}>{more.label}</a>}
+    </div>
+    <ul class="elsewhere" aria-label="Elsewhere">
+      {siteConfig.socialLinks.map((link) => (
+        <li><a href={link.href} rel="me noopener">{link.label}</a><span class="mono">{link.handle} ↗</span></li>
+      ))}
+    </ul>
+  </div>
+</section>

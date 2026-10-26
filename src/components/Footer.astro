@@ -1,0 +1,31 @@
+---
+import { siteConfig } from '../data/site';
+
+interface Props {
+  // 首页和 About 自带 Say hello，页脚只留一行
+  hello?: boolean;
+}
+const { hello = true } = Astro.props;
+---
+<footer class="end">
+  <div class="end-in">
+    {hello && (
+      <div class="end-full">
+        <div>
+          <p class="say">Say <em>hello.</em></p>
+          <a class="mail-s" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </div>
+        <ul class="end-links" aria-label="Elsewhere">
+          {siteConfig.socialLinks.map((link) => (
+            <li><a href={link.href} rel="me noopener">{link.label}</a><span class="mono">{link.handle} ↗</span></li>
+          ))}
+        </ul>
+      </div>
+    )}
+    <div class="end-line mono">
+      <a class="brand" href="/">Haoo</a>
+      <span class="tag">Life, Tech &amp; History · Built by hand in Guangzhou · 2026</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
