@@ -29,7 +29,7 @@ export const siteConfig = {
   ],
   email: 're11.zhou@gmail.com',
   socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/QVQSmile', handle: 'QVQSmile' },
+    { label: 'GitHub', href: 'https://github.com/Haoo-7', handle: 'Haoo-7' },
     { label: 'Bilibili', href: 'https://space.bilibili.com/438365760', handle: 'Haoo_117c' },
     { label: 'sspai', href: 'https://sspai.com/u/6veuyub4/updates', handle: 'Haoo_7' },
   ],

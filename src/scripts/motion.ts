@@ -27,6 +27,7 @@ if (!reduce) {
 
 // 标题按行升起，说明文字淡入；进页后各做一次
 export const rises = () => {
+  if (reduce) return;
   $$('[data-split]').forEach((h) => {
     const s = new SplitText(h, { type: 'lines', mask: 'lines' });
     s.masks.forEach((m) => m.classList.add('split-mask'));

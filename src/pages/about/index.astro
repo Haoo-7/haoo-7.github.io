@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hello from '../../components/Hello.astro';
+import { frames } from '../../data/frames';
+import '../../styles/parts.css';
+import '../../styles/pages.css';
+
+// 三段各配首屏的一帧；文案比首页那一句多说一点
+const chapters = [
+  {
+    h: 'Getting a little better, <em>on purpose.</em>',
+    p: [
+      'Probably not headed for academia. What I care about is the slow kind of progress: reading on how people grow, keeping notes I actually come back to, and habits that survive a busy term.',
+      'Off the desk I play Brawlhalla, casually.',
+    ],
+  },
+  {
+    h: 'I’d rather build the tool <em>than wait for it.</em>',
+    p: [
+      'People who meet me assume I study engineering. I play with AI mostly to study faster, tinker with software and small hardware, and keep the tools that earn a place.',
+      'Two of them are on the <a href="/work/">bench</a> right now. The reviews and how-tos are under <a href="/writing/">Writing</a>.',
+    ],
+  },
+  {
+    h: 'The big picture, <em>and the people in it.</em>',
+    p: [
+      'I study history at Jinan University in Guangzhou. I like reading the past at two scales at once: the long arc of how societies change, and the ordinary people living inside it.',
+      'Research notes and papers will go up under Writing as they’re ready.',
+    ],
+  },
+];
+---
+<Base title="About" description="Haoo is a history undergrad in Guangzhou who builds like an engineer. About, and how to get in touch." active="/about/" hello={false}>
+  <header class="p-head">
+    <p class="kick mono"><b>About</b><span>Guangzhou · UTC+8</span></p>
+    <h1 class="p-h1" data-split>One person,<br /><em>three frames.</em></h1>
+    <p class="p-lede" data-rise>I’m Haoo, a history undergrad who builds like an engineer. This site is where the three parts meet: life, tech and history.</p>
+  </header>
+
+  <div class="ab">
+    <div class="ab-text">
+      {chapters.map((c, i) => (
+        <section class="chapter" data-ch={String(i)} aria-labelledby={`ch-${i}`}>
+          <p class="ch-n mono"><b>0{i + 1}</b>{frames[i].name}</p>
+          <h2 id={`ch-${i}`} set:html={c.h} />
+          {c.p.map((t) => <p set:html={t} />)}
+        </section>
+      ))}
+    </div>
+    <div class="ab-frame" aria-hidden="true">
+      <div class="frame" data-frame>
+        {frames.map((f, i) => (
+          <img class:list={{ on: i === 0 }} src={`/images/refresh/${f.img}.jpg`} width="733" height="1100" alt="" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+        ))}
+        <div class="flash"></div>
+      </div>
+      <p class="ab-cap mono"><span>Fig. <b data-fig>01</b> <span data-figname>{frames[0].fig}</span></span><span class="ticks">{frames.map((_, i) => <i class:list={{ on: i === 0 }}></i>)}</span></p>
+    </div>
+  </div>
+
+  <section class="colophon" aria-labelledby="colophon-h">
+    <p class="kick mono" id="colophon-h"><b>Colophon</b></p>
+    <p class="big">Built by hand in Guangzhou, <em>one refresh at a time.</em></p>
+    <dl>
+      <div><dt class="mono">Type</dt><dd>Literata, Instrument Sans, IBM Plex Mono</dd></div>
+      <div><dt class="mono">Built with</dt><dd>Astro, GSAP, Lenis</dd></div>
+      <div><dt class="mono">Photographs</dt><dd>Generated for this site, picked by hand</dd></div>
+    </dl>
+  </section>
+
+  <Hello fig="08" />
+</Base>
+
+<script>
+  import { $, $$, refresh } from '../../scripts/core';
+  import { ScrollTrigger, rises } from '../../scripts/motion';
+  import { frames } from '../../data/frames';
+
+  // 读到哪一段，右边那一帧就刷新成哪张
+  const frame = $('[data-frame]')!;
+  const imgs = $$('img', frame);
+  const ticks = $$('.ab-cap .ticks i');
+  const figs = frames.map((f) => f.fig);
+  let cur = 0;
+  const show = (n: number) => {
+    if (n === cur) return;
+    cur = n;
+    refresh(frame, () => {
+      imgs.forEach((im, k) => im.classList.toggle('on', k === n));
+      ticks.forEach((t, k) => t.classList.toggle('on', k === n));
+      $('[data-fig]')!.textContent = '0' + (n + 1);
+      $('[data-figname]')!.textContent = figs[n];
+    });
+  };
+  $$('.chapter').forEach((c) =>
+    ScrollTrigger.create({ trigger: c, start: 'top 55%', end: 'bottom 55%', onToggle: (st) => st.isActive && show(+c.dataset.ch!) }),
+  );
+  ScrollTrigger.create({ trigger: '[data-standby]', start: 'top 75%', once: true, onEnter: () => refresh($('[data-standby]')!) });
+  rises();
+</script>

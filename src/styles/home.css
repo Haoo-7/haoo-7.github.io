@@ -11,14 +11,8 @@
 .intro { margin-top: 58px; max-width: 600px; font-size: 22px; line-height: 1.5; }
 .intro span { color: var(--ink-2); }
 .panel { grid-column: 2; grid-row: 1; align-self: start; cursor: pointer; }
-.frame { position: relative; aspect-ratio: 508 / 640; overflow: hidden; background: var(--screen-bg); }
-.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.02); opacity: 0; }
-.frame img.on { opacity: 1; }
 .cap { margin-top: 16px; display: flex; justify-content: space-between; color: var(--ink-2); }
 .cap b { color: var(--ink); font-weight: 500; }
-.ticks { display: flex; gap: 6px; align-items: center; }
-.ticks i { width: 22px; height: 2px; background: var(--rule); transition: background-color .2s; }
-.ticks i.on { background: var(--ink); }
 .hero .foot { grid-column: 1 / -1; grid-row: 2; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; border-top: 1px solid var(--rule); padding-top: 22px; margin-top: 28px; }
 .makes { display: flex; flex-wrap: wrap; gap: 12px 28px; color: var(--ink-2); }
 .makes a { color: var(--ink); }
@@ -111,7 +105,7 @@
   .words { --wfs: clamp(60px, 13vw, 120px); }
   .intro { margin-top: 32px; font-size: 20px; }
   .panel { grid-column: 1; grid-row: auto; margin-top: 40px; }
-  .frame { aspect-ratio: 4 / 5; }
+  .panel .frame { aspect-ratio: 4 / 5; }
   .hero .foot { grid-column: 1; grid-row: auto; margin-top: 32px; }
 
   .bench { grid-template-columns: 1fr; grid-template-rows: none; padding: 120px var(--x) 24px; }
