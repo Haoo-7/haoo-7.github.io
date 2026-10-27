@@ -1,0 +1,61 @@
+---
+// 首屏黑猫：坐在分隔线上，正对观众。尾巴从线后垂下去，一直通到页面最底部
+// 可爱靠比例：头大、脸颊鼓，身子短而圆，眼睛大而圆
+---
+<div class="cat" data-cat aria-hidden="true">
+  <!-- 上方多留 60 给受惊时跳起来，左右各多留 12 给炸开的尾巴和落地压扁；下边界就是分隔线，尾巴过了线就被裁掉 -->
+  <svg viewBox="-12 -60 164 250" width="164" height="250">
+    <defs>
+      <clipPath id="cat-eyes">
+        <ellipse cx="50" cy="92" rx="11" ry="11.5" />
+        <ellipse cx="78" cy="92" rx="11" ry="11.5" />
+      </clipPath>
+    </defs>
+    <g class="cat-all">
+      <g class="cat-shiver">
+        <!-- 炸毛的尖毛都画在各自形状的后面，平时是空的 -->
+        <path class="cat-fur" data-fur="tail" d="" />
+        <path class="cat-tail" pathLength="1" d="M92 184 C106 183 117 185 121 196 C121.3 210 121.7 225 122 240" />
+        <path class="cat-fur" data-fur="body" d="" />
+        <path class="cat-body" d="M64 108 C48 108 40 120 39 134 C38 148 30 160 30 174 C30 185 37 190 46 190 L82 190 C91 190 98 185 98 174 C98 160 90 148 89 134 C88 120 80 108 64 108 Z" />
+        <path class="cat-line" d="M48 190 C48 184 52 181 56 181 C60 181 63 184 63 190 M65 190 C65 184 68 181 72 181 C76 181 80 184 80 190" />
+        <!-- 收尾：猫把被拽过的尾巴收到身前，绕住前爪。下面一道纸色描边把它和身子分开；平时藏着 -->
+        <g class="cat-wrap" opacity="0">
+          <path class="cat-wrap-gap" pathLength="1" d="M92 182 C82 186 54 187 38 184 C31 182.5 28 179 30 174" />
+          <path class="cat-wrap-ink" pathLength="1" d="M92 182 C82 186 54 187 38 184 C31 182.5 28 179 30 174" />
+        </g>
+        <g class="cat-head">
+          <g class="cat-shake">
+            <path class="cat-ear" data-ear="l" d="M29 84 C28 68 29 54 33 46 C34 44 36 43.5 38 45 C45 51 52 57 57 64 Z" />
+            <path class="cat-ear" data-ear="r" d="M99 84 C100 68 99 54 95 46 C94 44 92 43.5 90 45 C83 51 76 57 71 64 Z" />
+            <path class="cat-fur" data-fur="skull" d="" />
+            <path class="cat-skull" d="M64 62 C86 62 102 74 102 94 C102 110 88 120 64 120 C40 120 26 110 26 94 C26 74 42 62 64 62 Z" />
+            <g class="cat-whisk" data-whisk="l"><path d="M31 100 L9 96 M31 104 L10 107" /></g>
+            <g class="cat-whisk" data-whisk="r"><path d="M97 100 L119 96 M97 104 L118 107" /></g>
+            <path class="cat-nose" d="M62 101 L66 101 L64 103.2 Z" />
+            <path class="cat-mouth" d="M60.5 105 Q62.2 107.4 64 105 Q65.8 107.4 67.5 105" />
+            <!-- 哈气：张开的嘴和两颗小尖牙，平时藏着 -->
+            <g class="cat-hiss" opacity="0">
+              <path class="cat-maw" d="M55.5 104.5 Q64 102.8 72.5 104.5 Q71 117.5 64 118.5 Q57 117.5 55.5 104.5 Z" />
+              <path class="cat-fang" d="M58.2 104.6 L60.8 111.8 L63.4 104 Z M64.6 104 L67.2 111.8 L69.8 104.6 Z" />
+            </g>
+            <g class="cat-eyes">
+              <ellipse class="cat-eye" cx="50" cy="92" rx="11" ry="11.5" />
+              <ellipse class="cat-eye" cx="78" cy="92" rx="11" ry="11.5" />
+              <g clip-path="url(#cat-eyes)">
+                <ellipse class="cat-pupil" data-eye="0" cx="50" cy="92" rx="5" ry="5.8" />
+                <ellipse class="cat-pupil" data-eye="1" cx="78" cy="92" rx="5" ry="5.8" />
+                <circle class="cat-glint" data-eye="0" cx="52.5" cy="88.5" r="1.8" />
+                <circle class="cat-glint" data-eye="1" cx="80.5" cy="88.5" r="1.8" />
+              </g>
+            </g>
+          </g>
+        </g>
+        <!-- 吓一跳那一下，头顶炸开的几道短线 -->
+        <g class="cat-shock" opacity="0">
+          <path d="M18 74 L8 72 M25 50 L17 43 M64 52 L64 40 M103 50 L111 43 M110 74 L120 72" />
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>

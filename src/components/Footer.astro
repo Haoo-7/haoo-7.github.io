@@ -4,8 +4,10 @@ import { siteConfig } from '../data/site';
 interface Props {
   // 首页和 About 自带 Say hello，页脚只留一行
   hello?: boolean;
+  // 首页：猫尾巴挂在 Back to top 的位置，拉它就回到顶部，不再另放链接
+  tail?: boolean;
 }
-const { hello = true } = Astro.props;
+const { hello = true, tail = false } = Astro.props;
 ---
 <footer class="end">
   <div class="end-in">
@@ -22,10 +24,10 @@ const { hello = true } = Astro.props;
         </ul>
       </div>
     )}
-    <div class="end-line mono">
+    <div class:list={['end-line mono', { 'has-tail': tail }]}>
       <a class="brand" href="/">Haoo</a>
       <span class="tag">Life, Tech &amp; History · Built by hand in Guangzhou · 2026</span>
-      <a href="#top">Back to top ↑</a>
+      {tail ? <slot /> : <a href="#top">Back to top ↑</a>}
     </div>
   </div>
 </footer>

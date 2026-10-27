@@ -41,7 +41,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <main id="main" class="page">
       <slot />
     </main>
-    <Footer hello={hello} />
+    <Footer hello={hello} tail={Astro.slots.has('end')}><slot name="end" /></Footer>
     <script>
       import '../scripts/core';
     </script>

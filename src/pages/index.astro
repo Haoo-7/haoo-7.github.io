@@ -4,11 +4,14 @@ import Base from '../layouts/Base.astro';
 import Tray from '../components/Tray.astro';
 import Reader from '../components/Reader.astro';
 import Hello from '../components/Hello.astro';
+import Cat from '../components/Cat.astro';
+import TailTip from '../components/TailTip.astro';
 import { projects } from '../data/projects';
 import { postMeta, readerItem } from '../data/posts';
 import { frames } from '../data/frames';
 import '../styles/parts.css';
 import '../styles/home.css';
+import '../styles/cat.css';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -42,6 +45,7 @@ const items = posts.map((post, i) => readerItem(post, i, posts.length));
     </div>
 
     <div class="foot mono">
+      <Cat />
       <div class="makes">Makes <a href="/work/">Projects</a><a href="/writing/">Essays</a><a href="/writing/">Reviews</a><a href="/writing/">Research</a></div>
       <a class="scrollhint" href="#work"><i aria-hidden="true"></i>Scroll, or keep watching</a>
     </div>
@@ -132,8 +136,10 @@ const items = posts.map((post, i) => readerItem(post, i, posts.length));
   </section>
 
   <Hello fig="08" more={{ label: 'More about me →', href: '/about/#contact' }} />
+  <TailTip slot="end" />
 </Base>
 
 <script>
   import '../scripts/home';
+  import '../scripts/cat';
 </script>

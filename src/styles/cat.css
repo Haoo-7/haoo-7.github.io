@@ -1,0 +1,51 @@
+/* 首屏的黑猫，和页脚右端垂下来的尾巴尖 */
+:root {
+  --cat-w: 120px;
+  --cat-r: calc(var(--col-r) + 48px); /* 猫离首屏右边的距离：坐在左栏文字和照片之间的空白里 */
+}
+
+.hero .foot { position: relative; }
+/* 画布左右各多出 12（共 164 宽），猫本身的大小和位置仍按 140 宽来算 */
+.cat { position: absolute; right: calc(var(--cat-r) - var(--cat-w) * 12 / 140); bottom: calc(100% + 1px); width: calc(var(--cat-w) * 164 / 140); aspect-ratio: 164 / 250; pointer-events: none; }
+.cat svg { display: block; width: 100%; height: 100%; overflow: hidden; }
+.cat-body, .cat-skull, .cat-ear { fill: var(--ink); }
+.cat-tail { fill: none; stroke: var(--ink); stroke-width: 8; stroke-linecap: round; }
+.cat-line { fill: none; stroke: #3A3A38; stroke-width: 1.2; stroke-linecap: round; }
+.cat-whisk path { fill: none; stroke: var(--dim); stroke-width: .8; stroke-linecap: round; }
+.cat-nose { fill: #4A4A47; }
+.cat-mouth { fill: none; stroke: #4A4A47; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+/* 炸毛：一圈尖毛，和身子同一种墨色；尾巴炸开时描边变粗 */
+.cat-fur { fill: var(--ink); stroke: var(--ink); stroke-width: .6; stroke-linejoin: miter; }
+/* 张嘴用中灰，原样大小下也读得出是一张嘴，不是一个灰点 */
+.cat-maw { fill: #7A7A76; }
+/* 绕到身前的尾巴：用 pathLength=1 的虚线从胯部往前画出来 */
+.cat-wrap path { fill: none; stroke-linecap: round; } /* 虚线长度由脚本每帧给，从胯部那头往前长出来 */
+.cat-wrap-gap { stroke: var(--paper); stroke-width: 11; }
+.cat-wrap-ink { stroke: var(--ink); stroke-width: 8; }
+.cat-fang { fill: var(--paper); }
+.cat-shock path { fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; }
+.cat-eye { fill: var(--paper); }
+.cat-pupil { fill: var(--ink); }
+.cat-glint { fill: var(--paper); }
+
+/* 尾巴尖：挂在页脚右端 Back to top 原来的位置，从页脚上沿那条线后面垂下来。
+   这一行下面多留一段空白，往下拉才有地方；按钮框上沿是那条线、下沿是页面底，两头都裁 */
+.end-line.has-tail { position: relative; height: 240px; padding-bottom: 120px; }
+.tailtip { width: 110px; align-self: stretch; }
+.tail-btn { position: absolute; top: 0; right: -52px; width: 160px; height: 100%; overflow: hidden; pointer-events: none; }
+.tail-btn:focus-visible { outline: none; }
+.tail-btn svg { display: block; width: 160px; height: 240px; overflow: visible; touch-action: none; }
+.tail-line { fill: none; stroke: var(--ink); stroke-width: 8; stroke-linecap: round; }
+.tail-grab { fill: none; stroke: transparent; stroke-width: 44; stroke-linecap: round; pointer-events: stroke; cursor: grab; touch-action: none; }
+.tail-btn.drag .tail-grab { cursor: grabbing; }
+.tail-btn:focus-visible .tail-line { stroke: var(--blue); }
+
+@media (max-width: 1023px) {
+  :root { --cat-w: 104px; --cat-r: 0px; }
+  .hero .foot { margin-top: 156px; } /* 留出受惊时跳起来的高度，不碰上面照片的图注 */
+}
+@media (max-width: 767px) {
+  :root { --cat-w: 88px; }
+  .end-line.has-tail { height: auto; padding-bottom: 140px; }
+  .end-line.has-tail .tag { padding-right: 56px; } /* 两行的标语别压到右边垂着的尾巴 */
+}
