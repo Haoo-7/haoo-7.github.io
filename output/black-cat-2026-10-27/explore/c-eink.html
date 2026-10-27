@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C · E-ink cat</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* 墨水屏猫：1 位抖动点阵，坐在当前亮着的那个词的基线上；尾巴过了基线就看不见 */
+  .hero-l { position: relative; }
+  .dots { position: absolute; left: 462px; top: 79px; width: 110px; height: 211px; overflow: hidden; }
+  .dots img { width: 110px; height: 244px; image-rendering: pixelated; }
+  .dots .eye { position: absolute; transform: translate(-50%, -50%); }
+  /* 方块瞳孔：按点阵对齐，一格一格地挪 */
+  .dots .eye i { position: absolute; left: 1px; top: 1px; width: 3px; height: 6px; background: #121212; }
+</style>
+</head>
+<body>
+<header class="bar mono"><div class="bar-in"><a class="brand" href="#">Haoo</a><nav class="nav"><a href="#">Work</a><a href="#">Writing</a><a href="#">About</a></nav><div class="clock"><i class="dot"></i>Guangzhou <b>20:17</b> UTC+8</div></div></header>
+<main class="page">
+  <section class="hero">
+    <div class="hero-l">
+      <h1 class="words" aria-label="Life, Tech and History"><ol>
+        <li><span class="n">01</span><span class="w">Life,</span></li>
+        <li class="on"><span class="n">02</span><span class="w">Tech <em>&amp;</em></span></li>
+        <li><span class="n">03</span><span class="w">History.</span></li>
+      </ol></h1>
+      <div class="dots" aria-hidden="true">
+        <img src="../img/c.png" alt="" />
+        <span class="eye" style="left:42px;top:44px;width:9px;height:8px"><i></i></span>
+        <span class="eye" style="left:71px;top:45px;width:9px;height:8px"><i></i></span>
+      </div>
+      <p class="intro">I’m Haoo, a history student who builds like an engineer. <span>Trying to make life better with technology.</span></p>
+    </div>
+    <div class="panel">
+      <div class="frame"><img class="on" src="assets/tech.jpg" alt="" /></div>
+      <div class="cap mono"><span>Fig. <b>02</b> The workbench</span><span class="ticks"><i></i><i class="on"></i><i></i></span></div>
+    </div>
+    <div class="foot mono">
+      <div class="makes">Makes <a href="#">Projects</a><a href="#">Essays</a><a href="#">Reviews</a><a href="#">Research</a></div>
+      <a class="scrollhint" href="#"><i></i>Scroll, or keep watching</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

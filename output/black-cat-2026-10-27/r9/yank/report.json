@@ -1,0 +1,232 @@
+[
+  {
+    "file": "motion-yank-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "yank",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-yank-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 3427
+      },
+      "mid": {
+        "file": "motion-yank-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 7506
+      },
+      "end": {
+        "file": "motion-yank-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 10871
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 3,
+      "action": "drag",
+      "raw": "drag .tail-grab 0 85"
+    },
+    "durationMs": 10871,
+    "sequence": {
+      "file": "motion-yank-sequence.png",
+      "width": 2656,
+      "height": 1376,
+      "columns": 4,
+      "items": [
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 24,
+          "label": "0.000 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 24,
+          "label": "0.988 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 24,
+          "label": "1.977 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 24,
+          "label": "2.965 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 472,
+          "label": "3.953 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 472,
+          "label": "4.941 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 472,
+          "label": "5.930 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 472,
+          "label": "6.918 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 920,
+          "label": "7.906 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 920,
+          "label": "8.895 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 920,
+          "label": "9.883 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 920,
+          "label": "10.871 s",
+          "labelY": 1328
+        }
+      ],
+      "frames": [
+        {
+          "timeMs": 0,
+          "sourceTimeMs": 0
+        },
+        {
+          "timeMs": 988,
+          "sourceTimeMs": 973
+        },
+        {
+          "timeMs": 1977,
+          "sourceTimeMs": 1973
+        },
+        {
+          "timeMs": 2965,
+          "sourceTimeMs": 2956
+        },
+        {
+          "timeMs": 3953,
+          "sourceTimeMs": 3939
+        },
+        {
+          "timeMs": 4941,
+          "sourceTimeMs": 4939
+        },
+        {
+          "timeMs": 5930,
+          "sourceTimeMs": 5923
+        },
+        {
+          "timeMs": 6918,
+          "sourceTimeMs": 6906
+        },
+        {
+          "timeMs": 7906,
+          "sourceTimeMs": 7906
+        },
+        {
+          "timeMs": 8895,
+          "sourceTimeMs": 8889
+        },
+        {
+          "timeMs": 9883,
+          "sourceTimeMs": 9873
+        },
+        {
+          "timeMs": 10871,
+          "sourceTimeMs": 10871
+        }
+      ]
+    },
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-yank-end.jpg",
+      "different": false,
+      "changedPixels": 2,
+      "maxTilePixels": 2,
+      "pixelRatio": 0.0000015432098765432098
+    }
+  }
+]

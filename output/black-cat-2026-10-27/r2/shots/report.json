@@ -1,0 +1,143 @@
+[
+  {
+    "file": "s1-silhouette.png",
+    "target": "r2/explore/s1-silhouette.html",
+    "name": "s1-silhouette",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "s1-silhouette-@2x.png",
+    "target": "r2/explore/s1-silhouette.html",
+    "name": "s1-silhouette",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "s2-line.png",
+    "target": "r2/explore/s2-line.html",
+    "name": "s2-line",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "s2-line-@2x.png",
+    "target": "r2/explore/s2-line.html",
+    "name": "s2-line",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "s3-pixel.png",
+    "target": "r2/explore/s3-pixel.html",
+    "name": "s3-pixel",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "s3-pixel-@2x.png",
+    "target": "r2/explore/s3-pixel.html",
+    "name": "s3-pixel",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "sheet.png",
+    "width": 3968,
+    "height": 480,
+    "columns": 6,
+    "items": [
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "s1-silhouette",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 2880,
+        "naturalHeight": 1800,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "s1-silhouette · @2x",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "s2-line",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 2880,
+        "naturalHeight": 1800,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1992,
+        "y": 24,
+        "label": "s2-line · @2x",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 2648,
+        "y": 24,
+        "label": "s3-pixel",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 2880,
+        "naturalHeight": 1800,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 3304,
+        "y": 24,
+        "label": "s3-pixel · @2x",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]

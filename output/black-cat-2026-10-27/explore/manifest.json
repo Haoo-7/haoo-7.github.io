@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "project": "Haoo blog · black cat",
+  "brief": "A black cat on the homepage first screen faces the visitor and its eyes follow the pointer. Its tail runs down behind the page and peeks out at the very bottom; pull it too hard and the page snaps back to the top while the cat jumps in fright. The page itself stays as it is: paper, ink, Literata, e-ink refresh.",
+  "round": "cat-01",
+  "candidates": [
+    {
+      "id": "a-photo",
+      "name": "01 Photo cat",
+      "concept": "A real cat that wandered into the same greyscale photography as the workbench, sitting on the hero rule.",
+      "typography": "Unchanged: Literata 400/300 italic for the three words, IBM Plex Mono 400 for labels",
+      "palette": ["#EFEEEA", "#121212", "#5E5E5A"],
+      "traits": ["Generated greyscale photo, white background dropped with multiply", "Sits on the hero rule in the gap between the words and the photo", "Tail hangs over the rule and vanishes below it", "Pupils are code-drawn vertical slits that track the pointer", "Startle: swap to a puffed-fur frame plus a code-driven jump"],
+      "source": "a-photo.html"
+    },
+    {
+      "id": "b-ink",
+      "name": "02 Ink cat",
+      "concept": "A few strokes of sumi ink, perched on top of the photograph with its tail dropping behind it in one brush line.",
+      "typography": "Unchanged: Literata 400/300 italic for the three words, IBM Plex Mono 400 for labels",
+      "palette": ["#EFEEEA", "#111111", "#C9C8C3"],
+      "traits": ["Generated ink-wash painting, ink density becomes alpha", "Crouches on the photo's top edge; the photo drops ~130px to make room", "Tail goes behind the photo, so 'hidden behind the page' is literal", "Pupils are irregular ink dots", "Ties to the History frame (rubbings, thread-bound book)"],
+      "source": "b-ink.html"
+    },
+    {
+      "id": "c-eink",
+      "name": "03 E-ink cat",
+      "concept": "A 1-bit dithered cat that looks like it lives on the e-reader screen, sitting on the baseline of whichever word is lit.",
+      "typography": "Unchanged: Literata 400/300 italic for the three words, IBM Plex Mono 400 for labels",
+      "palette": ["#EFEEEA", "#121212", "#858480"],
+      "traits": ["Generated photo turned into Atkinson dither, 110 dots wide, pixelated", "Sits on the baseline of the lit word; can hop to the next word as frames rotate", "Pupils are square dots that move one cell at a time", "Startle uses the site's own e-ink refresh flash", "Most on-concept with the Refresh direction"],
+      "source": "c-eink.html"
+    }
+  ]
+}

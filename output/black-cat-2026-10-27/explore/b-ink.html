@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>B · Ink cat</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* 水墨猫：蹲在照片的上沿，尾巴一笔垂到照片后面去 */
+  .panel { position: relative; padding-top: 130px; }
+  .panel .frame { position: relative; z-index: 1; aspect-ratio: 508 / 510; }
+  /* 不给 z-index：猫和纸色背景在同一层，正片叠底才能把白底吃掉；照片按文档顺序盖在尾巴上 */
+  .ink { position: absolute; left: 64px; top: calc(130px - 190px); width: 110px; height: 304px; }
+  .ink img { width: 100%; height: 100%; }
+  .ink .eye { position: absolute; transform: translate(-50%, -50%); }
+  /* 墨点瞳孔：不规则的圆，像笔尖点上去的 */
+  .ink .eye i { position: absolute; left: 4%; top: 12%; width: 58%; height: 72%; background: #111; border-radius: 52% 48% 55% 45% / 50% 56% 44% 50%; }
+</style>
+</head>
+<body>
+<header class="bar mono"><div class="bar-in"><a class="brand" href="#">Haoo</a><nav class="nav"><a href="#">Work</a><a href="#">Writing</a><a href="#">About</a></nav><div class="clock"><i class="dot"></i>Guangzhou <b>20:17</b> UTC+8</div></div></header>
+<main class="page">
+  <section class="hero">
+    <div class="hero-l">
+      <h1 class="words" aria-label="Life, Tech and History"><ol>
+        <li><span class="n">01</span><span class="w">Life,</span></li>
+        <li class="on"><span class="n">02</span><span class="w">Tech <em>&amp;</em></span></li>
+        <li><span class="n">03</span><span class="w">History.</span></li>
+      </ol></h1>
+      <p class="intro">I’m Haoo, a history student who builds like an engineer. <span>Trying to make life better with technology.</span></p>
+    </div>
+    <div class="panel">
+      <div class="ink" aria-hidden="true">
+        <img src="../img/b.png" alt="" />
+        <span class="eye" style="left:40.2%;top:13.9%;width:7.6%;height:2.5%"><i></i></span>
+        <span class="eye" style="left:61.6%;top:13.9%;width:7.6%;height:2.5%"><i></i></span>
+      </div>
+      <div class="frame"><img class="on" src="assets/tech.jpg" alt="" /></div>
+      <div class="cap mono"><span>Fig. <b>02</b> The workbench</span><span class="ticks"><i></i><i class="on"></i><i></i></span></div>
+    </div>
+    <div class="foot mono">
+      <div class="makes">Makes <a href="#">Projects</a><a href="#">Essays</a><a href="#">Reviews</a><a href="#">Research</a></div>
+      <a class="scrollhint" href="#"><i></i>Scroll, or keep watching</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

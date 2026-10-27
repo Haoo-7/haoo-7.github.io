@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>03 · Pixel cat</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* 像素猫：20 格宽，每格 5px；画框只到脚底，尾巴过了基线就看不见 */
+  .hero-l { position: relative; }
+  .px { position: absolute; left: 462px; top: 100px; width: 100px; height: 190px; overflow: hidden; }
+  .px img { display: block; width: 100px; height: 255px; image-rendering: pixelated; }
+  .px .pupil { position: absolute; width: 5px; height: 10px; background: var(--ink); }
+</style>
+</head>
+<body>
+<header class="bar mono"><div class="bar-in"><a class="brand" href="#">Haoo</a><nav class="nav"><a href="#">Work</a><a href="#">Writing</a><a href="#">About</a></nav><div class="clock"><i class="dot"></i>Guangzhou <b>20:17</b> UTC+8</div></div></header>
+<main class="page">
+  <section class="hero">
+    <div class="hero-l">
+      <h1 class="words" aria-label="Life, Tech and History"><ol>
+        <li><span class="n">01</span><span class="w">Life,</span></li>
+        <li class="on"><span class="n">02</span><span class="w">Tech <em>&amp;</em></span></li>
+        <li><span class="n">03</span><span class="w">History.</span></li>
+      </ol></h1>
+      <div class="px" aria-hidden="true">
+  <img src="../s3.png" width="20" height="51" alt="" />
+  <i class="pupil" style="left:30px;top:37px"></i>
+  <i class="pupil" style="left:65px;top:37px"></i>
+</div>
+      <p class="intro">I’m Haoo, a history student who builds like an engineer. <span>Trying to make life better with technology.</span></p>
+    </div>
+    <div class="panel">
+      <div class="frame"><img class="on" src="assets/tech.jpg" alt="" /></div>
+      <div class="cap mono"><span>Fig. <b>02</b> The workbench</span><span class="ticks"><i></i><i class="on"></i><i></i></span></div>
+    </div>
+    <div class="foot mono">
+      
+      <div class="makes">Makes <a href="#">Projects</a><a href="#">Essays</a><a href="#">Reviews</a><a href="#">Research</a></div>
+      <a class="scrollhint" href="#"><i></i>Scroll, or keep watching</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

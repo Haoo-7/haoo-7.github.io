@@ -1,0 +1,42 @@
+[
+  {
+    "file": "motion-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 0
+      },
+      "mid": {
+        "file": "motion-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 3050
+      },
+      "end": {
+        "file": "motion-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 6071
+      }
+    },
+    "sampling": {
+      "mode": "recording"
+    },
+    "durationMs": 6071,
+    "consistency": {
+      "status": "mismatch",
+      "reference": "motion-end.jpg",
+      "different": true,
+      "changedPixels": 250,
+      "maxTilePixels": 98,
+      "pixelRatio": 0.00019290123456790122,
+      "original": "record-stream-end.jpg"
+    },
+    "warnings": [
+      "录屏末帧与静止截图差异明显，可能没拍全；静止终态以 motion-end.jpg 为准，已补为录像最后一帧，原末帧保留在 record-stream-end.jpg；过渡请单独重录：node '/Users/haoo/.claude/skills/oil-ui-pro/scripts/shoot.mjs' 'http://localhost:4329/?state=startle' --timeout-scale 2 --out '/Users/haoo/Documents/Haoo-blog/.claude/worktrees/affectionate-mirzakhani-566ecd/output/black-cat-2026-10-27/r8/rec' --size '1440x900' --zoom 1 --record --hold 2000"
+    ]
+  }
+]

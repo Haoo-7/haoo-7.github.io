@@ -1,0 +1,24 @@
+[
+  {
+    "file": "s1-silhouette-@2x.png",
+    "target": "r2/explore/s1-silhouette.html",
+    "name": "s1-silhouette",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "s3-pixel-@2x.png",
+    "target": "r2/explore/s3-pixel.html",
+    "name": "s3-pixel",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  }
+]

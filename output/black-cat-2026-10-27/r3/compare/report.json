@@ -1,0 +1,44 @@
+[
+  {
+    "file": "stitch.png",
+    "width": 1160,
+    "height": 800,
+    "columns": 3,
+    "items": [
+      {
+        "naturalWidth": 360,
+        "naturalHeight": 591,
+        "width": 360,
+        "height": 591,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "之前",
+        "labelY": 623
+      },
+      {
+        "naturalWidth": 360,
+        "naturalHeight": 591,
+        "width": 360,
+        "height": 591,
+        "labelHeight": 32,
+        "x": 400,
+        "y": 24,
+        "label": "精修后",
+        "labelY": 623
+      },
+      {
+        "naturalWidth": 360,
+        "naturalHeight": 720,
+        "width": 360,
+        "height": 720,
+        "labelHeight": 32,
+        "x": 776,
+        "y": 24,
+        "label": "受惊（录屏截帧）",
+        "labelY": 752
+      }
+    ],
+    "issues": []
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "project": "Haoo blog · black cat",
+  "brief": "A black cat on the homepage first screen faces the visitor and its eyes follow the pointer. Its tail runs down behind the page and peeks out at the very bottom; pull it too hard and the page snaps back to the top while the cat jumps in fright. Round 2: graphic, not realistic. The page itself stays as it is.",
+  "round": "cat-02",
+  "candidates": [
+    {
+      "id": "s1-silhouette",
+      "name": "01 Silhouette cat",
+      "concept": "One solid ink shape with designed curves, almond eyes cut out of it; closest to the first SVG, drawn properly this time.",
+      "typography": "Unchanged: Literata 400/300 italic for the three words, IBM Plex Mono 400 for labels",
+      "palette": ["#EFEEEA", "#121212", "#C9C8C3"],
+      "traits": ["Generated flat silhouette, traced to SVG with potrace", "Sits on the hero rule in the gap between the words and the photo", "Tail hangs behind the rule and is clipped there", "Slit pupils sit behind the shape and show through the eye holes", "Ears, head and tail are separate paths, so startle can be animated"],
+      "source": "s1-silhouette.html"
+    },
+    {
+      "id": "s2-line",
+      "name": "02 One-line cat",
+      "concept": "A cat drawn in the same thin line as the page's rules; its tail lands on the hero rule and becomes the rule.",
+      "typography": "Unchanged: Literata 400/300 italic for the three words, IBM Plex Mono 400 for labels",
+      "palette": ["#EFEEEA", "#121212", "#C9C8C3"],
+      "traits": ["Generated one-line drawing, traced to SVG; tail redrawn in code", "Sits on the hero rule; tail runs right along it and fades from ink into the rule's grey", "The page's own lines are the tail, so pulling it at the bottom reads literally", "Round pupils inside small ring eyes", "Lightest presence of the three; reads as outline, not a black cat"],
+      "source": "s2-line.html"
+    },
+    {
+      "id": "s3-pixel",
+      "name": "03 Pixel cat",
+      "concept": "A 20-cell-wide 1-bit icon, like an early Mac system icon or a Kindle screensaver sprite.",
+      "typography": "Unchanged: Literata 400/300 italic for the three words, IBM Plex Mono 400 for labels",
+      "palette": ["#EFEEEA", "#121212", "#858480"],
+      "traits": ["Generated pixel art, resampled to a clean 20x51 grid, 5px cells", "Sits on the baseline of the lit word; can hop as the three frames rotate", "Pupils are one-cell blocks that jump cell by cell", "Startle swaps to a second sprite through the site's e-ink refresh flash", "Most playful; strongest tie to the e-ink concept"],
+      "source": "s3-pixel.html"
+    }
+  ]
+}

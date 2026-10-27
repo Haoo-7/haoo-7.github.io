@@ -1,0 +1,462 @@
+[
+  {
+    "file": "motion-tug-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "tug",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-tug-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 3256
+      },
+      "mid": {
+        "file": "motion-tug-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 3767
+      },
+      "end": {
+        "file": "motion-tug-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 7179
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 3,
+      "action": "drag",
+      "raw": "drag .tail-grab 0 40"
+    },
+    "durationMs": 7179,
+    "sequence": {
+      "file": "motion-tug-sequence.png",
+      "width": 2656,
+      "height": 1376,
+      "columns": 4,
+      "items": [
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 24,
+          "label": "0.000 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 24,
+          "label": "0.653 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 24,
+          "label": "1.305 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 24,
+          "label": "1.958 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 472,
+          "label": "2.611 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 472,
+          "label": "3.263 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 472,
+          "label": "3.916 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 472,
+          "label": "4.569 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 920,
+          "label": "5.221 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 920,
+          "label": "5.874 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 920,
+          "label": "6.527 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 920,
+          "label": "7.179 s",
+          "labelY": 1328
+        }
+      ],
+      "frames": [
+        {
+          "timeMs": 0,
+          "sourceTimeMs": 0
+        },
+        {
+          "timeMs": 653,
+          "sourceTimeMs": 650
+        },
+        {
+          "timeMs": 1305,
+          "sourceTimeMs": 1300
+        },
+        {
+          "timeMs": 1958,
+          "sourceTimeMs": 1950
+        },
+        {
+          "timeMs": 2611,
+          "sourceTimeMs": 2600
+        },
+        {
+          "timeMs": 3263,
+          "sourceTimeMs": 3250
+        },
+        {
+          "timeMs": 3916,
+          "sourceTimeMs": 3900
+        },
+        {
+          "timeMs": 4569,
+          "sourceTimeMs": 4567
+        },
+        {
+          "timeMs": 5221,
+          "sourceTimeMs": 5216
+        },
+        {
+          "timeMs": 5874,
+          "sourceTimeMs": 5866
+        },
+        {
+          "timeMs": 6527,
+          "sourceTimeMs": 6516
+        },
+        {
+          "timeMs": 7179,
+          "sourceTimeMs": 7179
+        }
+      ]
+    },
+    "consistency": {
+      "status": "moving",
+      "reference": "motion-tug-end.jpg",
+      "different": true,
+      "changedPixels": 149,
+      "maxTilePixels": 65,
+      "pixelRatio": 0.00011496913580246914
+    }
+  },
+  {
+    "file": "motion-yank-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "yank",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-yank-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 3446
+      },
+      "mid": {
+        "file": "motion-yank-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 6200
+      },
+      "end": {
+        "file": "motion-yank-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 7730
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 3,
+      "action": "drag",
+      "raw": "drag .tail-grab 0 150"
+    },
+    "durationMs": 7730,
+    "sequence": {
+      "file": "motion-yank-sequence.png",
+      "width": 2656,
+      "height": 1376,
+      "columns": 4,
+      "items": [
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 24,
+          "label": "0.000 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 24,
+          "label": "0.703 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 24,
+          "label": "1.405 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 24,
+          "label": "2.108 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 472,
+          "label": "2.811 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 472,
+          "label": "3.513 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 472,
+          "label": "4.216 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 472,
+          "label": "4.919 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 920,
+          "label": "5.622 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 920,
+          "label": "6.324 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 920,
+          "label": "7.027 s",
+          "labelY": 1328
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 920,
+          "label": "7.730 s",
+          "labelY": 1328
+        }
+      ],
+      "frames": [
+        {
+          "timeMs": 0,
+          "sourceTimeMs": 0
+        },
+        {
+          "timeMs": 703,
+          "sourceTimeMs": 700
+        },
+        {
+          "timeMs": 1405,
+          "sourceTimeMs": 1400
+        },
+        {
+          "timeMs": 2108,
+          "sourceTimeMs": 1950
+        },
+        {
+          "timeMs": 2811,
+          "sourceTimeMs": 2800
+        },
+        {
+          "timeMs": 3513,
+          "sourceTimeMs": 3500
+        },
+        {
+          "timeMs": 4216,
+          "sourceTimeMs": 4200
+        },
+        {
+          "timeMs": 4919,
+          "sourceTimeMs": 4533
+        },
+        {
+          "timeMs": 5622,
+          "sourceTimeMs": 4533
+        },
+        {
+          "timeMs": 6324,
+          "sourceTimeMs": 6200
+        },
+        {
+          "timeMs": 7027,
+          "sourceTimeMs": 7000
+        },
+        {
+          "timeMs": 7730,
+          "sourceTimeMs": 7730
+        }
+      ]
+    },
+    "consistency": {
+      "status": "moving",
+      "reference": "motion-yank-end.jpg",
+      "different": true,
+      "changedPixels": 290886,
+      "maxTilePixels": 1024,
+      "pixelRatio": 0.22444907407407408
+    }
+  }
+]

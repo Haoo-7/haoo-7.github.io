@@ -1,0 +1,38 @@
+[
+  {
+    "file": "motion-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 0
+      },
+      "mid": {
+        "file": "motion-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 3200
+      },
+      "end": {
+        "file": "motion-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 6879
+      }
+    },
+    "sampling": {
+      "mode": "recording"
+    },
+    "durationMs": 6879,
+    "consistency": {
+      "status": "moving",
+      "reference": "motion-end.jpg",
+      "different": true,
+      "changedPixels": 348388,
+      "maxTilePixels": 1024,
+      "pixelRatio": 0.2688179012345679
+    }
+  }
+]

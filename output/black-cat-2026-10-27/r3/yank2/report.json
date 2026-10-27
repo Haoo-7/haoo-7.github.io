@@ -1,0 +1,42 @@
+[
+  {
+    "file": "motion-yank-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "yank",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-yank-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 3086
+      },
+      "mid": {
+        "file": "motion-yank-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 4167
+      },
+      "end": {
+        "file": "motion-yank-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 7322
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 3,
+      "action": "drag",
+      "raw": "drag .tail-grab 0 -320"
+    },
+    "durationMs": 7322,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-yank-end.jpg",
+      "different": false,
+      "changedPixels": 3,
+      "maxTilePixels": 3,
+      "pixelRatio": 0.0000023148148148148148
+    }
+  }
+]

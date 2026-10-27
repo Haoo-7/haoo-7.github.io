@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A · Photo cat</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* 灰阶照片猫：坐在首屏分隔线上，文字和照片之间的空白里；尾巴从线的前沿垂下去，过线就看不见 */
+  .hero .foot { position: relative; }
+  .cat { position: absolute; right: calc(var(--col-r) + 30px); bottom: calc(100% + 1px); width: 126px; height: 230px; overflow: hidden; }
+  .cat img { position: absolute; left: 0; top: 0; width: 100%; height: auto; mix-blend-mode: multiply; filter: grayscale(1) contrast(1.04); }
+  .eye { position: absolute; transform: translate(-50%, -50%); border-radius: 50%; overflow: hidden; }
+  /* 竖缝瞳孔，望向左边的大字 */
+  .eye i { position: absolute; left: 22%; top: 6%; width: 34%; height: 88%; border-radius: 50%; background: #0b0b0b; }
+  .eye b { position: absolute; left: 30%; top: 18%; width: 16%; height: 16%; border-radius: 50%; background: #fff; }
+</style>
+</head>
+<body>
+<header class="bar mono"><div class="bar-in"><a class="brand" href="#">Haoo</a><nav class="nav"><a href="#">Work</a><a href="#">Writing</a><a href="#">About</a></nav><div class="clock"><i class="dot"></i>Guangzhou <b>20:17</b> UTC+8</div></div></header>
+<main class="page">
+  <section class="hero">
+    <div class="hero-l">
+      <h1 class="words" aria-label="Life, Tech and History"><ol>
+        <li><span class="n">01</span><span class="w">Life,</span></li>
+        <li class="on"><span class="n">02</span><span class="w">Tech <em>&amp;</em></span></li>
+        <li><span class="n">03</span><span class="w">History.</span></li>
+      </ol></h1>
+      <p class="intro">I’m Haoo, a history student who builds like an engineer. <span>Trying to make life better with technology.</span></p>
+    </div>
+    <div class="panel">
+      <div class="frame"><img class="on" src="assets/tech.jpg" alt="" /></div>
+      <div class="cap mono"><span>Fig. <b>02</b> The workbench</span><span class="ticks"><i></i><i class="on"></i><i></i></span></div>
+    </div>
+    <div class="foot mono">
+      <div class="cat" aria-hidden="true">
+        <img src="../img/a.png" alt="" />
+        <span class="eye" style="left:36.5%;top:calc(683 / 320 * 126px * .182);width:8%;height:9px"><i></i><b></b></span>
+        <span class="eye" style="left:60.5%;top:calc(683 / 320 * 126px * .181);width:8.2%;height:9px"><i></i><b></b></span>
+      </div>
+      <div class="makes">Makes <a href="#">Projects</a><a href="#">Essays</a><a href="#">Reviews</a><a href="#">Research</a></div>
+      <a class="scrollhint" href="#"><i></i>Scroll, or keep watching</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

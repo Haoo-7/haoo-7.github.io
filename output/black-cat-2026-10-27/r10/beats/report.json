@@ -1,0 +1,170 @@
+[
+  {
+    "file": "startle-look-@3x.png",
+    "state": "startle-look",
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "p.lede「Small tools for problems」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "startle-tuck-@3x.png",
+    "state": "startle-tuck",
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "p.lede「Small tools for problems」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "startle-glare-@3x.png",
+    "state": "startle-glare",
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "p.lede「Small tools for problems」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "startle-release-@3x.png",
+    "state": "startle-release",
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "p.lede「Small tools for problems」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "startle-handoff-@3x.png",
+    "state": "startle-handoff",
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "p.lede「Small tools for problems」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "startle-putdown-@3x.png",
+    "state": "startle-putdown",
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "p.lede「Small tools for problems」"
+        ]
+      }
+    ]
+  }
+]
