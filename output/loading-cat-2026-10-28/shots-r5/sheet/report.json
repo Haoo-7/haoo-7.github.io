@@ -1,0 +1,33 @@
+[
+  {
+    "file": "stitch.png",
+    "width": 688,
+    "height": 848,
+    "columns": 1,
+    "items": [
+      {
+        "naturalWidth": 909,
+        "naturalHeight": 512,
+        "width": 640,
+        "height": 360,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "40%：球滚过猫爪前",
+        "labelY": 392
+      },
+      {
+        "naturalWidth": 909,
+        "naturalHeight": 512,
+        "width": 640,
+        "height": 360,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 432,
+        "label": "80%：猫转头盯着球",
+        "labelY": 800
+      }
+    ],
+    "issues": []
+  }
+]

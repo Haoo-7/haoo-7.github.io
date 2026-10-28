@@ -1,0 +1,44 @@
+[
+  {
+    "file": "stitch.png",
+    "width": 688,
+    "height": 1193,
+    "columns": 1,
+    "items": [
+      {
+        "naturalWidth": 1080,
+        "naturalHeight": 572,
+        "width": 640,
+        "height": 339,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "甩起中",
+        "labelY": 371
+      },
+      {
+        "naturalWidth": 1080,
+        "naturalHeight": 572,
+        "width": 640,
+        "height": 339,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 411,
+        "label": "回弹",
+        "labelY": 758
+      },
+      {
+        "naturalWidth": 1080,
+        "naturalHeight": 572,
+        "width": 640,
+        "height": 339,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 798,
+        "label": "停住",
+        "labelY": 1145
+      }
+    ],
+    "issues": []
+  }
+]
