@@ -1,6 +1,7 @@
 ---
 import Bar from '../components/Bar.astro';
 import Footer from '../components/Footer.astro';
+import Loader from '../components/Loader.astro';
 import { siteConfig } from '../data/site';
 import '../styles/base.css';
 
@@ -36,6 +37,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <slot name="head" />
   </head>
   <body id="top">
+    <Loader />
     <a class="skip mono" href="#main">Skip to content</a>
     <Bar active={active} progress={progress} />
     <main id="main" class="page">
