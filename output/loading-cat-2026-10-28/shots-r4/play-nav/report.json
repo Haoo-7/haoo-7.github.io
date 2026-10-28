@@ -1,0 +1,172 @@
+[
+  {
+    "file": "motion-end.jpg",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 0
+      },
+      "mid": {
+        "file": "motion-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 2683
+      },
+      "end": {
+        "file": "motion-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 5283
+      }
+    },
+    "sampling": {
+      "mode": "recording"
+    },
+    "durationMs": 5283,
+    "sequence": {
+      "file": "motion-sequence.png",
+      "width": 2656,
+      "height": 928,
+      "columns": 4,
+      "items": [
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 24,
+          "label": "0.000 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 24,
+          "label": "0.755 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 24,
+          "label": "1.510 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 24,
+          "label": "2.264 s",
+          "labelY": 432
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 472,
+          "label": "3.019 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 680,
+          "y": 472,
+          "label": "3.774 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1336,
+          "y": 472,
+          "label": "4.529 s",
+          "labelY": 880
+        },
+        {
+          "naturalWidth": 1440,
+          "naturalHeight": 900,
+          "width": 640,
+          "height": 400,
+          "labelHeight": 32,
+          "x": 1992,
+          "y": 472,
+          "label": "5.283 s",
+          "labelY": 880
+        }
+      ],
+      "frames": [
+        {
+          "timeMs": 0,
+          "sourceTimeMs": 0
+        },
+        {
+          "timeMs": 755,
+          "sourceTimeMs": 750
+        },
+        {
+          "timeMs": 1510,
+          "sourceTimeMs": 1500
+        },
+        {
+          "timeMs": 2264,
+          "sourceTimeMs": 2250
+        },
+        {
+          "timeMs": 3019,
+          "sourceTimeMs": 3017
+        },
+        {
+          "timeMs": 3774,
+          "sourceTimeMs": 3767
+        },
+        {
+          "timeMs": 4529,
+          "sourceTimeMs": 4517
+        },
+        {
+          "timeMs": 5283,
+          "sourceTimeMs": 5283
+        }
+      ]
+    },
+    "consistency": {
+      "status": "mismatch",
+      "reference": "motion-end.jpg",
+      "different": true,
+      "changedPixels": 314046,
+      "maxTilePixels": 1024,
+      "pixelRatio": 0.24231944444444445,
+      "original": "record-stream-end.jpg"
+    },
+    "warnings": [
+      "录屏末帧与静止截图差异明显，可能没拍全；静止终态以 motion-end.jpg 为准，已补为录像最后一帧，原末帧保留在 record-stream-end.jpg；过渡请单独重录：node '/Users/haoo/.claude/skills/oil-ui-pro/scripts/shoot.mjs' 'http://localhost:4321/?loader=play-nav' --timeout-scale 2 --out '/Users/haoo/Documents/Haoo-blog/.claude/worktrees/website-loading-animation-eab905/output/loading-cat-2026-10-28/shots-r4/play-nav' --size '1440x900' --zoom 1 --steps 'wait 3600' --record --hold 2000"
+    ]
+  }
+]

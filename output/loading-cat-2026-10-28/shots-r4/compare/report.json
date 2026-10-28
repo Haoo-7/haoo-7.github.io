@@ -1,0 +1,33 @@
+[
+  {
+    "file": "stitch.png",
+    "width": 688,
+    "height": 806,
+    "columns": 1,
+    "items": [
+      {
+        "naturalWidth": 1080,
+        "naturalHeight": 572,
+        "width": 640,
+        "height": 339,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "改前：尾尖竖成一根棍",
+        "labelY": 371
+      },
+      {
+        "naturalWidth": 1080,
+        "naturalHeight": 572,
+        "width": 640,
+        "height": 339,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 411,
+        "label": "改后：越近尖端卷得越多",
+        "labelY": 758
+      }
+    ],
+    "issues": []
+  }
+]

@@ -1,0 +1,582 @@
+---
+import '../styles/loader.css';
+---
+<div class="loader" aria-hidden="true">
+  <div class="loader-paper"></div>
+  <div class="loader-stage">
+    <div class="loader-fly">
+      <!-- 猫坐在正中（坐点 64,190，和首页猫同一套坐标）；地面从 -86 到 214，毛线球沿它从左滚到右 -->
+      <svg class="loader-art" viewBox="-96 30 320 180" width="320" height="180" aria-hidden="true" focusable="false">
+        <defs>
+          <clipPath id="loader-eyes">
+            <ellipse cx="50" cy="92" rx="11" ry="11.5" />
+            <ellipse cx="78" cy="92" rx="11" ry="11.5" />
+          </clipPath>
+          <!-- 尾巴和首页猫一样从线后垂下去，过了地面就裁掉 -->
+          <clipPath id="loader-floor"><rect x="-200" y="0" width="600" height="190" /></clipPath>
+        </defs>
+
+        <!-- 还没滚到的地方是一行虚点，右端一道短刻度是终点 -->
+        <g class="loader-props">
+          <line class="loader-rule" x1="-86" y1="190" x2="214" y2="190" />
+          <line class="loader-end" x1="214" y1="186" x2="214" y2="194" />
+        </g>
+
+        <g class="loader-cat">
+          <path class="loader-tail" clip-path="url(#loader-floor)" d="M92 184 C106 183 117 185 121 196 C121.3 210 121.7 225 122 240" />
+          <path class="loader-body" d="M64 108 C48 108 40 120 39 134 C38 148 30 160 30 174 C30 185 37 190 46 190 L82 190 C91 190 98 185 98 174 C98 160 90 148 89 134 C88 120 80 108 64 108 Z" />
+          <path class="loader-line" d="M48 190 C48 184 52 181 56 181 C60 181 63 184 63 190 M65 190 C65 184 68 181 72 181 C76 181 80 184 80 190" />
+          <g class="loader-head">
+            <path class="loader-ear" d="M29 84 C28 68 29 54 33 46 C34 44 36 43.5 38 45 C45 51 52 57 57 64 Z" />
+            <path class="loader-ear" d="M99 84 C100 68 99 54 95 46 C94 44 92 43.5 90 45 C83 51 76 57 71 64 Z" />
+            <path class="loader-skull" d="M64 62 C86 62 102 74 102 94 C102 110 88 120 64 120 C40 120 26 110 26 94 C26 74 42 62 64 62 Z" />
+            <g class="loader-whisk" data-whisk="l"><path d="M31 100 L9 96 M31 104 L10 107" /></g>
+            <g class="loader-whisk" data-whisk="r"><path d="M97 100 L119 96 M97 104 L118 107" /></g>
+            <path class="loader-nose" d="M62 101 L66 101 L64 103.2 Z" />
+            <path class="loader-mouth" d="M60.5 105 Q62.2 107.4 64 105 Q65.8 107.4 67.5 105" />
+            <g class="loader-eyes">
+              <g class="loader-eye">
+                <ellipse cx="50" cy="92" rx="11" ry="11.5" />
+                <g clip-path="url(#loader-eyes)">
+                  <g class="loader-drift">
+                    <ellipse class="loader-pupil" cx="50" cy="92" rx="5" ry="5.8" />
+                    <circle class="loader-glint" cx="52.5" cy="88.5" r="1.8" />
+                  </g>
+                </g>
+              </g>
+              <g class="loader-eye">
+                <ellipse cx="78" cy="92" rx="11" ry="11.5" />
+                <g clip-path="url(#loader-eyes)">
+                  <g class="loader-drift">
+                    <ellipse class="loader-pupil" cx="78" cy="92" rx="5" ry="5.8" />
+                    <circle class="loader-glint" cx="80.5" cy="88.5" r="1.8" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+
+        <!-- 毛线从起点一路拖到球底，盖住走过的虚点；球在最上面，从猫爪前滚过去 -->
+        <path class="loader-thread" d="M-86 189.4 L-72 189.4" />
+        <g class="loader-ball" transform="translate(-72 176)">
+          <g class="loader-spin">
+            <!-- 图里球占 92.6%（四边各留 4%），球半径 14 -->
+            <image href="/images/loader/yarn.webp" x="-15.1" y="-15.1" width="30.2" height="30.2" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+<p class="loader-status sr-only" role="status"></p>
+<script is:inline>
+  (() => {
+    const html = document.documentElement;
+    const loader = document.querySelector('.loader');
+    if (!loader) return;
+
+    const status = document.querySelector('.loader-status');
+    const props = loader.querySelector('.loader-props');
+    const thread = loader.querySelector('.loader-thread');
+    const ball = loader.querySelector('.loader-ball');
+    const spin = loader.querySelector('.loader-spin');
+    const head = loader.querySelector('.loader-head');
+    const ears = [...loader.querySelectorAll('.loader-ear')];
+    const eyes = [...loader.querySelectorAll('.loader-eye')];
+    const drifts = [...loader.querySelectorAll('.loader-drift')];
+    const paper = loader.querySelector('.loader-paper');
+    const stage = loader.querySelector('.loader-stage');
+    const fly = loader.querySelector('.loader-fly');
+    const art = loader.querySelector('.loader-art');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 站点原有的横向溢出会把 fixed 层撑宽，按可见宽度收窄才对得齐
+    const fitLoader = () => {
+      const width = document.documentElement.clientWidth;
+      if (!width) return;
+      loader.style.width = `${width}px`;
+      loader.style.right = 'auto';
+    };
+    fitLoader();
+    addEventListener('resize', fitLoader);
+
+    // 书签在外面；先挂上，home.ts 晚一步执行也能接住
+    let release;
+    window.__loaderGate = new Promise((resolve) => { release = resolve; });
+    let released = false;
+    const openGate = () => {
+      if (released) return;
+      released = true;
+      // 告诉首页加载动画露过面没有：露过面就别再刷黑屏，猫要留给交接
+      release({ shown: isShown });
+      document.dispatchEvent(new CustomEvent('haoo:loader-exit'));
+    };
+
+    // 只在本机认调试参数：hold 停住截图，play 固定 2.4s 走完录屏
+    const isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+    const query = new URLSearchParams(location.search);
+    const mode = isLocal ? query.get('loader') : null;
+    const hold = mode === 'hold';
+    const playNav = mode === 'play-nav';
+    // play-stall：走到一半停 2.4 秒，用来看卡住时猫动耳朵
+    const playStall = mode === 'play-stall';
+    const play = mode === 'play' || playNav || playStall;
+    const forced = hold || play;
+
+    let first = true;
+    try { first = !sessionStorage.getItem('haoo-seen'); } catch {}
+    if (first && !forced) {
+      try { sessionStorage.setItem('haoo-seen', '1'); } catch {}
+    }
+
+    let target = 0;
+    let shown = 0;
+    let look = 1;
+    let lastShown = 0;
+    let stillSince = performance.now();
+    let isShown = false;
+    let shownAt = 0;
+    let completing = false;
+    let lateFlow = false;
+    let destroyed = false;
+    let raf = 0;
+    let last = performance.now();
+    let showTimer = 0;
+    let fallbackTimer = 0;
+    let blinkTimer = 0;
+    let playStart = 0;
+    const running = new Set();
+
+    let fontsDone = false;
+    let imagesReady = false;
+    let imgTotal = 0;
+    let imgDone = 0;
+    let loadDone = false;
+
+    const score = () => (fontsDone ? .3 : 0) + .6 * (imagesReady && imgTotal ? imgDone / imgTotal : 0) + (loadDone ? .1 : 0);
+    const easeInOut = (t) => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    const animEl = (el, frames, options) => {
+      const anim = el.animate(frames, options);
+      running.add(anim);
+      anim.finished.then(() => running.delete(anim)).catch(() => {});
+      return anim;
+    };
+
+    const stopBlink = () => {
+      clearTimeout(blinkTimer);
+      blinkTimer = 0;
+      eyes.forEach((eye) => eye.classList.remove('is-blinking'));
+    };
+
+    const cleanup = () => {
+      destroyed = true;
+      clearTimeout(showTimer);
+      clearTimeout(fallbackTimer);
+      showTimer = 0;
+      fallbackTimer = 0;
+      stopBlink();
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      // 先撤掉交接遮罩，首页猫和加载层不会同屏出现
+      html.classList.remove('is-loading', 'loader-cover', 'loader-show', 'loader-step', 'loader-handoff');
+      running.forEach((anim) => { try { anim.cancel(); } catch {} });
+      running.clear();
+      eyes.forEach((eye) => { eye.style.transform = ''; });
+      ears.forEach((ear) => { ear.style.transform = ''; });
+      if (fly) fly.style.transform = '';
+      if (stage) stage.style.opacity = '';
+      if (paper) paper.style.opacity = '';
+      if (status) status.textContent = '';
+    };
+
+    // 快速就绪：纸都不留，直接放行
+    const finishFast = () => {
+      cleanup();
+      openGate();
+    };
+
+    // 毛线球：半径 14，中心沿 y=176 从 -72 滚到 200，滚到头时右边缘正好碰到终点刻度
+    const R = 14;
+    const X0 = -72;
+    const X1 = 200;
+    const BALL_Y = 190 - R;
+    const ballX = (v) => X0 + (X1 - X0) * v;
+    const DEG = 180 / Math.PI;
+
+    // 球、毛线、猫的头和眼睛都由球心位置决定；rock 是滚到头后来回晃的那一点偏移
+    let rock = 0;
+    const render = (value) => {
+      const v = Math.max(0, Math.min(1, value));
+      const x = ballX(v) + rock;
+      // 滚过多远就转多少：弧长 = 半径 × 弧度
+      ball.setAttribute('transform', `translate(${x.toFixed(3)} ${BALL_Y})`);
+      spin.setAttribute('transform', `rotate(${((x - X0) / R * DEG).toFixed(2)})`);
+      // 毛线贴着地面拖到球底；最后一小段往球后侧卷进去，像是从球上松出来的
+      thread.setAttribute('d', `M-86 189.4 L${(x - 6).toFixed(3)} 189.4 Q${(x - 2).toFixed(3)} 189.6 ${(x - 1).toFixed(3)} 188`);
+      aim(x);
+    };
+
+    // 猫盯着球：瞳孔往球的方向挪，最多 2.8；头跟着转一点，最多 7 度。look=0 时看回观众
+    const EYES = [[50, 92], [78, 92]];
+    const aim = (x) => {
+      drifts.forEach((drift, i) => {
+        const [cx, cy] = EYES[i];
+        let dx = x - cx;
+        let dy = BALL_Y - cy;
+        const dist = Math.hypot(dx, dy) || 1;
+        const k = Math.min(2.8, dist) / dist;
+        dx *= k * look;
+        dy *= k * look;
+        drift.setAttribute('transform', `translate(${dx.toFixed(3)} ${dy.toFixed(3)})`);
+      });
+      const tilt = Math.max(-7, Math.min(7, (x - 64) / 140 * 7)) * look;
+      head.setAttribute('transform', `rotate(${tilt.toFixed(3)} 64 112)`);
+    };
+
+    // 卡住时动一下耳朵：随便哪只，往外撇一下再回来
+    let lastTwitch = 0;
+    const twitch = () => {
+      if (reduce) return;
+      const i = Math.random() < .5 ? 0 : 1;
+      const ear = ears[i];
+      const sign = i === 0 ? -1 : 1;
+      ear.style.transformBox = 'fill-box';
+      ear.style.transformOrigin = i === 0 ? '80% 100%' : '20% 100%';
+      animEl(ear, [
+        { transform: 'rotate(0deg)' },
+        { transform: `rotate(${sign * 16}deg)`, offset: .3 },
+        { transform: `rotate(${sign * -4}deg)`, offset: .62 },
+        { transform: 'rotate(0deg)' },
+      ], { duration: 420, easing: 'ease-out' });
+    };
+
+    const startBlink = () => {
+      if (reduce || hold || blinkTimer) return;
+      const schedule = () => {
+        blinkTimer = window.setTimeout(() => {
+          blinkTimer = 0;
+          if (destroyed || !isShown || completing) return;
+          eyes.forEach((eye) => eye.classList.add('is-blinking'));
+          schedule();
+        }, 2400 + Math.random() * 1200);
+      };
+      schedule();
+    };
+    eyes.forEach((eye) => eye.addEventListener('animationend', () => eye.classList.remove('is-blinking')));
+
+    const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+    const nextFrame = () => new Promise((resolve) => requestAnimationFrame(() => resolve()));
+    const animate = (ms, fn) => new Promise((resolve) => {
+      const t0 = performance.now();
+      const step = (now) => {
+        if (destroyed) { resolve(); return; }
+        const t = Math.min(1, (now - t0) / ms);
+        fn(t);
+        if (t < 1) requestAnimationFrame(step);
+        else resolve();
+      };
+      requestAnimationFrame(step);
+    });
+
+    // 交接：首页猫在视口里就 FLIP 过去，否则原地蹲一下跟着纸淡出
+    // short 是站内跳转档：不蹲、淡出更短，FLIP 也收得更快
+    const handoff = async (short) => {
+      if (destroyed) return;
+      const cat = document.querySelector('[data-cat]');
+      const hsvg = cat && cat.querySelector('svg');
+      const hvb = hsvg && hsvg.viewBox.baseVal;
+      // 让 home.ts 先把 .hero .foot 归位，再量首页猫的坐点；坐点要落在可见视口里才飞过去
+      // 站内跳转只让一个微任务：门已放行，别再多耗一帧
+      if (short) await Promise.resolve();
+      else await nextFrame();
+      if (destroyed) return;
+      const cr = cat ? cat.getBoundingClientRect() : null;
+      const vh = (window.visualViewport && window.visualViewport.height) || document.documentElement.clientHeight;
+      const seat = cr && hvb && hvb.width && hvb.height && cr.width > 0
+        ? [cr.left + (64 - hvb.x) * (cr.width / hvb.width), cr.top + (190 - hvb.y) * (cr.height / hvb.height)]
+        : null;
+      const inView = !!seat && seat[1] > 0 && seat[1] < vh - 8 && seat[0] > 0 && seat[0] < innerWidth;
+      const fadeMs = short ? 240 : 300;
+      const fadePaper = () => {
+        if (paper) animEl(paper, [{ opacity: 1 }, { opacity: 0 }], { duration: fadeMs, easing: 'steps(3)', fill: 'forwards' });
+      };
+
+      if (!inView) {
+        // 没有首页猫，或它不在视口：猫在原地蹲一下，再和纸一起分步消失；站内跳转不蹲
+        if (!short) {
+          const avb = art.viewBox.baseVal;
+          fly.style.transformOrigin = `0% ${((190 - avb.y) / avb.height * 100).toFixed(3)}%`;
+          await animate(160, (t) => {
+            const squat = 1 - .06 * Math.sin(Math.PI * t);
+            fly.style.transform = `scaleY(${squat.toFixed(4)})`;
+          });
+          if (destroyed) return;
+          fly.style.transform = '';
+        }
+        fadePaper();
+        if (stage) animEl(stage, [{ opacity: 1 }, { opacity: 0 }], { duration: fadeMs, easing: 'steps(3)', fill: 'forwards' });
+        await wait(fadeMs);
+        if (destroyed) return;
+        cleanup();
+        return;
+      }
+
+      const avb = art.viewBox.baseVal;
+      const ar = art.getBoundingClientRect();
+
+      // 两只猫的造型坐标相同，坐点都在 (64, 190)
+      const au = ar.width / avb.width;
+      const hu = cr.width / hvb.width;
+      const scale = hu / au;
+      const seatX = (64 - avb.x) * au;
+      const seatY = (190 - avb.y) * (ar.height / avb.height);
+      const [targetX, targetY] = seat;
+      // 起点是 fly 自己的左上角，平移量要把它算进去
+      const tx = targetX - (ar.left + seatX * scale);
+      const ty = targetY - (ar.top + seatY * scale);
+
+      fadePaper();
+      // 只有猫飞过去：球、毛线和地面在起飞时跟纸一起退掉，别跟着飞到首页上
+      [props, thread, ball].forEach((el) => { if (el) animEl(el, [{ opacity: 1 }, { opacity: 0 }], { duration: 140, easing: 'steps(2)', fill: 'forwards' }); });
+      fly.style.transformOrigin = '0 0';
+      const flip = animEl(fly, [
+        { transform: 'translate(0px, 0px) scale(1)' },
+        { transform: `translate(${tx.toFixed(3)}px, ${ty.toFixed(3)}px) scale(${scale.toFixed(5)})` },
+      ], { duration: short ? 360 : 520, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'forwards' });
+
+      try { await flip.finished; } catch { return; }
+      if (destroyed) return;
+      cleanup();
+    };
+
+    const complete = async () => {
+      if (destroyed || completing) return;
+      completing = true;
+      clearTimeout(fallbackTimer);
+      fallbackTimer = 0;
+      stopBlink();
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+
+      // 减少动态效果：不甩尾、不眨眼、不交接，直接收掉
+      if (reduce) {
+        cleanup();
+        openGate();
+        return;
+      }
+
+      // 站内跳转：球到头就直接交接，猫顺手转回来，不停顿
+      if (lateFlow) {
+        animate(200, (t) => { look = 1 - easeInOut(t); render(1); });
+        openGate();
+        await handoff(true);
+        return;
+      }
+
+      // 1. 球滚到头碰到刻度，往回晃一下再停住，像真的球那样有惯性
+      await animate(420, (t) => {
+        rock = -2.4 * Math.sin(Math.PI * 2 * t) * (1 - t);
+        render(1);
+      });
+      if (destroyed) return;
+      rock = 0;
+      render(1);
+
+      // 2. 猫把头转回来看观众，停一下
+      await animate(220, (t) => { look = 1 - easeInOut(t); render(1); });
+      if (destroyed) return;
+      look = 0;
+      render(1);
+      await wait(160);
+      if (destroyed) return;
+
+      // 3. 交接：放行页面，再把猫送到首页猫的位置
+      openGate();
+      await handoff(false);
+    };
+
+    const checkDone = (now) => {
+      if (destroyed || completing || !isShown) return;
+      if (target < 1 || shown < 1) return;
+      if (now - shownAt < 600) return;
+      complete();
+    };
+
+    const frame = (now) => {
+      if (destroyed) return;
+      raf = requestAnimationFrame(frame);
+      if (play) {
+        const e = now - playStart;
+        target = playStall
+          ? (e < 1200 ? e / 1200 * .55 : e < 3600 ? .55 : Math.min(1, .55 + (e - 3600) / 1200 * .45))
+          : Math.min(1, e / 2400);
+      }
+
+      if (play) {
+        // 调试档严格 2.4s 走完，给后面的交接留足时间
+        shown = target;
+      } else if (reduce) {
+        shown = target;
+      } else if (target > shown) {
+        // 已经加载完就快点补满，别让人等尾巴；还在加载时慢慢追
+        const k = target >= 1 ? .25 : .12, floor = target >= 1 ? .02 : .004;
+        shown = Math.min(target, shown + Math.max((target - shown) * k, floor));
+      } else if (shown < .92) {
+        // 进度停住时球慢慢往前蹭，但不到 92%，永远不倒退
+        const dt = Math.min(.05, Math.max(0, (now - last) / 1000));
+        shown = Math.min(.92, shown + .02 * dt);
+      }
+      // 球几乎不动了超过 1.2 秒，猫动一下耳朵，像在等它再动
+      const moving = shown - lastShown > .0015;
+      if (moving) stillSince = now;
+      else if (isShown && !completing && now - stillSince > 1200 && now - lastTwitch > 1800) {
+        lastTwitch = now;
+        twitch();
+      }
+      lastShown = shown;
+      last = now;
+      render(shown);
+      checkDone(now);
+    };
+
+    const showLoader = (late) => {
+      if (destroyed || isShown || target >= 1) return;
+      isShown = true;
+      shownAt = performance.now();
+      lateFlow = late;
+      // 交接开始前后都先藏起首页猫，落地那一刻再露
+      html.classList.add('loader-handoff');
+      if (late) html.classList.add('is-loading', 'loader-cover', 'loader-show', 'loader-step');
+      else html.classList.add('loader-show');
+      if (status) status.textContent = 'Loading';
+      startBlink();
+    };
+
+    const bump = () => {
+      if (destroyed || hold || play) return;
+      if (fontsDone && imagesReady && loadDone) {
+        target = 1;
+        if (!isShown) finishFast();
+        return;
+      }
+      target = Math.max(target, Math.min(1, score()));
+    };
+
+    const startNormal = () => {
+      // 首次：先盖纸，猫等在 300ms 后；站内跳转：先让页面留着，400ms 后才盖
+      if (first) {
+        html.classList.add('is-loading', 'loader-cover');
+        if (status) status.textContent = 'Loading';
+        showTimer = window.setTimeout(() => {
+          showTimer = 0;
+          if (!destroyed) showLoader(false);
+        }, 300);
+      } else {
+        showTimer = window.setTimeout(() => {
+          showTimer = 0;
+          if (!destroyed) showLoader(true);
+        }, 400);
+      }
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          if (destroyed) return;
+          fontsDone = true;
+          bump();
+        });
+      } else {
+        fontsDone = true;
+        bump();
+      }
+
+      const selectImages = () => {
+        if (destroyed || imagesReady) return;
+        const imgs = [...document.querySelectorAll('main img')].filter((img) => img.getBoundingClientRect().top < innerHeight);
+        imagesReady = true;
+        if (!imgs.length) {
+          imgTotal = 1;
+          imgDone = 1;
+          bump();
+          return;
+        }
+        imgTotal = imgs.length;
+        const step = () => { imgDone += 1; bump(); };
+        imgs.forEach((img) => {
+          if (img.complete) step();
+          else {
+            let settled = false;
+            const done = () => {
+              if (settled) return;
+              settled = true;
+              step();
+            };
+            img.addEventListener('load', done, { once: true });
+            img.addEventListener('error', done, { once: true });
+          }
+        });
+      };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', selectImages, { once: true });
+      else selectImages();
+
+      if (document.readyState === 'complete') {
+        loadDone = true;
+      } else {
+        window.addEventListener('load', () => {
+          if (destroyed) return;
+          loadDone = true;
+          bump();
+        }, { once: true });
+      }
+
+      // 8 秒还没好也放行，不让尾巴卡在 92%
+      fallbackTimer = window.setTimeout(() => {
+        fallbackTimer = 0;
+        if (destroyed) return;
+        target = 1;
+        // 卡住才走到这里，收尾用站内跳转的短版，不再加戏
+        lateFlow = true;
+        if (!isShown) finishFast();
+      }, 8000);
+
+      bump();
+      if (!destroyed) {
+        last = performance.now();
+        raf = requestAnimationFrame(frame);
+      }
+    };
+
+    // bfcache 回来立刻收掉，不重播
+    addEventListener('pageshow', (event) => {
+      if (!event.persisted) return;
+      cleanup();
+      openGate();
+    });
+
+    if (hold) {
+      const raw = parseFloat(query.get('p') || '');
+      const p = Number.isFinite(raw) ? Math.max(0, Math.min(1, raw)) : .4;
+      target = p;
+      shown = p;
+      isShown = true;
+      shownAt = performance.now();
+      html.classList.add('is-loading', 'loader-cover', 'loader-show', 'loader-handoff');
+      if (status) status.textContent = 'Loading';
+      render(shown);
+    } else if (play) {
+      isShown = true;
+      shownAt = performance.now();
+      playStart = performance.now();
+      lateFlow = playNav;
+      html.classList.add('is-loading', 'loader-cover', 'loader-show', 'loader-handoff');
+      if (playNav) html.classList.add('loader-step');
+      if (status) status.textContent = 'Loading';
+      startBlink();
+      render(shown);
+      raf = requestAnimationFrame(frame);
+    } else {
+      startNormal();
+    }
+  })();
+</script>

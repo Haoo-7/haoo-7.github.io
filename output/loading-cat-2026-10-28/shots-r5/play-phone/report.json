@@ -1,0 +1,168 @@
+[
+  {
+    "file": "motion-end.jpg",
+    "state": null,
+    "size": "390x844",
+    "zoom": 1,
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 0
+      },
+      "mid": {
+        "file": "motion-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 1550
+      },
+      "end": {
+        "file": "motion-end.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 5166
+      }
+    },
+    "sampling": {
+      "mode": "recording"
+    },
+    "durationMs": 6278,
+    "sequence": {
+      "file": "motion-sequence.png",
+      "width": 1656,
+      "height": 1816,
+      "columns": 4,
+      "items": [
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 24,
+          "label": "0.000 s",
+          "labelY": 876
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 430,
+          "y": 24,
+          "label": "0.897 s",
+          "labelY": 876
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 836,
+          "y": 24,
+          "label": "1.794 s",
+          "labelY": 876
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 1242,
+          "y": 24,
+          "label": "2.691 s",
+          "labelY": 876
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 24,
+          "y": 916,
+          "label": "3.587 s",
+          "labelY": 1768
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 430,
+          "y": 916,
+          "label": "4.484 s",
+          "labelY": 1768
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 836,
+          "y": 916,
+          "label": "5.381 s",
+          "labelY": 1768
+        },
+        {
+          "naturalWidth": 390,
+          "naturalHeight": 844,
+          "width": 390,
+          "height": 844,
+          "labelHeight": 32,
+          "x": 1242,
+          "y": 916,
+          "label": "6.278 s",
+          "labelY": 1768
+        }
+      ],
+      "frames": [
+        {
+          "timeMs": 0,
+          "sourceTimeMs": 0
+        },
+        {
+          "timeMs": 897,
+          "sourceTimeMs": 883
+        },
+        {
+          "timeMs": 1794,
+          "sourceTimeMs": 1783
+        },
+        {
+          "timeMs": 2691,
+          "sourceTimeMs": 2683
+        },
+        {
+          "timeMs": 3587,
+          "sourceTimeMs": 3067
+        },
+        {
+          "timeMs": 4484,
+          "sourceTimeMs": 3067
+        },
+        {
+          "timeMs": 5381,
+          "sourceTimeMs": 5166
+        },
+        {
+          "timeMs": 6278,
+          "sourceTimeMs": 5166
+        }
+      ]
+    },
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  }
+]

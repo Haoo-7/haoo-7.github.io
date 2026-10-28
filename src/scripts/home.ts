@@ -37,8 +37,10 @@ panel.addEventListener('click', next);
 panel.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); }
 });
-// 进站不碰页面也在轮播；滚出首屏就停，回来接着走
-loop(2600);
+// 进站不碰页面也在轮播；滚出首屏就停，回来接着走。等加载动画放行再计时，第一次换帧别撞上交接
+const loaderGate = (window as any).__loaderGate;
+if (loaderGate && typeof loaderGate.then === 'function') loaderGate.then(() => loop(2600));
+else loop(2600);
 ScrollTrigger.create({ trigger: '.hero', start: 'top bottom', end: 'bottom 20%', onLeave: stop, onEnterBack: () => loop(1200) });
 
 const pick = bindTray($('.bench')!);
@@ -97,10 +99,26 @@ mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => 
 
 // 钉住的舞台要先建，它下面的触发点才算上钉住的那段距离
 mm.add('(prefers-reduced-motion: no-preference)', () => {
-  // 首次进入：三个词从遮罩里升起，屏幕刷一下亮起
-  gsap.from('.words .w', { yPercent: 105, duration: 0.9, ease: 'expo.out', stagger: 0.07, delay: 0.1 });
-  gsap.from('.intro, .hero .foot', { opacity: 0, y: 14, duration: 0.6, ease: 'power3.out', stagger: 0.08, delay: 0.45 });
-  refresh(panel);
+  let stopped = false;
+  // 先在纸下摆好起始状态，等加载动画放行再播，免得白演一遍
+  gsap.set('.words .w', { yPercent: 105 });
+  gsap.set('.intro, .hero .foot', { opacity: 0, y: 14 });
+  const enter = (r?: { shown?: boolean }) => {
+    if (stopped) return;
+    gsap.to('.words .w', { yPercent: 0, duration: 0.9, ease: 'expo.out', stagger: 0.07, delay: 0.1 });
+    if (r?.shown) {
+      // 加载层露过面：猫要留给交接，只让文字自己进来
+      gsap.set('.hero .foot', { opacity: 1, y: 0 });
+      gsap.set('.hero .foot .makes, .hero .foot .scrollhint', { opacity: 0, y: 14 });
+      gsap.to('.intro, .hero .foot .makes, .hero .foot .scrollhint', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.08, delay: 0.45 });
+    } else {
+      gsap.to('.intro, .hero .foot', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.08, delay: 0.45 });
+      refresh(panel);
+    }
+  };
+  const gate = (window as any).__loaderGate;
+  if (gate && typeof gate.then === 'function') gate.then(enter);
+  else enter();
   rises();
 
   // 工作台：照片从左揭开并回缩，再依次框出作品
@@ -119,6 +137,9 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   // 联系：屏幕刷一次进入待机
   const standby = $('[data-standby]')!;
   ScrollTrigger.create({ trigger: standby, start: 'top 75%', once: true, onEnter: () => refresh(standby) });
+
+  // 媒体查询失效时，别再让迟到的那一帧把元素点起来
+  return () => { stopped = true; };
 });
 mm.add('(prefers-reduced-motion: reduce)', () => pick('0'));
 

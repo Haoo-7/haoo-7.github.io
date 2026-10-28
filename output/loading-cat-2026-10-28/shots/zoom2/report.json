@@ -1,0 +1,32 @@
+[
+  {
+    "file": "page-@3x.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 3,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 8,
+        "examples": [
+          "p.intro「I’m Haoo, a history stud」",
+          "span「Trying to make life bett」",
+          "div.makes「MAKES PROJECTS ESSAYS RE」"
+        ]
+      }
+    ]
+  }
+]
