@@ -1,0 +1,126 @@
+[
+  {
+    "file": "a-by-purpose.png",
+    "target": "explore/a-by-purpose.html",
+    "name": "a-by-purpose",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "contrastLow",
+        "label": "文字对比度不达标（正文低于 4.5:1，大字低于 3:1）",
+        "count": 5,
+        "examples": [
+          "span.what.mono「CODE AND PROJECTS」（3.22:1）",
+          "span.what.mono「LONG READS · 中文」（3.22:1）",
+          "span.what.mono「VIDEOS · 中文」（3.22:1）"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 2,
+        "examples": [
+          "span.copied「COPIED」",
+          "span.copied「COPIED」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "b-by-reader.png",
+    "target": "explore/b-by-reader.html",
+    "name": "b-by-reader",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 1,
+        "examples": [
+          "span.copied「COPIED」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "c-elsewhere-page.png",
+    "target": "explore/c-elsewhere-page.html",
+    "name": "c-elsewhere-page",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "contrastLow",
+        "label": "文字对比度不达标（正文低于 4.5:1，大字低于 3:1）",
+        "count": 7,
+        "examples": [
+          "span.no.mono「01」（3.22:1）",
+          "span.no.mono「02」（3.22:1）",
+          "span.no.mono「03」（3.22:1）"
+        ]
+      },
+      {
+        "rule": "stuck",
+        "label": "首屏有内容停在透明状态（出场动画没触发？）",
+        "count": 2,
+        "examples": [
+          "span.copied「COPIED」",
+          "span.copied「COPIED」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "sheet.png",
+    "width": 2000,
+    "height": 480,
+    "columns": 3,
+    "items": [
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "a-by-purpose",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "b-by-reader",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "c-elsewhere-page",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]

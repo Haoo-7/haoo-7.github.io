@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · 一版邮票</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+  :root { --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  body { overflow: hidden; }
+  .hello { position: relative; height: 900px; padding: 0 var(--x); display: grid; grid-template-columns: 400px 1fr; align-items: center; }
+  .h2 { font-size: 104px; }
+  .lede { margin-top: 28px; font-family: var(--sans); font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 19em; }
+  .mail { display: inline-block; margin-top: 40px; font-family: var(--sans); font-weight: 500; font-size: 26px; color: var(--blue); border-bottom: 1.5px solid var(--blue); padding-bottom: 3px; }
+  .copy { margin-top: 18px; color: var(--ink-2); }
+
+  /* 整版：一张小型张，四列两行，边纸上印版铭 */
+  .stage { position: relative; justify-self: end; margin-right: 24px; }
+  .sheet { position: relative; padding: 44px 40px 52px; background: #F7F6F2 var(--grain); transform: rotate(-2.2deg);
+    box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.06), 0 24px 48px -16px rgba(0,0,0,.22); }
+  .sel { position: absolute; left: 40px; right: 40px; display: flex; justify-content: space-between; color: var(--ink-2); }
+  .sel.t { top: 16px; } .sel.b { bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 150px); gap: 10px; }
+
+  /* 一张票：齿孔用遮罩打出来，阴影交给外层 */
+  .st { filter: drop-shadow(0 1px 1px rgba(0,0,0,.12)); }
+  .face { --r: 4.5px; --p: 12px; width: 150px; height: 186px; padding: 9px; background: #FBFAF7 var(--grain);
+    -webkit-mask: radial-gradient(circle var(--r) at 50% 0, #0000 98%, #000) 50% 0 / var(--p) 9px repeat-x,
+      radial-gradient(circle var(--r) at 50% 100%, #0000 98%, #000) 50% 100% / var(--p) 9px repeat-x,
+      radial-gradient(circle var(--r) at 0 50%, #0000 98%, #000) 0 50% / 9px var(--p) repeat-y,
+      radial-gradient(circle var(--r) at 100% 50%, #0000 98%, #000) 100% 50% / 9px var(--p) repeat-y,
+      linear-gradient(#000 0 0) content-box; }
+  .in { height: 100%; border: 1px solid var(--ink); padding: 6px 8px 7px; display: flex; flex-direction: column; }
+  .top { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--ink); }
+  .vig { flex: 1; margin: 6px 0 6px; border: 1px solid var(--ink);
+    background: repeating-linear-gradient(0deg, rgba(18,18,18,.10) 0 1px, transparent 1px 3px); display: grid; place-items: center; }
+  .vig svg { width: 76px; height: 64px; }
+  .nm { font-size: 19px; font-style: italic; font-weight: 400; letter-spacing: -.01em; line-height: 1.1; }
+  .cd { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--ink-2); margin-top: 2px; }
+
+  /* 撕走的那一格：只剩齿孔印子 */
+  .gone .face { background: rgba(18,18,18,.05); }
+  .gone .in { border: 1px dashed rgba(18,18,18,.25); }
+  .gone .in * { display: none; }
+
+  /* 撕下来的公众号票，翻到背面是二维码 */
+  .torn { position: absolute; right: -54px; bottom: -70px; transform: rotate(9deg); filter: drop-shadow(0 2px 2px rgba(0,0,0,.12)) drop-shadow(0 18px 24px rgba(0,0,0,.2)); z-index: 3; }
+  .torn .face { background: #F4F2EC var(--grain); }
+  .torn .in { border-color: rgba(18,18,18,.35); align-items: center; justify-content: center; gap: 8px; }
+  .torn img { width: 108px; height: 108px; }
+  .torn .cd { color: var(--ink); text-align: center; }
+
+  .pm { position: absolute; left: 392px; top: 262px; width: 270px; z-index: 2; opacity: .78; transform: rotate(-8deg); mix-blend-mode: multiply; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="h" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.1" height="3" fill="#121212"/></pattern>
+    <pattern id="hd" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="1.2" height="2" fill="#121212"/></pattern>
+    <path id="wave" d="M0 6 q 12 -6 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0 t 24 0" fill="none" stroke="#121212" stroke-width="2"/>
+    <path id="arc" d="M 202 100 A 58 58 0 1 1 318 100"/>
+  </defs>
+</svg>
+<main class="page">
+  <section class="hello" aria-labelledby="h">
+    <div>
+      <h2 class="h2" id="h">Say <em>hello.</em></h2>
+      <p class="lede">Seven stamps, one for each place I can be reached. Tear off whichever suits you.</p>
+      <a class="mail" href="#gmail">re11.zhou@gmail.com</a>
+      <p class="copy mono">Copy address</p>
+    </div>
+    <div class="stage">
+      <div class="sheet">
+        <p class="sel t mono"><span>Haoo · Elsewhere</span><span>Set of 7 · 2026</span></p>
+        <div class="grid">
+          <a class="st" href="#gmail"><div class="face"><div class="in"><p class="top"><span>01</span><span>EN·中</span></p>
+            <div class="vig"><svg viewBox="0 0 76 64"><rect x="10" y="14" width="56" height="38" fill="url(#h)" stroke="#121212" stroke-width="1.5"/><path d="M10 14 L38 36 L66 14" fill="#FBFAF7" stroke="#121212" stroke-width="1.5"/></svg></div>
+            <p class="nm">Gmail</p><p class="cd">re11.zhou</p></div></div></a>
+          <a class="st" href="#qq"><div class="face"><div class="in"><p class="top"><span>02</span><span>中</span></p>
+            <div class="vig"><svg viewBox="0 0 76 64"><rect x="10" y="14" width="56" height="38" fill="#FBFAF7" stroke="#121212" stroke-width="1.5"/><path d="M10 14 L38 34 L66 14 M10 52 L32 32 M66 52 L44 32" fill="none" stroke="#121212" stroke-width="1.2"/><circle cx="38" cy="34" r="9" fill="url(#hd)" stroke="#121212" stroke-width="1.5"/></svg></div>
+            <p class="nm">QQ Mail</p><p class="cd">re11.zhou@qq</p></div></div></a>
+          <a class="st" href="#github"><div class="face"><div class="in"><p class="top"><span>03</span><span>EN</span></p>
+            <div class="vig"><svg viewBox="0 0 76 64"><circle cx="38" cy="32" r="24" fill="url(#h)" stroke="#121212" stroke-width="1.5"/><circle cx="38" cy="32" r="16" fill="#FBFAF7" stroke="#121212"/><text x="38" y="39" text-anchor="middle" font-family="Lit, serif" font-style="italic" font-size="20" fill="#121212">{ }</text></svg></div>
+            <p class="nm">GitHub</p><p class="cd">Haoo-7</p></div></div></a>
+          <a class="st" href="#sspai"><div class="face"><div class="in"><p class="top"><span>04</span><span>中</span></p>
+            <div class="vig"><svg viewBox="0 0 76 64"><path d="M8 18 Q23 12 38 18 L38 52 Q23 46 8 52 Z" fill="#FBFAF7" stroke="#121212" stroke-width="1.5"/><path d="M68 18 Q53 12 38 18 L38 52 Q53 46 68 52 Z" fill="url(#h)" stroke="#121212" stroke-width="1.5"/><path d="M13 26 H32 M13 32 H32 M13 38 H32 M13 44 H28" stroke="#121212" stroke-width=".8"/></svg></div>
+            <p class="nm">sspai</p><p class="cd">Haoo_7</p></div></div></a>
+          <a class="st" href="#bili"><div class="face"><div class="in"><p class="top"><span>05</span><span>中</span></p>
+            <div class="vig"><svg viewBox="0 0 76 64"><path d="M28 8 L34 16 M48 8 L42 16" stroke="#121212" stroke-width="1.5"/><rect x="10" y="16" width="56" height="36" rx="6" fill="url(#h)" stroke="#121212" stroke-width="1.5"/><rect x="17" y="22" width="42" height="24" rx="3" fill="#FBFAF7" stroke="#121212"/><path d="M34 28 L44 34 L34 40 Z" fill="#121212"/><path d="M20 52 v5 M56 52 v5" stroke="#121212" stroke-width="2"/></svg></div>
+            <p class="nm">Bilibili</p><p class="cd">Haoo_117c</p></div></div></a>
+          <a class="st" href="#xhs"><div class="face"><div class="in"><p class="top"><span>06</span><span>中</span></p>
+            <div class="vig"><svg viewBox="0 0 76 64"><rect x="10" y="18" width="56" height="36" rx="4" fill="url(#h)" stroke="#121212" stroke-width="1.5"/><rect x="24" y="12" width="16" height="7" fill="#FBFAF7" stroke="#121212" stroke-width="1.2"/><circle cx="38" cy="36" r="13" fill="#FBFAF7" stroke="#121212" stroke-width="1.5"/><circle cx="38" cy="36" r="7" fill="url(#hd)" stroke="#121212"/><rect x="54" y="22" width="7" height="4" fill="#121212"/></svg></div>
+            <p class="nm">Xiaohongshu</p><p class="cd">Open</p></div></div></a>
+          <div class="st gone" aria-hidden="true"><div class="face"><div class="in"></div></div></div>
+        </div>
+        <p class="sel b mono"><span>Printed in Guangzhou · No. 07 taken</span></p>
+        <a class="st torn" href="#wx" aria-label="WeChat official account QR code"><div class="face"><div class="in">
+          <img class="qr" src="assets/wechat-qr.png" width="108" height="108" alt=""><p class="cd">07 · 公众号</p></div></div></a>
+        <svg class="pm" viewBox="0 0 360 200" aria-hidden="true">
+          <circle cx="260" cy="100" r="76" fill="none" stroke="#121212" stroke-width="2.5"/>
+          <circle cx="260" cy="100" r="48" fill="none" stroke="#121212" stroke-width="1.5"/>
+          <text font-family="Mono, monospace" font-size="14" letter-spacing="2.5" fill="#121212"><textPath href="#arc" startOffset="50%" text-anchor="middle">GUANGZHOU · UTC+8</textPath></text>
+          <text x="260" y="96" text-anchor="middle" font-family="Mono, monospace" font-size="17" fill="#121212">28 OCT</text>
+          <text x="260" y="118" text-anchor="middle" font-family="Mono, monospace" font-size="17" fill="#121212">2026</text>
+          <use href="#wave" x="0" y="62"/><use href="#wave" x="0" y="84"/><use href="#wave" x="0" y="106"/><use href="#wave" x="0" y="128"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

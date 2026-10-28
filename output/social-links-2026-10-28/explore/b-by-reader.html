@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B · 自动：按访客所在地先排</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+  .hello { padding: 96px var(--x) 120px; }
+  .top { display: flex; justify-content: space-between; align-items: end; gap: 32px; flex-wrap: wrap; }
+  .hello .h2 { font-size: clamp(56px, 7.22vw, 104px); }
+
+  /* 访客所在地：系统先选好，一下就能换 */
+  .from { display: flex; align-items: baseline; gap: 14px; color: var(--ink-2); }
+  .seg { display: inline-flex; border: 1px solid var(--ink); }
+  .seg button { padding: 9px 14px; color: var(--ink); transition: background-color var(--t-mid), color var(--t-mid); }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .seg button:not([aria-pressed="true"]):hover { background: var(--hover); }
+
+  .board { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--ink); display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); gap: 48px; }
+  .first { display: flex; flex-direction: column; align-items: flex-start; }
+  .mail { font-family: var(--sans); font-weight: 500; font-size: clamp(26px, 3.06vw, 44px); letter-spacing: -.02em; color: var(--blue); border-bottom: 1.5px solid var(--blue); padding-bottom: 4px; }
+  .copy { margin-top: 26px; color: var(--ink-2); display: flex; gap: 10px; min-height: 24px; }
+  .copy:hover .t { color: var(--ink); }
+  .wx { margin-top: 44px; display: flex; gap: 22px; align-items: center; }
+  .wx img { width: 148px; height: 148px; }
+  .wx p { font-family: var(--sans); font-size: 15px; line-height: 1.5; color: var(--ink-2); max-width: 19em; }
+  .wx b { display: block; font-family: var(--serif); font-weight: 400; font-size: 20px; color: var(--ink); margin-bottom: 4px; }
+
+  .list li { border-top: 1px solid var(--rule); }
+  .list li:last-child { border-bottom: 1px solid var(--rule); }
+  .list a { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; }
+  .list a:hover .n { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+  .n { font-size: 20px; }
+  .list .mono { color: var(--ink-2); }
+
+  /* 其余渠道不藏，收成一行 */
+  .rest { margin-top: 28px; color: var(--ink-2); line-height: 2; }
+  .rest a { color: var(--ink); border-bottom: 1px solid var(--rule); margin-left: 16px; }
+  .rest a:hover { border-color: var(--ink); }
+
+  .swap { transition: opacity var(--t-mid) var(--ease); }
+  .swap.out { opacity: 0; }
+  [hidden] { display: none !important; }
+  @media (max-width: 760px) { .board { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="hello" aria-labelledby="h">
+    <div class="top">
+      <h2 class="h2" id="h">Say <em>hello.</em></h2>
+      <div class="from"><span class="mono">Reading from</span>
+        <div class="seg mono" role="group" aria-label="Where you are reading from">
+          <button type="button" data-mode="world" aria-pressed="false">Anywhere</button>
+          <button type="button" data-mode="china" aria-pressed="true">中国</button>
+        </div>
+      </div>
+    </div>
+    <div class="board swap">
+      <div class="first">
+        <a class="mail" href="#mail" data-mail></a>
+        <button class="copy mono" type="button" data-copy><span class="t">Copy address</span><span class="copied" aria-live="polite">Copied</span></button>
+        <div class="wx" data-only="china">
+          <img class="qr" src="assets/wechat-qr.png" width="148" height="148" alt="QR code for Haoo's WeChat official account">
+          <p><b>WeChat</b>公众号，文章当天同步。用微信扫一扫。</p>
+        </div>
+      </div>
+      <div>
+        <ul class="list" aria-label="Elsewhere" data-list></ul>
+        <p class="rest mono" data-rest></p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  const C = {
+    gmail: { n: 'Gmail', mail: 're11.zhou@gmail.com' },
+    qq: { n: 'QQ Mail', mail: 're11.zhou@qq.com' },
+    github: { n: 'GitHub', h: 'Haoo-7', href: '#github' },
+    sspai: { n: 'sspai', h: 'Haoo_7', href: '#sspai' },
+    bili: { n: 'Bilibili', h: 'Haoo_117c', href: '#bili' },
+    xhs: { n: 'Xiaohongshu', h: 'Open', href: '#xhs' },
+    wx: { n: 'WeChat', href: '#wx' },
+  };
+  // 每种访客先看到的：一个邮箱 + 三个最可能用上的平台，其余收成一行
+  const M = {
+    world: { mail: 'gmail', list: ['github', 'sspai', 'bili'], rest: ['qq', 'xhs', 'wx'] },
+    china: { mail: 'qq', list: ['bili', 'xhs', 'sspai'], rest: ['gmail', 'github'] },
+  };
+  const $ = (s) => document.querySelector(s), board = $('.board');
+  function render(mode) {
+    const m = M[mode], mail = C[m.mail].mail;
+    $('[data-mail]').textContent = mail; $('[data-copy]').dataset.copy = mail;
+    $('[data-list]').innerHTML = m.list.map((k) => `<li><a href="${C[k].href}"><span class="n">${C[k].n}</span><span class="mono">${C[k].h} ↗</span></a></li>`).join('');
+    $('[data-rest]').innerHTML = 'Also' + m.rest.map((k) => `<a href="${C[k].href || '#mail'}">${C[k].mail || C[k].n}</a>`).join('');
+    document.querySelectorAll('[data-only]').forEach((el) => (el.hidden = el.dataset.only !== mode));
+    document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.mode === mode));
+  }
+  const q = new URLSearchParams(location.search).get('mode');
+  const guess = /^zh/i.test(navigator.language) || Intl.DateTimeFormat().resolvedOptions().timeZone === 'Asia/Shanghai' ? 'china' : 'world';
+  render(q || guess);
+  document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => {
+    board.classList.add('out');
+    setTimeout(() => { render(b.dataset.mode); board.classList.remove('out'); }, 180);
+  }));
+  $('[data-copy]').addEventListener('click', (e) => {
+    const b = e.currentTarget; navigator.clipboard?.writeText(b.dataset.copy).catch(() => {});
+    b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 1600);
+  });
+</script>
+</body>
+</html>

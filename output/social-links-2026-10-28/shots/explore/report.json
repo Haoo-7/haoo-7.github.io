@@ -1,0 +1,80 @@
+[
+  {
+    "file": "a-by-purpose.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/hungry-payne-f47dc4/output/social-links-2026-10-28/explore/a-by-purpose.html",
+    "name": "A · 顺手：写信 / 关注 分两栏",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "b-by-reader.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/hungry-payne-f47dc4/output/social-links-2026-10-28/explore/b-by-reader.html",
+    "name": "B · 自动：按访客所在地先排",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "c-elsewhere-page.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/hungry-payne-f47dc4/output/social-links-2026-10-28/explore/c-elsewhere-page.html",
+    "name": "C · 专用：/elsewhere 渠道目录页",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "sheet.png",
+    "width": 2000,
+    "height": 480,
+    "columns": 3,
+    "items": [
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "A · 顺手：写信 / 关注 分两栏",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "B · 自动：按访客所在地先排",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "C · 专用：/elsewhere 渠道目录页",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]

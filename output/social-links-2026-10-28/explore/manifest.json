@@ -1,0 +1,18 @@
+{
+  "title": "社交链接 · 三种做法",
+  "round": "社交链接 2026-10-28",
+  "candidates": [
+    {"source": "a-by-purpose.html", "interactive": true, "name": "A · 顺手：写信 / 关注 分两栏",
+     "concept": "还在 Say hello 原地，只按“写信”和“关注”分两栏，公众号点一下就在行内展开二维码。",
+     "typography": "Literata · Instrument Sans · Plex Mono（沿用）", "palette": ["#EFEEEA", "#121212", "#5E5E5A", "#2E6FA8"],
+     "traits": ["入口：首页与 About 的 Say hello", "7 个渠道全露出，每行带一句“在那儿发什么”", "公众号：点击行内展开，不弹窗", "页脚只留 Gmail + 3 个主平台", "到达：1 次点击；扫码 2 次"]},
+    {"source": "b-by-reader.html", "interactive": true, "name": "B · 自动：按访客所在地先排",
+     "concept": "系统按浏览器语言和时区猜访客在国内还是国外，先给一个邮箱和三个最可能用上的平台；猜错一下就能换。",
+     "typography": "Literata · Instrument Sans · Plex Mono（沿用）", "palette": ["#EFEEEA", "#121212", "#5E5E5A", "#2E6FA8"],
+     "traits": ["入口：同 A", "国内：QQ 邮箱 + 公众号码直接露出 + B 站 / 小红书 / 少数派", "国外：Gmail + GitHub / 少数派 / B 站", "其余渠道收成一行 Also，不藏", "猜错时多 1 次点击；新增一个切换控件"]},
+    {"source": "c-elsewhere-page.html", "interactive": true, "name": "C · 专用：/elsewhere 渠道目录页",
+     "concept": "给联系方式一个自己的页，像书末索引：每个渠道写清在那儿发什么、用什么语言、怎么到达。",
+     "typography": "Literata · Instrument Sans · Plex Mono（沿用）", "palette": ["#EFEEEA", "#121212", "#5E5E5A", "#2E6FA8"],
+     "traits": ["入口：Say hello 与页脚各放一个 “All 7 channels →”", "新页面 /elsewhere，二维码直接印在表里", "信息最全，适合以后继续加渠道", "到达：多 1 次页面切换", "首页只保留 Gmail + 3 个主平台"]}
+  ]
+}

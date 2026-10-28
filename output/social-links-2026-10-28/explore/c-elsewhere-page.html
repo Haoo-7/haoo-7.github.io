@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C · 专用：/elsewhere 渠道目录页</title>
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+  .head { padding: 120px var(--x) 0; display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); gap: 48px; align-items: end; }
+  .head h1 { font-weight: 400; font-size: clamp(60px, 8.33vw, 120px); line-height: .98; letter-spacing: -.035em; }
+  .head h1 em { font-style: italic; font-weight: 300; }
+  .lede { font-family: var(--sans); font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 26em; }
+
+  /* 像书末的索引：渠道、在那里做什么、语言、怎么到达 */
+  .idx { margin: 72px var(--x) 120px; border-top: 1px solid var(--ink); }
+  .idx-h, .r { display: grid; grid-template-columns: 56px minmax(0, 1.1fr) minmax(0, 1.4fr) 88px minmax(0, 1.2fr); gap: 24px; align-items: baseline; }
+  .idx-h { padding: 14px 0; color: var(--ink-2); border-bottom: 1px solid var(--rule); }
+  .grp { padding: 34px 0 10px; color: var(--ink-2); }
+  .r { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .r .no { color: var(--ink-2); }
+  .r .n { font-size: 26px; letter-spacing: -.01em; }
+  .r .d { font-family: var(--sans); font-size: 16px; line-height: 1.45; color: var(--ink-2); }
+  .r .lang { color: var(--ink-2); }
+  .r .act { display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+  .r .mail { font-family: var(--sans); font-weight: 500; font-size: 18px; color: var(--blue); border-bottom: 1px solid var(--blue); padding-bottom: 2px; }
+  .copy { color: var(--ink-2); display: flex; gap: 10px; }
+  .copy:hover .t { color: var(--ink); }
+  .r:has(a.go:hover) .n { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+  .r.wx { align-items: start; }
+  .r.wx .act { display: block; }
+  .r.wx img { width: 128px; height: 128px; margin-top: -6px; }
+
+  @media (max-width: 860px) {
+    .head { grid-template-columns: 1fr; padding-top: 72px; }
+    .idx-h { display: none; }
+    .r { grid-template-columns: 40px 1fr; gap: 6px 14px; }
+    .r > :nth-child(n+3) { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <h1>Else<em>where.</em></h1>
+    <p class="lede">Seven places to find me. Email if you want an answer; the rest is where the work shows up, mostly in Chinese.</p>
+  </header>
+  <section class="idx" aria-label="All channels">
+    <div class="idx-h mono" aria-hidden="true"><span>No.</span><span>Channel</span><span>What's there</span><span>Lang</span><span>Reach</span></div>
+
+    <p class="grp mono">Write</p>
+    <div class="r"><span class="no mono">01</span><span class="n">Gmail</span><span class="d">Work, collaboration, anything that needs a reply.</span><span class="lang mono">EN · 中</span>
+      <span class="act"><a class="mail" href="#gmail">re11.zhou@gmail.com</a><button class="copy mono" type="button" data-copy="re11.zhou@gmail.com"><span class="t">Copy</span><span class="copied" aria-live="polite">Copied</span></button></span></div>
+    <div class="r"><span class="no mono">02</span><span class="n">QQ Mail</span><span class="d">Same inbox, if Gmail is hard to reach from where you are.</span><span class="lang mono">中</span>
+      <span class="act"><a class="mail" href="#qq">re11.zhou@qq.com</a><button class="copy mono" type="button" data-copy="re11.zhou@qq.com"><span class="t">Copy</span><span class="copied" aria-live="polite">Copied</span></button></span></div>
+
+    <p class="grp mono">Follow</p>
+    <div class="r"><span class="no mono">03</span><span class="n">GitHub</span><span class="d">Code behind every project on this site.</span><span class="lang mono">EN</span><span class="act"><a class="go mono" href="#github">Haoo-7 ↗</a></span></div>
+    <div class="r"><span class="no mono">04</span><span class="n">sspai</span><span class="d">Long reviews of software and hardware.</span><span class="lang mono">中</span><span class="act"><a class="go mono" href="#sspai">Haoo_7 ↗</a></span></div>
+    <div class="r"><span class="no mono">05</span><span class="n">Bilibili</span><span class="d">Videos, the occasional build log.</span><span class="lang mono">中</span><span class="act"><a class="go mono" href="#bili">Haoo_117c ↗</a></span></div>
+    <div class="r"><span class="no mono">06</span><span class="n">Xiaohongshu</span><span class="d">Short notes and photos between posts.</span><span class="lang mono">中</span><span class="act"><a class="go mono" href="#xhs">Open profile ↗</a></span></div>
+    <div class="r wx"><span class="no mono">07</span><span class="n">WeChat</span><span class="d">Official account. Essays arrive here the day they go up.</span><span class="lang mono">中</span>
+      <span class="act"><img class="qr" src="assets/wechat-qr.png" width="128" height="128" alt="QR code for Haoo's WeChat official account"></span></div>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', () => {
+    navigator.clipboard?.writeText(b.dataset.copy).catch(() => {});
+    b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 1600);
+  }));
+</script>
+</body>
+</html>

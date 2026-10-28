@@ -1,0 +1,22 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 203,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      }
+    ]
+  }
+]

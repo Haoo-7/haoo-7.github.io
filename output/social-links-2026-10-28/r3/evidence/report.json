@@ -1,0 +1,440 @@
+[
+  {
+    "file": "idle.png",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "idle-@2x.png",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "motion-probe-frank",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "frank",
+    "motion": {
+      "load": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": []
+      },
+      "steps": {
+        "elements": 4,
+        "loops": 0,
+        "maxMove": 31,
+        "maxSize": 0.213,
+        "maxOpacity": 0.8,
+        "top": [
+          {
+            "el": "span.pm",
+            "move": 31,
+            "size": 0.213,
+            "opacity": 0.8,
+            "loop": false,
+            "sources": [
+              "transition:transform",
+              "transition:opacity"
+            ]
+          },
+          {
+            "el": "span.side.front",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "button.stamp.used",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "div.sheet.thud",
+            "move": 2,
+            "size": 0.002,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "css:thud"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "layers": 0
+      },
+      "scroll": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "scrollable": false
+      }
+    },
+    "issues": [
+      "首次进入：没有检测到动画"
+    ]
+  },
+  {
+    "file": "motion-probe-copy",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "copy",
+    "motion": {
+      "load": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": []
+      },
+      "steps": {
+        "elements": 4,
+        "loops": 0,
+        "maxMove": 31,
+        "maxSize": 0.213,
+        "maxOpacity": 0.8,
+        "top": [
+          {
+            "el": "span.pm",
+            "move": 31,
+            "size": 0.213,
+            "opacity": 0.8,
+            "loop": false,
+            "sources": [
+              "transition:transform",
+              "transition:opacity"
+            ]
+          },
+          {
+            "el": "button.stamp.used",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.side.front",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "div.sheet.thud",
+            "move": 2,
+            "size": 0.002,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "css:thud"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "layers": 0
+      },
+      "scroll": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "scrollable": false
+      }
+    },
+    "issues": [
+      "首次进入：没有检测到动画"
+    ]
+  },
+  {
+    "file": "motion-probe-flip",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "flip",
+    "motion": {
+      "load": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": []
+      },
+      "steps": {
+        "elements": 4,
+        "loops": 0,
+        "maxMove": 67,
+        "maxSize": 0.889,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "span.card",
+            "move": 67,
+            "size": 0.889,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.side.front",
+            "move": 67,
+            "size": 0.888,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "div.side.back",
+            "move": 67,
+            "size": 0.888,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "button.stamp.flipped",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "layers": 0
+      },
+      "scroll": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "scrollable": false
+      }
+    },
+    "issues": [
+      "首次进入：没有检测到动画"
+    ]
+  },
+  {
+    "file": "motion-entry-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "entry",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-entry-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 352
+      },
+      "mid": {
+        "file": "motion-entry-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 368
+      },
+      "end": {
+        "file": "motion-entry-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 1941
+      }
+    },
+    "sampling": {
+      "mode": "entry"
+    },
+    "durationMs": 1941,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-entry-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  },
+  {
+    "file": "motion-frank-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "frank",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-frank-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 610
+      },
+      "mid": {
+        "file": "motion-frank-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 779
+      },
+      "end": {
+        "file": "motion-frank-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 2476
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 1,
+      "action": "click",
+      "raw": "click [data-href*=github]"
+    },
+    "durationMs": 2476,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-frank-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  },
+  {
+    "file": "motion-copy-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "copy",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-copy-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 590
+      },
+      "mid": {
+        "file": "motion-copy-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 723
+      },
+      "end": {
+        "file": "motion-copy-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 2323
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 1,
+      "action": "click",
+      "raw": "click [data-copy='re11.zhou@qq.com'].stamp"
+    },
+    "durationMs": 2323,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-copy-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  },
+  {
+    "file": "motion-flip-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "flip",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-flip-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 593
+      },
+      "mid": {
+        "file": "motion-flip-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 907
+      },
+      "end": {
+        "file": "motion-flip-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 2720
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 1,
+      "action": "click",
+      "raw": "click [data-flip]"
+    },
+    "durationMs": 2720,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-flip-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  }
+]

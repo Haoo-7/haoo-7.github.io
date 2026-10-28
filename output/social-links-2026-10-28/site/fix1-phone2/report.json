@@ -1,0 +1,23 @@
+[
+  {
+    "file": "page-flip.png",
+    "state": null,
+    "size": "390x844",
+    "zoom": 1,
+    "group": "flip",
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 4,
+        "examples": [
+          "p.kick.mono「ABOUT」",
+          "p.ch-n.mono「01LIFE」",
+          "p.ch-n.mono「02TECH」"
+        ]
+      }
+    ]
+  }
+]

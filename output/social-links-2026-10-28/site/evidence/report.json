@@ -1,0 +1,838 @@
+[
+  {
+    "file": "idle.png",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 4,
+        "examples": [
+          "p.kick.mono「ABOUT」",
+          "p.ch-n.mono「01LIFE」",
+          "p.ch-n.mono「02TECH」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "idle-@2x.png",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 4,
+        "examples": [
+          "p.kick.mono「ABOUT」",
+          "p.ch-n.mono「01LIFE」",
+          "p.ch-n.mono「02TECH」"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "motion-probe-sheet",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "sheet",
+    "motion": {
+      "load": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 129,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "div",
+            "move": 129,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div",
+            "move": 129,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "p.p-lede",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 95,
+        "maxSize": 0.292,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "header#bar.bar.mono",
+            "move": 0,
+            "size": 0.292,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:background-color",
+              "transition:box-shadow"
+            ]
+          },
+          {
+            "el": "div.bar-in",
+            "move": 0,
+            "size": 0.292,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:height"
+            ]
+          },
+          {
+            "el": "div",
+            "move": 95,
+            "size": 0.048,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 89,
+        "maxSize": 0.399,
+        "maxOpacity": 0.45,
+        "top": [
+          {
+            "el": "header#bar.bar.mono",
+            "move": 0,
+            "size": 0.399,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:background-color",
+              "transition:box-shadow"
+            ]
+          },
+          {
+            "el": "div.bar-in",
+            "move": 0,
+            "size": 0.399,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:height"
+            ]
+          },
+          {
+            "el": "div.flash",
+            "move": 89,
+            "size": 0,
+            "opacity": 0.45,
+            "loop": false,
+            "sources": [
+              "css:flash"
+            ]
+          }
+        ],
+        "layers": 3
+      },
+      "scroll": {
+        "elements": 0,
+        "loops": 0,
+        "maxMove": 0,
+        "maxSize": 0,
+        "maxOpacity": 0,
+        "top": [],
+        "scrollable": true
+      }
+    },
+    "issues": [
+      "滚动：没有检测到随滚动出现的变化；落地页、品牌页、发布页和展览页需要一段滚动叙事"
+    ]
+  },
+  {
+    "file": "motion-probe-frank",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "frank",
+    "motion": {
+      "load": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 129,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "div",
+            "move": 129,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div",
+            "move": 129,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "p.p-lede",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 7,
+        "loops": 0,
+        "maxMove": 98,
+        "maxSize": 0.292,
+        "maxOpacity": 0.8,
+        "top": [
+          {
+            "el": "span.stamp-pm",
+            "move": 29,
+            "size": 0.206,
+            "opacity": 0.8,
+            "loop": false,
+            "sources": [
+              "transition:transform",
+              "transition:opacity"
+            ]
+          },
+          {
+            "el": "div",
+            "move": 98,
+            "size": 0.07,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div.bar-in",
+            "move": 0,
+            "size": 0.292,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:height"
+            ]
+          },
+          {
+            "el": "header#bar.bar.mono",
+            "move": 0,
+            "size": 0.292,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:background-color",
+              "transition:box-shadow"
+            ]
+          },
+          {
+            "el": "button.stamp.used",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "div.stamp-sheet.thud",
+            "move": 2,
+            "size": 0.002,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "css:stamp-thud"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 5,
+        "loops": 0,
+        "maxMove": 1342,
+        "maxSize": 0.399,
+        "maxOpacity": 0.45,
+        "top": [
+          {
+            "el": "button.stamp.used",
+            "move": 1342,
+            "size": 0.024,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 1342,
+            "size": 0.024,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "div.bar-in",
+            "move": 0,
+            "size": 0.399,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:height"
+            ]
+          },
+          {
+            "el": "header#bar.bar.mono",
+            "move": 0,
+            "size": 0.399,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:background-color",
+              "transition:box-shadow"
+            ]
+          },
+          {
+            "el": "div.flash",
+            "move": 89,
+            "size": 0,
+            "opacity": 0.45,
+            "loop": false,
+            "sources": [
+              "css:flash"
+            ]
+          }
+        ],
+        "layers": 5
+      },
+      "scroll": {
+        "elements": 4,
+        "loops": 0,
+        "maxMove": 8,
+        "maxSize": 0.025,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "a.stamp",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "button.stamp.used",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "motion-probe-flip",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "flip",
+    "motion": {
+      "load": {
+        "elements": 3,
+        "loops": 0,
+        "maxMove": 129,
+        "maxSize": 0,
+        "maxOpacity": 1,
+        "top": [
+          {
+            "el": "div",
+            "move": 129,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "div",
+            "move": 129,
+            "size": 0,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "p.p-lede",
+            "move": 18,
+            "size": 0,
+            "opacity": 1,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          }
+        ]
+      },
+      "steps": {
+        "elements": 7,
+        "loops": 0,
+        "maxMove": 98,
+        "maxSize": 0.889,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "span.stamp-face.stamp-back",
+            "move": 67,
+            "size": 0.889,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 67,
+            "size": 0.889,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "span.stamp-card",
+            "move": 67,
+            "size": 0.889,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "div",
+            "move": 98,
+            "size": 0.07,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "js:style"
+            ]
+          },
+          {
+            "el": "header#bar.bar.mono",
+            "move": 0,
+            "size": 0.292,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:background-color",
+              "transition:box-shadow"
+            ]
+          },
+          {
+            "el": "div.bar-in",
+            "move": 0,
+            "size": 0.292,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:height"
+            ]
+          },
+          {
+            "el": "button.stamp.stamp-flipped",
+            "move": 8,
+            "size": 0.025,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          }
+        ]
+      },
+      "hero": {
+        "elements": 6,
+        "loops": 0,
+        "maxMove": 1342,
+        "maxSize": 0.391,
+        "maxOpacity": 0.45,
+        "top": [
+          {
+            "el": "span.stamp-face.stamp-back",
+            "move": 1342,
+            "size": 0.024,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "button.stamp.stamp-flipped",
+            "move": 1342,
+            "size": 0.024,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 1342,
+            "size": 0.024,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "header#bar.bar.mono",
+            "move": 0,
+            "size": 0.391,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:background-color",
+              "transition:box-shadow"
+            ]
+          },
+          {
+            "el": "div.bar-in",
+            "move": 0,
+            "size": 0.391,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:height"
+            ]
+          },
+          {
+            "el": "div.flash",
+            "move": 89,
+            "size": 0,
+            "opacity": 0.45,
+            "loop": false,
+            "sources": [
+              "css:flash"
+            ]
+          }
+        ],
+        "layers": 6
+      },
+      "scroll": {
+        "elements": 5,
+        "loops": 0,
+        "maxMove": 7,
+        "maxSize": 0.023,
+        "maxOpacity": 0,
+        "top": [
+          {
+            "el": "span.stamp-face.stamp-back",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "button.stamp.stamp-flipped",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "span.stamp-face.stamp-front",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:filter"
+            ]
+          },
+          {
+            "el": "a.stamp",
+            "move": 7,
+            "size": 0.023,
+            "opacity": 0,
+            "loop": false,
+            "sources": [
+              "transition:transform"
+            ]
+          }
+        ],
+        "scrollable": true
+      }
+    },
+    "issues": []
+  },
+  {
+    "file": "motion-entry-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "entry",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-entry-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 836
+      },
+      "mid": {
+        "file": "motion-entry-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 1652
+      },
+      "end": {
+        "file": "motion-entry-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 2453
+      }
+    },
+    "sampling": {
+      "mode": "entry"
+    },
+    "durationMs": 2453,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-entry-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  },
+  {
+    "file": "motion-sheet-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "sheet",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-sheet-start.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 0
+      },
+      "mid": {
+        "file": "motion-sheet-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 433
+      },
+      "end": {
+        "file": "motion-sheet-end.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 2600
+      }
+    },
+    "sampling": {
+      "mode": "recording"
+    },
+    "durationMs": 2607,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-sheet-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  },
+  {
+    "file": "motion-frank-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "frank",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-frank-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 1288
+      },
+      "mid": {
+        "file": "motion-frank-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 1433
+      },
+      "end": {
+        "file": "motion-frank-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 3228
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 3,
+      "action": "click",
+      "raw": "click .stamp[data-mail]"
+    },
+    "durationMs": 3228,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-frank-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  },
+  {
+    "file": "motion-flip-end.jpg",
+    "state": "idle",
+    "size": "1440x900",
+    "zoom": 1,
+    "group": "flip",
+    "issues": [],
+    "frames": {
+      "start": {
+        "file": "motion-flip-start.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 1283
+      },
+      "mid": {
+        "file": "motion-flip-mid.jpg",
+        "source": "Page.screencastFrame",
+        "timeMs": 1617
+      },
+      "end": {
+        "file": "motion-flip-end.jpg",
+        "source": "Page.captureScreenshot",
+        "timeMs": 3616
+      }
+    },
+    "sampling": {
+      "mode": "action",
+      "step": 3,
+      "action": "click",
+      "raw": "click .stamp[data-flip]"
+    },
+    "durationMs": 3616,
+    "consistency": {
+      "status": "matched",
+      "reference": "motion-flip-end.jpg",
+      "different": false,
+      "changedPixels": 0,
+      "maxTilePixels": 0,
+      "pixelRatio": 0
+    }
+  }
+]

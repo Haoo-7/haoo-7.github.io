@@ -1,0 +1,64 @@
+/* 邮票版：纸、票、邮戳都是生图抠出来的，图标用各平台官方图形 */
+:root { --sw: 144px; --sh: calc(var(--sw) * 917 / 600); }
+body { overflow-x: hidden; }
+.hello { position: relative; min-height: 900px; padding: 0 var(--x); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 40px; }
+.h2 { font-size: 104px; }
+.lede { margin-top: 28px; font-family: var(--sans); font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 17em; }
+.mail { display: inline-block; margin-top: 40px; font-family: var(--sans); font-weight: 500; font-size: 26px; color: var(--blue); border-bottom: 1.5px solid var(--blue); padding-bottom: 3px; }
+.copy-l { display: flex; gap: 10px; margin-top: 18px; color: var(--ink-2); }
+.copy-l:hover .t { color: var(--ink); }
+
+/* 版张 */
+.sheet { position: relative; padding: 82px 88px 100px; background: url(sheet.webp) center / 100% 100% no-repeat; transform: rotate(-.8deg); filter: drop-shadow(0 18px 30px rgba(0,0,0,.14)); }
+.sheet.thud { animation: thud .22s var(--ease); }
+@keyframes thud { 40% { transform: rotate(-.8deg) translateY(2px) scale(.997); } }
+.sel { position: absolute; left: 88px; right: 88px; display: flex; justify-content: space-between; color: var(--ink-2); }
+.sel.t { top: 46px; } .sel.b { bottom: 62px; } .sel { left: 96px; right: 96px; }
+.sel .st-msg { color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(4, var(--sw)); gap: 18px 16px; }
+
+/* 一张票 */
+.stamp { position: relative; width: var(--sw); height: var(--sh); perspective: 900px; text-align: left; transform: rotate(var(--r, 0deg)); transition: transform var(--t-mid) var(--ease); }
+.stamp:hover, .stamp:focus-visible { transform: rotate(var(--r, 0deg)) translateY(-5px) scale(1.025); z-index: 2; }
+.stamp:focus-visible { outline-offset: 6px; }
+.card { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .6s var(--ease); }
+.flipped .card { transform: rotateY(180deg); }
+.side { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; filter: drop-shadow(0 1px 1px rgba(0,0,0,.18)) drop-shadow(0 4px 6px rgba(0,0,0,.08)); transition: filter var(--t-mid); }
+.stamp:hover .side { filter: drop-shadow(0 2px 2px rgba(0,0,0,.16)) drop-shadow(0 14px 18px rgba(0,0,0,.18)); }
+.front { background: url(front.webp) center / 100% 100% no-repeat; }
+.back { background: url(back.webp) center / 100% 100% no-repeat; transform: rotateY(180deg); display: grid; place-items: center; align-content: center; gap: 8px; }
+/* 票心：官方图标按油墨印在排线上 */
+.vig { position: absolute; left: 11%; right: 11%; top: 8%; bottom: 15.5%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.ico { width: 46%; aspect-ratio: 1; object-fit: contain; filter: brightness(0); opacity: .86; mix-blend-mode: multiply; }
+.ico.wide { width: 74%; aspect-ratio: 1.2; }
+.nm { font-size: 17px; font-style: italic; letter-spacing: -.01em; line-height: 1; white-space: nowrap; }
+.car { position: absolute; left: 11%; right: 11%; top: 86%; height: 6.6%; display: grid; place-items: center; font-family: var(--mono); font-size: 10px; letter-spacing: .03em; color: var(--ink-2); white-space: nowrap; }
+.back img { width: 66%; height: auto; mix-blend-mode: multiply; filter: grayscale(1) contrast(1.05); }
+.back span { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--ink); }
+
+/* 用过的票盖一枚邮戳 */
+.pm { position: absolute; left: -22%; top: -6%; width: 128%; aspect-ratio: 2; background: url(mark.webp) left center / 100% 100% no-repeat; transform: rotate(-12deg) scale(1.25); opacity: 0; pointer-events: none; mix-blend-mode: multiply; z-index: 3; }
+.used .pm { opacity: .8; transform: rotate(-12deg) scale(1); transition: transform .16s cubic-bezier(.3, 1.6, .5, 1), opacity .08s; }
+
+/* 第八格：只盖了邮戳的空位，显示广州时间 */
+.clock { position: relative; width: var(--sw); height: var(--sh); display: grid; place-items: center; }
+.clock .ring { position: relative; width: 100%; aspect-ratio: 1; background: url(mark.webp) left center / 200% 100% no-repeat; transform: rotate(-8deg); mix-blend-mode: multiply; opacity: .85; display: grid; place-items: center; align-content: center; }
+.clock b { font-family: var(--mono); font-weight: 400; font-size: 22px; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.clock span { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-2); margin-top: 2px; }
+
+@media (max-width: 760px) {
+  :root { --sw: calc((100vw - 2 * var(--x) - 2 * 22px - 14px) / 2); }
+  .hello { grid-template-columns: 1fr; padding-top: 72px; padding-bottom: 72px; gap: 44px; }
+  .h2 { font-size: 64px; }
+  /* 手机上版张变成长条，原图会被拉变形：只借它中间的纸纹，边框用线画 */
+  .sheet { padding: 64px 22px 66px; transform: none; background: #ECEBE8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .sheet::before { content: ""; position: absolute; inset: 12px; border: 4px double rgba(18,18,18,.7); pointer-events: none; }
+  .pm { left: -14%; width: 118%; }
+  .sheet.thud { animation: none; }
+  .sel { left: 22px; right: 22px; } .sel.t { top: 30px; } .sel.b { bottom: 32px; } .sel { left: 30px; right: 30px; }
+  .grid { grid-template-columns: repeat(2, var(--sw)); gap: 16px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .stamp, .pm, .used .pm { transition: none; }
+  .sheet.thud { animation: none; }
+}

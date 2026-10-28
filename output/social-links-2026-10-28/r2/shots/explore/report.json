@@ -1,0 +1,80 @@
+[
+  {
+    "file": "1-stamps.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/hungry-payne-f47dc4/output/social-links-2026-10-28/r2/explore/1-stamps.html",
+    "name": "1 · 一版邮票",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "2-catalog.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/hungry-payne-f47dc4/output/social-links-2026-10-28/r2/explore/2-catalog.html",
+    "name": "2 · 图书馆卡片抽屉",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "3-keyring.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/hungry-payne-f47dc4/output/social-links-2026-10-28/r2/explore/3-keyring.html",
+    "name": "3 · 钥匙圈挂牌",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "sheet.png",
+    "width": 2000,
+    "height": 480,
+    "columns": 3,
+    "items": [
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "1 · 一版邮票",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "2 · 图书馆卡片抽屉",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "3 · 钥匙圈挂牌",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]

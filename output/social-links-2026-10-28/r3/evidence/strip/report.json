@@ -1,0 +1,55 @@
+[
+  {
+    "file": "stitch.png",
+    "width": 1344,
+    "height": 928,
+    "columns": 2,
+    "items": [
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "盖戳中",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "QQ 邮箱：盖戳+复制",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 472,
+        "label": "公众号翻面中",
+        "labelY": 880
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 472,
+        "label": "翻面后",
+        "labelY": 880
+      }
+    ],
+    "issues": []
+  }
+]

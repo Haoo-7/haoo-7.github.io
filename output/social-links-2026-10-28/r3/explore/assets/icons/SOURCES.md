@@ -1,0 +1,3 @@
+- gmail / qq / github / bilibili / xiaohongshu / wechat：Simple Icons 16.36.0（CC0），https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/
+- sspai：少数派官网 sspai.com 顶栏 mobile logo SVG（2026-10-28 取），仅取 0 0 36 36 视窗内的标志
+- 各标志商标归各平台所有，此处只用于链到本人账号

@@ -1,0 +1,3 @@
+- front / back / sheet / mark：imagegen relay（gpt-image-2.5-sunburst，quality high）生成，提示词见 `../../img/p-*.txt`；绿幕抠图后去色 85%。
+- icons/：见 `icons/SOURCES.md`。
+- wechat-qr.png：用户提供的公众号二维码。
