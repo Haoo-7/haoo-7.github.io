@@ -18,7 +18,7 @@ const { hello = true, tail = false } = Astro.props;
           <a class="mail-s" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>
         <ul class="end-links" aria-label="Elsewhere">
-          {siteConfig.socialLinks.map((link) => (
+          {siteConfig.socialLinks.filter((link) => link.primary).map((link) => (
             <li><a href={link.href} rel="me noopener">{link.label}</a><span class="mono">{link.handle} ↗</span></li>
           ))}
         </ul>

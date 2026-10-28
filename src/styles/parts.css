@@ -25,7 +25,7 @@
 .dusk-wrap { position: relative; }
 .hello .head { position: absolute; left: var(--x); top: 61.3%; }
 .hello .h2 { font-size: clamp(56px, 7.22vw, 104px); margin-top: 18px; }
-.hello-body { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); padding: 60px var(--x) 0; }
+.hello-body { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: start; padding: 60px var(--x) 0; }
 .hello-l { display: flex; flex-direction: column; align-items: flex-start; }
 .mail { font-family: var(--sans); font-weight: 500; font-size: clamp(26px, 3.06vw, 44px); letter-spacing: -.02em; color: var(--blue); border-bottom: 1.5px solid var(--blue); padding-bottom: 4px; overflow-wrap: anywhere; }
 .copy { margin-top: 34px; color: var(--ink-2); display: flex; gap: 10px; align-items: center; min-height: 24px; }
@@ -33,29 +33,100 @@
 .copy .ok { color: var(--ink); opacity: 0; transition: opacity .2s; }
 .copy.done .ok { opacity: 1; }
 .hello .more { margin-top: 40px; }
-.elsewhere { list-style: none; }
-.elsewhere li { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--rule); }
-.elsewhere li:last-child { border-bottom: 1px solid var(--rule); }
-.elsewhere a { font-size: 24px; }
-.elsewhere a:hover { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
-.elsewhere .mono { color: var(--ink-2); }
 
-/* 小于 1280：图片放大裁到主角那一块，文字排到图外 */
+/* 邮票版：纸、票、邮戳都是生图抠出来的，图标用各平台官方图形 */
+.stamp-sheet {
+  --sw: 144px;
+  --sh: calc(var(--sw) * 1019 / 600);
+  --pad-x: clamp(48px, calc(9.62vw - 50.5px), 88px);
+  --pad-t: clamp(56px, calc(6.25vw - 8px), 82px);
+  --pad-b: clamp(68px, calc(7.69vw - 10.8px), 100px);
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  padding: var(--pad-t) var(--pad-x) var(--pad-b);
+  background: url('/images/stamps/sheet.webp') center / 100% 100% no-repeat;
+  transform: rotate(-.8deg);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .08)) drop-shadow(0 6px 12px rgba(0, 0, 0, .06));
+}
+.stamp-sheet.thud { animation: stamp-thud .22s var(--ease); }
+@keyframes stamp-thud { 40% { transform: rotate(-.8deg) translateY(2px) scale(.997); } }
+.stamp-sel { position: absolute; left: calc(var(--pad-x) + 8px); right: calc(var(--pad-x) + 8px); display: flex; justify-content: space-between; gap: 12px; color: var(--ink-2); }
+.stamp-sel > span { min-width: 0; }
+.stamp-sel [data-msg] { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stamp-sel-top { top: calc(var(--pad-t) * .56); }
+.stamp-sel-bottom { bottom: calc(var(--pad-b) * .62); }
+.stamp-sel-bottom [data-msg] { color: var(--ink); }
+.stamp-grid { display: grid; grid-template-columns: repeat(4, var(--sw)); gap: 18px 16px; }
+
+/* 一张票 */
+.stamp { position: relative; display: block; width: var(--sw); height: var(--sh); perspective: 900px; text-align: left; transform: rotate(var(--r, 0deg)); transition: transform var(--t-mid) var(--ease); container-type: inline-size; }
+.stamp:hover, .stamp:focus-visible { transform: rotate(var(--r, 0deg)) translateY(-5px) scale(1.025); z-index: 2; }
+.stamp:focus-visible { outline-offset: 6px; }
+.stamp-card { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .6s var(--ease); }
+.stamp-flipped .stamp-card { transform: rotateY(180deg); }
+.stamp-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .18)) drop-shadow(0 4px 6px rgba(0, 0, 0, .08)); transition: filter var(--t-mid); }
+.stamp:hover .stamp-face { filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .16)) drop-shadow(0 8px 10px rgba(0, 0, 0, .12)); }
+.stamp-front { background: url('/images/stamps/front.webp') center / 100% 100% no-repeat; }
+.stamp-back { background: url('/images/stamps/back.webp') center / 100% 100% no-repeat; transform: rotateY(180deg); display: grid; place-items: center; align-content: center; gap: 8px; }
+/* 票心：官方图标按油墨印在排线上 */
+.stamp-vig { position: absolute; left: 12%; right: 12%; top: 8%; bottom: 8%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(6px, 8.3cqw, 12px); }
+.stamp-ico { width: 46%; aspect-ratio: 1; object-fit: contain; filter: brightness(0); opacity: .86; mix-blend-mode: multiply; }
+.stamp-ico.wide { width: 74%; aspect-ratio: 1.2; }
+.stamp-nm { font-size: clamp(13px, 11.8cqw, 17px); font-style: italic; letter-spacing: -.01em; line-height: 1; white-space: nowrap; }
+.stamp-back img { width: 66%; height: auto; mix-blend-mode: multiply; filter: grayscale(1) contrast(1.05); }
+.stamp-back span { color: var(--ink); }
+
+/* 用过的票盖一枚邮戳 */
+.stamp-pm { position: absolute; left: -16%; top: 4%; width: 128%; aspect-ratio: 2; background: url('/images/stamps/mark.webp') left center / 100% 100% no-repeat; transform: rotate(-12deg) scale(1.25); opacity: 0; pointer-events: none; mix-blend-mode: multiply; z-index: 3; }
+.stamp.used .stamp-pm { opacity: .8; transform: rotate(-12deg) scale(1); transition: transform .16s cubic-bezier(.3, 1.6, .5, 1), opacity .08s; }
+
+/* 第八格：只盖了邮戳的空位，显示广州时间 */
+.stamp-clock { position: relative; width: var(--sw); height: var(--sh); display: grid; place-items: center; container-type: inline-size; }
+.stamp-ring { position: relative; width: 100%; aspect-ratio: 1; background: url('/images/stamps/mark.webp') left center / 200% 100% no-repeat; transform: rotate(-8deg); mix-blend-mode: multiply; opacity: .85; display: grid; place-items: center; align-content: center; }
+.stamp-clock b { font-family: var(--mono); font-weight: 400; font-size: clamp(18px, 15.3cqw, 22px); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.stamp-clock span { color: var(--ink-2); margin-top: 2px; }
+
+/* 小于 1280：图片放大裁到主角那一块，文字排到图外；版张改单列，四列票跟着宽度走 */
 @media (max-width: 1279px) {
   .dusk-crop { aspect-ratio: 1.714; }
   .dusk-art { --aw: 200%; --ax: -51.5%; --ay: -13.89%; }
   .hello .head { position: static; padding: 8px var(--x) 0; }
+  .hello-body { grid-template-columns: 1fr; gap: 48px; padding-top: 36px; }
+  /* 单列时版张最宽 800，边距回到桌面的值，别跟着视口缩 */
+  .stamp-sheet { width: 100%; max-width: 800px; --pad-x: 88px; --pad-t: 82px; --pad-b: 100px; }
+  .stamp-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 14px; }
+  .stamp, .stamp-clock { width: 100%; height: auto; aspect-ratio: 600 / 1019; }
 }
 @media (max-width: 1023px) {
   .hello { padding-bottom: 88px; }
-  .hello-body { grid-template-columns: 1fr; gap: 48px; padding-top: 36px; }
   .copy { margin-top: 24px; }
   .hello .more { margin-top: 28px; }
 }
 @media (max-width: 767px) {
   .dusk-crop { aspect-ratio: 1.143; }
   .dusk-art { --aw: 300%; --ax: -102.3%; --ay: -20.83%; }
-  .elsewhere a { font-size: 21px; }
+  /* 手机上版张换成竖版纸，三列排成 3+3+2 */
+  .stamp-sheet {
+    padding: 48px 30px 52px;
+    transform: none;
+    background: url('/images/stamps/sheet-tall.webp') center / 100% 100% no-repeat;
+  }
+  .stamp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 10px; }
+  .stamp-pm { left: -14%; width: 118%; }
+  /* 窄屏的戳圈放不下 13px 的地名，顶栏和待机屏已写着广州，只留时间 */
+  .stamp-clock span { display: none; }
+  /* 翻面后的提示交给状态行，票背只放码，码尽量大 */
+  .stamp-back span { display: none; }
+  .stamp-back img { width: 84%; }
+  .stamp-sheet.thud { animation: none; }
+  .stamp-sel { left: 34px; right: 34px; }
+  .stamp-sel-top { top: 28px; }
+  .stamp-sel-bottom { bottom: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stamp, .stamp-card, .stamp-face, .stamp-pm, .stamp.used .stamp-pm { transition: none; }
+  .stamp-sheet.thud { animation: none; }
 }
 
 /* 一帧照片：首屏和 About 共用，换图时刷一下 */

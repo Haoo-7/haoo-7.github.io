@@ -7,6 +7,8 @@ interface Props {
   more?: { label: string; href: string };
 }
 const { fig, more } = Astro.props;
+// 每张票歪一点，像手贴上去的
+const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg'];
 ---
 <section class="hello" id="contact" aria-labelledby="contact-h">
   <div class="dusk-wrap">
@@ -33,10 +35,66 @@ const { fig, more } = Astro.props;
       <button class="copy mono" type="button" data-copy={siteConfig.email}><span class="lab">Copy address</span><span class="ok" aria-live="polite"></span></button>
       {more && <a class="go mono more" href={more.href}>{more.label}</a>}
     </div>
-    <ul class="elsewhere" aria-label="Elsewhere">
-      {siteConfig.socialLinks.map((link) => (
-        <li><a href={link.href} rel="me noopener">{link.label}</a><span class="mono">{link.handle} ↗</span></li>
-      ))}
-    </ul>
+    <div class="stamp-sheet" role="group" aria-label="Elsewhere stamps">
+      <p class="stamp-sel stamp-sel-top mono"><span>Haoo · Elsewhere</span></p>
+      <div class="stamp-grid">
+        {siteConfig.socialLinks.map((link, i) =>
+          link.kind === 'link' ? (
+            <a
+              class="stamp"
+              href={link.href}
+              target="_blank"
+              rel="me noopener"
+              style={`--r:${tilts[i]}`}
+              aria-label={`${link.label}, ${link.handle}, opens in a new tab`}
+            >
+              <span class="stamp-card">
+                <span class="stamp-face stamp-front">
+                  <span class="stamp-vig">
+                    <img class:list={['stamp-ico', { wide: link.label === 'Xiaohongshu' }]} src={`/images/stamps/icons/${link.icon}`} alt="" />
+                    <span class:list={['stamp-nm', { 'sr-only': link.label === 'Xiaohongshu' }]}>{link.label}</span>
+                  </span>
+                </span>
+              </span>
+              <span class="stamp-pm" aria-hidden="true"></span>
+            </a>
+          ) : (
+            <button
+              class="stamp"
+              type="button"
+              style={`--r:${tilts[i]}`}
+              data-mail={link.kind === 'mail' ? link.href.replace(/^mailto:/, '') : undefined}
+              data-flip={link.kind === 'qr' ? '' : undefined}
+              aria-pressed={link.kind === 'qr' ? 'false' : undefined}
+              aria-label={link.kind === 'mail' ? `${link.label}, ${link.handle}, copy address` : 'WeChat official account, show QR code'}
+            >
+              <span class="stamp-card">
+                <span class="stamp-face stamp-front">
+                  <span class="stamp-vig">
+                    <img class="stamp-ico" src={`/images/stamps/icons/${link.icon}`} alt="" />
+                    <span class="stamp-nm">{link.label}</span>
+                  </span>
+                </span>
+                {link.kind === 'qr' && (
+                  <span class="stamp-face stamp-back">
+                    <img src="/images/stamps/wechat-qr.png" width="430" height="430" alt="QR code for Haoo's WeChat official account" />
+                    <span class="mono">SCAN · 公众号</span>
+                  </span>
+                )}
+              </span>
+              <span class="stamp-pm" aria-hidden="true"></span>
+            </button>
+          ),
+        )}
+        <div class="stamp-clock" aria-label="Local time in Guangzhou">
+          <div class="stamp-ring"><b data-time>--:--</b><span class="mono">GUANGZHOU</span></div>
+        </div>
+      </div>
+      <p class="stamp-sel stamp-sel-bottom mono" aria-live="polite"><span data-msg></span></p>
+    </div>
   </div>
 </section>
+
+<script>
+  import '../scripts/stamps';
+</script>
