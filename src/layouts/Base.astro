@@ -11,10 +11,11 @@ interface Props {
   active?: string;
   hello?: boolean;
   progress?: boolean;
+  reader?: boolean;
   image?: string;
   type?: 'website' | 'article';
 }
-const { title, description = siteConfig.description, active, hello = true, progress = false, image = '/images/refresh/tech.jpg', type = 'website' } = Astro.props;
+const { title, description = siteConfig.description, active, hello = true, progress = false, reader = false, image = '/images/refresh/tech.jpg', type = 'website' } = Astro.props;
 const fullTitle = title ? `${title} — Haoo` : 'Haoo — Life, Tech & History';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -34,12 +35,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" href="data:," />
     <link rel="preload" href="/fonts/refresh/literata.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/refresh/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+    {reader && (
+      <script is:inline>
+        // 读者上次选的字体和字号，在首帧之前就套上，不先用默认字排一遍再跳
+        try {
+          var r = JSON.parse(localStorage.getItem('haoo:reading') || '{}');
+          if (r.face === 'sans') document.documentElement.dataset.face = 'sans';
+          if (r.size >= 0 && r.size <= 4 && r.size !== 1) document.documentElement.dataset.size = String(r.size);
+        } catch (e) {}
+      </script>
+    )}
     <slot name="head" />
   </head>
   <body id="top">
     <Loader />
     <a class="skip mono" href="#main">Skip to content</a>
-    <Bar active={active} progress={progress} />
+    <Bar active={active} progress={progress} reader={reader} />
     <main id="main" class="page">
       <slot />
     </main>

@@ -4,8 +4,10 @@ import { siteConfig } from '../data/site';
 interface Props {
   active?: string;
   progress?: boolean;
+  /** 文章页：时钟左边加 Aa，调正文的字体和字号 */
+  reader?: boolean;
 }
-const { active, progress = false } = Astro.props;
+const { active, progress = false, reader = false } = Astro.props;
 ---
 <header class="bar mono" id="bar">
   <div class="bar-in">
@@ -15,7 +17,34 @@ const { active, progress = false } = Astro.props;
         <a href={item.href} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
-    <div class="clock" aria-label="Local time in Guangzhou"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
+    {reader ? (
+      <div class="bar-r">
+        <div class="rd">
+          <button class="aa" type="button" aria-expanded="false" aria-controls="rd-panel" aria-label="Reading settings" data-rd-open>Aa</button>
+          <div class="rd-panel" id="rd-panel" role="group" aria-label="Reading settings" hidden>
+            <div class="rd-sec">
+              <p class="rd-lab mono"><span>Typeface</span></p>
+              <div class="rd-faces">
+                <button class="rd-face serif" type="button" aria-pressed="true" data-rd-face="serif"><span class="g" lang="zh-CN">永</span><span class="e">Literata</span><span class="n mono">Serif</span></button>
+                <button class="rd-face sans" type="button" aria-pressed="false" data-rd-face="sans"><span class="g" lang="zh-CN">永</span><span class="e">Instrument</span><span class="n mono">Sans</span></button>
+              </div>
+            </div>
+            <div class="rd-sec">
+              <p class="rd-lab mono"><span>Text size</span><b aria-live="polite" data-rd-px>19 px</b></p>
+              <div class="rd-step">
+                <button class="minus" type="button" aria-label="Smaller text" data-rd-step="-1">A</button>
+                <div class="rd-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                <button class="plus" type="button" aria-label="Larger text" data-rd-step="1">A</button>
+              </div>
+            </div>
+            <p class="rd-foot mono"><span>Saved on this device</span><button type="button" data-rd-reset>Reset</button></p>
+          </div>
+        </div>
+        <div class="clock" aria-label="Local time in Guangzhou"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
+      </div>
+    ) : (
+      <div class="clock" aria-label="Local time in Guangzhou"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
+    )}
   </div>
   {progress && <i class="progress" id="progress" aria-hidden="true"></i>}
 </header>

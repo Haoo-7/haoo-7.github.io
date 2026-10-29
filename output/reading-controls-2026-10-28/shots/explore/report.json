@@ -1,0 +1,80 @@
+[
+  {
+    "file": "a-margin.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/gifted-proskuriakova-1ebbf4/output/reading-controls-2026-10-28/explore/a-margin.html",
+    "name": "A · 页边：目录下面的「排版」小节",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "b-reader-menu.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/gifted-proskuriakova-1ebbf4/output/reading-controls-2026-10-28/explore/b-reader-menu.html",
+    "name": "B · 阅读器菜单：顶栏 Aa 弹出设置",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "c-corner-tab.png",
+    "target": "/Users/haoo/Documents/Haoo-blog/.claude/worktrees/gifted-proskuriakova-1ebbf4/output/reading-controls-2026-10-28/explore/c-corner-tab.html",
+    "name": "C · 页角小签：左下角展开成一条",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "sheet.png",
+    "width": 2000,
+    "height": 480,
+    "columns": 3,
+    "items": [
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "A · 页边：目录下面的「排版」小节",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "B · 阅读器菜单：顶栏 Aa 弹出设置",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "C · 页角小签：左下角展开成一条",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]
