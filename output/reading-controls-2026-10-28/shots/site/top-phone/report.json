@@ -1,0 +1,22 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "390x844",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 8,
+        "examples": [
+          "a.skip.mono「SKIP TO CONTENT」",
+          "a.back.mono「← ALL WRITING」",
+          "span「23 MIN READ」"
+        ]
+      }
+    ]
+  }
+]

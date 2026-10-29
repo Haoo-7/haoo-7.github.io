@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · 页边：目录下面的「排版」小节</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* 排版小节：和目录同一套语法，只有字和 1px 线，没有按钮框 */
+  .type { margin-top: 44px; }
+  .type summary { list-style: none; color: var(--ink-2); padding-bottom: 14px; display: flex; justify-content: space-between; }
+  .type summary b { font-weight: 400; color: var(--ink); }
+  .type .rows { border-top: 1px solid var(--rule); }
+  .type .row { padding: 14px 0 16px; border-bottom: 1px solid var(--rule); }
+  .type .lab { display: block; font-size: 11px; color: var(--ink-2); margin-bottom: 10px; }
+
+  /* 字体：每个字样用它自己的字体写 */
+  .faces { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .face { text-align: left; color: var(--ink-2); }
+  .face .g { display: block; font-size: 30px; line-height: 1.1; letter-spacing: -.01em; }
+  .face .n { display: block; margin-top: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+  .face.serif .g { font-family: var(--serif); }
+  .face.sans .g { font-family: var(--sans); font-weight: 500; }
+  .face[aria-pressed="true"] { color: var(--ink); }
+  .face[aria-pressed="true"] .g { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 7px; }
+
+  /* 字号：五个“文”由小到大，基线对齐 */
+  .sizes { display: flex; align-items: baseline; justify-content: space-between; }
+  .sz { font-family: var(--read-font); color: var(--dim); line-height: 1; padding: 4px 2px 8px; border-bottom: 1px solid transparent; }
+  .sz[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+  .px { margin-top: 10px; font-size: 11px; color: var(--ink-2); display: flex; justify-content: space-between; }
+  .px b { font-weight: 400; color: var(--ink); }
+</style>
+</head>
+<body>
+<header class="bar mono">
+  <div class="bar-in">
+    <a class="brand" href="#">Haoo</a>
+    <nav class="nav"><a href="#">Home</a><a href="#" aria-current="page">Writing</a><a href="#">Work</a><a href="#">About</a></nav>
+    <div class="clock"><i class="dot"></i>Guangzhou <b>21:40</b> UTC+8</div>
+  </div>
+  <i class="progress"></i>
+</header>
+
+<article class="post">
+  <aside class="side" lang="en">
+    <details class="toc" open>
+      <summary class="mono">Contents</summary>
+      <nav>
+        <ol>
+          <li><a href="#"><span class="mono">01</span><span lang="zh-CN">Kindle如今在中国市场的情况</span></a></li>
+          <li><a href="#"><span class="mono">02</span><span lang="zh-CN">为什么我推荐高中生用KPW3</span></a></li>
+          <li><a href="#" aria-current="true"><span class="mono">03</span><span lang="zh-CN">我是怎么使用KPW3的？</span></a></li>
+          <li><a href="#"><span class="mono">04</span><span lang="zh-CN">KPW3的缺陷和不足</span></a></li>
+          <li><a href="#"><span class="mono">05</span><span lang="zh-CN">后记</span></a></li>
+        </ol>
+      </nav>
+    </details>
+
+    <details class="type" open>
+      <summary class="mono">Type <b>Sans · 21</b></summary>
+      <div class="rows">
+        <div class="row">
+          <span class="lab mono">Face</span>
+          <div class="faces">
+            <button class="face serif" aria-pressed="false"><span class="g">Aa 文</span><span class="n">Serif</span></button>
+            <button class="face sans" aria-pressed="true"><span class="g">Aa 文</span><span class="n">Sans</span></button>
+          </div>
+        </div>
+        <div class="row">
+          <span class="lab mono">Size</span>
+          <div class="sizes" lang="zh-CN">
+            <button class="sz" style="font-size:16px" aria-pressed="false" aria-label="17px">文</button>
+            <button class="sz" style="font-size:19px" aria-pressed="false" aria-label="19px">文</button>
+            <button class="sz" style="font-size:22px" aria-pressed="true" aria-label="21px">文</button>
+            <button class="sz" style="font-size:25px" aria-pressed="false" aria-label="23px">文</button>
+            <button class="sz" style="font-size:28px" aria-pressed="false" aria-label="25px">文</button>
+          </div>
+          <p class="px mono"><span>Smaller</span><b>21 px</b><span>Larger</span></p>
+        </div>
+      </div>
+    </details>
+  </aside>
+
+  <div class="prose">
+    <h2>我是怎么使用KPW3的？</h2>
+    <h3>基础准备工作——越狱</h3>
+    <p>闲鱼上有很多是二手贩子，个人卖家比较少。就仅对于Kindle而言，不同于其他设备，<strong>我反而会倾向于在二手贩子手里购买</strong>，因为他们是对数码比较专业一点的用户，对电纸书的了解比平常人多得多。</p>
+    <p>当然，二手贩子们会利用信息差来定价，不过只要我们提前做好功课，掌握基本的信息，就能在二手贩子手里轻松愉快地买到心仪的机器了。</p>
+    <p>基本上按这几个步骤跟商家确认完，就可以买到正常的KPW3了。（当然你可以砍一下价，我一般只砍10块钱。）</p>
+  </div>
+</article>
+</body>
+</html>

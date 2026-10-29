@@ -1,0 +1,19 @@
+{
+  "title": "阅读页 · 字号与字体控件",
+  "round": "阅读控件 2026-10-28",
+  "nativeViewport": "1440x900",
+  "candidates": [
+    {"source": "a-margin.html", "name": "A · 页边：目录下面的「排版」小节",
+     "concept": "像书页边的一条批注：和目录用同一套线和字，平时几乎看不见，跟左栏一起吸顶。",
+     "typography": "Literata · Instrument Sans · Plex Mono（沿用）", "palette": ["#EFEEEA", "#121212", "#5E5E5A", "#C9C8C3"],
+     "traits": ["位置：左栏 Contents 之下", "字体：两个字样「Aa 文」，各用自己的字体写，选中加下划线", "字号：五个「文」由小到大，点哪个是哪档", "没有按钮框，只有字和 1px 线", "手机：并进折叠的 Contents 抽屉"]},
+    {"source": "b-reader-menu.html", "name": "B · 阅读器菜单：顶栏 Aa 弹出设置",
+     "concept": "借 Kindle 的 Aa 菜单：顶栏里一个黑底 Aa，点开落下一块纸色面板。",
+     "typography": "Literata · Instrument Sans · Plex Mono（沿用）", "palette": ["#EFEEEA", "#121212", "#5E5E5A", "#C9C8C3"],
+     "traits": ["位置：顶栏时钟左边", "字体：两张字样卡，各写一个大号「永」", "字号：A − 五格刻度 + A", "面板样式同脚注弹窗：纸色 + 1px 墨线", "哪台设备上入口都在同一处；顶栏多一个元素"]},
+    {"source": "c-corner-tab.html", "name": "C · 页角小签：左下角展开成一条",
+     "concept": "页角的一枚小签，读到哪儿都伸手可调；展开后横成一条，收起只剩 Aa。",
+     "typography": "Literata · Instrument Sans · Plex Mono（沿用）", "palette": ["#EFEEEA", "#121212", "#5E5E5A", "#C9C8C3"],
+     "traits": ["位置：视口左下角，常驻", "字体：衬线 / 无衬线分段开关", "字号：− 21 + 等宽数字", "硬边投影，像贴上去的标签", "随时可调、单手够得着；正文上多一个常驻浮层"]}
+  ]
+}
