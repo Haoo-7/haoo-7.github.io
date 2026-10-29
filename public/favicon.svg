@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 34 96 96" width="32" height="32">
+  <!-- 暗色标签栏上墨猫会消失，垫一块纸色底 -->
+  <style>.bg { display: none; } @media (prefers-color-scheme: dark) { .bg { display: inline; } }</style>
+  <rect class="bg" x="16" y="34" width="96" height="96" fill="#EFEEEA" />
+  <g fill="#121212">
+    <path d="M29 84 C28 68 29 54 33 46 C34 44 36 43.5 38 45 C45 51 52 57 57 64 Z" />
+    <path d="M99 84 C100 68 99 54 95 46 C94 44 92 43.5 90 45 C83 51 76 57 71 64 Z" />
+    <path d="M64 62 C86 62 102 74 102 94 C102 110 88 120 64 120 C40 120 26 110 26 94 C26 74 42 62 64 62 Z" />
+  </g>
+  <g fill="#EFEEEA">
+    <ellipse cx="50" cy="92" rx="11" ry="11.5" />
+    <ellipse cx="78" cy="92" rx="11" ry="11.5" />
+  </g>
+</svg>

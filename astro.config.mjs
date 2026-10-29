@@ -8,7 +8,7 @@ const slugs = readdirSync(new URL("./src/content/posts/", import.meta.url))
 
 export default defineConfig({
   output: "static",
-  site: "https://haoo.me",
+  site: "https://haoo-7.github.io",
   devToolbar: { enabled: false },
   redirects: {
     "/posts": "/writing/",

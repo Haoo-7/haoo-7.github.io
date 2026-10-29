@@ -32,7 +32,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
     <meta property="og:url" content={canonical} />
-    <link rel="icon" href="data:," />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Haoo" href="/rss.xml" />
     <link rel="preload" href="/fonts/refresh/literata.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/refresh/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
     {reader && (

@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/pages.css';
+---
+<Base title="Page not found" hello={false}>
+  <header class="p-head not-found">
+    <p class="kick mono"><b>Fig. 404</b></p>
+    <h1 class="p-h1">Nothing <em>here.</em></h1>
+    <p class="p-lede">This page may have moved, or the address may be wrong.</p>
+    <nav class="not-found-links" aria-label="Continue browsing">
+      <a class="go mono" href="/">Back home</a>
+      <a class="go mono" href="/writing/">All writing →</a>
+    </nav>
+  </header>
+</Base>

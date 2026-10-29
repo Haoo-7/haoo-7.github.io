@@ -5,6 +5,10 @@
 .p-h1 em { font-style: italic; font-weight: 300; }
 .p-lede { max-width: 600px; margin-top: 36px; font-family: var(--sans); font-size: 20px; line-height: 1.5; color: var(--ink-2); }
 
+/* 404：静态页头，留出返回首页和文章列表的入口 */
+.not-found { min-height: calc(100svh - 120px); padding-bottom: 112px; }
+.not-found-links { display: flex; flex-wrap: wrap; gap: 24px 32px; margin-top: 40px; }
+
 /* Work：左边托盘钉住，右边一份份档案滚过去，滚到哪份就框出哪一格 */
 .work { display: grid; grid-template-columns: minmax(0, 1fr) var(--col-r); column-gap: clamp(40px, 5.56vw, 80px); align-items: start; padding: 96px var(--x) 140px; }
 .work-tray { position: sticky; top: 110px; }

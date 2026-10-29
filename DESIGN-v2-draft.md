@@ -134,6 +134,8 @@ components:
 - **列表行**：悬停或聚焦时铺一层 `row-hover` 浅灰并给标题加下划线，整行可点。
 - **脚注**：正文里是蓝色等宽上标，点开浮出注释（手机端贴底），Esc 或点别处关闭；文末保留完整列表。
 - **图注**：`Fig. n` 等宽编号 + Instrument Sans 说明，自动计数。
+- **404 页**：`Fig. 404` 等宽编号、Literata 大字标题和 `<em>` 斜体强调，一句说明配回首页与 All writing 两个链接；不带 Say hello，不加入场动画、插图或黑闪。【Agent 推断】
+- **favicon**：从首页猫的原始双耳和圆头路径提取墨色 `#121212` 剪影，保留两只纸色眼睛；SVG 用于浏览器图标，180×180 Apple touch icon 用纸色 `#EFEEEA` 底、猫头居中。【Agent 推断】
 
 ## Do's and Don'ts
 

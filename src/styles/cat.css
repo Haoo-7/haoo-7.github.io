@@ -30,6 +30,7 @@
 
 /* 尾巴尖：挂在页脚右端 Back to top 原来的位置，从页脚上沿那条线后面垂下来。
    这一行下面多留一段空白，往下拉才有地方；按钮框上沿是那条线、下沿是页面底，两头都裁 */
+.end { overflow-x: clip; } /* 只裁页脚伸出页面的按钮框，不改变尾巴位置，也不创建滚动容器 */
 .end-line.has-tail { position: relative; height: 240px; padding-bottom: 120px; }
 .tailtip { width: 110px; align-self: stretch; }
 .tail-btn { position: absolute; top: 0; right: -52px; width: 160px; height: 100%; overflow: hidden; pointer-events: none; }
