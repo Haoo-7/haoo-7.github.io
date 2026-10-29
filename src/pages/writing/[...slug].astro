@@ -29,7 +29,7 @@ const keep: Record<string, string> = { 'ai-assisted-learning': '纸笔拓荒', '
 const word = keep[post.slug] ?? '';
 const [before, after] = word && title.includes(word) ? title.split(word) : [title, undefined];
 ---
-<Base title={titleEn ?? title} description={description} active="/writing/" progress image={cover} type="article">
+<Base title={titleEn ?? title} description={description} active="/writing/" progress reader image={cover} type="article">
   <article class="post" lang="zh-CN">
     <a class="back mono" href="/writing/" lang="en">← All writing</a>
     <header class="post-head">
@@ -84,4 +84,5 @@ const [before, after] = word && title.includes(word) ? title.split(word) : [titl
 
 <script>
   import '../../scripts/article';
+  import '../../scripts/reader';
 </script>
