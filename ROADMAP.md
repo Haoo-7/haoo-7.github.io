@@ -2,7 +2,7 @@
 
 2026-10-29 定。约束：零预算（不买域名、不备案）；读者国内为主、海外也有；写稿在 Obsidian。
 
-## Phase 0：上线（进行中）
+## Phase 0：上线（2026-10-29 完成）
 
 托管选 GitHub Pages，地址 `https://haoo-7.github.io/`。理由：免费、不用域名、不用备案，国内能打开（偏慢）。Cloudflare 的 `pages.dev` / `workers.dev` 在国内部分地区被墙，没有自己的域名时不可用；EdgeOne 想要国内加速必须有备案域名。
 
@@ -11,7 +11,7 @@
 - [x] favicon、404 页、RSS、sitemap、robots.txt
 - [x] 删掉没人引用的字体和旧素材（含 11MB 思源宋体）
 - [x] `astro check` 排除 `worker/`；GitHub Actions：check 和 build 通过才部署
-- [ ] 建公开仓库 `Haoo-7/haoo-7.github.io`，推 main，开 Pages
+- [x] 建公开仓库 `Haoo-7/haoo-7.github.io`，推 main，开 Pages（首次部署 run 40832080276 成功）
 
 暂缓：分享图（微信不读 og:image，收益低）；访问统计（要你自己注册账号）。
 
