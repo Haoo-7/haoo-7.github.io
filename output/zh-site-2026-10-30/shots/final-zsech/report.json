@@ -1,0 +1,36 @@
+[
+  {
+    "file": "page-@2x.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 1,
+        "examples": [
+          "p.tag.mono「A · 思源宋体 + 朱雀仿宋」"
+        ]
+      },
+      {
+        "rule": "headingSpacing",
+        "label": "标题离上文比离下文还近",
+        "count": 1,
+        "examples": [
+          "h2.h2「一个人， 三个画面。」（上 22px，下 72px）"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 1,
+        "examples": [
+          "h3.post-title「数码杂谈 | Kindle PaperWhite」（1.32）"
+        ]
+      }
+    ]
+  }
+]

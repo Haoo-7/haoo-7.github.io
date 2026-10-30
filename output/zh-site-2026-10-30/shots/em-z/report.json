@@ -1,0 +1,22 @@
+[
+  {
+    "file": "page-@2x.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 5,
+        "examples": [
+          "p.mono「朱雀仿宋」",
+          "p.mono「霞鹜文楷 Light」",
+          "p.mono「霞鹜文楷 Regular」"
+        ]
+      }
+    ]
+  }
+]
