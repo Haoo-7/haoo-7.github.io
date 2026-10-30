@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Tray from '../components/Tray.astro';
+import Reader from '../components/Reader.astro';
+import Hello from '../components/Hello.astro';
+import Cat from '../components/Cat.astro';
+import TailTip from '../components/TailTip.astro';
+import { projects } from '../data/projects';
+import { postMeta, readerItem } from '../data/posts';
+import { frames } from '../data/frames';
+import { pathFor, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
+import '../styles/parts.css';
+import '../styles/home.css';
+import '../styles/cat.css';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+const items = posts.map((post, i) => readerItem(post, i, posts.length, lang));
+---
+<Base lang={lang} hello={false}>
+  <section class="hero">
+    <div class="hero-l">
+      <h1 class="words" aria-label="Life, Tech and History" lang="en">
+        <ol>
+          <li data-i="0"><span class="n">01</span><span class="w">Life,</span></li>
+          <li data-i="1" class="on"><span class="n">02</span><span class="w">Tech <em>&amp;</em></span></li>
+          <li data-i="2"><span class="n">03</span><span class="w">History.</span></li>
+        </ol>
+      </h1>
+      <p class="intro">{lang === 'zh' ? ui.zh.home.intro : <>I’m Haoo, a history student who builds like an engineer. <span>Trying to make life better with technology.</span></>}</p>
+    </div>
+
+    <div class="panel" id="panel" role="button" tabindex="0" aria-label={t.a11y.photo}>
+      <div class="frame">
+        <img src="/images/refresh/life.jpg" width="733" height="1100" alt={t.alt.life} />
+        <img src="/images/refresh/tech.jpg" width="733" height="1100" alt={t.alt.tech} class="on" fetchpriority="high" />
+        <img src="/images/refresh/history.jpg" width="733" height="1100" alt={t.alt.history} />
+        <div class="flash" aria-hidden="true"></div>
+      </div>
+      <div class="cap mono" lang="en">
+        <span>Fig. <b id="fig">02</b> <span id="figname">The workbench</span></span>
+        <span class="ticks" aria-hidden="true"><i></i><i class="on"></i><i></i></span>
+      </div>
+    </div>
+
+    <div class="foot mono" lang="en">
+      <Cat />
+      <div class="makes">Makes <a href={pathFor('/work/', lang)}>Projects</a><a href={pathFor('/writing/', lang)}>Essays</a><a href={pathFor('/writing/', lang)}>Reviews</a><a href={pathFor('/writing/', lang)}>Research</a></div>
+      <a class="scrollhint" href="#work"><i aria-hidden="true"></i>Scroll, or keep watching</a>
+    </div>
+  </section>
+
+  <section class="bench" id="work" aria-labelledby="work-h">
+    <div class="head" lang="en">
+      <p class="kick mono"><b>Fig. 04</b> Work</p>
+      <h2 class="h2" id="work-h" data-split>On the bench.</h2>
+    </div>
+    <Tray />
+    <div class="bench-r">
+      <p class="lede" data-rise>{t.home.bench}</p>
+      <ol class="works" data-rows>
+        {projects.map((p, i) => (
+          <li class:list={{ on: i === 0 }} data-c={String(i)}>
+            <span class="n mono" lang="en">{String(i + 1).padStart(2, '0')} · {p.kind}</span>
+            <h3 lang="en"><a href={pathFor(`/work/#${p.id}`, lang)}>{p.name}</a></h3>
+            <p>{lang === 'zh' ? p.lineZh : p.line}</p>
+          </li>
+        ))}
+        <li class="later" data-c="later" tabindex="0" lang="en">
+          <span class="n mono">03–06</span>
+          <h3>Next, when I need it.</h3>
+        </li>
+      </ol>
+      <a class="go mono all" href={pathFor('/work/', lang)} lang="en">All work →</a>
+    </div>
+  </section>
+
+  <section class="desk" id="writing" aria-labelledby="writing-h">
+    <Reader {...items[0]} lang={lang} />
+    <div class="veil" aria-hidden="true"></div>
+    <div class="desk-c">
+      <div class="head" lang="en">
+        <p class="kick mono"><b>Fig. 05</b> Writing</p>
+        <h2 class="h2" id="writing-h" data-split>Written down.</h2>
+      </div>
+      <ol class="posts" data-items={JSON.stringify(items)}>
+        {posts.map((post, i) => (
+          <li class:list={{ on: i === 0 }} data-p={String(i)}>
+            <span class="meta mono" lang="en">{postMeta(post, true, lang)}</span>
+            <a class="t" href={pathFor(`/writing/${post.slug}/`, lang)}>{lang === 'zh' ? post.data.title : post.data.titleEn ?? post.data.title}</a>
+          </li>
+        ))}
+        <li class="later">{t.home.writing}</li>
+      </ol>
+      <a class="go mono all" href={pathFor('/writing/', lang)} lang="en">All writing →</a>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-h">
+    <div class="about-l">
+      <div class="head" lang="en">
+        <p class="kick mono"><b>Fig. 06</b> About</p>
+        <h2 class="h2" id="about-h" data-split>One person,<br /><em>three frames.</em></h2>
+      </div>
+      <ol class="facts" data-facts>
+        {frames.map((f, i) => (
+          <li class="on" data-f={String(i)}><span class="mono" lang="en">0{i + 1} {f.name}</span><p>{lang === 'zh' ? f.lineZh : f.line}</p></li>
+        ))}
+      </ol>
+      <a class="go mono all" href={pathFor('/about/', lang)} lang="en">More about me →</a>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="frames">
+        {[2, 1, 0].map((k) => (
+          <div class="strip partial" data-s={String(k)}>
+            <img src={`/images/refresh/${frames[k].img}.jpg`} width="733" height="1100" alt="" loading="lazy" decoding="async" />
+            <div class="flash"></div>
+          </div>
+        ))}
+      </div>
+      <div class="caps mono" lang="en">
+        {frames.map((f, i) => <span>Fig. 0{i + 1}<b> {f.fig}</b></span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="now" id="now" aria-labelledby="now-h">
+    <p class="kick mono" id="now-h" lang="en"><b>Fig. 07</b> Lately</p>
+    <ol class="lately">
+      {lang === 'zh' ? ui.zh.home.lately.map((line, i) => (
+        <li tabindex={i === 3 ? '0' : undefined}><span>{line}</span>{i === 3 && <span class="egg mono">{ui.zh.home.egg}</span>}</li>
+      )) : <>
+        <li><span>Playing with <em>AI</em>, mostly to study faster.</span></li>
+        <li><span>Tinkering with software and small hardware.</span></li>
+        <li><span>Reading on how people <em>grow</em>.</span></li>
+        <li tabindex="0"><span>Brawlhalla, casually.</span><span class="egg mono">Once top 3 in China, Katana ZERO speedruns</span></li>
+      </>}
+    </ol>
+  </section>
+
+  <Hello lang={lang} fig="08" more={{ label: 'More about me →', href: pathFor('/about/#contact', lang) }} />
+  <TailTip lang={lang} slot="end" />
+</Base>
+
+<script>
+  import '../scripts/home';
+  import '../scripts/cat';
+</script>

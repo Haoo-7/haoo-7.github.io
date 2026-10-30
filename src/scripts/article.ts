@@ -1,4 +1,4 @@
-import { $, $$, reduce } from './core';
+import { $, $$, reduce, lang, text } from './core';
 
 // 窄屏目录默认收起
 const toc = $<HTMLDetailsElement>('[data-toc]');
@@ -96,14 +96,14 @@ const open = (a: HTMLAnchorElement) => {
   pop.className = 'fn-pop';
   pop.id = 'fn-pop';
   pop.setAttribute('role', 'dialog');
-  pop.setAttribute('aria-label', `Note ${a.textContent?.trim() ?? ''}`);
+  pop.setAttribute('aria-label', `${lang === 'zh' ? '注释' : 'Note'} ${a.textContent?.trim() ?? ''}`);
   const body = src.cloneNode(true) as HTMLElement;
   body.removeAttribute('id');
   body.querySelector('.data-footnote-backref')?.remove();
   const x = document.createElement('button');
   x.className = 'x';
   x.type = 'button';
-  x.setAttribute('aria-label', 'Close note');
+  x.setAttribute('aria-label', text.closeNote);
   x.textContent = '×';
   x.addEventListener('click', () => close(true));
   pop.append(x, ...body.childNodes);

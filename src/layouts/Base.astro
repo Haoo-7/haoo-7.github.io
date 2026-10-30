@@ -2,10 +2,12 @@
 import Bar from '../components/Bar.astro';
 import Footer from '../components/Footer.astro';
 import Loader from '../components/Loader.astro';
-import { siteConfig } from '../data/site';
+import { htmlLang, pathFor, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 import '../styles/base.css';
 
 interface Props {
+  lang?: Lang;
   title?: string;
   description?: string;
   active?: string;
@@ -15,28 +17,36 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
 }
-const { title, description = siteConfig.description, active, hello = true, progress = false, reader = false, image = '/images/refresh/tech.jpg', type = 'website' } = Astro.props;
+const { lang = 'en', title, description = ui[lang].meta.home, active, hello = true, progress = false, reader = false, image = '/images/refresh/tech.jpg', type = 'website' } = Astro.props;
 const fullTitle = title ? `${title} — Haoo` : 'Haoo — Life, Tech & History';
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const alternatePath = Astro.url.pathname === '/404.html' || Astro.url.pathname === '/404/' ? '/' : Astro.url.pathname;
+const enUrl = new URL(pathFor(alternatePath, 'en'), Astro.site);
+const zhUrl = new URL(pathFor(alternatePath, 'zh'), Astro.site);
 ---
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang(lang)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="zh-CN" href={zhUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="Haoo" href="/rss.xml" />
     <link rel="preload" href="/fonts/refresh/literata.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/refresh/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/zh/zh.css" />
     {reader && (
       <script is:inline>
         // 读者上次选的字体和字号，在首帧之前就套上，不先用默认字排一遍再跳
@@ -51,12 +61,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body id="top">
     <Loader />
-    <a class="skip mono" href="#main">Skip to content</a>
-    <Bar active={active} progress={progress} reader={reader} />
+    <a class="skip mono" href="#main">{ui[lang].a11y.skip}</a>
+    <Bar lang={lang} active={active} progress={progress} reader={reader} path={alternatePath} />
     <main id="main" class="page">
       <slot />
     </main>
-    <Footer hello={hello} tail={Astro.slots.has('end')}><slot name="end" /></Footer>
+    <Footer lang={lang} hello={hello} tail={Astro.slots.has('end')}><slot name="end" /></Footer>
     <script>
       import '../scripts/core';
     </script>

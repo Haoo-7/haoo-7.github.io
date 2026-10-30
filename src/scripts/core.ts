@@ -1,3 +1,7 @@
+import { ui } from '../i18n/ui';
+
+export const lang = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
+export const text = ui[lang].a11y;
 export const $ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => r.querySelector<T>(s);
 export const $$ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => [...r.querySelectorAll<T>(s)];
 export const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -32,7 +36,7 @@ $$<HTMLButtonElement>('[data-copy]').forEach((copy) => {
       await navigator.clipboard.writeText(addr);
       ok.textContent = 'Copied: ' + addr;
     } catch {
-      ok.textContent = 'Couldn’t copy. Select the address above.';
+      ok.textContent = text.copyFailed;
     }
     copy.classList.add('done');
     clearTimeout(t);

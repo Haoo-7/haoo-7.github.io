@@ -1,0 +1,120 @@
+[
+  {
+    "file": "index.png",
+    "target": "dist/zh/index.html",
+    "name": "index",
+    "state": null,
+    "size": "390x844",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 17,
+        "examples": [
+          "span「FIG. 02 THE WORKBENCH」",
+          "span#figname「THE WORKBENCH」",
+          "div.makes「MAKES PROJECTS ESSAYS RE」"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 2,
+        "examples": [
+          "a.t「年度征文｜效率杂谈：告别纸笔拓荒，怎么用 AI 」（1.22）",
+          "a.t「数码杂谈 | Kindle PaperWhite」（1.22）"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 1,
+        "examples": [
+          "index.html（42 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "index-2.png",
+    "target": "dist/zh/writing/kindle-paperwhite-3/index.html",
+    "name": "index",
+    "state": null,
+    "size": "390x844",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "headingSpacing",
+        "label": "标题离上文比离下文还近",
+        "count": 1,
+        "examples": [
+          "h1.post-title「数码杂谈 | Kindle PaperWhite」（上 30px，下 40px）"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 6,
+        "examples": [
+          "a.back.mono「← ALL WRITING」",
+          "span「23 MIN READ」",
+          "summary.mono「CONTENTS +」"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 1,
+        "examples": [
+          "index.html（61 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "sheet.png",
+    "width": 844,
+    "height": 924,
+    "columns": 2,
+    "items": [
+      {
+        "naturalWidth": 390,
+        "naturalHeight": 844,
+        "width": 390,
+        "height": 844,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "index",
+        "labelY": 876
+      },
+      {
+        "naturalWidth": 390,
+        "naturalHeight": 844,
+        "width": 390,
+        "height": 844,
+        "labelHeight": 32,
+        "x": 430,
+        "y": 24,
+        "label": "index",
+        "labelY": 876
+      }
+    ],
+    "issues": []
+  }
+]

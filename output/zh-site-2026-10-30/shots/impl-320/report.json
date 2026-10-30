@@ -1,0 +1,38 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "320x740",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "headingSpacing",
+        "label": "标题离上文比离下文还近",
+        "count": 1,
+        "examples": [
+          "h1.post-title「数码杂谈 | Kindle PaperWhite」（上 30px，下 40px）"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 6,
+        "examples": [
+          "a.back.mono「← ALL WRITING」",
+          "span「23 MIN READ」",
+          "summary.mono「CONTENTS +」"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 1,
+        "examples": [
+          "index.html（61 KiB）"
+        ]
+      }
+    ]
+  }
+]

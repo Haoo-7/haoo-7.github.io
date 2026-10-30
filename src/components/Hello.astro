@@ -1,12 +1,16 @@
 ---
 import { siteConfig } from '../data/site';
+import type { Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 
 // 同一张书桌到了傍晚，阅读器进入待机，显示广州时间
 interface Props {
+  lang?: Lang;
   fig: string;
   more?: { label: string; href: string };
 }
-const { fig, more } = Astro.props;
+const { lang = 'en', fig, more } = Astro.props;
+const t = ui[lang];
 // 每张票歪一点，像手贴上去的
 const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg'];
 ---
@@ -14,17 +18,17 @@ const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg
   <div class="dusk-wrap">
     <div class="crop dusk-crop">
       <div class="art dusk-art" style="--ar: 1440 / 620">
-        <img class="dusk-img" src="/images/refresh/dusk.jpg" width="1797" height="1198" alt="The same desk at dusk, the e-reader asleep with a clock on its screen" loading="lazy" decoding="async" />
+        <img class="dusk-img" src="/images/refresh/dusk.jpg" width="1797" height="1198" alt={t.alt.dusk} loading="lazy" decoding="async" />
         <div class="standby pin partial" data-standby aria-hidden="true" style="--W:1440;--H:620;--l:606;--t:138;--w:250;--h:345">
-          <span class="sb-mono">Standby</span>
-          <span class="big" data-time>--:--</span>
-          <span class="sb-mono where">Guangzhou · UTC+8</span>
-          <p class="sleep">Probably at a desk, building something.</p>
+          <span class="sb-mono" lang="en">Standby</span>
+          <span class="big" data-time lang="en">--:--</span>
+          <span class="sb-mono where" lang="en">Guangzhou · UTC+8</span>
+          <p class="sleep">{t.contact.sleep}</p>
           <div class="flash"></div>
         </div>
       </div>
     </div>
-    <div class="head">
+    <div class="head" lang="en">
       <p class="kick mono"><b>Fig. {fig}</b> Contact</p>
       <h2 class="h2" id="contact-h" data-split>Say <em>hello.</em></h2>
     </div>
@@ -32,11 +36,11 @@ const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg
   <div class="hello-body">
     <div class="hello-l">
       <a class="mail" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-      <button class="copy mono" type="button" data-copy={siteConfig.email}><span class="lab">Copy address</span><span class="ok" aria-live="polite"></span></button>
-      {more && <a class="go mono more" href={more.href}>{more.label}</a>}
+      <button class="copy mono" type="button" data-copy={siteConfig.email}><span class="lab" lang="en">Copy address</span><span class="ok" aria-live="polite"></span></button>
+      {more && <a class="go mono more" href={more.href} lang="en">{more.label}</a>}
     </div>
-    <div class="stamp-sheet" role="group" aria-label="Elsewhere stamps">
-      <p class="stamp-sel stamp-sel-top mono"><span>Haoo · Elsewhere</span></p>
+    <div class="stamp-sheet" role="group" aria-label={t.a11y.stamps}>
+      <p class="stamp-sel stamp-sel-top mono" lang="en"><span>Haoo · Elsewhere</span></p>
       <div class="stamp-grid">
         {siteConfig.socialLinks.map((link, i) =>
           link.kind === 'link' ? (
@@ -46,13 +50,13 @@ const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg
               target="_blank"
               rel="me noopener"
               style={`--r:${tilts[i]}`}
-              aria-label={`${link.label}, ${link.handle}, opens in a new tab`}
+              aria-label={lang === 'zh' ? `${link.labelZh}，${link.handle}，在新标签页打开` : `${link.label}, ${link.handle}, opens in a new tab`}
             >
               <span class="stamp-card">
                 <span class="stamp-face stamp-front">
                   <span class="stamp-vig">
                     <img class:list={['stamp-ico', { wide: link.label === 'Xiaohongshu' }]} src={`/images/stamps/icons/${link.icon}`} alt="" />
-                    <span class:list={['stamp-nm', { 'sr-only': link.label === 'Xiaohongshu' }]}>{link.label}</span>
+                    <span class:list={['stamp-nm', { 'sr-only': lang === 'en' && link.label === 'Xiaohongshu' }]} lang={lang === 'zh' && /[一-鿿]/.test(link.labelZh) ? 'zh-CN' : 'en'}>{lang === 'zh' ? link.labelZh : link.label}</span>
                   </span>
                 </span>
               </span>
@@ -66,19 +70,19 @@ const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg
               data-mail={link.kind === 'mail' ? link.href.replace(/^mailto:/, '') : undefined}
               data-flip={link.kind === 'qr' ? '' : undefined}
               aria-pressed={link.kind === 'qr' ? 'false' : undefined}
-              aria-label={link.kind === 'mail' ? `${link.label}, ${link.handle}, copy address` : 'WeChat official account, show QR code'}
+              aria-label={link.kind === 'mail' ? (lang === 'zh' ? `${link.labelZh}，${link.handle}，复制地址` : `${link.label}, ${link.handle}, copy address`) : t.a11y.qrShow}
             >
               <span class="stamp-card">
                 <span class="stamp-face stamp-front">
                   <span class="stamp-vig">
                     <img class="stamp-ico" src={`/images/stamps/icons/${link.icon}`} alt="" />
-                    <span class="stamp-nm">{link.label}</span>
+                    <span class="stamp-nm" lang={lang === 'zh' && /[一-鿿]/.test(link.labelZh) ? 'zh-CN' : 'en'}>{lang === 'zh' ? link.labelZh : link.label}</span>
                   </span>
                 </span>
                 {link.kind === 'qr' && (
                   <span class="stamp-face stamp-back">
-                    <img src="/images/stamps/wechat-qr.png" width="430" height="430" alt="QR code for Haoo's WeChat official account" />
-                    <span class="mono">SCAN · 公众号</span>
+                    <img src="/images/stamps/wechat-qr.png" width="430" height="430" alt={t.alt.qr} />
+                    <span class="mono" lang="en">SCAN · <span lang="zh-CN">公众号</span></span>
                   </span>
                 )}
               </span>
@@ -86,7 +90,7 @@ const tilts = ['-1.4deg', '.9deg', '-.6deg', '1.3deg', '.5deg', '-1.1deg', '1deg
             </button>
           ),
         )}
-        <div class="stamp-clock" aria-label="Local time in Guangzhou">
+        <div class="stamp-clock" aria-label={t.a11y.time} lang="en">
           <div class="stamp-ring"><b data-time>--:--</b><span class="mono">GUANGZHOU</span></div>
         </div>
       </div>

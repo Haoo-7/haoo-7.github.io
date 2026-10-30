@@ -10,6 +10,8 @@ export default defineConfig({
   output: "static",
   site: "https://haoo-7.github.io",
   devToolbar: { enabled: false },
+  // 两种外壳共用中文文章，脚注的读屏标签也随正文使用中文
+  markdown: { remarkRehype: { footnoteLabel: '注释', footnoteBackLabel: '返回正文' } },
   redirects: {
     "/posts": "/writing/",
     ...Object.fromEntries(slugs.map((s) => [`/posts/${s}`, `/writing/${s}/`])),

@@ -1,0 +1,8 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import Article from '../../../views/Article.astro';
+import { postPaths } from '../../../data/posts';
+export async function getStaticPaths() { return postPaths(); }
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+---
+<Article {...Astro.props} lang="zh" />

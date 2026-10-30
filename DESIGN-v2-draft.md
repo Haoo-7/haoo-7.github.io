@@ -79,6 +79,8 @@ components:
 一个历史系学生、理科气质的个人站，slogan「Life, Tech & History」。整站像一台放在书桌上的墨水屏阅读器：纸色底、黑白照片、等宽小字编号，换图和换页时像墨水屏那样黑一下、白一下再显出来。【用户确认，10-25 选定 01 Refresh】
 
 - 外壳英文，文章正文中文。【用户确认】
+- 中文版在 `/zh/`，英文是默认地址；只靠顶栏「EN / 中」手动切换，不按浏览器语言跳转。【用户确认，10-30】
+- 中文版里标题、等宽小字、导航、按钮和招牌句（Life, Tech & History.／Say hello.）保留英文；只有要读的句子写中文，口语、完整，不写对仗口号。文案以 `output/zh-site-2026-10-30/COPY-zh.md` 为准。【用户确认，10-30】
 - 首页是完整的七屏单页，不拆；顶栏 Work / Writing / About 跳独立页面，联系放在 About 末尾。【用户确认，10-26】
 - 门面有动效，文章页零入场动画：门面热闹、阅读安静。【沿用旧规范，Agent 推断仍成立】
 
@@ -98,7 +100,8 @@ components:
 - **Literata**：大字、标题和英文正文；强调用斜体细体 `<em>`（300），例如 "Say *hello.*"。【用户确认】
 - **Instrument Sans**：说明段落、档案正文、TL;DR。【用户确认】
 - **IBM Plex Mono** 大写 13px：元信息、`Fig. 0n` 编号、按钮式链接（"All writing →"）。【用户确认】
-- 中文正文落系统宋体（Songti SC / Noto Serif CJK），不加载 11MB 的思源宋体 woff2。19px / 1.95，行宽约 36 个汉字（720px）。【Agent 推断】
+- 中文字体由 Agent 选定（用户授权，10-30）：标题、目录、下一篇用思源宋体分片（`public/fonts/zh/`，`scripts/build-zh-font.py` 生成）；正文 `--serif-read` 先用系统宋体，没有宋体的系统才下载分片。19px / 1.95，行宽约 36 个汉字（720px）。【Agent 推断】
+- 中文没有斜体：需要强调时用朱雀仿宋，目前中文版没有用到，未加载。中文标点在 `:lang(zh)` 下走 `ZhPunct`，不借 Literata 的西文引号。【Agent 推断】
 - 中文标题 `text-wrap: balance`，不能断开的词用 `.keep` 包住。【Agent 推断】
 
 ## Layout

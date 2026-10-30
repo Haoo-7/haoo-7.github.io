@@ -1,50 +1,58 @@
 ---
 import { siteConfig } from '../data/site';
+import { pathFor, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 
 interface Props {
+  lang?: Lang;
+  path?: string;
   active?: string;
   progress?: boolean;
   /** 文章页：时钟左边加 Aa，调正文的字体和字号 */
   reader?: boolean;
 }
-const { active, progress = false, reader = false } = Astro.props;
+const { lang = 'en', path = Astro.url.pathname, active, progress = false, reader = false } = Astro.props;
+const t = ui[lang].a11y;
 ---
 <header class="bar mono" id="bar">
   <div class="bar-in">
-    <a class="brand" href="/" aria-label="Haoo, home">Haoo</a>
-    <nav class="nav" aria-label="Main">
+    <a class="brand" href={pathFor('/', lang)} aria-label={t.home}>Haoo</a>
+    <nav class="nav" aria-label={t.nav} lang="en">
       {siteConfig.navigation.map((item) => (
-        <a href={item.href} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>
+        <a href={pathFor(item.href, lang)} aria-current={active === item.href ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
-    {reader ? (
-      <div class="bar-r">
+    <div class="bar-r">
+      <div class="lang-switch">
+        <a href={pathFor(path, 'en')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <span aria-hidden="true">/</span>
+        <a href={pathFor(path, 'zh')} hreflang="zh-CN" lang="zh-CN" aria-current={lang === 'zh' ? 'page' : undefined}>中</a>
+      </div>
+      {reader && (
         <div class="rd">
-          <button class="aa" type="button" aria-expanded="false" aria-controls="rd-panel" aria-label="Reading settings" data-rd-open>Aa</button>
-          <div class="rd-panel" id="rd-panel" role="group" aria-label="Reading settings" hidden>
-            <div class="rd-sec">
+          <button class="aa" type="button" aria-expanded="false" aria-controls="rd-panel" aria-label={t.reading} data-rd-open>Aa</button>
+          <div class="rd-panel" id="rd-panel" role="group" aria-label={t.reading} hidden>
+            <div class="rd-sec" lang="en">
               <p class="rd-lab mono"><span>Typeface</span></p>
               <div class="rd-faces">
                 <button class="rd-face serif" type="button" aria-pressed="true" data-rd-face="serif"><span class="g" lang="zh-CN">永</span><span class="e">Literata</span><span class="n mono">Serif</span></button>
                 <button class="rd-face sans" type="button" aria-pressed="false" data-rd-face="sans"><span class="g" lang="zh-CN">永</span><span class="e">Instrument</span><span class="n mono">Sans</span></button>
               </div>
             </div>
-            <div class="rd-sec">
+            <div class="rd-sec" lang="en">
               <p class="rd-lab mono"><span>Text size</span><b aria-live="polite" data-rd-px>19 px</b></p>
               <div class="rd-step">
-                <button class="minus" type="button" aria-label="Smaller text" data-rd-step="-1">A</button>
+                <button class="minus" type="button" aria-label={t.smaller} data-rd-step="-1">A</button>
                 <div class="rd-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-                <button class="plus" type="button" aria-label="Larger text" data-rd-step="1">A</button>
+                <button class="plus" type="button" aria-label={t.larger} data-rd-step="1">A</button>
               </div>
             </div>
-            <p class="rd-foot mono"><span>Saved on this device</span><button type="button" data-rd-reset>Reset</button></p>
+            <p class="rd-foot mono" lang="en"><span>Saved on this device</span><button type="button" data-rd-reset>Reset</button></p>
           </div>
         </div>
-        <div class="clock" aria-label="Local time in Guangzhou"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
-      </div>
-    ) : (
-      <div class="clock" aria-label="Local time in Guangzhou"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
-    )}
+      )}
+      <div class="clock" aria-label={t.time} lang="en"><i class="dot" aria-hidden="true"></i>Guangzhou <b data-time>--:--</b> UTC+8</div>
+    </div>
   </div>
   {progress && <i class="progress" id="progress" aria-hidden="true"></i>}
 </header>

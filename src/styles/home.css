@@ -89,6 +89,11 @@
 .egg { margin-left: auto; white-space: nowrap; flex: none; color: var(--ink-2); opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s; letter-spacing: 0; }
 .lately li:hover .egg, .lately li:focus-within .egg { opacity: 1; transform: none; }
 
+/* 中文说明和标题不收紧字距，也不合成斜体 */
+.intro:lang(zh), .lede:lang(zh), .facts p:lang(zh), .posts a.t:lang(zh), .lately li:lang(zh) { letter-spacing: 0; }
+.posts a.t:lang(zh) { line-height: 1.38; }
+.posts li.later:lang(zh) { font-style: normal; }
+
 @media (max-width: 1279px) {
   .desk { min-height: 0; overflow: visible; }
   .desk > .desk-crop { position: relative; inset: auto; aspect-ratio: 1.412; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 88%, transparent 100%); }

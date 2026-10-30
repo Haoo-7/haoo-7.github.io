@@ -1,4 +1,4 @@
-import { $, $$, reduce } from './core';
+import { $, $$, reduce, lang, text } from './core';
 
 // 邮票版：链接票盖戳后照常打开，邮箱票盖戳并复制，公众号票翻面
 const sheet = $<HTMLElement>('.stamp-sheet');
@@ -32,7 +32,7 @@ if (sheet && msg) {
           await navigator.clipboard.writeText(mail);
           say(`Copied · ${mail}`);
         } catch {
-          say(`Couldn’t copy · ${mail}`);
+          say(lang === 'zh' ? text.copyFailed : `Couldn’t copy · ${mail}`);
         }
         return;
       }
@@ -41,7 +41,7 @@ if (sheet && msg) {
         const on = !stamp.classList.contains('stamp-flipped');
         stamp.classList.toggle('stamp-flipped', on);
         stamp.setAttribute('aria-pressed', String(on));
-        stamp.setAttribute('aria-label', on ? 'WeChat official account, hide QR code' : 'WeChat official account, show QR code');
+        stamp.setAttribute('aria-label', on ? text.qrHide : text.qrShow);
         if (on) {
           say('Scan with WeChat');
         } else {
@@ -67,7 +67,7 @@ if (sheet && msg) {
     flipped.forEach((stamp) => {
       stamp.classList.remove('stamp-flipped');
       stamp.setAttribute('aria-pressed', 'false');
-      stamp.setAttribute('aria-label', 'WeChat official account, show QR code');
+      stamp.setAttribute('aria-label', text.qrShow);
     });
     clearTimeout(t);
     msg.textContent = idle;

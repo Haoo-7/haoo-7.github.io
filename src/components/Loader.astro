@@ -73,6 +73,7 @@ import '../styles/loader.css';
 <script is:inline>
   (() => {
     const html = document.documentElement;
+    const loading = html.lang.startsWith('zh') ? '加载中' : 'Loading';
     const loader = document.querySelector('.loader');
     if (!loader) return;
 
@@ -450,7 +451,7 @@ import '../styles/loader.css';
       html.classList.add('loader-handoff');
       if (late) html.classList.add('is-loading', 'loader-cover', 'loader-show', 'loader-step');
       else html.classList.add('loader-show');
-      if (status) status.textContent = 'Loading';
+      if (status) status.textContent = loading;
       startBlink();
     };
 
@@ -468,7 +469,7 @@ import '../styles/loader.css';
       // 首次：先盖纸，猫等在 300ms 后；站内跳转：先让页面留着，400ms 后才盖
       if (first) {
         html.classList.add('is-loading', 'loader-cover');
-        if (status) status.textContent = 'Loading';
+        if (status) status.textContent = loading;
         showTimer = window.setTimeout(() => {
           showTimer = 0;
           if (!destroyed) showLoader(false);
@@ -562,7 +563,7 @@ import '../styles/loader.css';
       isShown = true;
       shownAt = performance.now();
       html.classList.add('is-loading', 'loader-cover', 'loader-show', 'loader-handoff');
-      if (status) status.textContent = 'Loading';
+      if (status) status.textContent = loading;
       render(shown);
     } else if (play) {
       isShown = true;
@@ -571,7 +572,7 @@ import '../styles/loader.css';
       lateFlow = playNav;
       html.classList.add('is-loading', 'loader-cover', 'loader-show', 'loader-handoff');
       if (playNav) html.classList.add('loader-step');
-      if (status) status.textContent = 'Loading';
+      if (status) status.textContent = loading;
       startBlink();
       render(shown);
       raf = requestAnimationFrame(frame);

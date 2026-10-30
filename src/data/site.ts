@@ -1,5 +1,6 @@
 export interface SocialLink {
   label: string;
+  labelZh: string;
   href: string;
   handle: string;
   kind: 'link' | 'mail' | 'qr';
@@ -34,12 +35,12 @@ export const siteConfig = {
   email: 're11.zhou@qq.com',
   // 七张邮票：两张邮箱票（主邮箱在前）、四张链接票、一张公众号二维码票
   socialLinks: [
-    { label: 'QQ Mail', href: 'mailto:re11.zhou@qq.com', handle: 're11.zhou@qq.com', kind: 'mail', icon: 'qq.svg', short: 're11.zhou@qq' },
-    { label: 'Gmail', href: 'mailto:re11.zhou@gmail.com', handle: 're11.zhou@gmail.com', kind: 'mail', icon: 'gmail.svg', short: 're11.zhou@gmail' },
-    { label: 'GitHub', href: 'https://github.com/Haoo-7', handle: 'Haoo-7', kind: 'link', icon: 'github.svg', short: 'Haoo-7', primary: true },
-    { label: 'sspai', href: 'https://sspai.com/u/6veuyub4/updates', handle: 'Haoo_7', kind: 'link', icon: 'sspai.svg', short: 'Haoo_7', primary: true },
-    { label: 'Bilibili', href: 'https://space.bilibili.com/438365760', handle: 'Haoo_117c', kind: 'link', icon: 'bilibili.svg', short: 'Haoo_117c', primary: true },
-    { label: 'Xiaohongshu', href: 'https://www.xiaohongshu.com/user/profile/65464d64000000000d005c9b', handle: 'Haoo', kind: 'link', icon: 'xiaohongshu.svg', short: 'Haoo', primary: true },
-    { label: 'WeChat', href: '', handle: '公众号', kind: 'qr', icon: 'wechat.svg', short: '公众号' },
+    { label: 'QQ Mail', labelZh: 'QQ 邮箱', href: 'mailto:re11.zhou@qq.com', handle: 're11.zhou@qq.com', kind: 'mail', icon: 'qq.svg', short: 're11.zhou@qq' },
+    { label: 'Gmail', labelZh: 'Gmail', href: 'mailto:re11.zhou@gmail.com', handle: 're11.zhou@gmail.com', kind: 'mail', icon: 'gmail.svg', short: 're11.zhou@gmail' },
+    { label: 'GitHub', labelZh: 'GitHub', href: 'https://github.com/Haoo-7', handle: 'Haoo-7', kind: 'link', icon: 'github.svg', short: 'Haoo-7', primary: true },
+    { label: 'sspai', labelZh: '少数派', href: 'https://sspai.com/u/6veuyub4/updates', handle: 'Haoo_7', kind: 'link', icon: 'sspai.svg', short: 'Haoo_7', primary: true },
+    { label: 'Bilibili', labelZh: 'B站', href: 'https://space.bilibili.com/438365760', handle: 'Haoo_117c', kind: 'link', icon: 'bilibili.svg', short: 'Haoo_117c', primary: true },
+    { label: 'Xiaohongshu', labelZh: '小红书', href: 'https://www.xiaohongshu.com/user/profile/65464d64000000000d005c9b', handle: 'Haoo', kind: 'link', icon: 'xiaohongshu.svg', short: 'Haoo', primary: true },
+    { label: 'WeChat', labelZh: '公众号', href: '', handle: '公众号', kind: 'qr', icon: 'wechat.svg', short: '公众号' },
   ],
 } satisfies SiteConfig;

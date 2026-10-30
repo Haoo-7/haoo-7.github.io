@@ -1,31 +1,34 @@
 ---
 import { siteConfig } from '../data/site';
+import { pathFor, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 
 interface Props {
+  lang?: Lang;
   // 首页和 About 自带 Say hello，页脚只留一行
   hello?: boolean;
   // 首页：猫尾巴挂在 Back to top 的位置，拉它就回到顶部，不再另放链接
   tail?: boolean;
 }
-const { hello = true, tail = false } = Astro.props;
+const { lang = 'en', hello = true, tail = false } = Astro.props;
 ---
 <footer class="end">
   <div class="end-in">
     {hello && (
       <div class="end-full">
         <div>
-          <p class="say">Say <em>hello.</em></p>
+          <p class="say" lang="en">Say <em>hello.</em></p>
           <a class="mail-s" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>
-        <ul class="end-links" aria-label="Elsewhere">
+        <ul class="end-links" aria-label={ui[lang].a11y.elsewhere}>
           {siteConfig.socialLinks.filter((link) => link.primary).map((link) => (
-            <li><a href={link.href} rel="me noopener">{link.label}</a><span class="mono">{link.handle} ↗</span></li>
+            <li><a href={link.href} rel="me noopener" lang={lang === 'zh' && /[一-鿿]/.test(link.labelZh) ? 'zh-CN' : 'en'}>{lang === 'zh' ? link.labelZh : link.label}</a><span class="mono" lang="en">{link.handle} ↗</span></li>
           ))}
         </ul>
       </div>
     )}
-    <div class:list={['end-line mono', { 'has-tail': tail }]}>
-      <a class="brand" href="/">Haoo</a>
+    <div class:list={['end-line mono', { 'has-tail': tail }]} lang="en">
+      <a class="brand" href={pathFor('/', lang)}>Haoo</a>
       <span class="tag">Life, Tech &amp; History · Built by hand in Guangzhou · 2026</span>
       {tail ? <slot /> : <a href="#top">Back to top ↑</a>}
     </div>

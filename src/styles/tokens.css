@@ -20,8 +20,9 @@
   --flash-light: #F4F4F1;
   --hover: rgba(18, 18, 18, .045);
 
-  /* 字体：Literata 是正文与大字，中文落到系统宋体 */
-  --serif: "Lit", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  /* 标题优先思源宋体，阅读区域在 Mac 上优先系统宋体 */
+  --serif: "Lit", "Noto Serif SC Web", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
+  --serif-read: "Lit", "Songti SC", "Noto Serif SC Web", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif;
   --sans: "Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", system-ui, sans-serif;
   --mono: "Mono", ui-monospace, "PingFang SC", monospace;
 
@@ -35,3 +36,7 @@
   --t-mid: .24s;
   --t-slow: .32s;
 }
+
+/* 中文标点不借用 Literata 的西文宽度 */
+:lang(en) { --serif: "Lit", "Noto Serif SC Web", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; --serif-read: "Lit", "Songti SC", "Noto Serif SC Web", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; }
+:lang(zh) { --serif: "ZhPunct", "Lit", "Noto Serif SC Web", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; --serif-read: "ZhPunct", "Lit", "Songti SC", "Noto Serif SC Web", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, serif; }

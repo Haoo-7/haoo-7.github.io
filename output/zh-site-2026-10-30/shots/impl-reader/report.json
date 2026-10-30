@@ -1,0 +1,30 @@
+[
+  {
+    "file": "page-@2x.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 2,
+        "examples": [
+          "div.clock「GUANGZHOU 15:29 UTC+8」",
+          "a「BACK TO TOP ↑」"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 2,
+        "examples": [
+          "a.t「年度征文｜效率杂谈：告别纸笔拓荒，怎么用 AI 」（1.20）",
+          "a.t「数码杂谈 | Kindle PaperWhite」（1.20）"
+        ]
+      }
+    ]
+  }
+]

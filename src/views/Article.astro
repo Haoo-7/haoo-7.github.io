@@ -1,0 +1,82 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { kind, platforms, readingMinutes } from '../data/posts';
+import { pathFor, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
+import '../styles/article.css';
+
+interface Props {
+  lang: Lang;
+  post: CollectionEntry<'posts'>;
+  next: CollectionEntry<'posts'>;
+}
+const { lang, post, next } = Astro.props;
+const { Content, headings } = await render(post);
+// 目录只列二级标题，注释区不算
+const chapters = headings.filter((h) => h.depth === 2 && h.slug !== 'footnote-label' && h.text !== '注释');
+const { title, titleEn, description, tldr, pubDate, cover, externalPublications } = post.data;
+const date = pubDate.toISOString().slice(0, 10);
+const where = platforms(post, lang);
+// 两篇旧标题里有词不能断开
+const keep: Record<string, string> = { 'ai-assisted-learning': '纸笔拓荒', 'kindle-paperwhite-3': '高中生' };
+const word = keep[post.slug] ?? '';
+const [before, after] = word && title.includes(word) ? title.split(word) : [title, undefined];
+---
+<Base lang={lang} title={titleEn ?? title} description={description} active="/writing/" progress reader image={cover} type="article">
+  <article class="post" lang="zh-CN">
+    <a class="back mono" href={pathFor('/writing/', lang)} lang="en">← All writing</a>
+    <header class="post-head">
+      <p class="kick mono" lang="en"><b>{kind(post)}</b><time datetime={date}>{date}</time><span>{readingMinutes(post)} min read</span>{lang === 'en' && <span>In Chinese</span>}</p>
+      <h1 class="post-title">{after === undefined ? title : <>{before}<span class="keep">{word}</span>{after}</>}</h1>
+      {lang === 'en' && titleEn && <p class="post-en" lang="en">{titleEn}</p>}
+      <p class="tldr"><span class="mono" lang="en">TL;DR</span>{tldr}</p>
+    </header>
+
+    <figure class="post-cover">
+      <img src={cover} alt="" fetchpriority="high" decoding="async" />
+    </figure>
+
+    <aside class="side">
+      {chapters.length > 0 && (
+        <details class="toc" open data-toc>
+          <summary class="mono" lang="en">Contents <span aria-hidden="true">+</span></summary>
+          <nav aria-label={ui[lang].a11y.contents}>
+            <ol>
+              {chapters.map((c, i) => (
+                <li><a href={`#${c.slug}`} data-to={c.slug} lang="zh-CN"><span class="mono" lang="en">{String(i + 1).padStart(2, '0')}</span><span>{c.text}</span></a></li>
+              ))}
+            </ol>
+          </nav>
+        </details>
+      )}
+    </aside>
+
+    <div class="prose" id="prose">
+      <Content />
+    </div>
+
+    <footer class="post-foot" lang="en">
+      {externalPublications.length > 0 && (
+        <p class="also mono">
+          <span>Also published on</span>
+          {externalPublications.map((p, i) => (
+            <a href={p.url} rel="noopener" target="_blank" lang={lang === 'zh' ? 'zh-CN' : 'en'}>{where[i]} ↗</a>
+          ))}
+        </p>
+      )}
+      {next.id !== post.id && (
+        <a class="next" href={pathFor(`/writing/${next.slug}/`, lang)}>
+          <span class="mono">Next · {kind(next)}</span>
+          <span class="next-t" lang="zh-CN">{next.data.title}</span>
+          {lang === 'en' && next.data.titleEn && <span class="next-en">{next.data.titleEn}</span>}
+        </a>
+      )}
+    </footer>
+  </article>
+</Base>
+
+<script>
+  import '../scripts/article';
+  import '../scripts/reader';
+</script>

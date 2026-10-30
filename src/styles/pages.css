@@ -70,6 +70,9 @@
 .ab-cap { margin-top: 16px; display: flex; justify-content: space-between; color: var(--ink-2); }
 .ab-cap b { color: var(--ink); font-weight: 500; }
 
+.p-lede:lang(zh), .chapter p:lang(zh), .entry:lang(zh), .entry .t:lang(zh), .d-line:lang(zh), .d-facts dd:lang(zh) { letter-spacing: 0; }
+.entry .t:lang(zh) { line-height: 1.36; }
+
 @media (max-width: 1023px) {
   .p-head { padding-top: 120px; }
   .p-lede { font-size: 18px; }

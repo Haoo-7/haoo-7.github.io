@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import Tray from '../components/Tray.astro';
+import { projects } from '../data/projects';
+import { siteConfig } from '../data/site';
+import type { Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const github = siteConfig.socialLinks.find((l) => l.label === 'GitHub')!;
+import '../styles/parts.css';
+import '../styles/pages.css';
+---
+<Base lang={lang} title="Work" description={t.meta.work} active="/work/">
+  <header class="p-head">
+    <p class="kick mono" lang="en"><b>Work</b><span>{projects.length} projects · {6 - projects.length} empty compartments</span></p>
+    <h1 class="p-h1" data-split lang="en">On the <em>bench.</em></h1>
+    <p class="p-lede" data-rise>{t.work.intro}</p>
+  </header>
+
+  <div class="work">
+    <div class="work-tray">
+      <Tray class="tray-zoom" />
+      <p class="work-cap mono" aria-hidden="true" lang="en">Fig. <b>04</b> The cutting mat, from above</p>
+    </div>
+
+    <ol class="dossiers" data-rows>
+      {projects.map((p, i) => (
+        <li class="dossier" id={p.id} data-c={String(i)}>
+          <p class="d-n mono" lang="en"><b>{String(i + 1).padStart(2, '0')}</b><span>{p.kind}</span><span>Since {p.started}</span></p>
+          <h2 class="d-name" lang="en">{p.name}</h2>
+          <p class="d-line">{lang === 'zh' ? p.lineZh : p.line}</p>
+          <dl class="d-facts">
+            <div><dt class="mono" lang="en">Why</dt><dd>{lang === 'zh' ? p.problemZh : p.problem}</dd></div>
+            <div><dt class="mono" lang="en">What it does</dt><dd><ul>{(lang === 'zh' ? p.doesZh : p.does).map((d) => <li>{d}</li>)}</ul></dd></div>
+            <div><dt class="mono" lang="en">Built with</dt><dd>{lang === 'zh' ? p.stackZh : p.stack}</dd></div>
+            <div><dt class="mono" lang="en">Status</dt><dd>{lang === 'zh' ? p.statusZh : p.status}</dd></div>
+          </dl>
+          <a class="go mono" href={p.href} rel="noopener" target="_blank" lang="en">Source on GitHub ↗</a>
+        </li>
+      ))}
+      <li class="dossier later" data-c="later" tabindex="0">
+        <p class="d-n mono" lang="en"><b>03–06</b><span>Empty</span></p>
+        <h2 class="d-name" lang="en">Next, when I need it.</h2>
+        <p class="d-line">{lang === 'zh' ? <>以后做的新工具会放在这里。我其他的仓库可以去 <a href={github.href} rel="me noopener" lang="en">GitHub</a> 上看。</> : <>Whatever I build next goes here. The rest of my repositories live on <a href={github.href} rel="me noopener">GitHub</a>.</>}</p>
+      </li>
+    </ol>
+  </div>
+</Base>
+
+<script>
+  import '../scripts/work';
+</script>

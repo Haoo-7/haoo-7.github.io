@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Hello from '../components/Hello.astro';
+import { frames } from '../data/frames';
+import type { Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
+import '../styles/parts.css';
+import '../styles/pages.css';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+
+// 三段各配首屏的一帧；文案比首页那一句多说一点
+const chapters = [
+  {
+    h: 'Getting a little better, <em>on purpose.</em>',
+    p: t.about.chapters[0],
+  },
+  {
+    h: 'I’d rather build the tool <em>than wait for it.</em>',
+    p: t.about.chapters[1],
+  },
+  {
+    h: 'The big picture, <em>and the people in it.</em>',
+    p: t.about.chapters[2],
+  },
+];
+---
+<Base lang={lang} title="About" description={t.meta.about} active="/about/" hello={false}>
+  <header class="p-head">
+    <p class="kick mono" lang="en"><b>About</b></p>
+    <h1 class="p-h1" data-split lang="en">One person,<br /><em>three frames.</em></h1>
+    <p class="p-lede" data-rise>{t.about.intro}</p>
+  </header>
+
+  <div class="ab">
+    <div class="ab-text">
+      {chapters.map((c, i) => (
+        <section class="chapter" data-ch={String(i)} aria-labelledby={`ch-${i}`}>
+          <p class="ch-n mono" lang="en"><b>0{i + 1}</b>{frames[i].name}</p>
+          <h2 id={`ch-${i}`} lang="en" set:html={c.h} />
+          {c.p.map((t) => <p set:html={t} />)}
+        </section>
+      ))}
+    </div>
+    <div class="ab-frame" aria-hidden="true">
+      <div class="frame" data-frame>
+        {frames.map((f, i) => (
+          <img class:list={{ on: i === 0 }} src={`/images/refresh/${f.img}.jpg`} width="733" height="1100" alt="" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+        ))}
+        <div class="flash"></div>
+      </div>
+      <p class="ab-cap mono" lang="en"><span>Fig. <b data-fig>01</b> <span data-figname>{frames[0].fig}</span></span><span class="ticks">{frames.map((_, i) => <i class:list={{ on: i === 0 }}></i>)}</span></p>
+    </div>
+  </div>
+
+
+  <Hello lang={lang} fig="08" />
+</Base>
+
+<script>
+  import { $, $$, refresh } from '../scripts/core';
+  import { ScrollTrigger, rises } from '../scripts/motion';
+  import { frames } from '../data/frames';
+
+  // 读到哪一段，右边那一帧就刷新成哪张
+  const frame = $('[data-frame]')!;
+  const imgs = $$('img', frame);
+  const ticks = $$('.ab-cap .ticks i');
+  const figs = frames.map((f) => f.fig);
+  let cur = 0;
+  const show = (n: number) => {
+    if (n === cur) return;
+    cur = n;
+    refresh(frame, () => {
+      imgs.forEach((im, k) => im.classList.toggle('on', k === n));
+      ticks.forEach((t, k) => t.classList.toggle('on', k === n));
+      $('[data-fig]')!.textContent = '0' + (n + 1);
+      $('[data-figname]')!.textContent = figs[n];
+    });
+  };
+  $$('.chapter').forEach((c) =>
+    ScrollTrigger.create({ trigger: c, start: 'top 55%', end: 'bottom 55%', onToggle: (st) => st.isActive && show(+c.dataset.ch!) }),
+  );
+  ScrollTrigger.create({ trigger: '[data-standby]', start: 'top 75%', once: true, onEnter: () => refresh($('[data-standby]')!) });
+  rises();
+</script>

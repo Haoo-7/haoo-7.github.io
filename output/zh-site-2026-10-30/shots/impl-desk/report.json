@@ -1,0 +1,272 @@
+[
+  {
+    "file": "index.png",
+    "target": "dist/zh/index.html",
+    "name": "index",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 20,
+        "examples": [
+          "div.clock「GUANGZHOU 15:28 UTC+8」",
+          "span「FIG. 02 THE WORKBENCH」",
+          "span#figname「THE WORKBENCH」"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 2,
+        "examples": [
+          "a.t「年度征文｜效率杂谈：告别纸笔拓荒，怎么用 AI 」（1.22）",
+          "a.t「数码杂谈 | Kindle PaperWhite」（1.22）"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 2,
+        "examples": [
+          "index.html（42 KiB）",
+          "zh.css（81 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "index-2.png",
+    "target": "dist/zh/writing/index.html",
+    "name": "index",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 2,
+        "examples": [
+          "div.clock「GUANGZHOU 15:28 UTC+8」",
+          "a「BACK TO TOP ↑」"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 2,
+        "examples": [
+          "a.t「年度征文｜效率杂谈：告别纸笔拓荒，怎么用 AI 」（1.20）",
+          "a.t「数码杂谈 | Kindle PaperWhite」（1.20）"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 1,
+        "examples": [
+          "zh.css（81 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "index-3.png",
+    "target": "dist/zh/writing/kindle-paperwhite-3/index.html",
+    "name": "index",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "headingSpacing",
+        "label": "标题离上文比离下文还近",
+        "count": 1,
+        "examples": [
+          "h1.post-title「数码杂谈 | Kindle PaperWhite」（上 30px，下 40px）"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 7,
+        "examples": [
+          "div.clock「GUANGZHOU 15:28 UTC+8」",
+          "a.back.mono「← ALL WRITING」",
+          "span「23 MIN READ」"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 1,
+        "examples": [
+          "h1.post-title「数码杂谈 | Kindle PaperWhite」（1.32）"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 2,
+        "examples": [
+          "index.html（61 KiB）",
+          "zh.css（81 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "index-4.png",
+    "target": "dist/zh/about/index.html",
+    "name": "index",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 4,
+        "examples": [
+          "p.kick.mono「ABOUT」",
+          "p.ch-n.mono「01LIFE」",
+          "p.ch-n.mono「02TECH」"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 6,
+        "examples": [
+          "div.clock「GUANGZHOU 15:28 UTC+8」",
+          "p.kick.mono「FIG. 08 CONTACT」",
+          "span.lab「COPY ADDRESS」"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 1,
+        "examples": [
+          "zh.css（81 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "index-5.png",
+    "target": "dist/index.html",
+    "name": "index",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 2,
+        "examples": [
+          "index.html（41 KiB）",
+          "zh.css（81 KiB）"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "sheet.png",
+    "width": 3312,
+    "height": 480,
+    "columns": 5,
+    "items": [
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "index",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "index",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "index",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1992,
+        "y": 24,
+        "label": "index",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 2648,
+        "y": 24,
+        "label": "index",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]

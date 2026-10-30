@@ -1,13 +1,14 @@
 /* 文章页：安静的阅读页。左栏是目录，正文一栏约 36 个汉字宽，没有入场动画 */
 /* 读者可调的字体和字号（顶栏 Aa）。--rd 是相对默认档的倍数，正文里的字号都乘它；标题、目录不跟着变 */
-:root { --rd: 1; --read: var(--serif); --read-lh: 1.95; }
+:root { --rd: 1; --read: var(--serif-read); --read-lh: 1.95; }
 :root[data-size="0"] { --rd: .895; }
 :root[data-size="2"] { --rd: 1.105; }
 :root[data-size="3"] { --rd: 1.21; }
 :root[data-size="4"] { --rd: 1.316; }
 :root[data-face="sans"] { --read: var(--sans); --read-lh: 1.9; }
 
-.post { --side: clamp(200px, 19.4vw, 280px); --measure: 720px; display: grid; grid-template-columns: var(--side) minmax(0, var(--measure)) minmax(0, 1fr); column-gap: clamp(40px, 5.56vw, 80px); padding: 140px var(--x) 0; }
+.post { --read: var(--serif-read); --side: clamp(200px, 19.4vw, 280px); --measure: 720px; display: grid; grid-template-columns: var(--side) minmax(0, var(--measure)) minmax(0, 1fr); column-gap: clamp(40px, 5.56vw, 80px); padding: 140px var(--x) 0; }
+:root[data-face="sans"] .post { --read: var(--sans); }
 .back { grid-column: 1; grid-row: 1; align-self: start; padding-top: 6px; color: var(--ink-2); justify-self: start; border-bottom: 1px solid transparent; }
 .back:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
@@ -81,7 +82,6 @@
 .fn-pop .x:hover { color: var(--ink); }
 
 /* 顶栏 Aa：平时一圈细墨线，面板打开时才填黑；面板从它正下方落下，样子同脚注弹窗 */
-.bar-r { justify-self: end; display: flex; align-items: center; gap: 28px; }
 .rd { position: relative; }
 .aa { display: grid; place-items: center; width: 44px; height: 34px; border: 1px solid var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1; text-transform: none; letter-spacing: 0; color: var(--ink); transition: background-color var(--t-fast), color var(--t-fast); }
 .aa:hover { background: var(--hover); }
@@ -157,9 +157,9 @@
   .prose h3 { margin-top: 44px; font-size: calc(21px * var(--rd)); }
   .prose .article-figure { margin: 32px calc(-1 * var(--x)); }
   .prose figcaption { padding-inline: var(--x); }
-  /* 手机：顶栏只剩 品牌 · 导航 · Aa；面板挂在整条顶栏下面，左右留 12px */
+  /* 手机：语言切换留在 Aa 左边，面板挂在整条顶栏下面 */
   .bar-in:has(.bar-r) { grid-template-columns: auto 1fr auto; column-gap: 10px; }
-  .aa { width: 38px; height: 32px; font-size: 16px; }
+  .aa { width: 32px; height: 32px; font-size: 16px; }
   .rd { position: static; }
   .rd-panel { top: calc(100% + 8px); left: 12px; right: 12px; width: auto; }
   .rd-panel::before { right: calc(var(--x) + 18px - 12px - 6px); }
@@ -171,7 +171,8 @@
   .next-t { font-size: 22px; }
 }
 @media (max-width: 374px) {
-  .bar-in:has(.bar-r) .nav { gap: 14px; }
+  .bar-in:has(.bar-r) { column-gap: 8px; }
+  .bar-in:has(.bar-r) .nav { gap: 8px; font-size: 11px; }
 }
 @media print {
   .bar, .side, .back, .rd, .end, .post-foot .next { display: none; }

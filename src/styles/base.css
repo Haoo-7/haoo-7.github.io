@@ -31,6 +31,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav { display: flex; gap: 34px; }
 .nav a { padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color .2s; }
 .nav a:hover, .nav a[aria-current] { border-bottom-color: var(--ink); }
+.bar-r { justify-self: end; display: flex; align-items: center; gap: 28px; }
+.lang-switch { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+.lang-switch a { border-bottom: 1px solid transparent; padding-bottom: 2px; }
+.lang-switch a:hover, .lang-switch a[aria-current] { border-bottom-color: var(--ink); }
 .clock { justify-self: end; color: var(--ink-2); display: flex; gap: 10px; align-items: center; }
 .clock b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); animation: blink 2s steps(1) infinite; }
@@ -70,8 +74,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* 阅读器 / 待机屏里的字，跟着图片宽度缩放 */
 .screen { display: flex; flex-direction: column; color: var(--screen-ink); padding: 1.53cqw 1.39cqw 1.25cqw; }
 .screen .s-meta { font-family: var(--mono); font-size: max(7px, .73cqw); letter-spacing: .05em; text-transform: uppercase; color: var(--screen-ink-2); }
-.screen .s-title { font-family: var(--serif); font-size: 1.46cqw; line-height: 1.24; letter-spacing: -.01em; margin-top: .97cqw; }
-.screen .s-dek { font-family: var(--serif); font-size: max(8px, .9cqw); line-height: 1.5; color: var(--screen-ink-2); margin-top: .83cqw; }
+.screen .s-title { font-family: var(--serif-read); font-size: 1.46cqw; line-height: 1.24; letter-spacing: -.01em; margin-top: .97cqw; }
+.screen .s-dek { font-family: var(--serif-read); font-size: max(8px, .9cqw); line-height: 1.5; color: var(--screen-ink-2); margin-top: .83cqw; }
+.screen .s-title:lang(zh), .screen .s-dek:lang(zh) { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; flex-shrink: 0; letter-spacing: 0; }
+.screen .s-title:lang(zh) { -webkit-line-clamp: 3; line-clamp: 3; }
+.screen .s-dek:lang(zh) { -webkit-line-clamp: 4; line-clamp: 4; }
 .screen .s-foot { margin-top: auto; display: flex; justify-content: space-between; font-family: var(--mono); font-size: max(7px, .7cqw); letter-spacing: .05em; text-transform: uppercase; color: var(--screen-ink-2); }
 
 /* 页面之间：像墨水屏一样分两三下换页，顶栏不动 */
@@ -85,13 +92,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .end-full { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 767px) {
-  .bar-in { height: 64px; grid-template-columns: auto 1fr; }
+  .bar-in { height: 64px; grid-template-columns: auto 1fr auto; column-gap: 10px; }
   .bar.stuck .bar-in { height: 56px; }
   .clock { display: none; }
   .nav { justify-self: end; gap: 20px; }
+  .bar-r { gap: 8px; margin-left: 6px; }
+  .lang-switch { font-size: 11px; letter-spacing: 0; gap: 4px; }
   .end-line { height: auto; padding: 28px 0 32px; flex-wrap: wrap; }
   .end-line .tag { order: 3; width: 100%; }
 }
+@media (max-width: 374px) { .bar-in { column-gap: 8px; } .bar-in .nav { gap: 8px; font-size: 11px; } }
 @media (prefers-reduced-motion: reduce) {
   .dot { animation: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }

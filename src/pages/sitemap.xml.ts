@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { pathFor } from '../i18n/lang';
 
 export const GET: APIRoute = async ({ site }) => {
   if (!site) throw new Error('Missing site URL');
@@ -12,7 +13,7 @@ export const GET: APIRoute = async ({ site }) => {
       lastmod: data.pubDate.toISOString(),
     })),
   ];
-  const urls = pages.map(({ path, lastmod }) => {
+  const urls = pages.flatMap((page) => [page, { ...page, path: pathFor(page.path, 'zh') }]).map(({ path, lastmod }) => {
     const loc = new URL(path, site).href.replaceAll('&', '&amp;');
     return `<url><loc>${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`;
   }).join('');
