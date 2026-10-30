@@ -1,0 +1,32 @@
+[
+  {
+    "file": "page-@2x.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 2,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "eyebrow",
+        "label": "标题上方的眉标",
+        "count": 4,
+        "examples": [
+          "p.kick.mono「ABOUT」",
+          "p.ch-n.mono「01LIFE」",
+          "p.ch-n.mono「02TECH」"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 6,
+        "examples": [
+          "div.clock「GUANGZHOU 15:56 UTC+8」",
+          "p.kick.mono「FIG. 08 CONTACT」",
+          "span.lab「COPY ADDRESS」"
+        ]
+      }
+    ]
+  }
+]

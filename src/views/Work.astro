@@ -11,6 +11,7 @@ const t = ui[lang];
 const github = siteConfig.socialLinks.find((l) => l.label === 'GitHub')!;
 import '../styles/parts.css';
 import '../styles/pages.css';
+import { zh } from '../i18n/copy-zh';
 ---
 <Base lang={lang} title="Work" description={t.meta.work} active="/work/">
   <header class="p-head">
@@ -43,7 +44,7 @@ import '../styles/pages.css';
       <li class="dossier later" data-c="later" tabindex="0">
         <p class="d-n mono" lang="en"><b>03–06</b><span>Empty</span></p>
         <h2 class="d-name" lang="en">Next, when I need it.</h2>
-        <p class="d-line">{lang === 'zh' ? <>以后做的新工具会放在这里。我其他的仓库可以去 <a href={github.href} rel="me noopener" lang="en">GitHub</a> 上看。</> : <>Whatever I build next goes here. The rest of my repositories live on <a href={github.href} rel="me noopener">GitHub</a>.</>}</p>
+        {lang === 'zh' ? <p class="d-line" set:html={zh.workLater} /> : <p class="d-line">Whatever I build next goes here. The rest of my repositories live on <a href={github.href} rel="me noopener">GitHub</a>.</p>}
       </li>
     </ol>
   </div>

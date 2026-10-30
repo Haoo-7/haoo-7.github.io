@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = ROOT / 'output/zh-site-2026-10-30/fonts/noto'
 DEST = ROOT / 'public/fonts/zh'
 CHUNK_SIZE = 400
-PUNCT = {0x2014, 0x2026} | set(range(0x2018, 0x201E)) | set(range(0x3000, 0x3040)) | set(range(0xFF00, 0xFFF0))
+# 单引号 U+2018-201A 不收：英文标题里的 I’d 会被排成全角撇号
+PUNCT = {0x2014, 0x2026} | set(range(0x201C, 0x201E)) | set(range(0x3000, 0x3040)) | set(range(0xFF00, 0xFFF0))
 
 
 def gb2312_han():

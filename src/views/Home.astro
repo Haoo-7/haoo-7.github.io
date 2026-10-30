@@ -134,7 +134,7 @@ const items = posts.map((post, i) => readerItem(post, i, posts.length, lang));
     <p class="kick mono" id="now-h" lang="en"><b>Fig. 07</b> Lately</p>
     <ol class="lately">
       {lang === 'zh' ? ui.zh.home.lately.map((line, i) => (
-        <li tabindex={i === 3 ? '0' : undefined}><span>{line}</span>{i === 3 && <span class="egg mono">{ui.zh.home.egg}</span>}</li>
+        <li tabindex={i === ui.zh.home.lately.length - 1 ? '0' : undefined}><span>{line}</span>{i === ui.zh.home.lately.length - 1 && <span class="egg mono">{ui.zh.home.egg}</span>}</li>
       )) : <>
         <li><span>Playing with <em>AI</em>, mostly to study faster.</span></li>
         <li><span>Tinkering with software and small hardware.</span></li>

@@ -1,3 +1,5 @@
+import { zh } from './copy-zh';
+
 export const ui = {
   en: {
     meta: {
@@ -63,12 +65,7 @@ export const ui = {
     contact: { sleep: 'Probably at a desk, building something.' },
   },
   zh: {
-    meta: {
-      home: 'Haoo 的个人网站。我在读历史，也喜欢动手做东西，这里放我做的小工具、随笔、数码评测和一些历史研究。',
-      work: 'Haoo 做的小工具，每个都写了起因、能做什么和源码地址。',
-      writing: 'Haoo 写的随笔、数码评测和历史研究。',
-      about: 'Haoo，暨南大学历史学系在读。关于我，以及怎么联系我。',
-    },
+    meta: zh.meta,
     a11y: {
       skip: '跳到正文',
       home: 'Haoo，首页',
@@ -98,39 +95,22 @@ export const ui = {
       qr: 'Haoo 公众号的二维码',
     },
     home: {
-      intro: '我是 Haoo，历史学系在读，正在尝试用科技改变生活',
-      bench: '这些小工具都是为了解决我自己碰到的问题做的。未完待续～',
-      writing: '写生活，数码，历史研究',
-      lately: [
-        '在玩 AI，主要是想用它学得更快一点。',
-        '折腾软件，也折腾一些小硬件。',
-        '在读讲个人成长的书。',
-        '偶尔打几局 Brawlhalla。',
-      ],
-      egg: '以前跑过《武士零》速通，排进过国内前三。',
+      intro: zh.intro,
+      bench: zh.bench,
+      writing: zh.writingLater,
+      lately: zh.lately,
+      egg: zh.latelyEgg,
     },
     work: {
-      intro: '这些小工具都是为了解决我自己碰到的问题做的，每格放一个。',
+      intro: zh.workIntro,
     },
     writing: {
-      intro: '这里有写我怎么学习、怎么做事的随笔，也有我对自己在用的设备的评测。',
+      intro: zh.writingIntro,
     },
     about: {
-      intro: '我是 Haoo，暨南大学历史学系就读。喜欢捣鼓 AI，历史，和未来。',
-      chapters: [
-        [
-          '我在意的是那种慢慢积累的进步：读讲个人成长的书，记下以后真的会回头看的笔记，养成学期再忙也能坚持下去的习惯。',
-          '不在书桌前的时候，我会偶尔打几局 Brawlhalla。',
-        ],
-        [
-          '认识我的人常以为我是学理工科的。我玩 AI，主要是想用它学得更快；我也喜欢折腾软件和小硬件，最后留下来的都是真正用得上的工具。',
-          '其中两个现在放在 <a href="/zh/work/" lang="en">Work</a> 页，评测和教程放在 <a href="/zh/writing/" lang="en">Writing</a> 页。',
-        ],
-        [
-          '我在广州的暨南大学读历史。我喜欢同时从两个尺度去看过去：一是一个社会怎样在很长的时间里发生变化，二是生活在其中的普通人。',
-        ],
-      ],
+      intro: zh.aboutIntro,
+      chapters: zh.aboutChapters,
     },
-    contact: { sleep: '这会儿多半在桌前捣鼓点什么。' },
+    contact: { sleep: zh.standby },
   },
 } as const;
