@@ -1,0 +1,12 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "failed": true,
+    "issues": [
+      "第 1 步「click .lately li:last-child」：匹配到 1 个元素 .lately li:last-child，但都不可见，不能操作（opacity:0）；先执行让它出现的那一步，或换成当前可见的元素；线索：去掉最后一段后 \".lately\" 匹配 1 个元素；例如 click .lately"
+    ]
+  }
+]

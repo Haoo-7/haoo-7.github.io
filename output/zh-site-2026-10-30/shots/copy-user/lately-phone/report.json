@@ -1,0 +1,49 @@
+[
+  {
+    "file": "page.png",
+    "state": null,
+    "size": "390x844",
+    "zoom": 1,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": [
+      {
+        "rule": "numbered",
+        "label": "标题上方的编号标签",
+        "count": 3,
+        "examples": [
+          "span.n.mono「01 · AGENT SKILL」",
+          "span.n.mono「02 · AGENT WORKFLOW」",
+          "span.n.mono「03–06」"
+        ]
+      },
+      {
+        "rule": "englishLabel",
+        "label": "中文界面里的英文大写标签",
+        "count": 17,
+        "examples": [
+          "span「FIG. 02 THE WORKBENCH」",
+          "span#figname「THE WORKBENCH」",
+          "div.makes「MAKES PROJECTS ESSAYS RE」"
+        ]
+      },
+      {
+        "rule": "tightLeading",
+        "label": "多行正文行高过紧",
+        "count": 2,
+        "examples": [
+          "a.t「年度征文｜效率杂谈：告别纸笔拓荒，怎么用 AI 」（1.38）",
+          "a.t「数码杂谈 | Kindle PaperWhite」（1.38）"
+        ]
+      },
+      {
+        "rule": "sourceSplit",
+        "label": "本地页面文件较大或有超长行，适合按功能拆分",
+        "count": 1,
+        "examples": [
+          "index.html（42 KiB）"
+        ]
+      }
+    ]
+  }
+]

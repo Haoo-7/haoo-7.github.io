@@ -130,7 +130,7 @@
   .about .all { order: 4; justify-self: start; }
   .caps { font-size: 11px; }
   .lately li { flex-wrap: wrap; gap: 6px 24px; }
-  .egg { margin-left: 0; opacity: 1; transform: none; white-space: normal; }
+  .egg { margin-left: 0; opacity: 1; transform: none; white-space: normal; flex: 1 1 100%; min-width: 0; }
 }
 @media (max-width: 767px) {
   .hero { padding-top: 96px; }
