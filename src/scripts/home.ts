@@ -101,7 +101,7 @@ mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => 
 mm.add('(prefers-reduced-motion: no-preference)', () => {
   let stopped = false;
   // 先在纸下摆好起始状态，等加载动画放行再播，免得白演一遍
-  gsap.set('.words .w', { yPercent: 105 });
+  gsap.set('.words .w', { yPercent: 125 });
   gsap.set('.intro, .hero .foot', { opacity: 0, y: 14 });
   const enter = (r?: { shown?: boolean }) => {
     if (stopped) return;
