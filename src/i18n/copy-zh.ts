@@ -11,7 +11,7 @@ export const zh = {
   // ── 首页 /zh/ ─────────────────────────────
 
   // 首屏：大字 Life, Tech & History. 下面那一句
-  intro: `我是 Haoo，历史学系在读，正在尝试用科技改变生活`,
+  intro: `我是 Haoo，历史学系在读，正在尝试用科技改变生活。`,
 
   // On the bench. 右边那段说明
   bench: `这些小工具都是为了解决我自己碰到的问题做的。`,
@@ -28,7 +28,7 @@ export const zh = {
 
   // Lately：近况，最近在做什么，一行一条
   lately: [
-    `在玩 AI，Vibe Coding是人文社科学生的创造方式`,
+    `在玩 AI，Vibe Coding 是人文社科学生的创造方式。`,
     `折腾软件，也折腾一些小硬件。`,
     `在读历史研究相关的书籍。`,
     `也喜欢打打游戏。`,
@@ -91,8 +91,8 @@ export const zh = {
     ],
     // 02 Tech（标题 I’d rather build the tool than wait for it.）
     [
-      `认识我的人常以为我是学理工科的。我玩 AI，主要是为了我的生活服务，也在进行一些商业化的尝试`,
-      `其中两个现在放在 <a href="/zh/work/" lang="en">Work</a> 页，评测和教程放在 <a href="/zh/writing/" lang="en">Writing</a> 页。`,
+      `认识我的人常以为我是学理工科的。我玩 AI，主要是为了我的生活服务，也在进行一些商业化的尝试。`,
+      `我做的小工具放在 <a href="/zh/work/" lang="en">Work</a> 页，评测和教程放在 <a href="/zh/writing/" lang="en">Writing</a> 页。`,
     ],
     // 03 History（标题 The big picture, and the people in it.）
     [
