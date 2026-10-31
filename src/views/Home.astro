@@ -6,7 +6,7 @@ import Reader from '../components/Reader.astro';
 import Hello from '../components/Hello.astro';
 import Cat from '../components/Cat.astro';
 import TailTip from '../components/TailTip.astro';
-import { projects } from '../data/projects';
+import { projects, laterCells } from '../data/projects';
 import { postMeta, readerItem } from '../data/posts';
 import { frames } from '../data/frames';
 import { pathFor, type Lang } from '../i18n/lang';
@@ -73,7 +73,7 @@ const items = posts.map((post, i) => readerItem(post, i, posts.length, lang));
           </li>
         ))}
         <li class="later" data-c="later" tabindex="0" lang="en">
-          <span class="n mono">03–06</span>
+          <span class="n mono">{laterCells}</span>
           <h3>Next, when I need it.</h3>
         </li>
       </ol>

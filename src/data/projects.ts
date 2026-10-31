@@ -18,8 +18,30 @@ export interface Project {
   href: string;
 }
 
-// 托盘照片上前两格放作品，其余四格留空
+// 托盘照片上按顺序每格放一个作品，剩下的格子留空
 export const projects: Project[] = [
+  {
+    id: 'dayline',
+    name: 'Dayline Journal',
+    kind: 'Obsidian plugin',
+    started: '2026-07',
+    line: 'A visual journal for Obsidian: calendar, timeline, mood, memories, weather and photos in one place.',
+    lineZh: zh.projects['dayline'].line,
+    problem: 'At university I switched to Day One and gave up after five months. My journal lived on its servers, where AI couldn’t read it. When I moved it into Obsidian, I found it was a bare shell for keeping a journal: no photo calendar, no On This Day, no timeline.',
+    problemZh: zh.projects['dayline'].why,
+    does: [
+      'Photo calendar: a whole month covered in my photos. An empty day nags at you, so you want to fill it in.',
+      'Timeline: the journal stops being a folder of cold, dated files.',
+      'Mood: a colour for each day, shown on the calendar too.',
+      'Weather and photo EXIF: how wild the weather was that day, and when, on what and with which settings each photo was taken.',
+    ],
+    doesZh: zh.projects['dayline'].does,
+    stack: 'TypeScript, on Obsidian desktop and mobile',
+    stackZh: zh.projects['dayline'].builtWith,
+    status: 'In the official Obsidian community plugin store. Search for Dayline Journal.',
+    statusZh: zh.projects['dayline'].status,
+    href: 'https://github.com/Haoo-7/Obsidian-Dayline',
+  },
   {
     id: 'md2docx',
     name: 'md2docx-historypaper-skill',
@@ -63,3 +85,7 @@ export const projects: Project[] = [
     href: 'https://github.com/Haoo-7/agent-recap',
   },
 ];
+
+// 托盘共六格，空格子的编号，如 04–06
+const pad = (n: number) => String(n).padStart(2, '0');
+export const laterCells = projects.length < 5 ? `${pad(projects.length + 1)}–06` : '06';

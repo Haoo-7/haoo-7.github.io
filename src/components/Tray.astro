@@ -1,17 +1,18 @@
 ---
-// 切割垫上的分格盒就是作品目录：01、02 有作品，03–06 空着
+// 切割垫上的分格盒就是作品目录：前几格按顺序放作品，其余空着
+import { projects } from '../data/projects';
 interface Props {
   class?: string;
 }
 const { class: cls = '' } = Astro.props;
 const cells = [
-  { n: '01', c: '0', l: 132, t: 215, w: 122, h: 137 },
-  { n: '02', c: '1', l: 266, t: 215, w: 123, h: 137 },
-  { n: '03', c: 'later', l: 397, t: 215, w: 126, h: 137 },
-  { n: '04', c: 'later', l: 132, t: 359, w: 122, h: 135 },
-  { n: '05', c: 'later', l: 266, t: 359, w: 123, h: 135 },
-  { n: '06', c: 'later', l: 397, t: 359, w: 126, h: 135 },
-];
+  { n: '01', l: 132, t: 215, w: 122, h: 137 },
+  { n: '02', l: 266, t: 215, w: 123, h: 137 },
+  { n: '03', l: 397, t: 215, w: 126, h: 137 },
+  { n: '04', l: 132, t: 359, w: 122, h: 135 },
+  { n: '05', l: 266, t: 359, w: 123, h: 135 },
+  { n: '06', l: 397, t: 359, w: 126, h: 135 },
+].map((cell, i) => ({ ...cell, c: i < projects.length ? String(i) : 'later' }));
 ---
 <div class:list={['crop tray-crop', cls]} aria-hidden="true">
   <div class="art tray" style="--ar: 1100 / 733">

@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Tray from '../components/Tray.astro';
-import { projects } from '../data/projects';
+import { projects, laterCells } from '../data/projects';
 import { siteConfig } from '../data/site';
 import type { Lang } from '../i18n/lang';
 import { ui } from '../i18n/ui';
@@ -42,7 +42,7 @@ import { zh } from '../i18n/copy-zh';
         </li>
       ))}
       <li class="dossier later" data-c="later" tabindex="0">
-        <p class="d-n mono" lang="en"><b>03–06</b><span>Empty</span></p>
+        <p class="d-n mono" lang="en"><b>{laterCells}</b><span>Empty</span></p>
         <h2 class="d-name" lang="en">Next, when I need it.</h2>
         {lang === 'zh' ? <p class="d-line" set:html={zh.workLater} /> : <p class="d-line">Whatever I build next goes here. The rest of my repositories live on <a href={github.href} rel="me noopener">GitHub</a>.</p>}
       </li>
