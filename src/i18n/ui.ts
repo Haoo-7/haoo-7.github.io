@@ -38,27 +38,27 @@ export const ui = {
     },
     home: {
       bench: 'Small tools for problems I actually had. One compartment each. The empty ones are on purpose.',
-      writing: 'History research is on its way here.',
+      writing: 'Life, tech, and history research.',
     },
     work: {
       intro: 'Small tools for problems I actually had. One compartment each.',
     },
     writing: {
-      intro: 'Essays on how I study and work, and reviews of the gear I actually use. Written in Chinese, with a short English note on each.',
+      intro: 'Mostly tech, history research and my own life. Written in Chinese, with a short English note on each.',
     },
     about: {
-      intro: 'I’m Haoo, a history undergrad who builds like an engineer. This site is where the three parts meet: life, tech and history.',
+      intro: 'I’m Haoo, a history undergrad at Jinan University. I like tinkering with AI, history, and the future.',
       chapters: [
         [
-          'What I care about is the slow kind of progress: reading on how people grow, keeping notes I actually come back to, and habits that survive a busy term.',
-          'Off the desk I play Brawlhalla, casually.',
+          'Focused on personal growth: getting a little better, bit by bit.',
+          'I like pixel-art games, though I play less and less.',
         ],
         [
-          'People who meet me assume I study engineering. I play with AI mostly to study faster, tinker with software and small hardware, and keep the tools that earn a place.',
-          'Two of them are on the <a href="/work/">bench</a> right now. The reviews and how-tos are under <a href="/writing/">Writing</a>.',
+          'People who meet me assume I study science or engineering. I use AI mostly to make my own life easier, and I’m trying a few commercial ideas with it too.',
+          'The tools I’ve made are on the <a href="/work/">bench</a>. The reviews and how-tos are under <a href="/writing/">Writing</a>.',
         ],
         [
-          'I study history at Jinan University in Guangzhou. I like reading the past at two scales at once: the long arc of how societies change, and the ordinary people living inside it.',
+          'I study history at Jinan University in Guangzhou, and I enjoy what the humanities have to offer.',
         ],
       ],
     },

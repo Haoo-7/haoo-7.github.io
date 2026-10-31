@@ -136,10 +136,10 @@ const items = posts.map((post, i) => readerItem(post, i, posts.length, lang));
       {lang === 'zh' ? ui.zh.home.lately.map((line, i) => (
         <li tabindex={i === ui.zh.home.lately.length - 1 ? '0' : undefined}><span>{line}</span>{i === ui.zh.home.lately.length - 1 && <span class="egg mono">{ui.zh.home.egg}</span>}</li>
       )) : <>
-        <li><span>Playing with <em>AI</em>, mostly to study faster.</span></li>
+        <li><span>Playing with <em>AI</em>. Vibe coding is how a humanities student gets to build things.</span></li>
         <li><span>Tinkering with software and small hardware.</span></li>
-        <li><span>Reading on how people <em>grow</em>.</span></li>
-        <li tabindex="0"><span>Brawlhalla, casually.</span><span class="egg mono">Once top 3 in China, Katana ZERO speedruns</span></li>
+        <li><span>Reading books on history research.</span></li>
+        <li tabindex="0"><span>Games, now and then.</span><span class="egg mono">Worth a mention: top 3 in China, Katana ZERO all-levels speedrun</span></li>
       </>}
     </ol>
   </section>
